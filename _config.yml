@@ -9,3 +9,4 @@ url: "http://www.transit.land" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+exclude: [vendor] # https://github.com/jekyll/jekyll/issues/2938
