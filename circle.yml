@@ -15,8 +15,8 @@ deployment:
   staging:
     branch: master
     commands:
-      - S3_BUCKET=staging.transit.land bundle exec s3_website push
+      - TARGET=staging bundle exec s3_website push
   production:
     branch: production 
     commands:
-      - S3_BUCKET=www.transit.land bundle exec s3_website push
+      - TARGET=prod bundle exec s3_website push
