@@ -1,5 +1,5 @@
-s3_id: <%= ENV["AWS_ACCESS_KEY_ID_#{ENV['TARGET']}.upcase"] %>
-s3_secret: <%= ENV["AWS_SECRET_ACCESS_KEY_#{ENV['TARGET']}.upcase"] %>
+s3_id: <%= ENV["AWS_ACCESS_KEY_ID_#{ENV['TARGET'].upcase}"] %>
+s3_secret: <%= ENV["AWS_SECRET_ACCESS_KEY_#{ENV['TARGET'].upcase}"] %>
 s3_bucket: <%= ENV['TARGET'] == 'prod' ? 'www.transit.land' : 'staging.transit.land'  %>
 
 # Below are examples of all the available configurations.
