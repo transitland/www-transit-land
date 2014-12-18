@@ -1,0 +1,22 @@
+machine:
+  ruby:
+    version: 2.1.2
+database:
+  override:
+    - echo "we need no database" 
+test:
+  override:
+    - echo "we need no tests"
+dependencies:
+  post:
+    - bundle exec jekyll build
+
+deployment:
+  staging:
+    branch: master
+    commands:
+      - S3_BUCKET=staging.transit.land bundle exec s3_website push
+  production:
+    branch: production 
+    commands:
+      - S3_BUCKET=www.transit.land bundle exec s3_website push
