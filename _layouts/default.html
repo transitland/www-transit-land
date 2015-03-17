@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width initial-scale=1">
-
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+    
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,15 +19,89 @@
       ga('send', 'pageview');
     </script>
   </head>
-
   <body>
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Add your site or application content here -->
+    <nav class="navbar col-lg-12 col-md-12 col-sm-12">
+      <div class="logo-image">
+        <a href="#">
+          <img src="images/logo.png">
+        </a>
       </div>
-    </div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu-bar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="nav-menu-helper"></div>
+      <div id="nav-menu-bar" class="navbar-collapse collapse">
+          <div class="nav-menu">
+            <div class="float-left">
+              <a href="/">
+                <div class="circle">
+                </div>
+                <div class="main">
+                  HOME
+                </div>
+              </a>
+            </div>
+            <div class="float-left">
+              <a href="">
+                <div class="circle">
+                </div>
+                <div class="main">
+                HOW IT WORKS
+                </div>
+              </a>
+            </div>
+            <div class="float-left">
+              <a href="">
+                <div class="circle">
+                </div>
+                <div class="main">
+                PLAYGROUND
+                </div>
+              </a>
+            </div>
+            <div class="float-left">
+              <a href="">
+                <div class="circle">
+                </div>
+                <div class="main">
+                CONTRIBUTE
+                </div>
+              </a>
+            </div>
+            <div class="float-left">
+              <a href="">
+                <div class="circle">
+                </div>
+                <div class="main">
+                FAQ'S
+                </div>
+              </a>
+            </div>
+            <div class="float-left">
+              <a href="">
+                <div class="circle">
+                </div>
+                <div class="main">
+                SHARE
+                </div>
+              </a>
+            </div>
+          </div>
+        </div><!--/.navbar-collapse -->
+    </nav>
 
+    {{ content }}
+    <script src="{{ "/js/vendor/jquery-2.1.3.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/vendor/bootstrap.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
   </body>
-
 </html>
