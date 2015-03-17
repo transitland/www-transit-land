@@ -1,0 +1,109 @@
+#nav-menu-bar{
+  border-top:1px solid #000;
+  margin-top:20px;
+  background:#fff;
+}
+.navbar{
+  background-color:#fff;
+  margin:0 auto;
+  padding:10px 0;
+  text-align: center;
+}
+
+
+.main{
+ /* margin-top:-5px;
+  border-top:1px solid #000;*/
+}
+.nav-menu{
+  display:inline-block;
+}
+
+.circle{
+  background-color:#fff;
+  margin:0 auto;
+  border:1px solid;
+  border-radius:50%;
+  width:8px;
+  height:8px;
+  position:relative;
+  top:-5px;
+}
+
+.float-left{
+  float:left;
+  padding: 0 20px;
+}
+
+nav a{
+  color:#000000;
+  text-decoration: none;
+  font-weight: 400;
+
+}
+
+nav a:visited{
+  color: #000;
+}
+
+.nav-menu a:hover{
+  text-decoration: none;
+}
+
+.nav-menu .float-left:nth-child(1) a:hover{
+  color:$logo-color-1;
+}
+
+.nav-menu .float-left:nth-child(2) a:hover{
+  color:$logo-color-2;
+}
+
+.nav-menu .float-left:nth-child(3) a:hover{
+  color:$logo-color-3;
+}
+
+.nav-menu .float-left:nth-child(4) a:hover{
+  color:$logo-color-4;
+}
+
+.nav-menu .float-left:nth-child(5) a:hover{
+  color:$logo-color-5;
+}
+
+.nav-menu .float-left:nth-child(6) a:hover{
+  color:$logo-color-6;
+}
+
+.nav-helper{
+  width:100%;
+  height:20px;
+  position:fixed;
+  top:0px;
+  left:0px;
+  background-color:#fff;
+  z-index: 1030;
+}
+
+@include media-query($on-pad){
+  .navbar-toggle{
+    background-color:#ccc;
+    margin-top:40px;
+  }
+  .navbar-toggle span{
+    background-color:#fff;
+  }
+
+  .nav-menu .float-left{
+    float:initial;
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+  .circle{
+    display:none;
+
+  }
+  .logo-image{
+    float:left;
+    margin-left:30px;
+  }
+}

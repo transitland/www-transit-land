@@ -1,0 +1,19 @@
+html,body{
+  width:100%;
+  height:100%;
+}
+
+body{
+  font-family:$base-font-family;
+}
+
+
+div{
+   box-sizing: border-box;
+}
+
+.jumbotron{  
+  height:100%;
+  margin:0;
+  padding-top:150px;
+}
