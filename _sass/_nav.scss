@@ -1,8 +1,9 @@
 #nav-menu-bar{
   border-top:1px solid #000;
   margin-top:20px;
-  background:#fff;
+  background:rgba(255,255,255,0.85);
 }
+
 .navbar{
   background-color:#fff;
   margin:0 auto;
@@ -10,15 +11,9 @@
   text-align: center;
 }
 
-
-.main{
- /* margin-top:-5px;
-  border-top:1px solid #000;*/
-}
 .nav-menu{
   display:inline-block;
 }
-
 .circle{
   background-color:#fff;
   margin:0 auto;
@@ -80,7 +75,7 @@ nav a:visited{
   position:fixed;
   top:0px;
   left:0px;
-  background-color:#fff;
+  background-color:rgba(255,255,255,0.85);
   z-index: 1030;
 }
 

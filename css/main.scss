@@ -25,13 +25,14 @@ $grey-color-dark:  darken($grey-color, 25%);
 $content-width:    800px;
 
 $on-palm:          600px;
-$on-pad:        767px;
+$on-pad:           767px;
+$on-small-screen:  991px;
 
 
 //pretty logo color scheme
 $logo-color-1:  #f7ae56;
 $logo-color-2:  #c91e42;
-$logo-color-3:  #4ec7e7;
+$logo-color-3:  #2ed4e8;
 $logo-color-4:  #ee914b;
 $logo-color-5:  #66ad2a;
 $logo-color-6:  #9f5bcc;
@@ -49,11 +50,10 @@ $logo-color-6:  #9f5bcc;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "bootstrap",
         "override",
-        "nav"
+        "nav",
+        "style"
 ;

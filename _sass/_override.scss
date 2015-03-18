@@ -5,8 +5,8 @@ html,body{
 
 body{
   font-family:$base-font-family;
+  overflow-x:hidden;
 }
-
 
 div{
    box-sizing: border-box;
@@ -15,5 +15,15 @@ div{
 .jumbotron{  
   height:100%;
   margin:0;
-  padding-top:150px;
+  padding-top:200px;
+}
+
+
+@include media-query($on-small-screen){
+  .jumbotron{  
+    height:auto;
+    margin:0;
+    padding-top:10px;
+  }
+
 }

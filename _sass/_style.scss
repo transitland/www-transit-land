@@ -1,0 +1,52 @@
+
+
+#index-1 h2{
+  font-weight:700;
+  font-size:35px;
+  letter-spacing: 3.2px;
+  display:inline;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin:0 auto;
+}
+
+#index-1 .container{
+  height:100%;
+}
+
+#index-1 .container img{
+  width:0;
+}
+#index-3{
+  text-align: center;
+}
+#index-3 h3{
+  margin-bottom:30px;
+}
+
+
+.white-bg{
+  background-color:#fff;
+}
+
+.blue-bg{
+  background-color: $logo-color-3;
+}
+
+.white-text{
+  color:#fff;
+}
+
+
+@include media-query($on-small-screen){
+    #index-1 h2{
+    font-weight:700;
+    font-size:27px;
+    letter-spacing: 3px;
+    display:inline;
+    line-height:2em;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin:0 auto;
+  }
+}
