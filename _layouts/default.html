@@ -54,24 +54,24 @@ navigation:
       </div>
       <div id="nav-menu-helper"></div>
       <div id="nav-menu-bar" class="navbar-collapse collapse">
-          <div class="nav-menu">
-            {% assign url = page.url|remove:'index.html' %}
-              {% for link in page.navigation %}
-                <div class="float-left">
-                  <a {% if url == link.url %}class="selected"{% endif %} href="{{link.url}}">
-                    <div class="circle">
-                    </div>
-                    <div class="main">
-                      {{link.text}}
-                    </div>
-                  </a>
-                </div>
-              {% endfor %}
-          </div>
-        </div><!--/.navbar-collapse -->
+        <div class="nav-menu">
+          {% assign url = page.url|remove:'index.html' %}
+            {% for link in page.navigation %}
+              <div class="float-left">
+                <a {% if url == link.url %}class="selected"{% endif %} href="{{link.url}}">
+                  <div class="circle"></div>
+                  <div class="main">
+                    {{link.text}}
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+        </div>
+      </div><!--/.navbar-collapse -->
     </nav>
 
     {{ content }}
+    
     <script src="{{ "/js/vendor/jquery-2.1.3.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/vendor/bootstrap.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/sprite.js" | prepend: site.baseurl }}"></script>
