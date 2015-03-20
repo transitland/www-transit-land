@@ -9,11 +9,23 @@
   margin:0 auto;
   padding:10px 0;
   text-align: center;
+  z-index:1030;
 }
 
 .nav-menu{
   display:inline-block;
 }
+
+.logo-image{
+  background-image:url(../images/transit-logo.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+  width: 326px;
+  height:145px;
+  margin: 0 auto;
+
+}
+
 .circle{
   background-color:#fff;
   margin:0 auto;
@@ -34,6 +46,7 @@ nav a{
   color:#000000;
   text-decoration: none;
   font-weight: 400;
+  display:inline-block;
 
 }
 
@@ -66,6 +79,30 @@ nav a:visited{
 }
 
 .nav-menu .float-left:nth-child(6) a:hover{
+  color:$logo-color-6;
+}
+
+.nav-menu .float-left:nth-child(1) .selected{
+  color:$logo-color-1;
+}
+
+.nav-menu .float-left:nth-child(2) .selected{
+  color:$logo-color-2;
+}
+
+.nav-menu .float-left:nth-child(3) .selected{
+  color:$logo-color-3;
+}
+
+.nav-menu .float-left:nth-child(4) .selected{
+  color:$logo-color-4;
+}
+
+.nav-menu .float-left:nth-child(5) .selected{
+  color:$logo-color-5;
+}
+
+.nav-menu .float-left:nth-child(6) .selected{
   color:$logo-color-6;
 }
 

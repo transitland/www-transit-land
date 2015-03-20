@@ -1,3 +1,18 @@
+---
+navigation:
+- text: HOME
+  url: /
+- text: HOW IT WORKS
+  url: /how-it-works/
+- text: PLAYGROUND
+  url: /playground/
+- text: CONTRIBUTE
+  url: /contribute/
+- text: FAQS
+  url: /faqs/
+- text: SHARE
+  url: /share/
+---
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,7 +23,7 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index','' | prepend: site.baseurl | prepend: site.url }}">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -26,7 +41,7 @@
     <nav class="navbar col-lg-12 col-md-12 col-sm-12">
       <div class="logo-image">
         <a href="#">
-          <img src="images/transit-logo.png">
+          <!--<img src="./images/transit-logo.png">-->
         </a>
       </div>
       <div class="navbar-header">
@@ -40,60 +55,18 @@
       <div id="nav-menu-helper"></div>
       <div id="nav-menu-bar" class="navbar-collapse collapse">
           <div class="nav-menu">
-            <div class="float-left">
-              <a href="/">
-                <div class="circle">
+            {% assign url = page.url|remove:'index.html' %}
+              {% for link in page.navigation %}
+                <div class="float-left">
+                  <a {% if url == link.url %}class="selected"{% endif %} href="{{link.url}}">
+                    <div class="circle">
+                    </div>
+                    <div class="main">
+                      {{link.text}}
+                    </div>
+                  </a>
                 </div>
-                <div class="main">
-                  HOME
-                </div>
-              </a>
-            </div>
-            <div class="float-left">
-              <a href="/how-it-works.html">
-                <div class="circle">
-                </div>
-                <div class="main">
-                HOW IT WORKS
-                </div>
-              </a>
-            </div>
-            <div class="float-left">
-              <a href="/playground.html">
-                <div class="circle">
-                </div>
-                <div class="main">
-                PLAYGROUND
-                </div>
-              </a>
-            </div>
-            <div class="float-left">
-              <a href="/contribute.html">
-                <div class="circle">
-                </div>
-                <div class="main">
-                CONTRIBUTE
-                </div>
-              </a>
-            </div>
-            <div class="float-left">
-              <a href="faqs.html">
-                <div class="circle">
-                </div>
-                <div class="main">
-                FAQ'S
-                </div>
-              </a>
-            </div>
-            <div class="float-left">
-              <a href="share.html">
-                <div class="circle">
-                </div>
-                <div class="main">
-                SHARE
-                </div>
-              </a>
-            </div>
+              {% endfor %}
           </div>
         </div><!--/.navbar-collapse -->
     </nav>
@@ -101,6 +74,9 @@
     {{ content }}
     <script src="{{ "/js/vendor/jquery-2.1.3.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/vendor/bootstrap.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/sprite.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/animation.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/ui-part.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
   </body>
 </html>
