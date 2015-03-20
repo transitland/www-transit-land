@@ -21,10 +21,17 @@ div{
   background-color:#fff;
 }
 
+a{
+  text-decoration: none;
+  color:$logo-color-2;
+}
+a:hover{
+  text-decoration: none;
+}
+
 .jumbotron p{
   font-weight:300;
 }
-
 
 @include media-query($on-small-screen){
   .jumbotron{  
