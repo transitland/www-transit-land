@@ -35,6 +35,12 @@ h2{
   height:100%;
 }
 
+#index-1.jumbotron{
+  height:100%;
+  min-height:600px;
+  padding-top:200px;
+}
+
 #index-1 .container img{
   width:0;
 }
@@ -46,6 +52,7 @@ h2{
 }
 
 #playground.jumbotron{
+  min-height:auto;
   height:auto;
 }
 
