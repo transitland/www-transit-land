@@ -1,13 +1,34 @@
-
-
-#index-1 h2{
+h2{
   font-weight:700;
-  font-size:35px;
-  letter-spacing: 3.2px;
+  font-size:32px;
+  letter-spacing: 3.1px;
   display:inline;
   vertical-align: middle;
-  white-space: nowrap;
   margin:0 auto;
+  padding-top:50px;
+}
+
+.desc{
+  padding-top:50px;
+}
+
+.blue-bg{
+  background-color: $logo-color-3;
+}
+
+.white-text{
+  color:#fff;
+}
+
+.center-text{
+  text-align: center;
+}
+
+/* page specific*/
+
+#index-1 h2{
+  padding-top:0px;
+  white-space: nowrap;
 }
 
 #index-1 .container{
@@ -24,21 +45,28 @@
   margin-bottom:30px;
 }
 
-
-.white-bg{
-  background-color:#fff;
+#playground.jumbotron{
+  height:auto;
 }
 
-.blue-bg{
-  background-color: $logo-color-3;
-}
+#playground-demo.jumbotron{
+  padding: 0 0;
+  margin: 0 0;
+  height:100%;
 
-.white-text{
-  color:#fff;
 }
-
+#playground-demo iframe{
+  width:100%;
+  height:100%;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  border: 0;
+}
 
 @include media-query($on-small-screen){
+
+
+    /* page specific*/
     #index-1 h2{
     font-weight:700;
     font-size:27px;
