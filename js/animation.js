@@ -1,12 +1,12 @@
 function Animation(w,h){
- 
+
   var canvas = $('<canvas class = />').attr({
-      width : w,
-      height :h
-    });
+    width : w,
+    height :h
+  });
 
   canvas.css({
-    "vertical-align":"middle",
+    "vertical-align":"baseline",
     "cursor":"pointer"
   });
 
@@ -28,20 +28,20 @@ function Animation(w,h){
       width : w,
       height: h,
       image : bgImage,
-      imageHeight: 91,
+      imageHeight: 48,
       ticksPerFrame : 50,
-      numberOfFrames : 20
+      numberOfFrames : 78
   });
 
   var vehicle = new sprite({
       context : $(canvas)[0].getContext('2d'),
       width : w,
       height: h,
-      imageWidth : 166,
-      imageHeight : 63,
+      imageWidth : 114,
+      imageHeight : 48,
       image : vehicleImage,
       ticksPerFrame : 50,
-      numberOfFrames : 20    
+      numberOfFrames : 78    
   });
 
   this.getCanvas = function(){

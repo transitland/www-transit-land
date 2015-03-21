@@ -6,7 +6,7 @@ function sprite (options) {
   var ticksPerFrame = options.ticksPerFrame || 0;
   var numberOfFrames = options.numberOfFrames || 1;
   var frameIndex = 0;
-  var speed = 5;
+  var speed = 6;
   var started = false;
       
   that.context = options.context;
@@ -46,20 +46,20 @@ function sprite (options) {
   }
 
   that.render = function(){
+    console.log( ((speed*frameIndex)+that.width)-(speed*frameIndex));
     that.context.clearRect(0, 0, that.width, that.height);
     that.context.drawImage(
     that.image,
-    speed*frameIndex,0, speed*frameIndex+that.imageWidth,that.imageHeight,
-    0,0,that.imageWidth,that.height
+    (speed*frameIndex)+315,0, that.width,that.height,
+    0,0,that.width,that.height
     );
   }
-  
+
   that.staticRender = function(){
-    console.log("static reunder");
     that.context.drawImage(
     that.image,
     0,0, that.imageWidth,that.imageHeight,
-    0,0,that.imageWidth,that.height
+    0,0,that.imageWidth,that.imageHeight
     );
   }
 

@@ -7,11 +7,3 @@ function fixNavigation(){
       $("#nav-menu-helper").removeClass("nav-helper");
     }
 }
-
-function hightlightActiveMenu(){
-
-  $("#nav-menu-bar .nav-menu a").click(function(){
-    $(this).addClass("selected");
-  });
-
-}
