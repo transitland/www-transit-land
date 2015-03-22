@@ -28,11 +28,10 @@ $(document).ready(function(){
     });
     
     var ani = new Animation(canvasW,canvasH);
-   
+    
     var canv = ani.getCanvas();
     $(this).find(".before-canvas").append(canv).each(function(){
-      //wait until canvas is set
-      setTimeout(ani.render,100);
+      ani.initSprites();
     });
   });
   

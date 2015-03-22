@@ -18,12 +18,16 @@ function Animation(w,h){
   });
 
 
+  var background;
+  var vehicle;
+
+  this.initSprites = function(){
+
   var bgImage = new Image();
   bgImage.src = "./images/bus_bg.png";
-  var vehicleImage = new Image();
-  vehicleImage.src = "./images/bus_1.png"
 
-  var background = new sprite({
+  $(bgImage).load(function(){
+    background = new sprite({
       context : $(canvas)[0].getContext('2d'),
       width : w,
       height: h,
@@ -31,18 +35,28 @@ function Animation(w,h){
       imageHeight: 48,
       ticksPerFrame : 50,
       numberOfFrames : 78
+    });
+
+    background.render();
+
+    var vehicleImage = new Image();
+    vehicleImage.src="./images/bus_1.png";
+    $(vehicleImage).load(function(){
+      vehicle = new sprite({
+        context : $(canvas)[0].getContext('2d'),
+        width : w,
+        height: h,
+        imageWidth : 114,
+        imageHeight : 48,
+        image : vehicleImage,
+        ticksPerFrame : 50,
+        numberOfFrames : 78    
+      });
+    vehicle.staticRender();
+    });
   });
 
-  var vehicle = new sprite({
-      context : $(canvas)[0].getContext('2d'),
-      width : w,
-      height: h,
-      imageWidth : 114,
-      imageHeight : 48,
-      image : vehicleImage,
-      ticksPerFrame : 50,
-      numberOfFrames : 78    
-  });
+  }
 
   this.getCanvas = function(){
     return canvas;
