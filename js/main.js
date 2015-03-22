@@ -32,11 +32,6 @@ $(document).ready(function(){
     var canv = ani.getCanvas();
     $(this).find(".before-canvas").append(canv).each(function(){
       ani.initSprites();
-      //  ani.debug();
-      //ani.render();
-    
-    //   setTimeout(function(){
-    //     ani.render();ani.debug();},100);
     });
   });
   
