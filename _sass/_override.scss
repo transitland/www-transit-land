@@ -34,7 +34,9 @@ section{
   margin:0;
   background-color:#fff;
 }
-
+.jumbotron .container{
+  max-width:1030px;
+}
 a{
   text-decoration: none;
   color:$logo-color-2;

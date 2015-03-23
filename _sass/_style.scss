@@ -100,14 +100,21 @@ h2{
 }
 .container{
   padding:0px 5.55%;
-  position:absolute;
-  top:50%;
+  position:relative;
+  top:10%;
   width:100%;
-  margin:-150px auto 0px;
+  margin:0 auto;
+}
+
+#index-2 .container{
+  top:25%;
+}
+#index-3 .container{
+  top:25%;
 }
 
 .reveal section .container{
-  top:300px;
+  top:30px;
   margin: 0 auto;
 }
 
@@ -135,7 +142,7 @@ h2{
   height:700px;
   width:100%;
   position:absolute;
-  top:500px;
+  top:580px;
 }
 #playground-demo iframe{
   height:700px;
@@ -231,7 +238,7 @@ h2{
   }
   .container{
     padding:0px 5.55%;
-    position:absolute;
+    position:relative;
     top:50%;
     width:100%;
     margin:-350px auto 0px;
@@ -239,6 +246,9 @@ h2{
 
   #index-2 .badges-wrapper{
    margin-top:20px;
+  }
+  #playground-demo{
+  top:300px;
   }
 }
 
@@ -252,6 +262,10 @@ h2{
    margin-left: auto;
    margin-right: auto;
    width: 300px;
+  }
+  #playground-demo{
+
+    top:450px;
   }
   .badge-circle{
     width:80px;
