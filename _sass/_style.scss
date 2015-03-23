@@ -5,7 +5,21 @@ h2{
   display:inline;
   vertical-align: middle;
   margin:0 auto;
-  padding-top:50px;
+}
+.col-1{
+  color:$logo-color-1;
+}
+.col-2{
+  color:$logo-color-2;
+}
+.col-3{
+  color:$logo-color-3;
+}
+.col-4{
+  color:$logo-color-4;
+}
+.col-5{
+  color:$logo-color-5;
 }
 
 .desc{
@@ -36,16 +50,69 @@ h2{
 
 #index-1 .container{
   height:100%;
+  padding-top:50px;
+  margin-bottom:150px;
 }
 
-#index-1.jumbotron{
-  height:100%;
-  min-height:800px;
-  padding-top:200px;
+#index-1 .row{
+  padding-top:20px;
+  padding-bottom:20px;
 }
 
-#index-1 .container img{
-  width:0;
+#index-2 .badges-wrapper{
+ margin-top:80px;
+ margin-left: auto;
+ margin-right: auto;
+ width: 360px;
+}
+
+.badge-circle{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid #ccc;
+  float:left;
+  background-size:cover;
+  margin-left:15px;
+  margin-right:15px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+#trans-badge-1{
+  background-image:url(../images/badges/badge_train.png);
+}
+#trans-badge-2{
+  background-image:url(../images/badges/badge_bus.png);
+}
+#trans-badge-3{
+  background-image:url(../images/badges/badge_cablecar.png);
+}
+#trans-badge-4{
+  background-image:url(../images/badges/badge_ferry.png);
+}
+#trans-badge-5{
+  background-image:url(../images/badges/badge_tram.png);
+}
+#trans-badge-6{
+  background-image:url(../images/badges/badge_trolley.png);
+}
+.container{
+  padding:0px 5.55%;
+  position:absolute;
+  top:50%;
+  width:100%;
+  margin:-150px auto 0px;
+}
+
+.reveal section .container{
+  top:300px;
+  margin: 0 auto;
+}
+
+#index-2 p{
+  font-size:18px;
 }
 
 #index-3{
@@ -55,37 +122,143 @@ h2{
   margin-bottom:30px;
 }
 
-#playground.jumbotron{
-  min-height:auto;
-  height:auto;
+#how-it-works-1{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position:0 300px;
 }
 
-#playground-demo.jumbotron{
+#playground-demo{
   padding: 0 0;
   margin: 0 0;
-  height:100%;
-
+  height:700px;
+  width:100%;
+  position:absolute;
+  top:500px;
 }
 #playground-demo iframe{
+  height:700px;
   width:100%;
-  height:100%;
   overflow-x:hidden;
   overflow-y:hidden;
   border: 0;
 }
+.fade{
+  opacity:1;
+}
+.slide{
+  width:100%;
+  height:100%;
+  background-size:100%;
+  background-repeat: no-repeat;
+  margin-top:30px;
+}
+#slide-1{
+  background-image:url("../images/slides/hiw_1.png");
+}
 
-@include media-query($on-small-screen){
+#slide-2{
+  background-image:url("../images/slides/hiw_2.png");
+}
+#slide-3{
+  background-image:url("../images/slides/hiw_3.png");
+}
+#slide-4{
+  background-image:url("../images/slides/hiw_4.png");
+}
+#slide-5{
+  background-image:url("../images/slides/hiw_5.png");
+}
+#slide-6{
+  background-image:url("../images/slides/hiw_5.png");
+}
+.slide-desc{
+  width:40%;
+  background-color:rgba(235,235,235,0.7);
+  text-align: left;
+  font-size:16px;
+  font-weight:300;
+  padding:15px;
+  line-height:23px;
+}
 
+#slide-1-desc{
+  float:right;
+  margin-right:30px;
+}
+#slide-2-desc{
+  float:right;
+  margin-right:30px;
+}
+#slide-3-desc{
+  float:right;
+  margin-right:30px;
+}
+#slide-4-desc{
+  margin-left:30px;
+}
+#slide-5-desc{
+  margin-left:30px;
+}
+#slide-6-desc{
+  width:80%;
+  margin:0 auto;
+  font-size:18px;
+  line-height:27px;
+}
 
-    /* page specific*/
-    #index-1 h2{
+@include media-query($on-pad){
+  /* page specific*/
+  #index-1 h2{
     font-weight:700;
-    font-size:27px;
-    letter-spacing: 3px;
+    font-size:26px;
+    letter-spacing: 1.6px;
     display:inline;
-    line-height:2em;
+    line-height:1em;
     vertical-align: middle;
-    white-space: nowrap;
+    white-space: normal;
     margin:0 auto;
+  }
+  #index-1.jumbotron{
+    min-height:600px;
+  }
+  #index-1 .container{
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+    margin-top: -250px;
+  }
+  .container{
+    padding:0px 5.55%;
+    position:absolute;
+    top:50%;
+    width:100%;
+    margin:-350px auto 0px;
+  }
+
+  #index-2 .badges-wrapper{
+   margin-top:20px;
+  }
+}
+
+@include media-query($on-palm){
+
+  #index-2{
+    height:950px;
+  }
+  #index-2 .badges-wrapper{
+   margin-top:0px;
+   margin-left: auto;
+   margin-right: auto;
+   width: 300px;
+  }
+  .badge-circle{
+    width:80px;
+    height:80px;
+    margin-left:5px;
+    margin-right:5px;
+    margin-top:5px;
+    margin-bottom:5px;
   }
 }

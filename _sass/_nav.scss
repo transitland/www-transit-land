@@ -121,9 +121,6 @@ nav a:visited{
     background-color:#ccc;
     margin-top:40px;
   }
-  .navbar-toggle span{
-    background-color:#fff;
-  }
 
   .nav-menu .float-left{
     float:initial;
@@ -135,7 +132,29 @@ nav a:visited{
 
   }
   .logo-image{
-    float:left;
-    margin-left:30px;
+    margin:0 auto;
+    background-image:url(../images/transit-logo.png);
+    width:226px;
+    height:100px;
+    
   }
+  .navbar-toggle{
+    margin-top:0px;
+    width:100%;
+    margin-right:0px;
+    border-radius:0px;
+    background-color:#fff;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+
+  }
+  .icon-bar{
+    background-color:#000;
+  }
+  #nav-menu-bar{
+    
+    margin-top:0px;
+    border-top:0px;
+  }
+
 }
