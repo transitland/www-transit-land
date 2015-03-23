@@ -1,12 +1,11 @@
 ---
 layout: default
-madeinsf: "<p>Hello from the San Francisco Bay Area, where half of the ground is heading northbound and the other is inching southward. (Remember from elementary school? That’s what causes earthquakes.)</p><p>Also epically disjoint is our mass transit: over 30 public agencies, an ever-increasing number of private shuttles, not to mention jitneys and carpools welcoming those in the know.</p><p>Our goal at Transitland is to make sense of this jumble. We’re mapping those buses, trains, streetcars, ferries, and even cable cars. Clarification: We’re aggregating existing geographic and temporal data from authoritative sources; we’re connecting the dots using common identifiers;.</p>"
+madeinsf: "<p>Hello from the San Francisco Bay Area, where half of the ground is heading northbound and the other is inching southward. (Remember from elementary school? That’s what causes earthquakes.) Also epically disjoint is our mass transit: over 30 public agencies, an ever-increasing number of private shuttles, not to mention jitneys and carpools welcoming those in the know. Our goal at Transitland is to make sense of this jumble. We’re mapping those buses, trains, streetcars, ferries, and even cable cars. Clarification: We’re aggregating existing geographic and temporal data from authoritative sources; we’re connecting the dots using common identifiers;.</p>"
 howitworks: "The Bay Area is our laboratory. The world is our goal. Seriously, transit-network data is useful in many places big, small, rich, poor. So, we’re trying to create is a modular, open-source data service that can work all over."
 playground: ""
 participate: "Transitland is in its early stages. We welcome transit enthusiasts, community builders, public servants, and collaborative companies to help shape its future"
 ---
-
-<div id="index-1" class="jumbotron white-bg">
+<section id="index-1" class="jumbotron white-bg">
   <div class="container">
     <div class="rows-wrapper">
       <div class="row">
@@ -21,44 +20,52 @@ participate: "Transitland is in its early stages. We welcome transit enthusiasts
         <h2>AND RURAL </h2>
       </div>
       <div class="row">
-        <h2 class="before-canvas">AREAS AROUND THE WORLD.</h2>
+        <h2 class="before-canvas mobile-before-canvas">AREAS AROUND THE WORLD.</h2>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="jumbotron blue-bg">
-  <div class="container deep-padding">
-    <div class="col-sm-12 col-md-12 col-lg-6 white-text">
-      <h3>Made in San Francisco</h3>
+<section id="index-2" class="jumbotron blue-bg">
+  <div class="container">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 white-text">
+      <h3>Made in Sanfransisco</h3>
       {{page.madeinsf}}
     </div>
-    <div class="center-text col-sm-12 col-md-12 col-lg-6">
-      <img src="./images/sponsors-holder.png">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+      <div class="badges-wrapper">
+        <div id="trans-badge-1" class="badge-circle"></div>
+        <div id="trans-badge-2" class="badge-circle"></div>
+        <div id="trans-badge-3" class="badge-circle"></div>
+        <div id="trans-badge-4" class="badge-circle"></div>
+        <div id="trans-badge-5" class="badge-circle"></div>
+        <div id="trans-badge-6" class="badge-circle"></div>
+      </div>
+        
+      </div>
     </div>
   </div>
-</div>
-
-<div id="index-3" class="jumbotron white-bg">
-  <div class="container deep-padding">
-    <div class="col-sm-12 col-md-12 col-lg-4">
+</section>
+<section id="index-3" class="jumbotron white-bg">
+  <div class="container">
+    <div class="col-lg-4 col-md-4 col-sm-4">
       <h3>HOW IT WORKS</h3>
       <p>
         {{page.howitworks}}
       </p>
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 ">
       <h3>PLAYGROUND</h3>
       <p>
         {{page.playground}}
       </p>
       <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
     </div>
-    <div class="col-sm-12 col-md-12 col-lg-4">
+    <div class="col-lg-4 col-md-4 col-sm-4">
       <h3>PARTICIPATE</h3>
       <p>
         {{page.participate}}
       </p>
     </div>
   </div>
-</div>
+</section>

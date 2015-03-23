@@ -6,21 +6,37 @@ html,body{
 body{
   font-family:$base-font-family;
   overflow-x:hidden;
+  overflow-y:scroll;
 }
 
-div{
+div,section{
    box-sizing: border-box;
 }
 
-.jumbotron{  
-  min-height:100%;
-  height:auto;
-  margin:0;
-  padding-top:150px;
-  padding-bottom:150px;
-  background-color:#fff;
+section{
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  height:100%;
+  display: block;
+ // overflow: hidden;
+}
+::-moz-selection {
+   background-color: #ccc;
+   color: #fff;
+}
+::selection {
+    background-color: #ccc;
+    color: #fff;
 }
 
+.jumbotron{
+  margin:0;
+  background-color:#fff;
+}
+.jumbotron .container{
+  max-width:1030px;
+}
 a{
   text-decoration: none;
   color:$logo-color-2;
@@ -33,11 +49,17 @@ a:hover{
   font-weight:300;
 }
 
-@include media-query($on-small-screen){
+@include media-query($on-pad){
   .jumbotron{  
     height:auto;
     margin:0;
     padding-top:10px;
   }
-
+  section{
+  position: relative;
+  width: 100%;
+  height:100%;
+  display: block;
+ 
+  }
 }

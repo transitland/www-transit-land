@@ -46,7 +46,6 @@ function sprite (options) {
   }
 
   that.render = function(){
-    console.log(that.image);
     that.context.clearRect(0, 0, that.width, that.height);
     that.context.drawImage(
     that.image,

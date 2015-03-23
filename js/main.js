@@ -1,43 +1,43 @@
 $(document).ready(function(){
-  fixNavigation();
-  var containerH = $("#index-1 .container").height();
-  var contentH =$("#index-1 .rows-wrapper").height();
-  var leftSpace = containerH - contentH;
+  if($(document).innerWidth() > 768){
+    fixNavigation();
+    $("#index-1 .row").each(function(){
+      var thisW = $(this).width();
+      var totalW = 0;
+      $(this).find("h2").each(function(){ 
+        totalW += $(this).width();
+      });
+      var canvasW = thisW - totalW - 30;
+      //image height : 48
+      var canvasH = 48;
 
-  var rowsMargin = leftSpace*1/2;
-  var rowMargin = rowsMargin/$("#index-1 .row").length;
-  var containerMargin = (leftSpace - rowsMargin)/2;
-
-  $("#index-1 .rows-wrapper").css({"margin-top":containerMargin,
-                                      "margin-bottom":containerMargin});
-  $("#index-1 .row").each(function(){
-    var thisW = $(this).width();
-    var totalW = 0;
-    $(this).find("h2").each(function(){ 
-      totalW += $(this).width();
-    });
-
-    var canvasW = thisW - totalW - 30;
-    var canvasH = 48;//(contentH/4);
-
-    $(this).css({"padding-top":(rowMargin/2),
-                "padding-bottom":(rowMargin/2)});
-
-    $(this).find("h2").each(function(){ 
-      totalW += $(this).width();
+      $(this).find("h2").each(function(){ 
+        totalW += $(this).width();
+      });
+      
+      var ani = new Animation(canvasW,canvasH);
+      var canv = ani.getCanvas();
+      $(this).find(".before-canvas").append(canv).each(function(){
+        ani.initSprites();
+      });
     });
     
+    $(window).scroll(function(){
+       fixNavigation();
+    });
+  }else{
+    
+    var thisW = $("#index-1").width();
+
+    var canvasW = thisW - 30;
+    var canvasH = 48;
+
     var ani = new Animation(canvasW,canvasH);
-    
     var canv = ani.getCanvas();
-    $(this).find(".before-canvas").append(canv).each(function(){
+    canv.css({"margin-top":"50px"});
+    $(this).find("#index-1 .mobile-before-canvas").append(canv).each(function(){
       ani.initSprites();
     });
-  });
-  
-  $(window).scroll(function(){
-     fixNavigation();
-  });
-
+  }
 });
   
