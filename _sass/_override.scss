@@ -16,10 +16,13 @@ div,section{
 section{
   position: relative;
   width: 100%;
-  min-height: 800px;
+  min-height: 600px;
   height:100%;
   display: block;
  // overflow: hidden;
+}
+.reveal section{
+  min-height:0px;
 }
 ::-moz-selection {
    background-color: #ccc;
