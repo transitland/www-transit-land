@@ -129,11 +129,11 @@
 .reveal .controls {
   display: none;
   position: fixed;
-  width: 110px;
+  width: 100%;
   height: 110px;
   z-index: 30;
   right: 10px;
-  bottom: 10px;
+  bottom:250px;
   -webkit-user-select: none; }
 
 .reveal .controls div {
@@ -158,6 +158,7 @@
 
 .reveal .controls div.navigate-left {
   top: 42px;
+  left:14px;
   border-right-width: 22px;
   border-right-color: #000; }
 
@@ -165,7 +166,7 @@
   opacity: 0.3; }
 
 .reveal .controls div.navigate-right {
-  left: 74px;
+  right: 14px;
   top: 42px;
   border-left-width: 22px;
   border-left-color: #000; }
