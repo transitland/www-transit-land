@@ -145,7 +145,7 @@ h2{
   top:580px;
 }
 #playground-demo iframe{
-  height:700px;
+  height:850px;
   width:100%;
   overflow-x:hidden;
   overflow-y:hidden;
@@ -187,7 +187,7 @@ h2{
   font-size:16px;
   font-weight:300;
   padding:15px;
-  margin-top:20px;
+  margin-top:40px;
   line-height:23px;
 }
 
@@ -211,10 +211,11 @@ h2{
 }
 #slide-6-desc{
   width:80%;
-  margin:0 auto;
+  margin:40px auto 0;
   font-size:18px;
   line-height:27px;
 }
+
 .reveal .controls .navigate-up{
   display:none;
 }
