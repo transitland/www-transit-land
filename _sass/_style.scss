@@ -145,7 +145,7 @@ h2{
   top:580px;
 }
 #playground-demo iframe{
-  height:700px;
+  height:850px;
   width:100%;
   overflow-x:hidden;
   overflow-y:hidden;
@@ -182,11 +182,12 @@ h2{
 }
 .slide-desc{
   width:40%;
-  background-color:rgba(235,235,235,0.7);
+  background-color:rgba(235,235,235,0.9);
   text-align: left;
   font-size:16px;
   font-weight:300;
   padding:15px;
+  margin-top:40px;
   line-height:23px;
 }
 
@@ -210,11 +211,17 @@ h2{
 }
 #slide-6-desc{
   width:80%;
-  margin:0 auto;
+  margin:40px auto 0;
   font-size:18px;
   line-height:27px;
 }
 
+.reveal .controls .navigate-up{
+  display:none;
+}
+.reveal .controls .navigate-down{
+  display:none;
+}
 @include media-query($on-pad){
   /* page specific*/
   #index-1 h2{
@@ -234,14 +241,6 @@ h2{
     padding-top:0px;
     padding-bottom:0px;
     margin-bottom:0px;
-    margin-top: -250px;
-  }
-  .container{
-    padding:0px 5.55%;
-    position:relative;
-    top:50%;
-    width:100%;
-    margin:-350px auto 0px;
   }
 
   #index-2 .badges-wrapper{
@@ -249,6 +248,20 @@ h2{
   }
   #playground-demo{
   top:300px;
+  }
+  
+  .container{
+    padding:0px 2.55%;
+    position:relative;
+    top:35%;
+    width:100%;
+    margin:0 auto;
+  }
+    #index-2 .container{
+  top:15%;
+  }
+  #index-3 .container{
+    top:15%;
   }
 }
 
@@ -264,7 +277,6 @@ h2{
    width: 300px;
   }
   #playground-demo{
-
     top:450px;
   }
   .badge-circle{
@@ -275,4 +287,18 @@ h2{
     margin-top:5px;
     margin-bottom:5px;
   }
+  .container{
+    padding:0px 1.55%;
+    position:relative;
+    top:15%;
+    width:100%;
+    margin:0 auto;
+  }
+  #index-2 .container{
+  top:5%;
+  }
+  #index-3 .container{
+    top:15%;
+  }
+
 }
