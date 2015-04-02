@@ -1,6 +1,7 @@
 $(document).ready(function(){
   if($(document).innerWidth() > 768){
-    fixNavigation();
+    var navDefault = $("#nav-menu-bar").offset().top - parseInt($("#nav-menu-bar").css('margin-top'));
+    fixNavigation(navDefault);
     $("#index-1 .row").each(function(){
       var thisW = $(this).width();
       var totalW = 0;
@@ -23,7 +24,7 @@ $(document).ready(function(){
     });
     
     $(window).scroll(function(){
-       fixNavigation();
+       fixNavigation(navDefault);
     });
   }else{
     

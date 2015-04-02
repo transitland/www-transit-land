@@ -20,6 +20,10 @@ section{
   height:100%;
   display: block;
  // overflow: hidden;
+ &.not-full-height {
+  min-height: 0;
+  height: auto;
+ }
 }
 .reveal section{
   min-height:0px;
