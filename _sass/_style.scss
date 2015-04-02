@@ -6,29 +6,18 @@ h2{
   vertical-align: middle;
   margin:0 auto;
 }
-.col-1{
-  color:$logo-color-1;
-}
-.col-2{
-  color:$logo-color-2;
-}
-.col-3{
-  color:$logo-color-3;
-}
-.col-4{
-  color:$logo-color-4;
-}
-.col-5{
-  color:$logo-color-5;
-}
+.col-1{color:$logo-color-1;}
+.col-2{color:$logo-color-2;}
+.col-3{color:$logo-color-3;}
+.col-4{color:$logo-color-4;}
+.col-5{color:$logo-color-5;}
+.blue-bg{background-color: $logo-color-3;}
 
 .desc{
   padding-top:50px;
 }
 
-.blue-bg{
-  background-color: $logo-color-3;
-}
+
 
 .white-text{
   color:#fff;
