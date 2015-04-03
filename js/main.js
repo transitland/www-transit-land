@@ -2,6 +2,7 @@ $(document).ready(function(){
   if($(document).innerWidth() > 768){
     var navDefault = $("#nav-menu-bar").offset().top - parseInt($("#nav-menu-bar").css('margin-top'));
     fixNavigation(navDefault);
+
     $("#index-1 .row").each(function(){
       var thisW = $(this).width();
       var totalW = 0;
@@ -15,8 +16,8 @@ $(document).ready(function(){
       $(this).find("h2").each(function(){ 
         totalW += $(this).width();
       });
-      
-      var ani = new Animation(canvasW,canvasH);
+      var vehicle = $(this).attr("data-item");
+      var ani = new Animation(canvasW,canvasH,vehicle);
       var canv = ani.getCanvas();
       $(this).find(".before-canvas").append(canv).each(function(){
         ani.initSprites();

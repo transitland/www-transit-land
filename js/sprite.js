@@ -5,8 +5,9 @@ function sprite (options) {
   var frameIndex = 0;
   var ticksPerFrame = options.ticksPerFrame || 0;
   var numberOfFrames = options.numberOfFrames || 1;
+  var startPoint = options.startPoint || 0;
   var frameIndex = 0;
-  var speed = 6;
+  var speed = options.speed|| 6;
   var started = false;
       
   that.context = options.context;
@@ -28,6 +29,7 @@ function sprite (options) {
     }
     else frameIndex = 0;
   }
+
   that.staticUpdate = function(){
     if (frameIndex < numberOfFrames - 1) {  
       // Go to the next frame
@@ -46,10 +48,13 @@ function sprite (options) {
   }
 
   that.render = function(){
+    var startP;
+    if(speed<0)  startP= 800 + speed*frameIndex;
+    else startP =  (speed*frameIndex)+315;
     that.context.clearRect(0, 0, that.width, that.height);
     that.context.drawImage(
     that.image,
-    (speed*frameIndex)+315,0, that.width,that.height,
+    startP,0, that.width,that.height,
     0,0,that.width,that.height
     );
   }
@@ -58,7 +63,7 @@ function sprite (options) {
     that.context.drawImage(
     that.image,
     0,0, that.imageWidth,that.imageHeight,
-    0,0,that.imageWidth,that.imageHeight
+    startPoint,0,that.imageWidth,that.imageHeight
     );
   }
 
