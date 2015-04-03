@@ -6,31 +6,25 @@ h2{
   vertical-align: middle;
   margin:0 auto;
 }
+
+.container{
+  position:relative;
+  top:10%;
+  width:100%;
+  margin:0 auto;
+}
+
 .col-1{color:$logo-color-1;}
 .col-2{color:$logo-color-2;}
 .col-3{color:$logo-color-3;}
 .col-4{color:$logo-color-4;}
 .col-5{color:$logo-color-5;}
+
 .blue-bg{background-color: $logo-color-3;}
+.orange-bg{background-color: $logo-color-4;}
 
-.desc{
-  padding-top:50px;
-}
-
-.orange-bg{
-  background-color: $logo-color-4;
-}
-
-.white-text{
-  color:#fff;
-}
-
-.center-text{
-  text-align: center;
-}
-.deep-padding{
-  padding:100px 0;
-}
+.white-text{color:#fff;}
+.center-text{text-align: center;}
 
 /* page specific*/
 
@@ -39,17 +33,8 @@ h2{
   white-space: nowrap;
 }
 
-#index-1 .container{
-  height:100%;
-  padding-top:50px;
-  margin-bottom:50px;
-  max-height:650px;
-
-}
-
 #index-1 .row{
-  padding-top:20px;
-  padding-bottom:20px;
+  padding : 20px;
 }
 
 #index-2 .badges-wrapper{
@@ -73,150 +58,29 @@ h2{
   margin-bottom:10px;
 }
 
-#trans-badge-1{
-  background-image:url(../images/badges/badge_train.png);
-}
-#trans-badge-2{
-  background-image:url(../images/badges/badge_bus.png);
-}
-#trans-badge-3{
-  background-image:url(../images/badges/badge_cablecar.png);
-}
-#trans-badge-4{
-  background-image:url(../images/badges/badge_ferry.png);
-}
-#trans-badge-5{
-  background-image:url(../images/badges/badge_tram.png);
-}
-#trans-badge-6{
-  background-image:url(../images/badges/badge_trolley.png);
-}
-.container{
-  
-  position:relative;
-  top:10%;
-  width:100%;
-  margin:0 auto;
+#trans-badge-1{background-image:url(../images/badges/badge_train.png);}
+#trans-badge-2{background-image:url(../images/badges/badge_bus.png);}
+#trans-badge-3{background-image:url(../images/badges/badge_cablecar.png);}
+#trans-badge-4{background-image:url(../images/badges/badge_ferry.png);}
+#trans-badge-5{background-image:url(../images/badges/badge_tram.png);}
+#trans-badge-6{background-image:url(../images/badges/badge_trolley.png);}
+
+
+#index-{
+  @for $i from 1 through 4 {
+    &#{$i} .container{
+      @if $i == 1 {
+        top : 10%;
+      }@else{
+        top:25%;
+      }
+    }
+  }
 }
 
-#index-2 .container{
-  top:25%;
-}
-#index-3 .container{
-  top:25%;
-}
+#index-2 p{font-size:18px;}
+#index-4 h3{margin-bottom:30px;}
 
-.reveal section .container{
-  top:30px;
-  margin: 0 auto;
-}
-
-#index-2 p{
-  font-size:18px;
-}
-
-#index-3{
-  text-align: center;
-}
-#index-3 h3{
-  margin-bottom:30px;
-}
-
-#how-it-works-1{
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position:0 300px;
-}
-
-#playground-demo{
-  padding: 0 0;
-  margin: 0 0;
-  height:700px;
-  width:100%;
-  position:absolute;
-  top:580px;
-}
-#playground-demo iframe{
-  height:1850px;
-  width:100%;
-  overflow-x:hidden;
-  overflow-y:hidden;
-  border: 0;
-}
-.fade{
-  opacity:1;
-}
-.slide{
-  width:100%;
-  height:100%;
-  background-size:100%;
-  background-repeat: no-repeat;
-  margin-top:30px;
-}
-#slide-1{
-  background-image:url("../images/slides/hiw_1.png");
-  margin-top:40px;
-}
-#slide-2{
-  background-image:url("../images/slides/hiw_2.png");
-  margin-top:40px;
-}
-#slide-3{
-  background-image:url("../images/slides/hiw_3.png");
-  margin-top:40px;
-}
-#slide-4{
-  background-image:url("../images/slides/hiw_4.png");
-}
-#slide-5{
-  background-image:url("../images/slides/hiw_5.png");
-}
-#slide-6{
-  background-image:url("../images/slides/hiw_5.png");
-}
-.slide-desc{
-  width:40%;
-  background-color:rgba(235,235,235,0.9);
-  text-align: left;
-  font-size:16px;
-  font-weight:300;
-  padding:15px;
-  margin-top:40px;
-  line-height:23px;
-}
-
-#slide-1-desc{
-  float:right;
-  margin-right:30px;
-}
-#slide-2-desc{
-  float:right;
-  margin-right:30px;
-}
-#slide-3-desc{
-  float:right;
-  margin-right:30px;
-}
-#slide-4-desc{
-  margin-left:30px;
-}
-#slide-5-desc{
-  margin-left:30px;
-}
-#slide-6-desc{
-  width:80%;
-  margin:40px auto 0;
-  font-size:18px;
-  line-height:27px;
-}
-
-.reveal .controls .navigate-up{
-  display:none;
-}
-.reveal .controls .navigate-down{
-  display:none;
-}
 @include media-query($on-pad){
   /* page specific*/
   #index-1 h2{
@@ -252,10 +116,10 @@ h2{
     width:100%;
     margin:0 auto;
   }
-    #index-2 .container{
+  #index-2 .container{
   top:15%;
   }
-  #index-3 .container{
+  #index-4.container{
     top:15%;
   }
 }
@@ -292,8 +156,7 @@ h2{
   #index-2 .container{
   top:5%;
   }
-  #index-3 .container{
+  #index-4 .container{
     top:15%;
   }
-
 }

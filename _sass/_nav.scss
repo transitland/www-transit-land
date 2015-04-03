@@ -23,7 +23,6 @@
   width: 326px;
   height:145px;
   margin: 0 auto;
-
 }
 
 .circle{
@@ -58,52 +57,9 @@ nav a:visited{
   text-decoration: none;
 }
 
-.nav-menu .float-left:nth-child(1) a:hover{
-  color:$logo-color-1;
-}
-
-.nav-menu .float-left:nth-child(2) a:hover{
-  color:$logo-color-2;
-}
-
-.nav-menu .float-left:nth-child(3) a:hover{
-  color:$logo-color-3;
-}
-
-.nav-menu .float-left:nth-child(4) a:hover{
-  color:$logo-color-4;
-}
-
-.nav-menu .float-left:nth-child(5) a:hover{
-  color:$logo-color-5;
-}
-
-.nav-menu .float-left:nth-child(6) a:hover{
-  color:$logo-color-6;
-}
-
-.nav-menu .float-left:nth-child(1) .selected{
-  color:$logo-color-1;
-}
-
-.nav-menu .float-left:nth-child(2) .selected{
-  color:$logo-color-2;
-}
-
-.nav-menu .float-left:nth-child(3) .selected{
-  color:$logo-color-3;
-}
-
-.nav-menu .float-left:nth-child(4) .selected{
-  color:$logo-color-4;
-}
-
-.nav-menu .float-left:nth-child(5) .selected{
-  color:$logo-color-5;
-}
-
-.nav-menu .float-left:nth-child(6) .selected{
-  color:$logo-color-6;
+@for $i from 1 through 6 {
+  .nav-menu .float-left:nth-child(#{$i}) a:hover{color:nth($logo-colors,$i);}
+  .nav-menu .float-left:nth-child(#{$i}) .selected{color:nth($logo-colors,$i);}
 }
 
 .nav-helper{
