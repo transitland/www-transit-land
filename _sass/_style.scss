@@ -14,6 +14,10 @@ h2{
   margin:0 auto;
 }
 
+.title{
+  margin-bottom:$spacing-unit;
+}
+
 .col-1{color:$logo-color-1;}
 .col-2{color:$logo-color-2;}
 .col-3{color:$logo-color-3;}
@@ -56,6 +60,19 @@ h2{
   margin-right:15px;
   margin-top:10px;
   margin-bottom:10px;
+}
+
+.action-circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid #ccc;
+  
+  
+  margin:0 auto;
+  display:block;
+  margin-bottom:#spacing-unit;
 }
 
 #trans-badge-1{background-image:url(../images/badges/badge_train.png);}

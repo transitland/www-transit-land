@@ -36,11 +36,17 @@ section{
 a{
   text-decoration: none;
   color:nth($logo-hover-colors,2);
+  &:hover{
+    text-decoration: none;
+  }
 }
-a:hover{text-decoration: none;}
-
-.jumbotron p{
-  font-weight:$base-font-weight;
+ul{
+  list-style-type:none;
+  padding: 0 0;
+  & li::after{
+    font-family:$font-awesome;
+    content:" \f08e ";
+  }
 }
 
 @include media-query($on-pad){
