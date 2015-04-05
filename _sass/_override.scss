@@ -59,7 +59,7 @@ ul{
   .jumbotron{  
     height:auto;
     margin:0;
-    padding:70px 0;
+    padding:30px 0;
   }
   section{
     position: relative;
@@ -67,5 +67,12 @@ ul{
     height:auto;
     max-height:1000px;
     display: block;
+  }
+  section#index-1{
+    height:auto;
+    max-height:1000px;
+  }
+  .row{
+    margin-left:0px;
   }
 }
