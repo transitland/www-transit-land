@@ -23,6 +23,13 @@ section{
   display: block;
 }
 
+section#index-1,section#hiw{
+  height:100%;
+}
+.reveal section{
+  height:100%;
+}
+
 .jumbotron{
   margin:0;
   background-color:#fff;

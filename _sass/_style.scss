@@ -14,9 +14,10 @@ h2{
   margin:0 auto;
 }
 
-.title{
-  margin-bottom:$spacing-unit*2;
-}
+#open .title{margin-bottom:$spacing-unit*2; margin-top:$spacing-unit*1.5;}
+#participate .title{margin-bottom:$spacing-unit*2; margin-top:$spacing-unit*1.5;}
+#open .container{max-width:800px;}
+#participate .container{max-width:800px;}
 
 .col-1{color:$logo-color-1;}
 .col-2{color:$logo-color-2;}
