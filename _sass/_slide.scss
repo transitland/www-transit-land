@@ -75,8 +75,6 @@
         height:350px;
         top:0;
         background-position:top;
-        margin-top:-100px;
-     
       }
     }
   }
@@ -84,13 +82,10 @@
   @for $i from 1 through 6 {
     
     &#{$i}-desc{
-      
-        
-      
           width:80%;
-          
-          font-size:30px;
-          line-height:37px;
+          margin:0 auto;
+          font-size:33px;
+          line-height:40px;
       
     }
   }
