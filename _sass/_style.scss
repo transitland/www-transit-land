@@ -141,10 +141,12 @@ h2{
   #index-4.container{
     top:15%;
   }
+  #hiw .title{margin-top:-200px;}
+  #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}  
+  #participate .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
 }
 
 @include media-query($on-palm){
-
   #index-2{
     height:950px;
   }
@@ -178,4 +180,5 @@ h2{
   #index-4 .container{
     top:15%;
   }
+
 }
