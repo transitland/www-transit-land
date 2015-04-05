@@ -34,7 +34,7 @@ $(document).ready(function(){
     var canvasW = thisW - 30;
     var canvasH = 48;
 
-    var ani = new Animation(canvasW,canvasH);
+    var ani = new Animation(canvasW,canvasH,"bus");
     var canv = ani.getCanvas();
     canv.css({"margin-top":"50px"});
     $(this).find("#index-1 .mobile-before-canvas").append(canv).each(function(){

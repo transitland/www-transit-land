@@ -14,9 +14,10 @@ h2{
   margin:0 auto;
 }
 
-.title{
-  margin-bottom:$spacing-unit;
-}
+#open .title{margin-bottom:$spacing-unit*2; margin-top:$spacing-unit*1.5;}
+#participate .title{margin-bottom:$spacing-unit*2; margin-top:$spacing-unit*1.5;}
+#open .container{max-width:800px;}
+#participate .container{max-width:800px;}
 
 .col-1{color:$logo-color-1;}
 .col-2{color:$logo-color-2;}
@@ -29,6 +30,7 @@ h2{
 
 .white-text{color:#fff;}
 .center-text{text-align: center;}
+
 
 /* page specific*/
 
@@ -139,10 +141,12 @@ h2{
   #index-4.container{
     top:15%;
   }
+  #hiw .title{margin-top:-200px;}
+  #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}  
+  #participate .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
 }
 
 @include media-query($on-palm){
-
   #index-2{
     height:950px;
   }
@@ -176,4 +180,5 @@ h2{
   #index-4 .container{
     top:15%;
   }
+
 }
