@@ -135,12 +135,8 @@ h2{
     width:100%;
     margin:0 auto;
   }
-  #index-2 .container{
-  top:15%;
-  }
-  #index-4.container{
-    top:15%;
-  }
+  #index-2 .container{top:15%;}
+  #index-4 .container{top:15%;}
   #hiw .title{margin-top:-200px;}
   #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}  
   #participate .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
@@ -168,9 +164,9 @@ h2{
     margin-bottom:5px;
   }
   .container{
-    padding:0px 1.55%;
-    position:relative;
-    top:15%;
+    padding:0px 15px;
+    //position:relative;
+    //top:15%;
     width:100%;
     margin:0 auto;
   }
@@ -178,7 +174,7 @@ h2{
   top:5%;
   }
   #index-4 .container{
-    top:15%;
+    top:5%;
   }
 
 }
