@@ -87,6 +87,7 @@
   .reveal .slides > section{
     display:inline-block;
     position:relative;
+    height : $mobile-slide-h
   }
 
 
@@ -94,6 +95,9 @@
   width:90%;
   background-color:rgba(235,235,235,0.7);
   text-align: left;
+  float:left;
+  margin-left:15px !important;
+  margin-right:15px !important;
   font-size:16px;
   padding:15px;
   margin-top:150px;
@@ -114,7 +118,6 @@
   #hiw.jumbotron{
     height:$mobile-slide-h * 6;
     margin-bottom:$footer-h;
-
   }
   
   #hiw .container{
@@ -124,5 +127,8 @@
 
 
 @include media-query($on-palm){
-
+  #hiw.jumbotron{
+    height:$mobile-slide-h * 5.5;
+    margin-bottom:$footer-h;
+  }
 }
