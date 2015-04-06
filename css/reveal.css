@@ -133,7 +133,7 @@
   height: 110px;
   z-index: 30;
   right: 10px;
-  bottom:250px;
+  bottom:350px;
   -webkit-user-select: none; }
 
 .reveal .controls div {
@@ -196,7 +196,7 @@
  *********************************************/
 .reveal .progress {
   position: fixed;
-  display: none;
+  display: none !important;
   height: 3px;
   width: 100%;
   bottom: 0;
