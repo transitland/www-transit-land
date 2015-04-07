@@ -78,10 +78,9 @@
 
 @include media-query($on-pad){
 
-//temp style for reveal scaling
   .reveal{
-    -ms-touch-action: none;
-        touch-action: none;
+    -ms-touch-action: auto;
+        touch-action: auto;
     .slides > section{
       display:inline-block;
       position:relative;
