@@ -45,10 +45,14 @@ a{
   }
 }
 
+@include media-query($on-ipad){
+  .jumbotron{
+  margin:0 0 0 0;
+}
+}
 @include media-query($on-pad){
   .jumbotron{  
     height:auto;
-    margin:0 0 $footer-h 0;
     padding:30px 0;
   }
   section{
