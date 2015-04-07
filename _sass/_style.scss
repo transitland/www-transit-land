@@ -173,6 +173,10 @@ section{
 }
 
 @include media-query($on-palm){
+  h2{
+    font-size:30px;
+    letter-spacing: 1.7px;
+  }
 
   .badges-wrapper{
    margin-top:0px;
