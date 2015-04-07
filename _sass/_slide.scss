@@ -45,6 +45,7 @@
       }
     }
   }
+
 }
 
 .slide-desc{
@@ -65,38 +66,69 @@
   display:none;
 }
 
-
-@include media-query($on-pad){
-  #slide-{
-  @for $i from 1 through 6 {
-    &#{$i}{
-      
-        width:100%;
-        height:350px;
-        top:0;
-        background-position:top;
-      }
-    }
-  }
-#slide-{
-  @for $i from 1 through 6 {
-    
-    &#{$i}-desc{
-          width:80%;
-          margin:0 auto;
-          font-size:33px;
-          line-height:40px;
-      
-    }
+.reveal ul{
+  list-style-type:none;
+  padding: 0 0;
+  & li::after{
+    font-family:$font-awesome;
+    font-size:16px;
+    content:" \f08e ";
   }
 }
+
+@include media-query($on-pad){
+
 //temp style for reveal scaling
   .keep-slide{
   ///////////
     min-height:350px;
   }
+
+  .reveal .slides > section{
+    display:inline-block;
+    position:relative;
+    height : $mobile-slide-h
+  }
+
+
+.slide-desc{
+  width:90%;
+  background-color:rgba(235,235,235,0.7);
+  text-align: left;
+  float:left;
+  margin-left:15px !important;
+  margin-right:15px !important;
+  font-size:16px;
+  padding:15px;
+  margin-top:150px;
+  line-height:18px;
+  }
+
+  #slide-{
+    @for $i from 1 through 6 {
+      &#{$i}{
+        background-image:url("../images/slides/hiw_"+ $i +"_mobile.png");
+        background-size: auto 140px;
+        background-position:50% 0%;
+        display:inline-block
+      }
+    }
+  }
+
+  #hiw.jumbotron{
+    height:$mobile-slide-h * 6;
+    margin-bottom:$footer-h;
+  }
+  
+  #hiw .container{
+    top:0%;
+  }
 }
 
-@include media-query($on-palm){
 
+@include media-query($on-palm){
+  #hiw.jumbotron{
+    height:$mobile-slide-h * 5.5;
+    margin-bottom:$footer-h;
+  }
 }

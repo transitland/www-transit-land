@@ -71,7 +71,7 @@ layout: default
         </div>
       </div>
     </section>
-    <section>
+    <section class="hidden-xs">
       <div style="height:100%" class="container">
         <div id="slide-6" class="slide">
         <div id="slide-6-desc" class="slide-desc">
@@ -90,13 +90,13 @@ layout: default
 <script src="../js/vendor/head.min.js"></script>
 <script src="../js/vendor/reveal.js"></script>
 <script>
-    // Full list of configuration options available at:
-    // http://github.com/hakimel/reveal.js#configuration
-    Reveal.initialize({
+if(window.innerWidth > 768){
+      Reveal.initialize({
       controls: true,
       progress: true,
       history: true,
       center: true,
       transition: 'fade' // none/fade/slide/convex/concave/zoom
     });
+ }
 </script>

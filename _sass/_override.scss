@@ -8,7 +8,12 @@ body{
   overflow-y:scroll;
 }
 
-div,section{ box-sizing: border-box;}
+div,section{
+  -webkit-box-sizing : border-box;
+  -moz-box-sizing : border-box;
+  -ms-box-sizing : border-box;
+  box-sizing : border-box; 
+}
 
 ::-moz-selection,::selection {
    background-color: #ccc;
@@ -18,21 +23,14 @@ div,section{ box-sizing: border-box;}
 section{
   position: relative;
   width: 100%;
-  min-height:550px;
-  max-height:750px;
-  display: block;
-}
-
-section#index-1,section#hiw{
-  height:100%;
-}
-.reveal section{
-  height:100%;
+  display: inline-block;
+  float:left;
 }
 
 .jumbotron{
-  margin:0;
+  margin:0 0 $footer-h 0;
   background-color:#fff;
+  padding:75px 0;
 }
 
 .jumbotron .container{
@@ -46,31 +44,18 @@ a{
     text-decoration: none;
   }
 }
-ul{
-  list-style-type:none;
-  padding: 0 0;
-  & li::after{
-    font-family:$font-awesome;
-    content:" \f08e ";
-  }
-}
 
 @include media-query($on-pad){
   .jumbotron{  
     height:auto;
-    margin:0;
+    margin:0 0 $footer-h 0;
     padding:30px 0;
   }
   section{
     position: relative;
     width: 100%;
     height:auto;
-    max-height:1000px;
     display: block;
-  }
-  section#index-1{
-    height:auto;
-    max-height:1000px;
   }
   .row{
     margin-left:0px;

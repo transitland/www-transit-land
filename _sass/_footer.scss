@@ -1,0 +1,33 @@
+footer{
+  width: 100%;
+  bottom:0;
+  position:fixed;
+  z-index:-1;
+  background-color: #efefef;
+  color:#000;
+  height: $footer-h;
+  .container{
+    color: #000;
+    margin: 0 auto; 
+    max-width:800px;
+  }
+  ul{
+  list-style-type:none;
+  padding: 0 0;
+  font-weight:700;
+    li{font-weight: 400;}
+  }
+  p{padding-top:$spacing-unit;}
+}
+
+@include media-query($on-pad){
+  footer{
+  .container{
+    top:0%;
+    }
+  }
+}
+
+@include media-query($on-palm){
+
+}

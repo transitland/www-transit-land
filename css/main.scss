@@ -11,7 +11,8 @@ $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
-
+$footer-h:         150px;
+$mobile-slide-h:   500px;
 $text-color:       #000;
 $background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
@@ -55,5 +56,6 @@ $index-sections:();
         "override",
         "nav",
         "style",
-        "slide"
+        "slide",
+        "footer"
 ;
