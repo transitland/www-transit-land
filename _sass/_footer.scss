@@ -20,12 +20,18 @@ footer{
   p{padding-top:$spacing-unit;}
 }
 
-@include media-query($on-pad){
+@include media-query($on-ipad){
   footer{
-    width:100%;
+    position:relative;
+    background-color: #efefef;
+    height: $footer-h;
+    display:inline-block;
+    z-index:0;
   .container{
     top:0%;
+    height:$footer-h;
     }
+  p{padding-top:$spacing-unit/2;}
   }
 }
 
