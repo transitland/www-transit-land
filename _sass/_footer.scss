@@ -22,6 +22,7 @@ footer{
 
 @include media-query($on-pad){
   footer{
+    width:100%;
   .container{
     top:0%;
     }
