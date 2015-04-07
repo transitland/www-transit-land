@@ -79,11 +79,14 @@
 @include media-query($on-pad){
 
 //temp style for reveal scaling
-
-  .reveal .slides > section{
-    display:inline-block;
-    position:relative;
-    height : $mobile-slide-h
+  .reveal{
+    -ms-touch-action: none;
+        touch-action: none;
+    .slides > section{
+      display:inline-block;
+      position:relative;
+      height : $mobile-slide-h
+    }
   }
 
 
