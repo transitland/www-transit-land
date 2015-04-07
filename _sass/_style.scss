@@ -124,7 +124,7 @@ section{
 #index-4 h3{margin-bottom:30px;}
 
 @include media-query($on-pad){
-    section#index-{
+  section#index-{
     @for $i from 1 through 4 {
       &#{$i}{
           height:auto;
@@ -150,9 +150,10 @@ section{
 
   #index-2 .badges-wrapper{
    margin-top:20px;
+   
   }
   #index-3 .badges-wrapper{
-   margin-top:20px;
+    margin-top:20px;
   }
   #playground-demo{
   top:300px;
@@ -178,6 +179,11 @@ section{
    margin-left: auto;
    margin-right: auto;
    width: 300px;
+  }
+
+  #index-2 .badges-wrapper{
+   width: 270px;
+   margin:0 auto;
   }
 
   .badge-circle{
