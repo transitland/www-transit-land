@@ -78,16 +78,14 @@
 
 @include media-query($on-pad){
 
-//temp style for reveal scaling
-  .keep-slide{
-  ///////////
-    min-height:350px;
-  }
-
-  .reveal .slides > section{
-    display:inline-block;
-    position:relative;
-    height : $mobile-slide-h
+  .reveal{
+    -ms-touch-action: auto;
+        touch-action: auto;
+    .slides > section{
+      display:inline-block;
+      position:relative;
+      height : $mobile-slide-h
+    }
   }
 
 
@@ -98,17 +96,15 @@
   float:left;
   margin-left:15px !important;
   margin-right:15px !important;
-  font-size:16px;
   padding:15px;
   margin-top:150px;
-  line-height:18px;
   }
 
   #slide-{
     @for $i from 1 through 6 {
       &#{$i}{
         background-image:url("../images/slides/hiw_"+ $i +"_mobile.png");
-        background-size: auto 140px;
+        background-size: 210px 140px;
         background-position:50% 0%;
         display:inline-block
       }
