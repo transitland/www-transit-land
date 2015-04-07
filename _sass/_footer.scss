@@ -3,7 +3,7 @@ footer{
   bottom:0;
   position:fixed;
   z-index:-1;
-  background-color: #efefef;
+  background-color: #ccc;
   color:#000;
   height: $footer-h;
   .container{
@@ -23,15 +23,14 @@ footer{
 @include media-query($on-ipad){
   footer{
     position:relative;
-    background-color: #efefef;
     height: $footer-h;
     display:inline-block;
     z-index:0;
   .container{
     top:0%;
-    height:$footer-h;
+    height:100%;
     }
-  p{padding-top:$spacing-unit/2;}
+  p{padding-top:$spacing-unit/2;margin-top:$spacing-unit/2;}
   }
 }
 
