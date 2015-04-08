@@ -41,7 +41,7 @@ function Animation(w,h,veh){
     background.render();
 
     var vehicleImage = new Image();
-    vehicleImage.src="./images/animation/"+vehicle+"_1.png";
+    vehicleImage.src="./images/animation/"+vehicle+".png";
     $(vehicleImage).load(function(){
       vehicle = new sprite({
         context : $(canvas)[0].getContext('2d'),
@@ -70,8 +70,8 @@ function Animation(w,h,veh){
   }
 
   var assetWidth = {
-    bike:46,
-    bus:114,
+    bike:72,
+    bus:101,
     ferry:101,
     train:146
   };

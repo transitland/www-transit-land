@@ -17,7 +17,7 @@ footer{
   font-weight:700;
     li{font-weight: 400;}
   }
-  p{padding-top:$spacing-unit;}
+  p{padding-top:0;padding-bottom:0;}
 }
 
 @include media-query($on-ipad){
@@ -30,7 +30,6 @@ footer{
     top:0%;
     height:100%;
     }
-  p{padding-top:$spacing-unit/2;margin-top:$spacing-unit/2;}
   }
 }
 
