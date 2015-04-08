@@ -9,11 +9,8 @@ h2{
 
 h3{
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.3px;
   font-size:24px;
-  &.upper{
-    text-transform: uppercase;
-  }
 }
 
 .container{
@@ -39,7 +36,6 @@ h3{
 
 .white-text{color:#fff;}
 .center-text{text-align: center;}
-
 
 /* page specific*/
 
@@ -128,11 +124,15 @@ section{
 #index-4 h3{margin-bottom:30px;}
 
 #open p { margin-bottom:$spacing-unit;margin-top:$spacing-unit;}
-#participate p { margin-bottom:$spacing-unit;margin-top:$spacing-unit;}
+#participate p { margin-bottom:$spacing-unit;}
+#participate h3 { margin-top:0;}
 .yesanswer{
   display:block;
   font-weight: 400;
   text-transform: lowercase;
+}
+.br-on-mobile{
+  display:block;
 }
 
 @include media-query($on-pad){
@@ -179,9 +179,12 @@ section{
   }
   #index-2 .container{top:15%;}
   #index-4 .container{top:15%;}
-  #index-4 {margin-bottom: $footer-h;}
+  #index-4 {margin-bottom: 0;}
   #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}  
   #participate .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
+  .br-on-mobile{
+    display:inline;
+  }
 }
 
 @include media-query($on-palm){
