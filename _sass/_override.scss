@@ -39,7 +39,7 @@ section{
 
 a{
   text-decoration: none;
-  color:nth($logo-hover-colors,2);
+  color:nth($logo-colors,4);
   &:hover{
     text-decoration: none;
   }
