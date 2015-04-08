@@ -20,9 +20,10 @@ navigation:
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
-    <link rel="icon" href="images/favicon.png">
+    {% assign url = page.url|remove:'index.html' %}
+    <link rel="icon" href={% if url == "/" %}"images/favicon.png" {% else %} "../images/favicon.png"{% endif %}>
     <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ "/css/reveal.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index','' | prepend: site.baseurl | prepend: site.url }}">
@@ -53,7 +54,6 @@ navigation:
       <div id="nav-menu-helper"></div>
       <div id="nav-menu-bar" class="navbar-collapse collapse">
         <div class="nav-menu">
-          {% assign url = page.url|remove:'index.html' %}
             {% for link in page.navigation %}
               <div class="float-left">
                 <a {% if url == link.url %}class="selected"{% endif %} href="{{link.url}}" target="_self">
