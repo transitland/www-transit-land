@@ -30,7 +30,6 @@
 }
 #slide-{
   @for $i from 1 through 6 {
-    
     &#{$i}-desc{
       @if $i < 3 {
         float:right;
@@ -40,23 +39,23 @@
       }@else{
           width:80%;
           margin:40px auto 0;
-          font-size:18px;
-          line-height:27px;
       }
     }
   }
-
 }
 
+#diagram{
+  display:none;
+}
 .slide-desc{
   width:40%;
   background-color:rgba(235,235,235,0.9);
   text-align: left;
-  font-size:16px;
-  font-weight:300;
   padding:15px;
   margin-top:40px;
-  line-height:23px;
+  font-weight:300;
+  font-size:18px;
+  line-height:27px;
 }
 
 .reveal .controls .navigate-up{
@@ -71,59 +70,73 @@
   padding: 0 0;
   & li::after{
     font-family:$font-awesome;
-    font-size:16px;
+    font-size:$base-font-size;
     content:" \f08e ";
   }
 }
 
 @include media-query($on-pad){
-
+  #diagram{
+    display:inline-block;
+    background-size:100% 100%;
+    width:100vw;
+    height:auto;
+    margin-top:30px;
+    margin-left:-15px;
+    padding:0;
+  }
+  #diagram img{
+    width:100%;
+  }
   .reveal{
     -ms-touch-action: auto;
         touch-action: auto;
     .slides > section{
       display:inline-block;
       position:relative;
-      height : $mobile-slide-h
+      height : auto;
     }
   }
 
 
 .slide-desc{
-  width:90%;
+  width:90% !important;
   background-color:rgba(235,235,235,0.7);
   text-align: left;
-  float:left;
+  float:none !important;
   margin-left:15px !important;
   margin-right:15px !important;
   padding:15px;
-  margin-top:150px;
   }
 
   #slide-{
     @for $i from 1 through 6 {
       &#{$i}{
-        background-image:url("../images/slides/hiw_"+ $i +"_mobile.png");
-        background-size: 210px 140px;
-        background-position:50% 0%;
+        background-image:none;
         display:inline-block
       }
     }
   }
 
   #hiw.jumbotron{
-    height:$mobile-slide-h * 6;
+    height:auto;
     margin-bottom:$footer-h;
   }
   
   #hiw .container{
     top:0%;
   }
+  .reveal .slides{
+    position:relative;
+    display:inline-block;
+    height:auto;
+  }
 }
+
 
 @include media-query($on-palm){
   #hiw.jumbotron{
-    height:$mobile-slide-h * 5.5;
+    height:auto;
     margin-bottom:$footer-h;
   }
 }
