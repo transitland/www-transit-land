@@ -55,7 +55,7 @@ h3{
  width: 360px;
 }
 #index-3 .badges-wrapper{
-  margin-top:100px;
+  margin-top:50px;
 }
 
 .badge-circle{
@@ -65,7 +65,9 @@ h3{
   background:#fff;
   border:3px solid #ccc;
   float:left;
-  background-size:cover;
+  background-size:90% 90%;
+  background-color:#fff;
+  background-position:center center;
   margin-left:15px;
   margin-right:15px;
   margin-top:10px;
