@@ -1,0 +1,60 @@
+<!--<nav class="navbar col-lg-12 col-md-12 col-sm-12">
+  <a href="/"><div class="logo-image"></div></a>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu-bar" aria-expanded="false" aria-controls="navbar">
+      MENU 
+    </button>
+  </div>
+  <div id="nav-menu-helper"></div>
+  <div id="nav-menu-bar" class="navbar-collapse collapse">
+    <div class="nav-menu">
+      {% for link in page.navigation %}
+      <div class="float-left">
+        <a {% if url == link.url %}class="selected"{% endif %} href="{{link.url}}" target="_self">
+        <div class="circle"></div>
+        <div class="main">{{link.text}}</div>
+        </a>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</nav>-->
+<nav class="navbar col-lg-12 col-md-12 col-sm-12">
+  <a href="/"><div class="logo-image"></div></a>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu-bar" aria-expanded="false" aria-controls="navbar">
+      MENU 
+    </button>
+  </div>
+
+  <div id="nav-menu-helper"></div>
+  <div id="nav-menu-bar" class="navbar-collapse collapse">
+    <div class="nav-menu">
+      <div class="float-left">
+        <a class='{{"/index.html" | activelink: page.url }}' href="{{site.url}}" target="_self">
+        <div class="circle"></div><div class="main">home</div>
+        </a>
+      </div>
+      <div class="float-left">
+        <a class='{{"/how-it-works" | activelink: page.url }}' href="{{site.url}}how-it-works" target="_self">
+        <div class="circle"></div><div class="main">how it works</div>
+        </a>
+      </div>
+      <div class="float-left">
+        <a class='{{"/playground" | activelink: page.url }}' href="{{site.playground_url}}" target="_self">
+        <div class="circle"></div><div class="main">playground</div>
+        </a>
+      </div>
+      <div class="float-left">
+        <a class='{{"/an-open-project" | activelink: page.url }}' href="{{site.url}}an-open-project" target="_self">
+        <div class="circle"></div><div class="main">an open project</div>
+        </a>
+      </div>
+      <div class="float-left">
+        <a class='{{"/participate" | activelink: page.url }}' href="{{site.url}}participate" target="_self">
+        <div class="circle"></div><div class="main">participate</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
