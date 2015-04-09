@@ -12,7 +12,7 @@ module Jekyll
       if site.config['env'] == 'prod'
         site.config['url'] = '//transit.land/'
         site.config['playground_url'] = '//playground.transit.land/'
-      elsif site.config['env'] == 'stage'
+      elsif site.config['env'] == 'staging'
         site.config['url'] = '//staging.transit.land/'
         site.config['playground_url'] = '//staging.playground.transit.land/'
       else
