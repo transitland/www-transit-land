@@ -31,7 +31,7 @@
 #slide-{
   @for $i from 1 through 6 {
     &#{$i}-desc{
-      @if $i < 3 {
+      @if $i < 4 {
         float:right;
         margin-right:30px;
       }@else if $i < 6{
