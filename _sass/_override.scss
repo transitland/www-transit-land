@@ -45,6 +45,21 @@ a{
   }
 }
 
+h2{
+  font-weight:700;
+  font-size:32px;
+  letter-spacing: 2px;
+  display:inline;
+  vertical-align: middle;
+  margin:0 auto;
+}
+
+h3{
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  font-size:24px;
+}
+
 @include media-query($on-ipad){
   .jumbotron{
     margin:0 0 0 0;
