@@ -46,6 +46,9 @@
   padding: 0 20px;
 }
 
+.main{
+  text-transform: uppercase;
+}
 nav a{
   color:#000000;
   text-decoration: none;
@@ -64,7 +67,7 @@ nav a:visited{
 
 @for $i from 1 through 6 {
   .nav-menu .float-left:nth-child(#{$i}) a:hover{color:nth($logo-colors,$i);}
-  .nav-menu .float-left:nth-child(#{$i}) .selected{color:nth($logo-colors,$i);}
+  .nav-menu .float-left:nth-child(#{$i}) .active{color:nth($logo-colors,$i);}
 }
 
 .nav-helper{
