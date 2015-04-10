@@ -4,20 +4,23 @@ footer{
   position:fixed;
   z-index:-1;
   background-color: #cecece;
-  color:#000;
   height: $footer-h;
   .container{
-    color: #000;
+    color: #666;
     margin: 0 auto; 
     max-width:800px;
   }
   ul{
   list-style-type:none;
   padding: 0 0;
-  font-weight:700;
-    li{font-weight: 400;}
+  font-weight:400;
+  text-align: center;
+    li{font-weight: 400; display:inline; padding:0 5px;}
   }
-  p{padding-top:0;padding-bottom:0;}
+  .container{
+    padding-top:$spacing-unit;
+  }
+  .fa{padding-right:5px;}
 }
 
 @include media-query($on-ipad){
@@ -26,13 +29,12 @@ footer{
     height: $footer-h;
     display:inline-block;
     z-index:0;
+    padding-bottom:$spacing-unit;
   .container{
-    top:0%;
+    top:5%;
     height:100%;
+    padding-top:$spacing-unit;
     }
-  }
-  p{
-    padding-top:$spacing-unit/2;
   }
 }
 
