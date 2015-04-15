@@ -17,7 +17,7 @@ module Jekyll
         site.config['playground_url'] = '//staging.playground.transit.land/'
       else
         site.config['url'] = '/'
-        site.config['playground_url'] = '/'
+        site.config['playground_url'] = '//staging.playground.transit.land/'
       end
     end
  
