@@ -16,9 +16,9 @@ layout: default
       <div style="height:100%;" class="container">
         <div id="slide-1" class="slide">
           <div id="slide-1-desc" class="slide-desc">
-            <b class="col-1">Onestop ID Registry</b> is a directory of feed URLs and IDs for transit networks, stops/stations, operators/agencies, and routes. Our "Onestop" ID scheme gives global, immutable identifiers to all those different entities, so you can know when two different agencies' feeds are referring to the same bus stop. The registry is a set of JSON and GeoJSON files hosted on Github, ready for you to consume into your own infrastructure or to improve with a pull request.
+            <b class="col-1">Onestop ID Registry</b> is a directory of feed URLs and IDs for transit networks, stops/stations, operators/agencies, and routes. Our "Onestop" ID scheme gives global, immutable identifiers to all those different entities, so you can know when two different agencies' feeds are referring to the same bus stop. The registry is a set of JSON and GeoJSON files hosted on GitHub, ready for you to consume into your own infrastructure or to improve with a pull request.
             <ul>
-              <li><a href="http://github.com/transitland/onestop-id-registry">Code on Github</a></li>
+              <li><a href="http://github.com/transitland/onestop-id-registry">Code on GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -28,11 +28,10 @@ layout: default
       <div style="height:100%;" class="container">
         <div id="slide-2" class="slide">
           <div id="slide-2-desc" class="slide-desc">
-            <b class="col-2">Onestop Similarity Engine </b>is used behind the scenes, in the update loop, to determine what's changed from one set of transit data to the next. We use it as part of the Onestop Updater's automated process, but you could also use it as a simple command-line utility to "diff" two GTFS archives.
+            <b class="col-3">Onestop Updater</b> tends to the Onestop ID Registry. It fetches feeds, looks for updates, and generates the simple summary GeoJSON files you'll find in the registry. The updater also pushes changesets into the Transitland Community Datastore.
             <ul>
-              <li><a href="http://github.com/transitland/onestop-similarity">Code on Github</a></li>
+              <li><a href="http://github.com/transitland/onestop-updater">Code on GitHub</a></li>
             </ul>
-
           </div>
         </div>
       </div>
@@ -41,9 +40,9 @@ layout: default
       <div style="height:100%;" class="container">
         <div id="slide-3" class="slide">
           <div id="slide-3-desc" class="slide-desc">
-            <b class="col-3">Onestop Updater</b> tends to the Onestop ID Registry. It fetches feeds, looks for updates, and generates the simple summary GeoJSON files you'll find in the registry. The updater also pushes changesets into the Transitland Community Datastore.
+            <b class="col-2">Onestop Similarity Engine </b>is used behind the scenes, in the update loop, to determine what's changed from one set of transit data to the next. We use it as part of the Onestop Updater's automated process, but you could also use it as a simple command-line utility to "diff" two GTFS archives.
             <ul>
-              <li><a href="http://github.com/transitland/onestop-updater">Code on Github</a></li>
+              <li><a href="http://github.com/transitland/onestop-similarity">Code on GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -55,7 +54,7 @@ layout: default
           <div id="slide-4-desc" class="slide-desc">
             <b class="col-4">Transitland Community Datastore</b> brings together data from authoritative sources (in the Onestop ID Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
             <ul>
-              <li><a href="http://github.com/transitland/transitland-datastore">Code on Github</a></li>
+              <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
             </ul>
           </div>
         </div>
@@ -67,7 +66,7 @@ layout: default
           <div id="slide-5-desc" class="slide-desc">
             <b class="col-5">Transitland Playground:</b> If the Onestop ID Registry, Transitland Community Datastore, et al. are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
             <ul>
-              <li><a href="http://github.com/transitland/playground">Code on Github</a></li>
+              <li><a href="http://github.com/transitland/playground">Code on GitHub</a></li>
               <li><a href="http://playground.transit.land">Try the Playground</a></li>
             </ul>
           </div>

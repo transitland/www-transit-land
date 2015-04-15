@@ -153,7 +153,7 @@ section{
       }@else{
         height:800px;
         margin-bottom: $footer-h;
-      } 
+      }
     }
   }
 }
@@ -168,7 +168,6 @@ section{
 .yesanswer{
   display:block;
   font-weight: 400;
-  text-transform: lowercase;
 }
 .br-on-mobile{
   display:block;
@@ -201,7 +200,7 @@ section{
 
   #index-2 .badges-wrapper{
    margin-top:20px;
-   
+
   }
   #index-3 .badges-wrapper{
     margin-top:20px;
@@ -219,7 +218,7 @@ section{
   #index-2 .container{top:15%;}
   #index-4 .container{top:15%;}
   #index-4 {margin-bottom: 0;}
-  #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}  
+  #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
   #participate .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
   .br-on-mobile{
     display:inline;
