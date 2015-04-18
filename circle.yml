@@ -7,16 +7,15 @@ database:
 test:
   override:
     - echo "we need no tests"
-dependencies:
-  post:
-    - bundle exec jekyll build
 
 deployment:
   staging:
     branch: master
     commands:
+      - TARGET=staging bundle exec jekyll build
       - TARGET=staging bundle exec s3_website push
   production:
     branch: production 
     commands:
+      - TARGET=prod bundle exec jekyll build
       - TARGET=prod bundle exec s3_website push
