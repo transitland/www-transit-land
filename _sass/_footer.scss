@@ -10,7 +10,8 @@ footer{
   height: $footer-h;
   .container{
     color: #666;
-    margin: 0 auto; 
+    margin: 0 auto;
+    padding-top:40px;
     max-width:800px;
   }
   ul{
@@ -19,9 +20,6 @@ footer{
   font-weight:400;
   text-align: center;
     li{font-weight: 400; display:inline; padding:0 5px;}
-  }
-  .container{
-    padding-top:$spacing-unit;
   }
   .fa{padding-right:5px;}
 }
@@ -36,7 +34,7 @@ footer{
   .container{
     top:5%;
     height:100%;
-    padding-top:$spacing-unit;
+    padding-top:40px;
     }
   }
 }
