@@ -19,7 +19,7 @@
 #slide-{
   @for $i from 1 through 6 {
     &#{$i}{
-      background-image:url("../images/slides/hiw_"+ $i +".png");
+      background-image:url("../images/slides/hiw@2x_"+ $i +".png");
       @if $i < 4{
         margin-top:40px;
       }@else{
@@ -29,13 +29,14 @@
   }
 }
 #slide-{
-  @for $i from 1 through 6 {
+  @for $i from 1 through 4 {
     &#{$i}-desc{
-      @if $i < 4 {
+      @if $i < 2 {
         float:right;
         margin-right:30px;
-      }@else if $i < 6{
-        margin-left:30px;
+      }@else if $i < 4{
+        width: 35%;
+        margin-left:0px;
       }@else{
           width:80%;
           margin:40px auto 0;
