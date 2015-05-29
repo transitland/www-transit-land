@@ -1,0 +1,3 @@
+Content in this repository and on http://transit.land is Copyright (C) 2014-2015 Mapzen.
+
+Unless otherwise indicated, content is released for use by others under the Creative Commons Attribution-ShareAlike 4.0 International license: http://creativecommons.org/licenses/by-sa/4.0/
