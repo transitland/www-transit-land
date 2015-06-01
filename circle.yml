@@ -16,9 +16,9 @@ deployment:
     branch: master
     commands:
       - TARGET=staging bundle exec jekyll build
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_STAGING} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_STAGING} aws s3 sync _site s3://staging.transit.land/
+      - AWS_ACCESS_KEY_ID=${STAGING_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${STAGING_AWS_SECRET_ACCESS_KEY} aws s3 sync _site s3://staging.transit.land/
   production:
     branch: production
     commands:
       - TARGET=prod bundle exec jekyll build
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID_PROD} AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY_PROD} aws s3 sync _site s3://transit.land/
+      - AWS_ACCESS_KEY_ID=${PROD_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PROD_AWS_SECRET_ACCESS_KEY} aws s3 sync _site s3://transit.land/
