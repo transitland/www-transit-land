@@ -16,9 +16,11 @@ layout: default
       <div style="height:120%;" class="container">
         <div id="slide-1" class="slide">
           <div id="slide-1-desc" class="slide-desc">
-            <b class="col-1">Onestop ID Registry</b> is a directory of feed URLs and IDs for transit networks, stops/stations, operators/agencies, and routes. Our "Onestop" ID scheme gives global, immutable identifiers to all those different entities, so you can know when two different agencies' feeds are referring to the same bus stop. The registry is a set of JSON and GeoJSON files hosted on GitHub, ready for you to consume into your own infrastructure or to improve with a pull request.
+            <b class="col-1">Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
             <ul>
-              <li><a href="http://github.com/transitland/onestop-id-registry">Code on GitHub</a></li>
+              <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
+              <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
+              <li><a href="http://github.com/transitland/transitland-ruby-client">Ruby client</a></li>
             </ul>
           </div>
         </div>
@@ -28,9 +30,10 @@ layout: default
       <div style="height:120%;" class="container">
         <div id="slide-2" class="slide">
           <div id="slide-2-desc" class="slide-desc">
-           <b class="col-4">Transitland Community Datastore</b> brings together data from authoritative sources (in the Onestop ID Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
+           <b class="col-4">Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
             <ul>
               <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
+              <li><a href="https://github.com/transitland/transitland-datastore#api-endpoints">List of API endpoints</a></li>
             </ul>
           </div>
         </div>
@@ -40,10 +43,10 @@ layout: default
       <div style="height:120%;" class="container">
         <div id="slide-3" class="slide">
           <div id="slide-3-desc" class="slide-desc">
-            <b class="col-5">Transitland Playground:</b> If the Onestop ID Registry, Transitland Community Datastore, et al. are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
+            <b class="col-5">Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
             <ul>
-              <li><a href="http://github.com/transitland/playground">Code on GitHub</a></li>
-              <li><a href="https://transit.land/playground/">Try the Playground</a></li>
+              <li><a href="http://github.com/transitland/playground">Playground code on GitHub</a></li>
+              <li><a href="{{site.playground_url}}">Try the Playground</a></li>
             </ul>
           </div>
         </div>
@@ -55,7 +58,7 @@ layout: default
       <div style="height:120%" class="container">
         <div id="slide-4" class="slide">
         <div id="slide-4-desc" class="slide-desc">
-          <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Onestop's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
+          <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
           <ul>
             <li><a href="/an-open-project/">Transitland as an open project</a></li>
             <li><a href="/participate/">Participate in Transitland</a></li>
