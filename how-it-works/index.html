@@ -1,86 +1,77 @@
 ---
 layout: default
 ---
-<section id="hiw" class="jumbotron">
-  <div class="container">
-    <div class="title col-md-12 center-text">
-      <h2>TRANSITLAND - A SET OF MODULAR SERVICES</h2>
-   </div>
-<div class="reveal keep-slide">
+<section id="hiw" class="jumbotron" style="display:inline-block;">
+  <div class="title col-md-12 center-text">
+    <h2>TRANSITLAND - A SET OF MODULAR SERVICES</h2>
+  </div>
+
   <!-- Any section element inside of this container is displayed as a slide for reveal-->
-  <div id="diagram" class="col-xs-12 hidden-sm hidden-md hidden-lg">
-    <img alt="diagram for transitland" src="../images/slides/hiw@2x_4.png">
+  <div id="slide-1" class="slide">
+    <div id="slide-1-desc" class="slide-desc">
+      <b class="col-1">Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
+      <ul>
+        <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
+        <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
+        <li><a href="http://github.com/transitland/transitland-ruby-client">Ruby client</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="slides" style="width:100%;">
-    <section>
-      <div style="height:120%;" class="container">
-        <div id="slide-1" class="slide">
-          <div id="slide-1-desc" class="slide-desc">
-            <b class="col-1">Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
-            <ul>
-              <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
-              <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
-              <li><a href="http://github.com/transitland/transitland-ruby-client">Ruby client</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div style="height:120%;" class="container">
-        <div id="slide-2" class="slide">
-          <div id="slide-2-desc" class="slide-desc">
-           <b class="col-4">Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
-            <ul>
-              <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
-              <li><a href="https://github.com/transitland/transitland-datastore#api-endpoints">List of API endpoints</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div style="height:120%;" class="container">
-        <div id="slide-3" class="slide">
-          <div id="slide-3-desc" class="slide-desc">
-            <b class="col-5">Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
-            <ul>
-              <li><a href="http://github.com/transitland/playground">Playground code on GitHub</a></li>
-              <li><a href="{{site.playground_url}}">Try the Playground</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section>
-      <div style="height:120%" class="container">
-        <div id="slide-4" class="slide">
-        <div id="slide-4-desc" class="slide-desc">
-          <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
-          <ul>
-            <li><a href="/an-open-project/">Transitland as an open project</a></li>
-            <li><a href="/participate/">Participate in Transitland</a></li>
-          </ul>
-        </div>
-      </div>
-      </div>
-    </section>
+  <div id="slide-2" class="slide">
+    <div id="slide-2-desc" class="slide-desc">
+      <b class="col-4">Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
+      <ul>
+        <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
+        <li><a href="https://github.com/transitland/transitland-datastore#api-endpoints">List of API endpoints</a></li>
+      </ul>
+    </div>
   </div>
-</div>
+
+  <div id="slide-3" class="slide">
+    <div id="slide-3-desc" class="slide-desc">
+      <b class="col-5">Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
+      <ul>
+        <li><a href="http://github.com/transitland/playground">Playground code on GitHub</a></li>
+        <li><a href="{{site.playground_url}}">Try the Playground</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="slide-4" class="slide">
+    <div id="slide-4-desc" class="slide-desc">
+      <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
+      <ul>
+        <li><a href="/an-open-project/">Transitland as an open project</a></li>
+        <li><a href="/participate/">Participate in Transitland</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
-</div>
-<script src="../js/vendor/head.min.js"></script>
-<script src="../js/vendor/reveal.js"></script>
 <script>
-if(window.innerWidth > 767){
-      Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      transition: 'fade' // none/fade/slide/convex/concave/zoom
-    });
+
+window.onscroll = function() {
+  var firstSlide = document.getElementById("slide-1");
+  var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
+  var positions = offsetPosition.split(' ');
+  var xpos = positions[0];
+
+  var scrolly = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+
+  var highV = 250;
+  var scrollm = 250;
+  var sizew =  window.innerWidth || document.body.clientWidth;
+  if(sizew < 768){
+   highV = 100;
+   scrollm = 300;
+
  }
+ var ypos = map_range(scrolly,0,scrollm,330,highV);
+  firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
+}
+
+function map_range(value, low1, high1, low2, high2) {
+    if(value < high1) return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+    else return high2;
+}
+
 </script>

@@ -166,7 +166,6 @@ section{
 .br-on-mobile{
   display:block;
 }
-#hiw{height:100%;}
 @include media-query($on-pad){
   section#index-{
     @for $i from 1 through 4 {

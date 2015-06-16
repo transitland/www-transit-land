@@ -1,143 +1,116 @@
-.fade{
-  opacity:1;
-}
-.slide{
-  width:100%;
-  height:100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
+#hiw{
 
-.keep-slide{
-  ///////////
-  min-height:550px;
-}
-
-.reveal section .container{
-  margin: 0 auto;
-}
-#slide-{
-  @for $i from 1 through 6 {
-    &#{$i}{
-      background-image:url("../images/slides/hiw@2x_"+ $i +".png");
-      @if $i < 4{
-        margin-top:40px;
-      }@else{
-        top:25%;
-      }
-    }
-  }
-}
-#slide-{
-  @for $i from 1 through 4 {
-    &#{$i}-desc{
-      @if $i < 2 {
-        float:right;
-        margin-right:30px;
-      }@else if $i < 4{
-        width: 35%;
-        margin-left:0px;
-      }@else{
-          width:80%;
-          margin:40px auto 0;
-      }
-    }
-  }
-}
-
-#diagram{
-  display:none;
-}
-.slide-desc{
-  width:40%;
-  background-color:rgba(235,235,235,0.9);
-  text-align: left;
-  padding:15px;
-  margin-top:40px;
-  font-weight:300;
-  font-size:18px;
-  line-height:27px;
-}
-
-.reveal .controls .navigate-up{
-  display:none;
-}
-.reveal .controls .navigate-down{
-  display:none;
-}
-
-.reveal ul{
-  list-style-type:none;
-  padding: 0 0;
-  & li::after{
-    font-family:$font-awesome;
-    font-size:$base-font-size;
-    content:" \f08e ";
-  }
-}
-
-@include media-query($on-pad){
-  #diagram{
-    display:inline-block;
-    background-size:100% 100%;
-    width:100vw;
-    height:auto;
-    margin-top:30px;
-    margin-left:-15px;
-    padding:0;
-  }
-  #diagram img{
-    width:100%;
-  }
-  .reveal{
-    -ms-touch-action: auto;
-        touch-action: auto;
-    .slides > section{
-      display:inline-block;
-      position:relative;
-      height : auto;
-    }
-  }
-
-
-.slide-desc{
-  width:90% !important;
-  background-color:rgba(235,235,235,0.7);
-  text-align: left;
-  float:none !important;
-  margin-left:15px !important;
-  margin-right:15px !important;
-  padding:15px;
+  .title{
+    z-index:30;
   }
 
   #slide-{
-    @for $i from 1 through 6 {
+    @for $i from 1 through 4 {
       &#{$i}{
-        background-image:none;
-        display:inline-block
+        background-color:#fff;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        position:relative;
+        z-index:1;
+        @if $i < 2 {
+          background-position:center 330px;
+        }@else{
+          background-position:center 250px;
+        }
+        height: 800px;
+        background-image:url("../images/slides/hiw@2x_"+ $i +".png");
+        opacity:1;
+        @if $i > 3{
+          margin-bottom:110px;
+        }
       }
     }
   }
 
-  #hiw.jumbotron{
-    height:auto;
-    margin-bottom:$footer-h;
+  #slide-{
+    @for $i from 1 through 4 {
+      &#{$i}-desc{
+        position:absolute;
+        left : 50%;
+        top : 0%;
+        @if $i < 2 {
+          transform:translate(-10%, 30%);
+          width: 30%;
+          max-width: 430px;
+        }@else if $i < 3{
+          transform:translate(-100%, 80%);
+          width: 30%;
+          max-width: 430px;
+
+        }@else if $i < 4{
+          transform:translate(-90%, 30%);
+          width: 30%;
+          max-width: 430px;
+
+        }@else{
+          transform:translate(-50%, 80%);
+          width: 80%;
+          max-width: 800px;
+        }
+      }
+    }
   }
+
+  .slide-desc{
+    width:40%;
+    background-color:rgba(235,235,235,0.9);
+    text-align: left;
+    padding:15px;
+    font-weight:300;
+    font-size:18px;
+    line-height:27px;
+  }
+
+  ul{
+    list-style-type:none;
+    padding: 0 0;
+    & li::before{
+      font-family:$font-awesome;
+      font-size:$base-font-size - 3px;
+      content:" \f08e ";
+      margin-right:10px;
+    }
+  }
+
+  @include media-query($on-pad){
   
-  #hiw .container{
-    top:0%;
-  }
-  .reveal .slides{
-    position:relative;
-    display:inline-block;
-    height:auto;
-  }
-}
+    #slide-{
+      @for $i from 1 through 4 {
+        &#{$i}{
+          background-size: 100%;
+          position:relative;
+          height:100%;
+          @if $i < 2 {
+            background-position:center 330px;
+          }@else{
+            background-position:center 100px;
+          }
+          height: 800px;
+          background-image:url("../images/slides/hiw-mobile_"+ $i +".png");
+          opacity:1;
+          @if $i > 3{
+            margin-bottom:110px;
+          }
+        }
+      }
+    }
 
-
-@include media-query($on-palm){
-  #hiw.jumbotron{
-    height:auto;
-    margin-bottom:$footer-h;
+    #slide-{
+      @for $i from 1 through 4 {
+        &#{$i}-desc{
+          left : 50%;
+          top : 50%;
+          transform:translate(-50%, -50%);
+          width: 80%;
+          max-width: 800px;
+        }
+      }
+    }
   }
+
 }
