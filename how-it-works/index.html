@@ -17,12 +17,18 @@ layout: default
       </ul>
     </div>
   </div>
+  <div id="arrow" class="scroll_arrow">
+    <svg id="scroll_svg" height='40' width='80'><g fill='none'><path stroke='#000' d='M40 40 0 0'/><path stroke='#000' d='M40 40 80 0' /></g>Sorry, your browser does not support inline SVG.</svg>
+    <span style="display:none" id="scroll_down"> SCROLL DOWN</span>
+  </div>
+
   <div id="slide-2" class="slide">
     <div id="slide-2-desc" class="slide-desc">
       <b class="col-4">Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
       <ul>
         <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
-        <li><a href="https://github.com/transitland/transitland-datastore#api-endpoints">List of API endpoints</a></li>
+        <li><a href="https://github.com/transitland/trans
+          itland-datastore#api-endpoints">List of API endpoints</a></li>
       </ul>
     </div>
   </div>
@@ -47,7 +53,45 @@ layout: default
     </div>
   </div>
 </section>
+
+
 <script>
+
+var arrow = document.getElementById('arrow');
+arrow.addEventListener("mouseover",function(event){
+  //event.target.innerHTML = "scroll down";
+  document.getElementById('scroll_svg').style.display = 'none';
+  document.getElementById('scroll_down').style.display = 'block';
+});
+arrow.addEventListener("mouseout",function(event){
+  //event.target.innerHTML = "scroll down";
+  document.getElementById('scroll_svg').style.display = 'block';
+  document.getElementById('scroll_down').style.display = 'none';
+});
+arrow.addEventListener("click",function(event){
+  console.log("hoi");
+  var slide2 = document.getElementById('slide-2');
+  //document.body.scrollTop = slide2.offsetTop;
+  moveScroll(700);
+});
+
+var speed = 25;
+
+function moveScroll(margin){
+  var scroll = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  if(scroll < margin){
+
+      window.scrollTo(0,scroll+speed);
+
+      setTimeout(function(){
+        moveScroll(margin);
+      },10);
+  }else{
+    speed =  10;
+  }
+}
+
+
 
 window.onscroll = function() {
   var firstSlide = document.getElementById("slide-1");
@@ -60,12 +104,11 @@ window.onscroll = function() {
   var highV = 250;
   var scrollm = 250;
   var sizew =  window.innerWidth || document.body.clientWidth;
-  if(sizew < 768){
+  if(sizew < 992){
    highV = 100;
    scrollm = 300;
-
- }
- var ypos = map_range(scrolly,0,scrollm,330,highV);
+  }
+  var ypos = map_range(scrolly,0,scrollm,330,highV);
   firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
 }
 
