@@ -77,6 +77,30 @@
     }
   }
 
+  ul#nav-dots{
+    & li{
+      width:20px;
+      height:20px;
+      margin-bottom:10px;
+      color:#ccc;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      &.active{
+        color:$logo-color-1;
+      }
+    }
+    & li:hover{
+      color:$logo-color-1;
+    }
+    & li:before{
+      content:"";
+    }
+    position:fixed;
+    top: 50%;
+    right:30px;
+    cursor:pointer;
+  }
+
   // .scroll_arrow:before {
   //   content:'';
   //   width: 0; 
@@ -103,6 +127,8 @@
     margin-left:-50px;
     cursor:pointer;
   }
+
+
 
   @include media-query($on-small-screen){
   

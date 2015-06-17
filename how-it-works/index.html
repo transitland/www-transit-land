@@ -52,10 +52,55 @@ layout: default
       </ul>
     </div>
   </div>
+
+  <ul id="nav-dots">
+    <li>
+      <i class="fa fa-circle"></i>
+    </li>
+    <li>
+      <i class="fa fa-circle"></i>
+    </li>
+    <li>
+      <i class="fa fa-circle"></i>
+    </li>
+    <li>
+      <i class="fa fa-circle"></i>
+    </li>
+  </ul>
 </section>
 
-
 <script>
+
+var dotNav = document.getElementById('nav-dots');
+var lis = dotNav.getElementsByTagName('li');
+
+var tops = [];
+
+for(var i =0; i<lis.length; i++){
+  (function(){
+    var slide = document.getElementById('slide-'+ (i+1));
+    var topPos = slide.offsetTop;
+    tops.push(topPos);
+    lis[i].addEventListener("mouseover",function(event){
+      event.target.style.color = "#c91e42";
+    });
+
+    lis[i].addEventListener("mouseout",function(event){
+      event.target.style.color = "#ccc";
+    });
+
+    lis[i].addEventListener("click",function(event){
+      moveScroll(topPos);
+    });
+
+    lis[i].addEventListener("insiderage",function(event){
+      moveScroll(topPos);
+    });
+
+  }());
+}
+
+
 
 var arrow = document.getElementById('arrow');
 arrow.addEventListener("mouseover",function(event){
@@ -68,24 +113,25 @@ arrow.addEventListener("mouseout",function(event){
   document.getElementById('scroll_svg').style.display = 'block';
   document.getElementById('scroll_down').style.display = 'none';
 });
+
 arrow.addEventListener("click",function(event){
-  console.log("hoi");
   var slide2 = document.getElementById('slide-2');
   //document.body.scrollTop = slide2.offsetTop;
   moveScroll(700);
 });
 
-var speed = 25;
+var speed = 10;
 
 function moveScroll(margin){
+
   var scroll = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-  if(scroll < margin){
-
+  if(Math.abs(margin-scroll) > speed){
+    if(margin < scroll) speed = -10;
+    else speed = 10;
       window.scrollTo(0,scroll+speed);
-
       setTimeout(function(){
         moveScroll(margin);
-      },10);
+      },3);
   }else{
     speed =  10;
   }
@@ -100,6 +146,21 @@ window.onscroll = function() {
   var xpos = positions[0];
 
   var scrolly = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+
+  //refactor it
+  var i;
+  for(i=-1; i<tops.length-1; i++){
+    var lowV = tops[i];
+    if(i ==-1){
+      lowV = -20;
+    }
+      if(scrolly > lowV && scrolly <= tops[i+1]){
+         lis[i+1].style.color = "#c91e42";
+      }else{
+        lis[i+1].style.color = "#ccc";
+      }
+    
+  }
 
   var highV = 250;
   var scrollm = 250;
