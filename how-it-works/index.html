@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<section id="hiw" class="jumbotron" style="display:inline-block;">
+<div id="hiw" class="jumbotron">
   <div class="title col-md-12 center-text">
     <h2>TRANSITLAND - A SET OF MODULAR SERVICES</h2>
   </div>
@@ -17,10 +17,11 @@ layout: default
       </ul>
     </div>
   </div>
-  <div id="arrow" class="scroll_arrow">
-    <svg id="scroll_svg" height='40' width='80'><g fill='none'><path stroke='#000' d='M40 40 0 0'/><path stroke='#000' d='M40 40 80 0' /></g>Sorry, your browser does not support inline SVG.</svg>
-    <span style="display:none" id="scroll_down"> SCROLL DOWN</span>
-  </div>
+    <div id="arrow" class="scroll_arrow">
+      <svg id="scroll_svg" height='40' width='80'><g fill='none'><path stroke='#666' d='M40 40 0 0'/><path stroke='#000' d='M40 40 80 0' /></g>
+        SCROLL DOWN</svg>
+      <span style="display:none" id="scroll_down"> SCROLL DOWN</span>
+    </div> 
 
   <div id="slide-2" class="slide">
     <div id="slide-2-desc" class="slide-desc">
@@ -55,127 +56,224 @@ layout: default
 
   <ul id="nav-dots">
     <li>
-      <i class="fa fa-circle"></i>
+      <a href="#slide-1"></a>
     </li>
     <li>
-      <i class="fa fa-circle"></i>
+      <a href="#slide-2"></a>
     </li>
     <li>
-      <i class="fa fa-circle"></i>
+      <a href="#slide-3"></a>
     </li>
     <li>
-      <i class="fa fa-circle"></i>
+      <a href="#slide-4"></a>
     </li>
   </ul>
-</section>
+</div>
 
 <script>
 
-var dotNav = document.getElementById('nav-dots');
-var lis = dotNav.getElementsByTagName('li');
 
-var tops = [];
+window.addEventListener('load', function(){
+  // fixed background image doesn't work with fixed footer
+  var footer = document.getElementsByTagName('footer')[0];
+  footer.style.position = "relative";
+  ArrowScroll.init();
+  DotNavigation.init();
+  ScrollEvent.init();
+  ScrollEvent.activateDots();
+  var isSmallScreen = false;
+  var sizew =  window.innerWidth || document.body.clientWidth;
+    if(sizew < 992){
+      isSmallScreen = true;
+  }
+  window.addEventListener('scroll',function(){
+    ScrollEvent.activateDots();
+    if(isSmallScreen) ScrollEvent.animateFirstSlide();
+  });
 
-for(var i =0; i<lis.length; i++){
-  (function(){
-    var slide = document.getElementById('slide-'+ (i+1));
-    var topPos = slide.offsetTop;
-    tops.push(topPos);
-    lis[i].addEventListener("mouseover",function(event){
-      event.target.style.color = "#c91e42";
-    });
-
-    lis[i].addEventListener("mouseout",function(event){
-      event.target.style.color = "#ccc";
-    });
-
-    lis[i].addEventListener("click",function(event){
-      moveScroll(topPos);
-    });
-
-    lis[i].addEventListener("insiderage",function(event){
-      moveScroll(topPos);
-    });
-
-  }());
-}
+}, false);
 
 
 
-var arrow = document.getElementById('arrow');
-arrow.addEventListener("mouseover",function(event){
-  //event.target.innerHTML = "scroll down";
-  document.getElementById('scroll_svg').style.display = 'none';
-  document.getElementById('scroll_down').style.display = 'block';
-});
-arrow.addEventListener("mouseout",function(event){
-  //event.target.innerHTML = "scroll down";
-  document.getElementById('scroll_svg').style.display = 'block';
-  document.getElementById('scroll_down').style.display = 'none';
-});
 
-arrow.addEventListener("click",function(event){
-  var slide2 = document.getElementById('slide-2');
-  //document.body.scrollTop = slide2.offsetTop;
-  moveScroll(700);
-});
+var ArrowScroll = (function(){
 
-var speed = 10;
+  var arrow; 
+  var scrollSVG;
+  var scrollText;
 
-function moveScroll(margin){
+  var init = function(){
+    arrow = document.getElementById('arrow');
+    scrollSVG = document.getElementById('scroll_svg');
+    scrollText = document.getElementById('scroll_down');
+    scrollSVG.style.display = 'block';
+    scrollText.style.display = 'none';
+    
+    attachEvent();
+  };
 
-  var scroll = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-  if(Math.abs(margin-scroll) > speed){
-    if(margin < scroll) speed = -10;
-    else speed = 10;
+  var attachEvent = function(){
+    arrow.addEventListener("mouseover",function(event){
+        scrollSVG.style.display = 'none';
+        scrollText.style.display = 'block';
+    }.bind(this),false);
+    
+    arrow.addEventListener("mouseout",function(event){
+      scrollSVG.style.display = 'block';
+      scrollText.style.display = 'none';
+    }.bind(this),false);
+
+    arrow.addEventListener("click",function(event){
+      ScrollEvent.moveScroll(700);
+    }.bind(this),false);
+    };
+    
+    return {
+      init : init
+    };
+})();
+
+
+var DotNavigation = (function(){
+
+  var lis;
+  var activeColor;
+  var defautlColor;
+
+  var init =  function(){
+    lis = document.getElementById('nav-dots').getElementsByTagName('li');
+    activeColor = "#60C6D5";
+    defautlColor = "#ccc";
+    attachEvent();
+  };
+
+  var attachEvent = function(){
+    for(i = 0; i < lis.length; i++){
+      lis[i].addEventListener('mouseover',function(e){
+        e.target.style.backgroundColor = activeColor;
+      }.bind(this),false);
+
+      lis[i].addEventListener('mouseout',function(e){
+        e.target.style.backgroundColor = defautlColor;
+      },false);
+
+      lis[i].addEventListener('click',function(e){
+        var aLink = e.target.getElementsByTagName('a')[0].getAttribute('href');
+        aLink = aLink.replace("#","");
+        var targetSlide = document.getElementById(aLink);
+        var targetPos = targetSlide.offsetTop - 50;
+        ScrollEvent.moveScroll(targetPos);
+      },false);
+    }
+  };
+  
+  var changeDotActive = function(idx){
+    lis[idx].style.backgroundColor = activeColor;
+  }; 
+  
+  var changeDotDefault = function(idx){
+    
+    lis[idx].style.backgroundColor = defautlColor;
+  };
+
+  return {
+    init : init,
+    changeDotActive : changeDotActive,
+    changeDotDefault : changeDotDefault,
+  };
+
+})();
+
+
+
+var ScrollEvent = (function(){
+
+  var speed;
+  var acc;
+  var slides;
+  var firstSlide;
+  var slideH;
+  var firstMove;
+
+  var init = function(){
+    speed = 10;
+    acc = 1.01;
+    slides = document.getElementsByClassName('slide');
+    firstSlide = document.getElementById("slide-1");
+    slideH =  parseInt(window.getComputedStyle(firstSlide,null).getPropertyValue("height").replace("px",""));
+    firstMove = false;
+
+  };
+
+  var animateFirstSlide = function(){
+
+    var highV = 100;
+    var scrollm = 330;
+    var scrolly = getScroll();
+    var ypos = map_range(scrolly,0,scrollm,scrollm,highV);
+     var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
+    var positions = offsetPosition.split(' ');
+    var xpos = positions[0];
+    firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
+  }
+
+  var moveScroll = function(targetP){
+    var realTarget;
+    if(!firstMove){
+      //realTarget = map_range(targetP, 0,window.innerHeight || document.body.clientHeight )
+      (targetP < scroll)? speed = -5 : speed = 5;
+    }
+
+    if(Math.abs(targetP - getScroll()) > Math.abs(speed)){
+      firstMove = true;
+      speed *= acc;
       window.scrollTo(0,scroll+speed);
       setTimeout(function(){
-        moveScroll(margin);
-      },3);
-  }else{
-    speed =  10;
-  }
-}
-
-
-
-window.onscroll = function() {
-  var firstSlide = document.getElementById("slide-1");
-  var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
-  var positions = offsetPosition.split(' ');
-  var xpos = positions[0];
-
-  var scrolly = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-
-  //refactor it
-  var i;
-  for(i=-1; i<tops.length-1; i++){
-    var lowV = tops[i];
-    if(i ==-1){
-      lowV = -20;
+        moveScroll(targetP);
+      },2);
+    }else{
+      window.scrollTo(0,targetP);
+      firstMove = false;
+      speed = 5;
     }
-      if(scrolly > lowV && scrolly <= tops[i+1]){
-         lis[i+1].style.color = "#c91e42";
-      }else{
-        lis[i+1].style.color = "#ccc";
+  };
+
+  var activateDots = function(){
+
+    var i;
+    var currTop = -50;
+    for(i = 0; i < slides.length; i++){
+
+      DotNavigation.changeDotDefault(i);
+
+      var nextTop = slides[i].offsetTop + slideH/2;
+      var scrollTop = getScroll();
+      if(scrollTop > currTop && scrollTop <= nextTop){
+        DotNavigation.changeDotActive(i);
       }
-    
+      currTop = nextTop;
+    }
   }
 
-  var highV = 250;
-  var scrollm = 250;
-  var sizew =  window.innerWidth || document.body.clientWidth;
-  if(sizew < 992){
-   highV = 100;
-   scrollm = 300;
-  }
-  var ypos = map_range(scrolly,0,scrollm,330,highV);
-  firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
-}
 
-function map_range(value, low1, high1, low2, high2) {
+  var getScroll = function(){
+    scroll = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    return scroll;
+  };
+
+  var map_range = function(value, low1, high1, low2, high2) {
     if(value < high1) return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
     else return high2;
-}
+  };
+
+  return {
+    init : init,
+    moveScroll : moveScroll,
+    activateDots : activateDots,
+    animateFirstSlide : animateFirstSlide
+  };
+
+})();
+
 
 </script>
