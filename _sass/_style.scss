@@ -35,23 +35,6 @@ h3{
   display:inline-block;
 }
 
-.arrow-stem{
-  width:0px;
-  border-left:5px solid $logo-color-3;
-  height:calc(100% - 20px) ;
-  position:relative;
-  &:after{
-    content:' ';
-    border-style: solid;
-    position:absolute;
-    top:100%;
-    left:-9px;
-    border-width: 16px 7px 0 7px;
-    border-color: $logo-color-3 transparent transparent transparent;
-  }
-}
-
-
 #open .title{margin-bottom:$spacing-unit*2; margin-top:$spacing-unit*1.5;}
 #participate .title{margin-bottom:$spacing-unit*2; margin-top:$spacing-unit*1.5;}
 #open .container{max-width:800px;}

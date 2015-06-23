@@ -6,10 +6,13 @@ layout: default
     <h2>TRANSITLAND - A SET OF MODULAR SERVICES</h2>
   </div>
 
-  <!-- Any section element inside of this container is displayed as a slide for reveal-->
   <div id="slide-1" class="slide">
-    <div id="slide-1-desc" class="slide-desc">
-      <b class="col-1">Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
+  </div>
+
+
+  <div id="slide-2" class="slide">
+    <div id="slide-2-desc" class="slide-desc">
+      <b>Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
       <ul>
         <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
         <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
@@ -17,15 +20,10 @@ layout: default
       </ul>
     </div>
   </div>
-    <div id="arrow" class="scroll_arrow">
-      <svg id="scroll_svg" height='40' width='80'><g fill='none'><path stroke='#666' d='M40 40 0 0'/><path stroke='#000' d='M40 40 80 0' /></g>
-        SCROLL DOWN</svg>
-      <span style="display:none" id="scroll_down"> SCROLL DOWN</span>
-    </div> 
 
-  <div id="slide-2" class="slide">
-    <div id="slide-2-desc" class="slide-desc">
-      <b class="col-4">Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
+  <div id="slide-3" class="slide">
+    <div id="slide-3-desc" class="slide-desc">
+      <b>Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
       <ul>
         <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
         <li><a href="https://github.com/transitland/trans
@@ -34,9 +32,9 @@ layout: default
     </div>
   </div>
 
-  <div id="slide-3" class="slide">
-    <div id="slide-3-desc" class="slide-desc">
-      <b class="col-5">Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
+  <div id="slide-4" class="slide">
+    <div id="slide-4-desc" class="slide-desc">
+      <b>Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
       <ul>
         <li><a href="http://github.com/transitland/playground">Playground code on GitHub</a></li>
         <li><a href="{{site.playground_url}}">Try the Playground</a></li>
@@ -44,8 +42,8 @@ layout: default
     </div>
   </div>
 
-  <div id="slide-4" class="slide">
-    <div id="slide-4-desc" class="slide-desc">
+  <div id="slide-5" class="slide">
+    <div id="slide-5-desc" class="slide-desc">
       <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
       <ul>
         <li><a href="/an-open-project/">Transitland as an open project</a></li>
@@ -53,6 +51,17 @@ layout: default
       </ul>
     </div>
   </div>
+  <div id="arrow" class="scroll_arrow">
+    <svg version="1.1" id="scroll_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 80 60" xml:space="preserve">
+    <style type="text/css">
+      .st0{fill:none;stroke:#666;stroke-miterlimit:10;}
+    </style>
+    <line id="XMLID_1_" class="st0" x1="4.9" y1="4.6" x2="38.6" y2="28"/>
+    <line id="XMLID_2_" class="st0" x1="78.2" y1="4.6" x2="38.1" y2="28"/>
+  </svg>
+  <span style="display:none;" id="scroll_down">Learn More</span>
+  </div> 
 
   <ul id="nav-dots">
     <li>
@@ -66,6 +75,9 @@ layout: default
     </li>
     <li>
       <a href="#slide-4"></a>
+    </li>
+    <li>
+      <a href="#slide-5"></a>
     </li>
   </ul>
 </div>
@@ -125,6 +137,7 @@ var ArrowScroll = (function(){
 
     arrow.addEventListener("click",function(event){
       ScrollEvent.moveScroll(700);
+      arrow.style.display = "none";
     }.bind(this),false);
     };
     
@@ -172,7 +185,6 @@ var DotNavigation = (function(){
   }; 
   
   var changeDotDefault = function(idx){
-    
     lis[idx].style.backgroundColor = defautlColor;
   };
 
@@ -235,6 +247,7 @@ var ScrollEvent = (function(){
       window.scrollTo(0,targetP);
       firstMove = false;
       speed = 5;
+      activateDots();
     }
   };
 
