@@ -1,86 +1,292 @@
 ---
 layout: default
 ---
-<section id="hiw" class="jumbotron">
-  <div class="container">
-    <div class="title col-md-12 center-text">
-      <h2>TRANSITLAND - A SET OF MODULAR SERVICES</h2>
-   </div>
-<div class="reveal keep-slide">
-  <!-- Any section element inside of this container is displayed as a slide for reveal-->
-  <div id="diagram" class="col-xs-12 hidden-sm hidden-md hidden-lg">
-    <img alt="diagram for transitland" src="../images/slides/hiw@2x_4.png">
+<div id="hiw" class="jumbotron">
+  <div class="title col-md-12 center-text">
+    <h2>TRANSITLAND - A SET OF MODULAR SERVICES</h2>
   </div>
-  <div class="slides" style="width:100%;">
-    <section>
-      <div style="height:120%;" class="container">
-        <div id="slide-1" class="slide">
-          <div id="slide-1-desc" class="slide-desc">
-            <b class="col-1">Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
-            <ul>
-              <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
-              <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
-              <li><a href="http://github.com/transitland/transitland-ruby-client">Ruby client</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div style="height:120%;" class="container">
-        <div id="slide-2" class="slide">
-          <div id="slide-2-desc" class="slide-desc">
-           <b class="col-4">Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
-            <ul>
-              <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
-              <li><a href="https://github.com/transitland/transitland-datastore#api-endpoints">List of API endpoints</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div style="height:120%;" class="container">
-        <div id="slide-3" class="slide">
-          <div id="slide-3-desc" class="slide-desc">
-            <b class="col-5">Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
-            <ul>
-              <li><a href="http://github.com/transitland/playground">Playground code on GitHub</a></li>
-              <li><a href="{{site.playground_url}}">Try the Playground</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+
+  <div id="slide-1" class="slide">
+  </div>
 
 
-    <section>
-      <div style="height:120%" class="container">
-        <div id="slide-4" class="slide">
-        <div id="slide-4-desc" class="slide-desc">
-          <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
-          <ul>
-            <li><a href="/an-open-project/">Transitland as an open project</a></li>
-            <li><a href="/participate/">Participate in Transitland</a></li>
-          </ul>
-        </div>
-      </div>
-      </div>
-    </section>
+  <div id="slide-2" class="slide">
+    <div id="slide-2-desc" class="slide-desc">
+      <b>Transitland Feed Registry</b> is a directory of feed URLs and IDs for transit networks. The registry is a set of JSON files hosted on GitHub, ready for you to consume into your own infrastructure or to expand with a pull request. It also serves as a "crosswalk" between different identifiers for the same feeds and agencies, such as US National Transit Database IDs.
+      <ul>
+        <li><a href="http://github.com/transitland/transitland-feed-registry">Feed Registry code on GitHub</a></li>
+        <li><a href="http://github.com/transitland/transitland-python-client">Python client</a></li>
+        <li><a href="http://github.com/transitland/transitland-ruby-client">Ruby client</a></li>
+      </ul>
+    </div>
   </div>
+
+  <div id="slide-3" class="slide">
+    <div id="slide-3-desc" class="slide-desc">
+      <b>Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.
+      <ul>
+        <li><a href="http://github.com/transitland/transitland-datastore">Code on GitHub</a></li>
+        <li><a href="https://github.com/transitland/trans
+          itland-datastore#api-endpoints">List of API endpoints</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="slide-4" class="slide">
+    <div id="slide-4-desc" class="slide-desc">
+      <b>Transitland Playground:</b> If the Feed Registry and Datstore are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.
+      <ul>
+        <li><a href="http://github.com/transitland/playground">Playground code on GitHub</a></li>
+        <li><a href="{{site.playground_url}}">Try the Playground</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="slide-5" class="slide">
+    <div id="slide-5-desc" class="slide-desc">
+      <p>But we're not trying to sink ships, here. We're actively recruiting contributors, users, partners, critics, and imitators. All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.</p>
+      <ul>
+        <li><a href="/an-open-project/">Transitland as an open project</a></li>
+        <li><a href="/participate/">Participate in Transitland</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="arrow" class="scroll_arrow">
+    <svg version="1.1" id="scroll_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 80 60" xml:space="preserve">
+    <style type="text/css">
+      .st0{fill:none;stroke:#666;stroke-miterlimit:10;}
+    </style>
+    <line id="XMLID_1_" class="st0" x1="4.9" y1="4.6" x2="38.6" y2="28"/>
+    <line id="XMLID_2_" class="st0" x1="78.2" y1="4.6" x2="38.1" y2="28"/>
+  </svg>
+  <span style="display:none;" id="scroll_down">Learn More</span>
+  </div> 
+
+  <ul id="nav-dots">
+    <li>
+      <a href="#slide-1"></a>
+    </li>
+    <li>
+      <a href="#slide-2"></a>
+    </li>
+    <li>
+      <a href="#slide-3"></a>
+    </li>
+    <li>
+      <a href="#slide-4"></a>
+    </li>
+    <li>
+      <a href="#slide-5"></a>
+    </li>
+  </ul>
 </div>
-</section>
-</div>
-<script src="../js/vendor/head.min.js"></script>
-<script src="../js/vendor/reveal.js"></script>
+
 <script>
-if(window.innerWidth > 767){
-      Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      transition: 'fade' // none/fade/slide/convex/concave/zoom
-    });
- }
+
+
+window.addEventListener('load', function(){
+  // fixed background image doesn't work with fixed footer
+  var footer = document.getElementsByTagName('footer')[0];
+  footer.style.position = "relative";
+  ArrowScroll.init();
+  DotNavigation.init();
+  ScrollEvent.init();
+  ScrollEvent.activateDots();
+  var isSmallScreen = false;
+  var sizew =  window.innerWidth || document.body.clientWidth;
+    if(sizew < 992){
+      isSmallScreen = true;
+  }
+  window.addEventListener('scroll',function(){
+    ScrollEvent.activateDots();
+    if(isSmallScreen) ScrollEvent.animateFirstSlide();
+  });
+
+}, false);
+
+
+
+
+var ArrowScroll = (function(){
+
+  var arrow; 
+  var scrollSVG;
+  var scrollText;
+
+  var init = function(){
+    arrow = document.getElementById('arrow');
+    scrollSVG = document.getElementById('scroll_svg');
+    scrollText = document.getElementById('scroll_down');
+    scrollSVG.style.display = 'block';
+    scrollText.style.display = 'none';
+    
+    attachEvent();
+  };
+
+  var attachEvent = function(){
+    arrow.addEventListener("mouseover",function(event){
+        scrollSVG.style.display = 'none';
+        scrollText.style.display = 'block';
+    }.bind(this),false);
+    
+    arrow.addEventListener("mouseout",function(event){
+      scrollSVG.style.display = 'block';
+      scrollText.style.display = 'none';
+    }.bind(this),false);
+
+    arrow.addEventListener("click",function(event){
+      ScrollEvent.moveScroll(700);
+      arrow.style.display = "none";
+    }.bind(this),false);
+    };
+    
+    return {
+      init : init
+    };
+})();
+
+
+var DotNavigation = (function(){
+
+  var lis;
+  var activeColor;
+  var defautlColor;
+
+  var init =  function(){
+    lis = document.getElementById('nav-dots').getElementsByTagName('li');
+    activeColor = "#f7ae56";
+    defautlColor = "#ccc";
+    attachEvent();
+  };
+
+  var attachEvent = function(){
+    for(i = 0; i < lis.length; i++){
+      lis[i].addEventListener('mouseover',function(e){
+        e.target.style.backgroundColor = activeColor;
+      }.bind(this),false);
+
+      lis[i].addEventListener('mouseout',function(e){
+        e.target.style.backgroundColor = defautlColor;
+      },false);
+
+      lis[i].addEventListener('click',function(e){
+        var aLink = e.target.getElementsByTagName('a')[0].getAttribute('href');
+        aLink = aLink.replace("#","");
+        var targetSlide = document.getElementById(aLink);
+        var targetPos = targetSlide.offsetTop - 50;
+        ScrollEvent.moveScroll(targetPos);
+      },false);
+    }
+  };
+  
+  var changeDotActive = function(idx){
+    lis[idx].style.backgroundColor = activeColor;
+  }; 
+  
+  var changeDotDefault = function(idx){
+    lis[idx].style.backgroundColor = defautlColor;
+  };
+
+  return {
+    init : init,
+    changeDotActive : changeDotActive,
+    changeDotDefault : changeDotDefault,
+  };
+
+})();
+
+
+
+var ScrollEvent = (function(){
+
+  var speed;
+  var acc;
+  var slides;
+  var firstSlide;
+  var slideH;
+  var firstMove;
+
+  var init = function(){
+    speed = 10;
+    acc = 1.01;
+    slides = document.getElementsByClassName('slide');
+    firstSlide = document.getElementById("slide-1");
+    slideH =  parseInt(window.getComputedStyle(firstSlide,null).getPropertyValue("height").replace("px",""));
+    firstMove = false;
+
+  };
+
+  var animateFirstSlide = function(){
+
+    var highV = 100;
+    var scrollm = 330;
+    var scrolly = getScroll();
+    var ypos = map_range(scrolly,0,scrollm,scrollm,highV);
+     var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
+    var positions = offsetPosition.split(' ');
+    var xpos = positions[0];
+    firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
+  }
+
+  var moveScroll = function(targetP){
+    var realTarget;
+    if(!firstMove){
+      //realTarget = map_range(targetP, 0,window.innerHeight || document.body.clientHeight )
+      (targetP < scroll)? speed = -5 : speed = 5;
+    }
+
+    if(Math.abs(targetP - getScroll()) > Math.abs(speed)){
+      firstMove = true;
+      speed *= acc;
+      window.scrollTo(0,scroll+speed);
+      setTimeout(function(){
+        moveScroll(targetP);
+      },2);
+    }else{
+      window.scrollTo(0,targetP);
+      firstMove = false;
+      speed = 5;
+      activateDots();
+    }
+  };
+
+  var activateDots = function(){
+
+    var i;
+    var currTop = -50;
+    for(i = 0; i < slides.length; i++){
+
+      DotNavigation.changeDotDefault(i);
+
+      var nextTop = slides[i].offsetTop + slideH/2;
+      var scrollTop = getScroll();
+      if(scrollTop > currTop && scrollTop <= nextTop){
+        DotNavigation.changeDotActive(i);
+      }
+      currTop = nextTop;
+    }
+  }
+
+
+  var getScroll = function(){
+    scroll = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    return scroll;
+  };
+
+  var map_range = function(value, low1, high1, low2, high2) {
+    if(value < high1) return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+    else return high2;
+  };
+
+  return {
+    init : init,
+    moveScroll : moveScroll,
+    activateDots : activateDots,
+    animateFirstSlide : animateFirstSlide
+  };
+
+})();
+
+
 </script>

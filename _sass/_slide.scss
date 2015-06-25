@@ -1,143 +1,157 @@
-.fade{
-  opacity:1;
-}
-.slide{
-  width:100%;
-  height:100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
+$slideNum : 5;
+
+#hiw.jumbotron{
+  margin-bottom:0;
 }
 
-.keep-slide{
-  ///////////
-  min-height:550px;
-}
+#hiw{
 
-.reveal section .container{
-  margin: 0 auto;
-}
-#slide-{
-  @for $i from 1 through 6 {
-    &#{$i}{
-      background-image:url("../images/slides/hiw@2x_"+ $i +".png");
-      @if $i < 4{
-        margin-top:40px;
-      }@else{
-        top:25%;
-      }
-    }
-  }
-}
-#slide-{
-  @for $i from 1 through 4 {
-    &#{$i}-desc{
-      @if $i < 2 {
-        float:right;
-        margin-right:30px;
-      }@else if $i < 4{
-        width: 35%;
-        margin-left:0px;
-      }@else{
-          width:80%;
-          margin:40px auto 0;
-      }
-    }
-  }
-}
-
-#diagram{
-  display:none;
-}
-.slide-desc{
-  width:40%;
-  background-color:rgba(235,235,235,0.9);
-  text-align: left;
-  padding:15px;
-  margin-top:40px;
-  font-weight:300;
-  font-size:18px;
-  line-height:27px;
-}
-
-.reveal .controls .navigate-up{
-  display:none;
-}
-.reveal .controls .navigate-down{
-  display:none;
-}
-
-.reveal ul{
-  list-style-type:none;
-  padding: 0 0;
-  & li::after{
-    font-family:$font-awesome;
-    font-size:$base-font-size;
-    content:" \f08e ";
-  }
-}
-
-@include media-query($on-pad){
-  #diagram{
-    display:inline-block;
-    background-size:100% 100%;
-    width:100vw;
-    height:auto;
-    margin-top:30px;
-    margin-left:-15px;
-    padding:0;
-  }
-  #diagram img{
-    width:100%;
-  }
-  .reveal{
-    -ms-touch-action: auto;
-        touch-action: auto;
-    .slides > section{
-      display:inline-block;
-      position:relative;
-      height : auto;
-    }
-  }
-
-
-.slide-desc{
-  width:90% !important;
-  background-color:rgba(235,235,235,0.7);
-  text-align: left;
-  float:none !important;
-  margin-left:15px !important;
-  margin-right:15px !important;
-  padding:15px;
+  .title{
+    z-index:30;
   }
 
   #slide-{
-    @for $i from 1 through 6 {
+    @for $i from 1 through $slideNum {
       &#{$i}{
-        background-image:none;
-        display:inline-block
+        background-color:#fff;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 800px;
+        background-size:1000px auto;
+        background-image:url("../images/slides/hiw@2x_"+ $i +".svg");
+        background-position:center 330px;
       }
     }
   }
 
-  #hiw.jumbotron{
-    height:auto;
-    margin-bottom:$footer-h;
+  #slide-{
+    @for $i from 1 through $slideNum {
+      &#{$i}-desc{
+        position:absolute;
+        left : 50%;
+        top : 0%;
+        width:430px;
+        @if ($i == 2) {
+          transform:translate(10%, 100%);
+        }@else if ($i == 3){
+          transform:translate(-100%, 220%);
+        }@else if ($i == 4){
+          transform:translate(-90%, 130%);
+        }@else{
+          transform:translate(-50%, 80%);
+          width: 800px;
+        }
+      }
+    }
   }
+
+  .slide-desc{
+    width:40%;
+    background-color:rgba(235,235,235,0.9);
+    text-align: left;
+    padding:15px;
+    font-weight:300;
+    font-size:18px;
+    line-height:27px;
+  }
+
+  ul{
+    list-style-type:none;
+    padding: 0 0;
+    & li::before{
+      font-family:$font-awesome;
+      font-size:$base-font-size - 3px;
+      content:" \f08e ";
+      margin-right:10px;
+    }
+  }
+
+  ul#nav-dots{
+    & li{
+      width:6px;
+      height:6px;
+      margin-bottom:20px;
+      background-color:#ccc;
+      border-radius:50%;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      &.active{
+        background-color:$logo-color-1;
+      }
+    }
+    & li:hover{
+      background-color:$logo-color-1;
+    }
+    & li:before{
+      content:"";
+    }
+    a {
+      width:150%;
+      height:150%;
+    }
+    position:fixed;
+    top: calc( 50% - 50px);
+    right:30px;
+    cursor:pointer;
+  }
+
+  .scroll_arrow {
+    width:120px;
+    height:60px;
+    text-align:center;
+    background-color:transparent;
+    display:block;
+    z-index:25;
+    color:#666;
+    position:absolute;
+    left:50%;
+    bottom:120px;
+    margin-left:-50px;
+    cursor:pointer;
+  }
+
+  @include media-query($on-small-screen){
   
-  #hiw .container{
-    top:0%;
-  }
-  .reveal .slides{
-    position:relative;
-    display:inline-block;
-    height:auto;
-  }
-}
+    #slide-{
+      @for $i from 1 through $slideNum {
+        &#{$i}{
+          background-size: 100%;
+          position:relative;
+          height:100%;
+          @if $i < 2 {
+            background-position:center 330px;
+          }@else{
+            background-position:center 100px;
+          }
+          height: 800px;
+          //background-image:url("../images/slides/hiw-mobile_"+ $i +".png");
+          opacity:1;
+          @if $i > 3{
+            margin-bottom:110px;
+          }
+        }
+      }
+    }
 
+    #slide-{
+      @for $i from 2 through $slideNum {
+        &#{$i}-desc{
+          left : 50%;
+          top : 50%;
+          transform:translate(-50%, -50%);
+          width: 80%;
+          max-width: 800px;
+        }
+      }
+    }
 
-@include media-query($on-palm){
-  #hiw.jumbotron{
-    height:auto;
-    margin-bottom:$footer-h;
+    .scroll_arrow {
+      display:none;
+      }
+    ul#nav-dots{
+      display:none;
+    }
   }
+
 }
