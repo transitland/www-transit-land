@@ -128,9 +128,6 @@ $slideNum : 5;
           height: 800px;
           //background-image:url("../images/slides/hiw-mobile_"+ $i +".png");
           opacity:1;
-          @if $i > 3{
-            margin-bottom:110px;
-          }
         }
       }
     }
