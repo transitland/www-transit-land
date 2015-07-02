@@ -8,7 +8,9 @@ $slideNum : 5;
 #hiw{
 
   .title{
-    z-index:30;
+    z-index: 30;
+    margin-bottom: $spacing-unit*2; 
+    margin-top: $spacing-unit*1.5;
   }
 
   #slide-{
@@ -121,16 +123,12 @@ $slideNum : 5;
           position:relative;
           height:100%;
           @if $i < 2 {
-            background-position:center 330px;
+            background-position:center 450px;
           }@else{
             background-position:center 100px;
           }
           height: 800px;
-          //background-image:url("../images/slides/hiw-mobile_"+ $i +".png");
           opacity:1;
-          @if $i > 3{
-            margin-bottom:110px;
-          }
         }
       }
     }
