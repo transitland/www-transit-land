@@ -207,6 +207,10 @@ var ScrollEvent = (function(){
   var slideH;
   var firstMove;
 
+  var scrollm;
+  var xpos;
+  var highV;
+
   var init = function(){
     speed = 10;
     acc = 1.01;
@@ -215,17 +219,18 @@ var ScrollEvent = (function(){
     slideH =  parseInt(window.getComputedStyle(firstSlide,null).getPropertyValue("height").replace("px",""));
     firstMove = false;
 
+    var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
+    var positions = offsetPosition.split(' ');
+    scrollm = parseInt(positions[1]);
+    xpos = positions[0];
+    highV = 100;
+
   };
 
   var animateFirstSlide = function(){
 
-    var highV = 100;
-    var scrollm = 330;
     var scrolly = getScroll();
     var ypos = map_range(scrolly,0,scrollm,scrollm,highV);
-     var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
-    var positions = offsetPosition.split(' ');
-    var xpos = positions[0];
     firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
   }
 

@@ -123,7 +123,7 @@ $slideNum : 5;
           position:relative;
           height:100%;
           @if $i < 2 {
-            background-position:center 330px;
+            background-position:center 450px;
           }@else{
             background-position:center 100px;
           }
