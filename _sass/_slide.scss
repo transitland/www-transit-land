@@ -13,20 +13,25 @@ $slideNum : 5;
     margin-top: $spacing-unit*1.5;
   }
 
-  #slide-{
-    @for $i from 1 through $slideNum {
-      &#{$i}{
-        background-color:#fff;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        position: relative;
-        height: 800px;
-        background-size:1000px auto;
-        background-image:url("../images/slides/hiw@2x_"+ $i +".svg");
-        background-position:center 330px;
+   #slide-{
+     @for $i from 1 through $slideNum {
+       &#{$i}{
+         height: 700px;
+         background-color:#fff;
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+         position: relative;
+         -webkit-background-size: 900px auto;
+         background-size: 900px auto;
+         background-image:url("../images/slides/hiw@2x_"+ $i +".svg");
+        @if($i == 1) {
+          background-position:center 330px;
+        }@else {
+          background-position:center 150px;
+        }
       }
-    }
-  }
+     }
+   }
 
   #slide-{
     @for $i from 1 through $slideNum {
@@ -36,12 +41,16 @@ $slideNum : 5;
         top : 0%;
         width:430px;
         @if ($i == 2) {
+          -webkit-transform:translate(10%, 100%);
           transform:translate(10%, 100%);
         }@else if ($i == 3){
+          -webkit-transform:translate(-100%, 220%);
           transform:translate(-100%, 220%);
         }@else if ($i == 4){
+          -webkit-transform:translate(-90%, 130%);
           transform:translate(-90%, 130%);
         }@else{
+          -webkit-transform:translate(-50%, 80%);
           transform:translate(-50%, 80%);
           width: 800px;
         }
@@ -109,26 +118,26 @@ $slideNum : 5;
     color:#666;
     position:absolute;
     left:50%;
-    bottom:80px;
+    bottom:-20px;
     margin-left:-50px;
     cursor:pointer;
   }
 
   @include media-query($on-small-screen){
-  
     #slide-{
       @for $i from 1 through $slideNum {
         &#{$i}{
+          -webkit-background-size: 100%;
           background-size: 100%;
-          position:relative;
-          height:100%;
-          @if $i < 2 {
-            background-position:center 450px;
+          height:700px;
+           @if $i < 2 {
+            -webkit-background-position : center 100px;
+            background-position:center 430px;
+            height:300px;
           }@else{
-            background-position:center 100px;
-          }
-          height: 800px;
-          opacity:1;
+             -webkit-background-position:center 200px;
+             background-position:center 100px;
+           }
         }
       }
     }
@@ -138,13 +147,13 @@ $slideNum : 5;
         &#{$i}-desc{
           left : 50%;
           top : 50%;
+          -webkit-transform:translate(-50%, -50%);
           transform:translate(-50%, -50%);
           width: 80%;
           max-width: 800px;
         }
       }
     }
-
     .scroll_arrow {
       display:none;
       }
