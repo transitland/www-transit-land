@@ -7,8 +7,17 @@ layout: default
   </div>
 
   <div id="slide-1" class="slide">
+    <div id="arrow" class="scroll_arrow">
+      <svg version="1.1" id="scroll_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 80 60" xml:space="preserve">
+        <style type="text/css">
+          .st0{fill:none;stroke:#666;stroke-miterlimit:10;}
+        </style>
+        <line id="XMLID_1_" class="st0" x1="4.9" y1="4.6" x2="38.6" y2="28"/>
+          <line id="XMLID_2_" class="st0" x1="78.2" y1="4.6" x2="38.1" y2="28"/>
+      </svg>
+      <span style="display:none;" id="scroll_down">Learn More</span>
+    </div> 
   </div>
-
 
   <div id="slide-2" class="slide">
     <div id="slide-2-desc" class="slide-desc">
@@ -51,17 +60,6 @@ layout: default
       </ul>
     </div>
   </div>
-  <div id="arrow" class="scroll_arrow">
-    <svg version="1.1" id="scroll_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-   viewBox="0 0 80 60" xml:space="preserve">
-    <style type="text/css">
-      .st0{fill:none;stroke:#666;stroke-miterlimit:10;}
-    </style>
-    <line id="XMLID_1_" class="st0" x1="4.9" y1="4.6" x2="38.6" y2="28"/>
-    <line id="XMLID_2_" class="st0" x1="78.2" y1="4.6" x2="38.1" y2="28"/>
-  </svg>
-  <span style="display:none;" id="scroll_down">Learn More</span>
-  </div> 
 
   <ul id="nav-dots">
     <li>
@@ -82,9 +80,10 @@ layout: default
   </ul>
 </div>
 
+<script src="/js/scrollEvent.js"></script>
+<script src="/js/dotNavigation.js"></script>
+<script src="/js/arrowScroll.js"></script>
 <script>
-
-
 window.addEventListener('load', function(){
   // fixed background image doesn't work with fixed footer
   var footer = document.getElementsByTagName('footer')[0];
@@ -95,203 +94,26 @@ window.addEventListener('load', function(){
   ScrollEvent.activateDots();
   var isSmallScreen = false;
   var sizew =  window.innerWidth || document.body.clientWidth;
-    if(sizew < 992){
+  if(sizew < 992){
       isSmallScreen = true;
   }
-  window.addEventListener('scroll',function(){
+
+  //ios device making problem with fixed background
+  if (/iphone|ipod/i.test(navigator.userAgent.toLowerCase())){
+    var slideElems = document.getElementsByClassName('slide');
+    for(var i = 0; i < slideElems.length; i++) {
+      slideElems[i].style.backgroundAttachment = "scroll";
+      slideElems[i].style.backgroundPosition = "center 0px";
+    }
+  }else{
+    window.addEventListener('scroll',function(){
     ScrollEvent.activateDots();
-    if(isSmallScreen) ScrollEvent.animateFirstSlide();
+    ScrollEvent.animateFirstSlide();
   });
+  }
+
+
 
 }, false);
-
-
-
-
-var ArrowScroll = (function(){
-
-  var arrow; 
-  var scrollSVG;
-  var scrollText;
-
-  var init = function(){
-    arrow = document.getElementById('arrow');
-    scrollSVG = document.getElementById('scroll_svg');
-    scrollText = document.getElementById('scroll_down');
-    scrollSVG.style.display = 'block';
-    scrollText.style.display = 'none';
-    
-    attachEvent();
-  };
-
-  var attachEvent = function(){
-    arrow.addEventListener("mouseover",function(event){
-        scrollSVG.style.display = 'none';
-        scrollText.style.display = 'block';
-    }.bind(this),false);
-    
-    arrow.addEventListener("mouseout",function(event){
-      scrollSVG.style.display = 'block';
-      scrollText.style.display = 'none';
-    }.bind(this),false);
-
-    arrow.addEventListener("click",function(event){
-      ScrollEvent.moveScroll(700);
-      arrow.style.display = "none";
-    }.bind(this),false);
-    };
-    
-    return {
-      init : init
-    };
-})();
-
-
-var DotNavigation = (function(){
-
-  var lis;
-  var activeColor;
-  var defautlColor;
-
-  var init =  function(){
-    lis = document.getElementById('nav-dots').getElementsByTagName('li');
-    activeColor = "#f7ae56";
-    defautlColor = "#ccc";
-    attachEvent();
-  };
-
-  var attachEvent = function(){
-    for(i = 0; i < lis.length; i++){
-      lis[i].addEventListener('mouseover',function(e){
-        e.target.style.backgroundColor = activeColor;
-      }.bind(this),false);
-
-      lis[i].addEventListener('mouseout',function(e){
-        e.target.style.backgroundColor = defautlColor;
-      },false);
-
-      lis[i].addEventListener('click',function(e){
-        var aLink = e.target.getElementsByTagName('a')[0].getAttribute('href');
-        aLink = aLink.replace("#","");
-        var targetSlide = document.getElementById(aLink);
-        var targetPos = targetSlide.offsetTop - 50;
-        ScrollEvent.moveScroll(targetPos);
-      },false);
-    }
-  };
-  
-  var changeDotActive = function(idx){
-    lis[idx].style.backgroundColor = activeColor;
-  }; 
-  
-  var changeDotDefault = function(idx){
-    lis[idx].style.backgroundColor = defautlColor;
-  };
-
-  return {
-    init : init,
-    changeDotActive : changeDotActive,
-    changeDotDefault : changeDotDefault,
-  };
-
-})();
-
-
-
-var ScrollEvent = (function(){
-
-  var speed;
-  var acc;
-  var slides;
-  var firstSlide;
-  var slideH;
-  var firstMove;
-
-  var scrollm;
-  var xpos;
-  var highV;
-
-  var init = function(){
-    speed = 10;
-    acc = 1.01;
-    slides = document.getElementsByClassName('slide');
-    firstSlide = document.getElementById("slide-1");
-    slideH =  parseInt(window.getComputedStyle(firstSlide,null).getPropertyValue("height").replace("px",""));
-    firstMove = false;
-
-    var offsetPosition = window.getComputedStyle(firstSlide,null).getPropertyValue("background-position");
-    var positions = offsetPosition.split(' ');
-    scrollm = parseInt(positions[1]);
-    xpos = positions[0];
-    highV = 100;
-
-  };
-
-  var animateFirstSlide = function(){
-
-    var scrolly = getScroll();
-    var ypos = map_range(scrolly,0,scrollm,scrollm,highV);
-    firstSlide.style.backgroundPosition = xpos +" " + ypos + "px" ;
-  }
-
-  var moveScroll = function(targetP){
-    var realTarget;
-    if(!firstMove){
-      //realTarget = map_range(targetP, 0,window.innerHeight || document.body.clientHeight )
-      (targetP < scroll)? speed = -5 : speed = 5;
-    }
-
-    if(Math.abs(targetP - getScroll()) > Math.abs(speed)){
-      firstMove = true;
-      speed *= acc;
-      window.scrollTo(0,scroll+speed);
-      setTimeout(function(){
-        moveScroll(targetP);
-      },2);
-    }else{
-      window.scrollTo(0,targetP);
-      firstMove = false;
-      speed = 5;
-      activateDots();
-    }
-  };
-
-  var activateDots = function(){
-
-    var i;
-    var currTop = -50;
-    for(i = 0; i < slides.length; i++){
-
-      DotNavigation.changeDotDefault(i);
-
-      var nextTop = slides[i].offsetTop + slideH/2;
-      var scrollTop = getScroll();
-      if(scrollTop > currTop && scrollTop <= nextTop){
-        DotNavigation.changeDotActive(i);
-      }
-      currTop = nextTop;
-    }
-  }
-
-
-  var getScroll = function(){
-    scroll = window.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    return scroll;
-  };
-
-  var map_range = function(value, low1, high1, low2, high2) {
-    if(value < high1) return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
-    else return high2;
-  };
-
-  return {
-    init : init,
-    moveScroll : moveScroll,
-    activateDots : activateDots,
-    animateFirstSlide : animateFirstSlide
-  };
-
-})();
-
 
 </script>
