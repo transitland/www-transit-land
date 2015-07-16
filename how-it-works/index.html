@@ -98,17 +98,11 @@ window.addEventListener('load', function(){
   }
 
   //ios device making problem with fixed background
-  if (/iphone|ipod/i.test(navigator.userAgent.toLowerCase())){
-    var slideElems = document.getElementsByClassName('slide');
-    for(var i = 0; i < slideElems.length; i++) {
-      slideElems[i].style.backgroundAttachment = "scroll";
-      slideElems[i].style.backgroundPosition = "center 0px";
-    }
-  }else{
+  if (!isSmallScreen){
     window.addEventListener('scroll',function(){
     ScrollEvent.activateDots();
     ScrollEvent.animateFirstSlide();
-  });
+    });
   }
 
 

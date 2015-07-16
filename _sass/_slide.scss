@@ -128,15 +128,16 @@ $slideNum : 5;
       @for $i from 1 through $slideNum {
         &#{$i}{
           -webkit-background-size: 100%;
-          background-size: 100%;
+          background-size: 90%;
+          background-attachment: scroll;
           height:700px;
            @if $i < 2 {
-            -webkit-background-position : center 100px;
-            background-position:center 430px;
-            height:300px;
+            -webkit-background-position : center 0px;
+            background-position:center 0px;
+            height:370px;
           }@else{
-             -webkit-background-position:center 200px;
-             background-position:center 100px;
+             -webkit-background-position:center 0px;
+             background-position:center 0px;
            }
         }
       }
