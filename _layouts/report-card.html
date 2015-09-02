@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name=viewport content="width=device-width initial-scale=1">
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <!--[if IE]><link rel="shortcut icon" href="images/favicon.ico"><![endif]-->
@@ -11,9 +11,14 @@
     <link rel="icon" href={% if url == "/" %}"images/favicon.png" {% else %} "../images/favicon.png"{% endif %}>
     <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
     <link href='//fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ "/css/reveal.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <base href="/report-card/" />
+    <meta name="reportcard/config/environment" content="%7B%22modulePrefix%22%3A%22reportcard%22%2C%22environment%22%3A%22development%22%2C%22baseURL%22%3A%22/report-card%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22reportcard%22%2C%22version%22%3A%220.0.0+f34d9209%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27none%27%22%2C%22script-src%22%3A%22%27self%27%20%27unsafe-eval%27%22%2C%22font-src%22%3A%22%27self%27%22%2C%22connect-src%22%3A%22%27self%27%22%2C%22img-src%22%3A%22%27self%27%22%2C%22style-src%22%3A%22%27self%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22exportApplicationGlobal%22%3Atrue%7D" />
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/reportcard.css">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -23,18 +28,22 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body>
+  <body class = "report">
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     {% include nav.html %}
-    {{ content }}
+    <section id="open" class="jumbotron">
+      <div class="container">
+      {{ content }}
+    </div>
+    </section>
     {% include footer.html %}
+
     <script src="{{ "/js/vendor/jquery-2.1.3.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/vendor/bootstrap.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/sprite.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/animation.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/ui-part.js" | prepend: site.baseurl }}"></script>
-    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/reportcard.js"></script>
+    
   </body>
 </html>
