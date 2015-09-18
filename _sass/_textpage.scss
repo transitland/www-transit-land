@@ -1,0 +1,36 @@
+#open {
+
+  .title { 
+    margin-bottom: $spacing-unit*2; 
+    margin-top: $spacing-unit*1.5; 
+  }
+  .container { max-width: 800px;}
+  p { 
+    margin-bottom:$spacing-unit;
+    margin-top:$spacing-unit;
+  }
+}
+
+#participate {
+  h3 { margin-top:0;}
+  
+  .title { 
+    margin-bottom: $spacing-unit*2; 
+    margin-top: $spacing-unit*1.5; 
+  }
+  .container { max-width: 800px; }
+  p { margin-bottom:$spacing-unit; }
+  
+  .yesanswer {
+    display: block;
+    font-weight: 400;
+  }
+}
+
+
+@include media-query($on-pad){
+
+  #open .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
+  #participate .title{margin-bottom:$spacing-unit; margin-top:$spacing-unit/2;}
+
+}
