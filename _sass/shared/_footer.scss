@@ -32,19 +32,17 @@ footer {
 
 @include media-query($on-ipad) {
   footer {
-    position: relative;
-    height: $footer-h;
-    display: inline-block;
-    z-index: 0;
-    padding-bottom: $spacing-unit;
   .container {
-    top: 5%;
     height: 100%;
-    padding-top: 40px;
+    padding-left: 30px;
+    ul {
+      display: inline-block;
+      }
     }
   }
 }
 
 @include media-query($on-palm) {
+
 
 }
