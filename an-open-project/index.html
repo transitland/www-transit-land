@@ -10,14 +10,41 @@ layout: default
       <p class="desc">
         Transitland is an "open" project. That's a vague and overused word&mdash;still, "open" is a great goal.
       </p>
-      <h3>Software</h3>
-      <p>Transitland is built using exclusively open-source software. When possible, we release new tools under flexible licenses like MIT that allow use in both non-commercial and commercial settings.</p>
+
       <h3>Data</h3>
-      <p>Data in Transitland systems are covered by a variety of terms and licenses. Unless otherwise indicated, original data in the <a href="https://github.com/transitland/transitland-feed-registry/">Feed Registry</a> and the Datastore are made available under the <a href="http://opendatacommons.org/licenses/pddl/summary/">Public Domain Dedication and License v1.0</a>. By opening a pull request or contribute a changeset, you consent to release your contributions under these license terms as well.</p>
-      <p>GTFS feeds and other data from authoritative sources are covered by their own licenses and terms of service. We're working to standardize this maze of licenses, but in the meantime, we ask you to review each license individually, in the context of your application.</p>
+      <p>Data in Transitland systems are covered by a variety of terms and licenses.</p>
+
+      <h4>Original Data in Transitland (Operators and Feeds)</h4>
+      <p>Original data that we curate about GTFS feeds and transit operators under the Datastore's <a href="https://transit.land/api/v1/operators">/api/v1/operators</a> and <a href="https://transit.land/api/v1/feeds">/api/v1/feeds</a> endpoints are made
+        available under the <a href="http://opendatacommons.org/licenses/pddl/summary/">Public Domain Dedication and License (PDDL) v1.0</a>. Users contributing feed and operator information through the Datastore's changeset process agree to share their
+        contributions under the PDDL.</p>
+
+      <a name="aggregated-data"></a>
+      <h4>Data Aggregated from Authoritative Feeds (Stops, Routes, Schedules)</h4>
+      <p>Transitland aggregates stop, route, and schedule data from transit operators' authoritative feeds. Each of these feeds is covered by its own license and terms of service. The <a href="/feed-registry">Feed Registry</a> lists all of the feeds currently
+        aggregated by Transitland, along with information about license restrictions, using a simple classification scheme. The ideal license allows:</p>
+
+      <div class="license-attr">
+        <h4 style="clear: both;"><div class="not-requires-attr"></div> you to use the feed's data without attribution. It's up to you where and how in your map, application, or service you acknowledge where your data source.</h4>
+        <h4 style="clear: both;"><div class="allow-derivation"></div> you to create derived products from the feed. For example, you can mix the feed with other sources and share the mixed file with others.</h4>
+        <h4 style="clear: both;"><div class="allow-redistribution"></div> you to redistribute the feed as is, under open terms.</h4>
+      </div>
+
+      <p style="clear: both;">Browse the <a href="/feed-registry">Feed Registry</a> and you'll see that each license allows a different combination of uses. Please note these classifications are for informational purposes but do not constitute legal advice. Click through to each feed's license, review it, and <strong>consult with a lawyer if you need proper legal advice</strong>. We welcome edits and corrections; e-mail us at <a href="mailto:transitland@mapzen.com">transitland@mapzen.com</a>.</p>
+
+      <p>MODEL LICENSE</p>
+
+      <hr>
+      <h3>Software</h3>
+      <p>Transitland is built using exclusively open-source software. When possible, we release new tools under flexible licenses like MIT that allow use in both non-commercial and commercial settings. All our code, with the exception of some server configuration,
+        is <a href="https://github.com/transitland">publicly available on GitHub</a>.</p>
+      <hr>
       <h3>Direction</h3>
-      <p>Transitland is sponsored by <a href="https://mapzen.com/">Mapzen</a>. It's staff employed at Mapzen who have created Transitland and are setting its direction. We welcome partners who would like to be involved in Transitland, especially those who care about technical nuts-and-bolts and those who care about building a system that's useful for enthusiasts and non-experts.</p>
-      <p>There are already venues for negotiating data-interoperability specifications and debating general transit / transportation / planning topics. The point of Transitland is to create transit data services that work&mdash;even if they're not perfect be-all-end-alls.</p>
+      <p>Transitland is sponsored by <a href="https://mapzen.com/">Mapzen</a>. It's staff employed at Mapzen who have created Transitland and are setting its direction. We welcome partners who would like to be involved in Transitland, especially those who
+        care about technical nuts-and-bolts and those who care about building a system that's useful for enthusiasts and non-experts.</p>
+      <p>There are already venues for negotiating data-interoperability specifications and debating general transit / transportation / planning topics. The point of Transitland is to create transit data services that work&mdash;even if they're not perfect
+        be-all-end-alls.
+      </p>
       <p>Please write us: <a href="mailto:transitland@mapzen.com">transitland@mapzen.com</a></p>
     </div>
   </div>
