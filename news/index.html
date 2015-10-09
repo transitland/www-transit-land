@@ -1,0 +1,25 @@
+---
+layout: blog
+---
+<section id="blog" class="jumbotron">
+  <div class="container">
+    <div class="title col-md-12 center-text">
+      <h2> TRNASITLAND NEWS</h2>
+    </div>
+    <div class = "post-list">
+      {% for post in site.posts limit: 1 %}
+      <div class = "post-wrapper">
+        <div class = "col-md-2 post-info"> 
+          {{ post.date | date_to_string }}
+        </div>
+        <div class = "col-md-10 post-content">
+          <h3 class = "title">{{post.title}}</h3>
+          <p>{{post.content}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<div class="infinite-spinner"></div>
+
