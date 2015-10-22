@@ -10,12 +10,18 @@ layout: blog
       {% for post in site.posts limit: 1 %}
       <div class = "post-wrapper">
         <div class = "col-md-2 post-info"> 
-          {{ post.date | date_to_string }}
+           <a href = "{{post.url}}"> {{ post.date | date_to_string }} </a>
         </div>
-        <div class = "col-md-10 post-content">
-          <h3 class = "title">{{post.title}}</h3>
-          <p>{{post.content}}</p>
-        </div>
+        {% if post.isThereTitle %}
+          <div class = "col-md-10 post-content">
+            <h1 class = "title">{{post.title}}</h1> 
+            {{post.content}}
+          </div>
+        {% else %}
+          <div class = "col-md-10 post-content no-title">
+            {{post.content}}
+          </div>
+        {% endif %}
       </div>
       {% endfor %}
     </div>

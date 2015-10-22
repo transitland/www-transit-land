@@ -1,9 +1,22 @@
-<div class = "post-wrapper">
-  <div class = "col-md-2 post-info"> 
-    {{ page.date | date_to_string }}
+---
+layout: blog
+---
+<section id="blog" class="jumbotron">
+  <div class="container">
+    <div class = "post-wrapper">
+      <div class = "col-md-2 post-info"> 
+        {{ page.date | date_to_string }}
+      </div>
+        {% if page.isThereTitle %}
+          <div class = "col-md-10 post-content">
+            <h1 class = "title">{{page.title}}</h1> 
+            {{content}}
+          </div>
+        {% else %}
+          <div class = "col-md-10 post-content no-title">
+            {{content}}
+          </div>
+        {% endif %}
+    </div>
   </div>
-  <div class = "col-md-10 post-content">
-    <h3 class = "title">{{page.title}}</h3>
-    <p>{{content}}</p>
-  </div>
-</div>
+</section>

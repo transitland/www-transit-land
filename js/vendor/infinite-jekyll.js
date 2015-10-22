@@ -1,5 +1,5 @@
-$(function() {
-  
+  $(function() {
+
   var postURLs,
       isFetchingPosts = false,
       shouldFetchPosts = true,
@@ -52,7 +52,6 @@ $(function() {
             disableFetching();
             return;
           }
-          
           if (loadedPosts < postsToLoad) {
             fetchPostWithIndex(postIndex, callback);
           } else {
@@ -70,13 +69,14 @@ $(function() {
     $.get(postURL, function(data) {
       try {
         var postlist = $('.post-list');
-        
-        $(data).appendTo(postlist);
+        var wholePost = $(data).find('.post-wrapper');
+        $(wholePost.find('.post-info')).wrap('<a href = \"'+postURL+'\"></a>');
+        console.log(wholePost);
+        wholePost.appendTo(postlist);
       } catch(e) { console.log(e);}
       callback();
     });
   }
-  
   function disableFetching() {
     shouldFetchPosts = false;
     isFetchingPosts = false;

@@ -10,11 +10,70 @@
   }
   
   .post-wrapper {
+    // This is for post, using whole new header style to make post writing easy
     width: 100%;
     height: auto;
     display: inline-block;
     padding: 30px 0;
     border-bottom: 2px solid #eee;
+
+    h1 {
+      font-family: Lato;
+      font-size: 23px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 23px;
+
+      &.title {
+        font-size: 28px;
+        line-height: 28px;
+      }
+    }
+    h3 {
+      font-family: Lato;
+      font-size: 17px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 23px;
+    }
+    p {
+      font-family: Lato;
+      font-size: 16px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 300;
+      line-height: 23px;
+    }
+    blockquote {
+      font-family: Lato;
+      font-size: 17px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 400;
+      line-height: 23px;
+    }
+    pre {
+      font-family: Lato;
+      font-size: 11px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 300;
+      line-height: 23px;
+    }
+
+    image {
+      width: 100%;
+    }
+
+    .no-title {
+      *:first-child {
+        //when there is no title, first element shouldn't have margin top to align with date
+        margin-top: 0;
+      }
+    }
+
     &:last-child {
       border-bottom: 0;
     }
