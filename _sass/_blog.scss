@@ -18,10 +18,7 @@
     border-bottom: 2px solid #eee;
 
     h1 {
-      font-family: Lato;
       font-size: 23px;
-      font-style: normal;
-      font-variant: normal;
       font-weight: 400;
       line-height: 23px;
 
@@ -31,40 +28,33 @@
       }
     }
     h3 {
-      font-family: Lato;
       font-size: 17px;
-      font-style: normal;
-      font-variant: normal;
       font-weight: 400;
       line-height: 23px;
     }
     p {
-      font-family: Lato;
       font-size: 16px;
-      font-style: normal;
-      font-variant: normal;
       font-weight: 300;
       line-height: 23px;
     }
     blockquote {
-      font-family: Lato;
       font-size: 17px;
-      font-style: normal;
-      font-variant: normal;
       font-weight: 400;
       line-height: 23px;
     }
     pre {
-      font-family: Lato;
-      font-size: 11px;
-      font-style: normal;
-      font-variant: normal;
+      font-size: 12px;
       font-weight: 300;
       line-height: 23px;
     }
 
-    image {
+    img {
       width: 100%;
+    }
+
+    .caption {
+      font-style: italic;
+      color: #666;
     }
 
     .no-title {

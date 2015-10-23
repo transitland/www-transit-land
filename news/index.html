@@ -15,7 +15,14 @@ layout: blog
         {% if post.isThereTitle %}
           <div class = "col-md-10 post-content">
             <h1 class = "title">{{post.title}}</h1> 
-            {{post.content}}
+            <!-- if there is split mark, main page only shows the part before the mark -->
+            {% assign paragraphs =  post.content | split:"<!-- more -->" %}
+              {% if paragraphs.size > 1 %}
+                {{ paragraphs.first }}
+                <a href = "{{post.url}}">Read more...</a>
+              {% else %}
+                {{ paragraphs }}
+              {% endif %}
           </div>
         {% else %}
           <div class = "col-md-10 post-content no-title">

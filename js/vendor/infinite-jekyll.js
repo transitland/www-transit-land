@@ -64,14 +64,12 @@
 	
   function fetchPostWithIndex(index, callback) {
     var postURL = postURLs[index];
-    console.log(postURL);
 		
     $.get(postURL, function(data) {
       try {
         var postlist = $('.post-list');
         var wholePost = $(data).find('.post-wrapper');
         $(wholePost.find('.post-info')).wrap('<a href = \"'+postURL+'\"></a>');
-        console.log(wholePost);
         wholePost.appendTo(postlist);
       } catch(e) { console.log(e);}
       callback();
