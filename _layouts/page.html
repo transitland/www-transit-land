@@ -6,7 +6,7 @@ layout: blog
     <div class = "post-wrapper">
       <div class = "col-md-2 post-info"> 
         <span class = "date">{{ page.date | date_to_string }}</span>
-        {% include social.html title=page.title%}
+        {% include social.html page=page %}
       </div>
         {% if page.title == "no-title" %}
           <div class = "col-md-10 post-content no-title">

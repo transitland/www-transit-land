@@ -30,7 +30,8 @@
         </a>
       </div>
       <div class="float-left">
-        <a class='{{"/news" | activelink: page.url }}' href="{{site.url}}news" target="_self">
+
+        <a class= {% if include.link == '/news' %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}news" target="_self">
         <div class="circle"></div><div class="main">news & updates</div>
         </a>
       </div>
