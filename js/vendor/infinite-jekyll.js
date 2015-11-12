@@ -74,7 +74,7 @@ $(function() {
         var postParagraphs = wholePost.html().split('<!-- more -->');
         if(postParagraphs.length > 1) {
           wholePost.html(postParagraphs[0]);
-          wholePost.find('.post-content').append('<p><a href=\"'+ postURL +'\"> Read more... </a></p>');
+          wholePost.find('.post-content').append('<a class=\'col-xs-12 btn btn-default btn-transparent\' href=\''+postURL+'\'> Read more</a>');
         }
         $(wholePost.find('.date')).wrap('<a href = \"'+postURL+'\"></a>');
 

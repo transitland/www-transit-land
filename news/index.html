@@ -25,7 +25,7 @@ title: News & Updates
             {% assign paragraphs =  post.content | split:"<!-- more -->" %}
               {% if paragraphs.size > 1 %}
                 {{ paragraphs.first }}
-                <p><a href = "{{post.url}}">Read more...</a></p>
+                  <a class='col-xs-12 btn btn-default btn-transparent' href='{{post.url}}'> Read more</a>
               {% else %}
                 {{ paragraphs }}
               {% endif %}
