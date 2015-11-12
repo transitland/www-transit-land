@@ -2,16 +2,16 @@ section#blog {
   //this is lame way to make footer to stick when post is short
   min-height: calc(100vh - 400px);
 
-  .title { 
-    margin-bottom: $spacing-unit*2; 
-    margin-top: $spacing-unit*1.5; 
+  .title {
+    margin-bottom: $spacing-unit*2;
+    margin-top: $spacing-unit*1.5;
   }
   .container { max-width: 800px;}
-  p { 
+  p {
     margin-bottom:$spacing-unit;
     margin-top:$spacing-unit;
   }
-  
+
   .post-wrapper {
     // This is for post, using whole new header style to make post writing easy
     width: 100%;
@@ -35,36 +35,37 @@ section#blog {
     h1 {
       font-size: 28px;
       font-weight: 400;
-      line-height: 32px;
+      line-height: 36px;
       letter-spacing: initial;
     }
     h2 {
       font-size: 26px;
       font-weight: 400;
-      line-height: 32px;
+      line-height: 36px;
       letter-spacing: initial;
     }
     h3 {
       font-size: 24px;
       font-weight: 400;
-      line-height: 23px;
+      line-height: 32px;
       letter-spacing: initial;
     }
     h4 {
       font-size: 20px;
       font-weight: 400;
-      line-height: 23px;
+      line-height: 28px;
       letter-spacing: initial;
     }
     h5 {
       font-size: 18px;
       font-weight: 400;
-      line-height: 23px;
+      line-height: 27px;
     }
     p {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 300;
-      line-height: 23px;
+      line-height: 27px;
+      color: #333;
     }
     blockquote {
       font-size: 28px;
@@ -122,7 +123,7 @@ section#blog {
         word-break: keep-all;
       }
 
-      th { 
+      th {
         border-right: 1px dotted $table-border-color;
         border-bottom: 2px solid $table-border-color;
         padding: 8px;
@@ -168,7 +169,7 @@ section#blog {
   border-radius: 40px;
   background-color: #333;
   margin: 60px auto;
-  
+
   -webkit-animation: scaleout 1.0s infinite ease-in-out;
   animation: scaleout 1.0s infinite ease-in-out;
 }

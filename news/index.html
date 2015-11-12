@@ -5,12 +5,12 @@ title: News & Updates
 <section id="blog" class="jumbotron">
   <div class="container">
     <div class="title col-md-12 center-text">
-      <h2> TRNASITLAND NEWS</h2>
+      <h2> TRANSITLAND NEWS</h2>
     </div>
     <div class = "post-list">
       {% for post in site.posts limit: 3 %}
       <div class = "post-wrapper">
-        <div class = "col-md-2 post-info"> 
+        <div class = "col-md-2 post-info">
            <a href = "{{post.url}}"> <span class = "date">{{ post.date | date_to_string }}</span> </a>
            {% include social.html page=post %}
         </div>
@@ -20,7 +20,7 @@ title: News & Updates
           </div>
         {% else %}
           <div class = "col-md-10 post-content">
-            <h1 class = "title">{{post.title}}</h1> 
+            <h1 class = "title">{{post.title}}</h1>
             <!-- if there is split mark, main page only shows the part before the mark -->
             {% assign paragraphs =  post.content | split:"<!-- more -->" %}
               {% if paragraphs.size > 1 %}
