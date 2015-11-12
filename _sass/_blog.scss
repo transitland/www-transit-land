@@ -1,4 +1,7 @@
-#blog {
+section#blog {
+  //this is lame way to make footer to stick when post is short
+  min-height: calc(100vh - 400px);
+
   .title { 
     margin-bottom: $spacing-unit*2; 
     margin-top: $spacing-unit*1.5; 
@@ -17,18 +20,44 @@
     padding: 30px 0;
     border-bottom: 2px solid #eee;
 
-    h1 {
-      font-size: 23px;
-      font-weight: 400;
+    .post-info {
+      font-size: 16px;
+      font-weight: 300;
       line-height: 23px;
 
-      &.title {
-        font-size: 28px;
-        line-height: 28px;
+      .permalink {
+        font-size: 14px;
+      }
+      @media (max-width: $screen-md-min) {
+        margin-bottom: 30px;
       }
     }
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: initial;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: initial;
+    }
     h3 {
-      font-size: 17px;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: initial;
+    }
+    h4 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: initial;
+    }
+    h5 {
+      font-size: 18px;
       font-weight: 400;
       line-height: 23px;
     }
@@ -38,9 +67,20 @@
       line-height: 23px;
     }
     blockquote {
-      font-size: 17px;
+      font-size: 28px;
+      color: #666;
       font-weight: 400;
-      line-height: 23px;
+      font-style: italic;
+      line-height: 28px;
+      &:before {
+        content: '\"';
+        padding-right: 5px;
+      }
+      &:after {
+        content: '\"';
+        padding-left: 5px;
+      }
+
     }
     pre {
       font-size: 12px;
@@ -48,10 +88,54 @@
       line-height: 23px;
     }
 
-    img {
+    img:not([width]):not([height]) {
       width: 100%;
     }
 
+    ul li {
+      list-style: none;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 23px;
+      text-indent: -0.8em;
+    }
+
+    ul li::before {
+      content: ' • ';
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+
+    ul li p {
+      display: inline;
+    }
+
+    //table style, overwrapping with documentation site's table other than width & mobile behaviour
+    //on mobile, it breaks down the word to keep its width fit to container.
+    table {
+      width: 100%;
+      border: 2px solid $table-border-color;
+      word-break: break-all;
+      margin-bottom: 30px;
+      @media (min-width: $screen-sm-min) {
+        width: 100%;
+        word-break: keep-all;
+      }
+
+      th { 
+        border-right: 1px dotted $table-border-color;
+        border-bottom: 2px solid $table-border-color;
+        padding: 8px;
+      }
+      td {
+        border-top:  1px solid $table-border-color;
+        border-right: 1px dotted $table-border-color;
+        padding: 8px;
+        font-size: 0.9em;
+        line-height: 1.1;
+        vertical-align: top;
+      }
+    }
     .caption {
       font-style: italic;
       color: #666;
@@ -66,9 +150,6 @@
 
     &:last-child {
       border-bottom: 0;
-    }
-    .post-info {
-
     }
     .post-content {
       .title {

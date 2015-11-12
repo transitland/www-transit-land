@@ -24,7 +24,7 @@ function Animation(w,h,veh){
   this.initSprites = function(){
 
   var bgImage = new Image();
-  bgImage.src = "./images/animation/"+vehicle+"_bg.png";
+  bgImage.src = "/assets/images/animation/"+vehicle+"_bg.png";
 
   $(bgImage).load(function(){
     background = new sprite({
@@ -41,7 +41,7 @@ function Animation(w,h,veh){
     background.render();
 
     var vehicleImage = new Image();
-    vehicleImage.src="./images/animation/"+vehicle+".png";
+    vehicleImage.src="/assets/images/animation/"+vehicle+".png";
     $(vehicleImage).load(function(){
       vehicle = new sprite({
         context : $(canvas)[0].getContext('2d'),

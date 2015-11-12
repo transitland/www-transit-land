@@ -1,4 +1,6 @@
-  $(function() {
+$(function() {
+
+  socialHandler.init();
 
   var postURLs,
       isFetchingPosts = false,
@@ -64,13 +66,21 @@
 	
   function fetchPostWithIndex(index, callback) {
     var postURL = postURLs[index];
-		
     $.get(postURL, function(data) {
       try {
         var postlist = $('.post-list');
         var wholePost = $(data).find('.post-wrapper');
+        var postParagraphs = wholePost.html().split('<!-- more -->');
+        if(postParagraphs.length > 1) {
+          wholePost.html(postParagraphs[0]);
+          wholePost.find('.post-content').append('<p><a href=\"'+ postURL +'\"> Read more... </a></p>');
+        }
         $(wholePost.find('.post-info')).wrap('<a href = \"'+postURL+'\"></a>');
+
         wholePost.appendTo(postlist);
+        var el = wholePost.find('.social-popup')[0];
+        socialHandler.updateNewButton(el);
+
       } catch(e) { console.log(e);}
       callback();
     });

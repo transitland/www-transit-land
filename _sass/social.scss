@@ -1,0 +1,18 @@
+.social-buttons {
+  width: 100%;
+  margin-top: 30px;
+  padding: 5px;
+  background-color: #f8f8f8;
+  text-align: center;
+  &:hover {
+    
+    background-color: #ccc;
+  }
+  .social-button-twitter {
+
+    svg path,
+    svg polygon {
+      fill: $logo-color-3;
+    }
+  }
+}
