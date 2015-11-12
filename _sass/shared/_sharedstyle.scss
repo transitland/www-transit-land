@@ -11,7 +11,7 @@ body {
 
 div,section{
   -moz-box-sizing : border-box;
-  box-sizing : border-box; 
+  box-sizing : border-box;
 }
 
 section {
@@ -25,6 +25,7 @@ section {
 a {
   text-decoration: none;
   color: nth($logo-colors,4);
+  font-weight: 400;
   &:hover{
     text-decoration: none;
   }

@@ -23,7 +23,7 @@ $slideNum : 5;
          position: relative;
          -webkit-background-size: 900px auto;
          background-size: 900px auto;
-         background-image:url("../images/slides/hiw@2x_"+ $i +".svg");
+         background-image: url("/assets/images/slides/hiw@2x_"+ $i +".svg");
         @if($i == 1) {
           background-position:center 330px;
         }@else {
