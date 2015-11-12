@@ -1,6 +1,6 @@
 #index-1 {
   height: 650px;
-  //no footer 
+  //no footer
   margin-bottom: 0px;
   h2 {
     padding-top: 0px;
@@ -17,7 +17,6 @@
   //no footer
   margin-bottom: 0;
   background-color: $logo-color-3;  //blue
-  p { font-size:18px; }
   .badges-wrapper {
     margin-top:50px;
     margin-left: auto;
@@ -35,12 +34,12 @@
     background-position: center center;
     margin: 10px 15px;
   }
-  #trans-badge-1{background-image:url(/images/badges/badge_train.png);}
-  #trans-badge-2{background-image:url(/images/badges/badge_bus.png);}
-  #trans-badge-3{background-image:url(/images/badges/badge_cablecar.png);}
-  #trans-badge-4{background-image:url(/images/badges/badge_ferry.png);}
-  #trans-badge-5{background-image:url(/images/badges/badge_tram.png);}
-  #trans-badge-6{background-image:url(/images/badges/badge_trolley.png);}
+  #trans-badge-1 { background-image: url(/assets/images/badges/badge_train.png);}
+  #trans-badge-2 { background-image: url(/assets/images/badges/badge_bus.png);}
+  #trans-badge-3 { background-image: url(/assets/images/badges/badge_cablecar.png);}
+  #trans-badge-4 { background-image: url(/assets/images/badges/badge_ferry.png);}
+  #trans-badge-5 { background-image: url(/assets/images/badges/badge_tram.png);}
+  #trans-badge-6 { background-image: url(/assets/images/badges/badge_trolley.png);}
 }
 
 #index-3 {
@@ -48,14 +47,13 @@
   height: 650px;
   margin-bottom: 0px;
   background-color: $logo-color-4;  //orange
-  p { font-size: 18px; }
 
   .badges-wrapper {
     margin-top: 50px;
     text-align: center;
   }
 
-  img { 
+  img {
   width: 100%;
   max-width: 400px;
   }
@@ -78,7 +76,7 @@
 }
 
 @include media-query($on-pad){
-  
+
   #index-{
     @for $i from 1 through 4 {
       &#{$i}{
@@ -170,5 +168,5 @@
     .container{
       top:5%;
     }
-  } 
+  }
 }

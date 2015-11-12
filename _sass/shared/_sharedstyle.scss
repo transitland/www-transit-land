@@ -11,7 +11,7 @@ body {
 
 div,section{
   -moz-box-sizing : border-box;
-  box-sizing : border-box; 
+  box-sizing : border-box;
 }
 
 section {
@@ -25,9 +25,16 @@ section {
 a {
   text-decoration: none;
   color: nth($logo-colors,4);
+  font-weight: 400;
   &:hover{
     text-decoration: none;
   }
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 27px;
 }
 
 h2 {
@@ -74,7 +81,7 @@ h3{
   border:1px solid black;
   border-radius: 0px;
   color: #000000;
-  padding: 2px 20px;
+  padding: 5px 20px;
   font-size:16px;
   font-weight:400;
 }
