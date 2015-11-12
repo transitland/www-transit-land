@@ -76,7 +76,7 @@ $(function() {
           wholePost.html(postParagraphs[0]);
           wholePost.find('.post-content').append('<p><a href=\"'+ postURL +'\"> Read more... </a></p>');
         }
-        $(wholePost.find('.post-info')).wrap('<a href = \"'+postURL+'\"></a>');
+        $(wholePost.find('.date')).wrap('<a href = \"'+postURL+'\"></a>');
 
         wholePost.appendTo(postlist);
         var el = wholePost.find('.social-popup')[0];
