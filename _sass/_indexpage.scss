@@ -1,6 +1,6 @@
 #index-1 {
   height: 650px;
-  //no footer 
+  //no footer
   margin-bottom: 0px;
   h2 {
     padding-top: 0px;
@@ -17,7 +17,6 @@
   //no footer
   margin-bottom: 0;
   background-color: $logo-color-3;  //blue
-  p { font-size:18px; }
   .badges-wrapper {
     margin-top:50px;
     margin-left: auto;
@@ -48,14 +47,13 @@
   height: 650px;
   margin-bottom: 0px;
   background-color: $logo-color-4;  //orange
-  p { font-size: 18px; }
 
   .badges-wrapper {
     margin-top: 50px;
     text-align: center;
   }
 
-  img { 
+  img {
   width: 100%;
   max-width: 400px;
   }
@@ -78,7 +76,7 @@
 }
 
 @include media-query($on-pad){
-  
+
   #index-{
     @for $i from 1 through 4 {
       &#{$i}{
@@ -170,5 +168,5 @@
     .container{
       top:5%;
     }
-  } 
+  }
 }
