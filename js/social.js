@@ -1,6 +1,6 @@
 // SOCIAL SHARING BUTTONS
 //
-// written by Lou Huang based on Ridiculously Responsive Social Sharing Buttons)
+// written by Lou Huang, edited by Hanbyul Jo  based on Ridiculously Responsive Social Sharing Buttons)
 // Some of this functionality is borrowed from RRSSB
 // (Ridiculously Responsive Social Sharing Buttons) but
 // stripped down because we really don't need all of it
@@ -46,8 +46,9 @@ var socialHandler = (function () {
     attachClickHandlers(element);
   }
 
+  init();
+
   return {
-    init : init,
     updateNewButton: updateNewButton
   };
 

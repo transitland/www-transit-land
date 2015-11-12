@@ -1,6 +1,7 @@
-$(function() {
+//based on infinite jekyll, https://github.com/tobiasahlin/infinite-jekyll
+//edited by Hanbyul Jo to make it fit to transit.land
 
-  socialHandler.init();
+$(function() {
 
   var postURLs,
       isFetchingPosts = false,
