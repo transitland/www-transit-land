@@ -74,6 +74,7 @@ if (you === senstiveToLanguageType) {
         'layout' => 'page',
         'category' => 'news',
         'published' => false,
+        'isThereTitle' => true,
         'title' => title
         },
         :line_width => -1

@@ -2,6 +2,7 @@
 layout: page
 title: Welcome to the Transitland Playground
 published: true
+isThereTitle: true
 category: news
 ---
 

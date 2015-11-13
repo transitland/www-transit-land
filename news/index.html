@@ -14,7 +14,7 @@ title: News & Updates
            <a href = "{{post.url}}"> <span class = "date">{{ post.date | date_to_string }}</span> </a>
            {% include social.html page=post %}
         </div>
-        {% if post.title == "no-title" %}
+        {% if page.isThereTitle == false %}
           <div class = "col-md-10 post-content no-title">
             {{post.content}}
           </div>
@@ -25,7 +25,7 @@ title: News & Updates
             {% assign paragraphs =  post.content | split:"<!-- more -->" %}
               {% if paragraphs.size > 1 %}
                 {{ paragraphs.first }}
-                  <a class='col-xs-12 btn btn-default btn-transparent' href='{{post.url}}'> Read more</a>
+                  <a class='col-xs-12 btn btn-default btn-transparent read-more' href='{{post.url}}'> Read more</a>
               {% else %}
                 {{ paragraphs }}
               {% endif %}

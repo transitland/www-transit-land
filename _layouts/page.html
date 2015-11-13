@@ -2,7 +2,7 @@
 layout: blog
 ---
 <section id="blog" class="jumbotron">
-  <div class='row text-center'>
+  <div class='row text-center breadcrumb'>
     <div class='col-xs-12'>
       <a class='btn btn-default btn-transparent' href='/news'><i class='fa fa-angle-left'></i>&nbsp; NEWS</a>
     </div>
@@ -13,7 +13,7 @@ layout: blog
         <span class = "date">{{ page.date | date_to_string }}</span>
         {% include social.html page=page %}
       </div>
-        {% if page.title == "no-title" %}
+        {% if page.isThereTitle == false %}
           <div class = "col-md-10 post-content no-title">
             {{content}}
           </div>

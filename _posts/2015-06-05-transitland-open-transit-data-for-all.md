@@ -2,6 +2,7 @@
 layout: page
 title: 'Open Transit Data for All'
 published: true
+isThereTitle: true
 category: news
 ---
 
