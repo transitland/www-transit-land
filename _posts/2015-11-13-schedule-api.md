@@ -1,6 +1,6 @@
 ---
 layout: page
-title: The transit dimension transit land schedule api
+title: 'Transit Dimensions: Announcing the Datastore Schedule API'
 published: true
 isThereTitle: true
 category: news
@@ -12,9 +12,9 @@ Trains and buses are cool. They free your attention, widening your experience of
 
 Open transit data comes from a variety of sources, most commonly using the [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs/reference?hl=en) developed by [TriMet](http://trimet.org/) and Google in 2005. This collaboration created a versatile specification, balanced between the needs of transit agencies and data consumers. GTFS has added features and extensions over the years, but the core specification is remarkably resilient, and has been widely adopted by hundreds of transit agencies across the world.
 
-<!-- more -->
-
 ![GTFS schematic](https://s3.amazonaws.com/assets-staging.mapzen.com/images/the-transit-dimension-transit-land-schedule-api/ScheduleAPI_Chart_Final1.png)
+
+<!-- more -->
 
 GTFS describes a transit system as tables of `agencies`, `routes`, `stops`, and `trips` that individual transit vehicles make according to a set schedule. Each `trip` begins at a `stop`, then visits another `stop`, and so on, until the trip ends at a final `stop`. Each stop on a trip, or `stop_time`, includes an arrival time, a departure time, and accessibility details. This point-to-point representation is intuitive, and easy to describe as a series of rows in a CSV file or relational database.
 
@@ -33,15 +33,14 @@ The [schedule API endpoint](http://transit.land/api/v1/schedule_stop_pairs) allo
 | Query parameter        | Description | Example |
 |------------------------|-------------|---------|
 | origin_onestop_id      | Origin Stop | [from Embarcadero BART](http://transit.land/api/v1/schedule_stop_pairs?origin_onestop_id=s-9q8znb12j1-embarcadero) |
-| destination_onestop_id | Destination Stop | [to Montgomery St. BART](https://transit.land/api/v1/schedule_stop_pairs?destination_onestop_id=s-9q8yyxq427-montgomeryst)
-| route_onestop_id       | Route | [on Muni N](https://transit.land/api/v1/schedule_stop_pairs?route_onestop_id=r-9q8y-n) |
-| operator_onestop_id    | Operator | [on BART](https://transit.land/api/v1/schedule_stop_pairs?operator_onestop_id=o-9q9-bart) |
-| service_date           | Service operates on a date | [valid on 2015-10-26](https://transit.land/api/v1/schedule_stop_pairs?date=2015-10-26) |
-| service_from_date      | Service operates on a date, or in the future | [valid on and after 2015-10-26](https://transit.land/api/v1/schedule_stop_pairs?service_from_date=2015-10-26) |
-| origin_departure_between | Origin departure time between two times | [departing between 07:00 - 09:00](https://transit.land/api/v1/schedule_stop_pairs?origin_departure_between=07:00:00,09:00:00) |
-| trip                   | Trip identifier | [on trip '03SFO11SUN'](https://transit.land/api/v1/schedule_stop_pairs?trip=03SFO11SUN) |
-| bbox                   | Origin Stop within bounding box | [in the Bay Area](https://transit.land/api/v1/schedule_stop_pairs?bbox=-122.554,37.668,-122.085,37.912)
-
+| destination_onestop_id | Destination Stop | [to Montgomery St. BART](http://transit.land/api/v1/schedule_stop_pairs?destination_onestop_id=s-9q8yyxq427-montgomeryst)
+| route_onestop_id       | Route | [on Muni N](http://transit.land/api/v1/schedule_stop_pairs?route_onestop_id=r-9q8y-n) |
+| operator_onestop_id    | Operator | [on BART](http://transit.land/api/v1/schedule_stop_pairs?operator_onestop_id=o-9q9-bart) |
+| service_date           | Service operates on a date | [valid on 2015-10-26](http://transit.land/api/v1/schedule_stop_pairs?date=2015-10-26) |
+| service_from_date      | Service operates on a date, or in the future | [valid on and after 2015-10-26](http://transit.land/api/v1/schedule_stop_pairs?service_from_date=2015-10-26) |
+| origin_departure_between | Origin departure time between two times | [departing between 07:00 - 09:00](http://transit.land/api/v1/schedule_stop_pairs?origin_departure_between=07:00:00,09:00:00) |
+| trip                   | Trip identifier | [on trip '03SFO11SUN'](http://transit.land/api/v1/schedule_stop_pairs?trip=03SFO11SUN) |
+| bbox                   | Origin Stop within bounding box | [in the Bay Area](http://transit.land/api/v1/schedule_stop_pairs?bbox=-122.554,37.668,-122.085,37.912)
 
 ## Frequency is freedom: an example
 
@@ -55,4 +54,4 @@ The Transitland schedule API can bridge these gaps, providing the data necessary
 
 ## Explore with us
 
-Hop on the bus and explore the possibilities of a schedule API with us. It's more fun together! The [schedule API documentation](https://github.com/transitland/transitland-datastore/blob/master/doc/schedule_api.md) and [example script](https://gist.github.com/irees/272e5dc57614cab595a0) provide a few departure points, and we'd love to hear where you'd like to go next.
+Hop on the bus and explore the possibilities of a schedule API with us. It's more fun together! Schedule data for the SF Bay Area feeds and NYC subways is now available for all through the Transitland Datastore API (with more coming soon!) The [schedule API documentation](https://github.com/transitland/transitland-datastore/blob/master/doc/schedule_api.md) and [example script](https://gist.github.com/irees/272e5dc57614cab595a0) provide a few departure points, and we'd love to hear where you'd like to go next.
