@@ -1,0 +1,16 @@
+.social-buttons {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+
+  .social-button-twitter {
+    svg path,
+    svg polygon {
+      fill: $grey-color;
+      &:hover {
+        fill: #55acee;
+      }
+    }
+  }
+
+}

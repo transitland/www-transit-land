@@ -2,7 +2,7 @@ module Jekyll
 	module ActiveLink
 		def activelink(link, pagelink)
 			if pagelink == link || pagelink == link+".html" || pagelink == link+"/index.html"
-				"active"
+      	"active"
 			else
 				"inactive"
 			end

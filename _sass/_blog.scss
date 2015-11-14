@@ -1,0 +1,196 @@
+section#blog {
+  //this is lame way to make footer to stick when post is short
+  min-height: calc(100vh - 400px);
+
+  .breadcrumb {
+    margin: 30px 0;
+  }
+
+  .title {
+    margin-bottom: $spacing-unit*2;
+    margin-top: $spacing-unit*1.5;
+  }
+  .container { max-width: 800px;}
+  p {
+    margin-bottom:$spacing-unit;
+    margin-top:$spacing-unit;
+  }
+
+  .post-wrapper {
+    // This is for post, using whole new header style to make post writing easy
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    padding: 30px 0;
+    border-bottom: 2px solid #eee;
+
+    .post-info {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 32px;
+    }
+
+    .read-more {
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: initial;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 36px;
+      letter-spacing: initial;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 32px;
+      letter-spacing: initial;
+    }
+    h4 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      letter-spacing: initial;
+    }
+    h5 {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 27px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 27px;
+      color: #333;
+    }
+    blockquote {
+      font-size: 28px;
+      color: #666;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 28px;
+      &:before {
+        content: '\"';
+        padding-right: 5px;
+      }
+      &:after {
+        content: '\"';
+        padding-left: 5px;
+      }
+
+    }
+    pre {
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 23px;
+    }
+
+    img:not([width]):not([height]) {
+      width: 100%;
+    }
+
+    ul li {
+      list-style: none;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 23px;
+      text-indent: -0.8em;
+    }
+
+    ul li::before {
+      content: ' • ';
+      vertical-align: middle;
+      padding-right: 5px;
+    }
+
+    ul li p {
+      display: inline;
+    }
+
+    //table style, overwrapping with documentation site's table other than width & mobile behaviour
+    //on mobile, it breaks down the word to keep its width fit to container.
+    table {
+      width: 100%;
+      border: 2px solid $table-border-color;
+      word-break: break-all;
+      margin-bottom: 30px;
+      @media (min-width: $screen-sm-min) {
+        width: 100%;
+        word-break: keep-all;
+      }
+
+      th {
+        border-right: 1px dotted $table-border-color;
+        border-bottom: 2px solid $table-border-color;
+        padding: 8px;
+      }
+      td {
+        border-top:  1px solid $table-border-color;
+        border-right: 1px dotted $table-border-color;
+        padding: 8px;
+        font-size: 0.9em;
+        line-height: 1.1;
+        vertical-align: top;
+      }
+    }
+    .caption {
+      font-style: italic;
+      color: #666;
+    }
+
+    .no-title {
+      *:first-child {
+        //when there is no title, first element shouldn't have margin top to align with date
+        margin-top: 0;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0;
+    }
+    .post-content {
+      .title {
+        margin-top: 0px;
+      }
+    }
+
+  }
+
+}
+
+.infinite-spinner {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #333;
+  margin: 60px auto;
+
+  -webkit-animation: scaleout 1.0s infinite ease-in-out;
+  animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+  0% { -webkit-transform: scale(0.0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}

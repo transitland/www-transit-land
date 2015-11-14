@@ -1,0 +1,39 @@
+---
+layout: blog
+title: News & Updates
+---
+<section id="blog" class="jumbotron">
+  <div class="container">
+    <div class="title col-md-12 center-text">
+      <h2>NEWS &amp; UPDATES</h2>
+    </div>
+    <div class = "post-list">
+      {% for post in site.posts limit: 3 %}
+      <div class = "post-wrapper">
+        <div class = "col-md-2 post-info">
+           <a href = "{{post.url}}"> <span class = "date">{{ post.date | date_to_string }}</span> </a>
+           {% include social.html page=post %}
+        </div>
+        {% if page.isThereTitle == false %}
+          <div class = "col-md-10 post-content no-title">
+            {{post.content}}
+          </div>
+        {% else %}
+          <div class = "col-md-10 post-content">
+            <h1 class = "title">{{post.title}}</h1>
+            <!-- if there is split mark, main page only shows the part before the mark -->
+            {% assign paragraphs =  post.content | split:"<!-- more -->" %}
+              {% if paragraphs.size > 1 %}
+                {{ paragraphs.first }}
+                  <a class='col-xs-12 btn btn-default btn-transparent read-more' href='{{post.url}}'> Read more</a>
+              {% else %}
+                {{ paragraphs }}
+              {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="infinite-spinner"></div>
+</section>

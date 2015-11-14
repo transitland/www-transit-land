@@ -1,0 +1,28 @@
+---
+layout: blog
+---
+<section id="blog" class="jumbotron">
+  <div class='row text-center breadcrumb'>
+    <div class='col-xs-12'>
+      <a class='btn btn-default btn-transparent' href='/news'><i class='fa fa-angle-left'></i>&nbsp; NEWS</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class = "post-wrapper">
+      <div class = "col-md-2 post-info"> 
+        <span class = "date">{{ page.date | date_to_string }}</span>
+        {% include social.html page=page %}
+      </div>
+        {% if page.isThereTitle == false %}
+          <div class = "col-md-10 post-content no-title">
+            {{content}}
+          </div>
+        {% else %}
+          <div class = "col-md-10 post-content">
+            <h1 class = "title">{{page.title}}</h1> 
+            {{content}}
+          </div>
+        {% endif %}
+    </div>
+  </div>
+</section>
