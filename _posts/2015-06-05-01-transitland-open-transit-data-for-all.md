@@ -20,11 +20,11 @@ Every piece of Transitland is open. We welcome you to use the data and the tools
 
 ## Start where you are
 
-Are you a transit enthusiast or planner, interested in browsing the range of data available in Transitland? [Read about our Playground](/blog/welcome-to-the-transitland-playground) and give it [a try](https://transit.land/playground).
+Are you a transit enthusiast or planner, interested in browsing the range of data available in Transitland? [Read about our Playground](/news/2015/06/05/welcome-to-the-transitland-playground.html).
 
 Are you a software developer, interested in Transitland's tooling? [See our "how it works" diagram](https://transit.land/how-it-works/), with links to GitHub repos.
 
-Are you a transit data expert, interested in how Transitland joins feeds, operators, stops, and routes from disparate sources? Read more about [our Onestop ID scheme and its most important ingredient, the geohash](/blog/geohashes-and-you).
+Are you a transit data expert, interested in how Transitland joins feeds, operators, stops, and routes from disparate sources? Read more about [our Onestop ID scheme and its most important ingredient, the geohash](/news/2015/06/05/geohashes-and-you.html).
 
 ## And do keep in touch
 

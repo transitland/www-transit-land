@@ -177,7 +177,7 @@ At Transitland, we use this property to specify simple bouding boxes for transit
 
 ## Start where you are
 
-Try the [Transitland Playground](/blog/welcome-to-the-transitland-playground), a simple and attractive interface to browse transit operators, stops, and routes, including their Onestop IDs and geohashes.
+Try the [Transitland Playground](/news/2015/06/05/welcome-to-the-transitland-playground.html), a simple and attractive interface to browse transit operators, stops, and routes, including their Onestop IDs and geohashes.
 
 Browse a [worldwide map of geohashes overlaid on a "slippy" webmap](http://mapzen.github.io/leaflet-spatial-prefix-tree/).
 
