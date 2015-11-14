@@ -1,12 +1,10 @@
 ---
 layout: page
-title: Welcome to the Transitland Playground
+title: 'Welcome to the Transitland Playground'
 published: true
 isThereTitle: true
 category: news
 ---
-
-*Today we're introducing Transitland, a community-edited data service aggregating transit networks across metropolitan and rural areas around the world. For a general overview, see [Transitland: Open Transit Data for All](/blog/transitland-open-transit-data-for-all/).*
 
 [Transitland's](http://transit.land) mission is to make the world's transportation data as accessible as possible. We do this by smoothing out some of the quirks of the [General Transit Feed Specification (GTFS)](https://developers.google.com/transit/gtfs) format commonly used by transit agencies and then aggregating the transit data into a centralized, accessible place called the [Transitland Datastore](https://transit.land/how-it-works/#/1).
 
