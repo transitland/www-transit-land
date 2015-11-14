@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 'Open Transit Data for All'
+title: "An Open Directory of Transit Data Sources: Transitland's Feed Registry"
 published: true
 isThereTitle: true
 category: news
@@ -39,8 +39,8 @@ category: news
 }
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
+@media only screen
+  and (min-device-width: 320px)
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .license-image {
@@ -59,11 +59,11 @@ Public transit works best without barriers, when it's simple for riders to trans
 
 We're now pleased to offer another view into Transitland's collection of data, the [Feed Registry](https://transit.land/feed-registry). We've created the Feed Registry to help the users of open transit data answer two questions:
 
+- **What transit operators offer open feeds?**
+
+- **What can I legally do with each feed?**
+
 <!-- more -->
-
-### What transit operators offer open feeds?
-
-### What can I legally do with each feed?
 
 <a href="https://transit.land/feed-registry">![screenshot of Transitland Feed Registry](https://s3.amazonaws.com/assets-staging.mapzen.com/images/feed-registry/transitland-feed-registry-screenshot.png)</a>
 
