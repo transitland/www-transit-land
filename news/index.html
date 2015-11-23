@@ -14,7 +14,7 @@ title: News & Updates
            <a href = "{{post.url}}"> <span class = "date">{{ post.date | date_to_string }}</span> </a>
            {% include social.html page=post %}
         </div>
-        {% if page.isThereTitle == false %}
+        {% if post.isThereTitle == false %}
           <div class = "col-md-10 post-content no-title">
             {{post.content}}
           </div>
