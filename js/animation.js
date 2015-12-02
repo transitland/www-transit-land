@@ -1,4 +1,4 @@
-(function() {
+var Animation = (function() {
   var vehicleAni = {
     'bus': 'moveToRight',
     'ferry': 'moveToRight',
@@ -6,7 +6,7 @@
     'train': 'moveToLeft'
   }
 
-  function init() {
+  function _init() {
     addHoverEvent();
   }
 
@@ -25,6 +25,6 @@
     })
   }
 
-  init();
+  return { init: _init }
 
 })();
