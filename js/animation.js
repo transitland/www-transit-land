@@ -1,90 +1,30 @@
-function Animation(w,h,veh){
-
-  var canvas = $('<canvas class = />').attr({
-    width : w,
-    height :h
-  });
-
-  canvas.css({
-    "vertical-align":"baseline",
-    "cursor":"pointer"
-  });
-
-  canvas.mouseenter(function(){
-    if(!background.isThisRunning()){
-      background.update();
-      vehicle.staticUpdate();
-    }
-  });
-
-  var background;
-  var vehicle = veh;
-  var nFrames = 78;
-
-  this.initSprites = function(){
-
-  var bgImage = new Image();
-  bgImage.src = "/assets/images/animation/"+vehicle+"_bg.png";
-
-  $(bgImage).load(function(){
-    background = new sprite({
-      context : $(canvas)[0].getContext('2d'),
-      width : w,
-      height: h,
-      speed:speed[vehicle],
-      image : bgImage,
-      imageHeight: 48,
-      ticksPerFrame : 50,
-      numberOfFrames : 78
-    });
-
-    background.render();
-
-    var vehicleImage = new Image();
-    vehicleImage.src="/assets/images/animation/"+vehicle+".png";
-    $(vehicleImage).load(function(){
-      vehicle = new sprite({
-        context : $(canvas)[0].getContext('2d'),
-        width : w,
-        height: h,
-        startPoint: startPoint[vehicle],
-        imageWidth : assetWidth[vehicle],
-        imageHeight : 48,
-        image : vehicleImage,
-        ticksPerFrame : 50,
-        numberOfFrames : 78
-      });
-    vehicle.staticRender();
-    });
-  });
-
+var Animation = (function() {
+  var vehicleAni = {
+    'bus': 'moveToRight',
+    'ferry': 'moveToRight',
+    'bike': 'moveToLeft',
+    'train': 'moveToLeft'
   }
 
-  this.getCanvas = function(){
-    return canvas;
+  function _init() {
+    addHoverEvent();
   }
 
-  this.render = function(){
-    background.render();
-    vehicle.staticRender();
+  function addHoverEvent() {
+    $('.animation').hover(function() {
+      var thisAnimation = $(this);
+      var thisId = thisAnimation.attr('id');
+      if(!thisAnimation.hasClass(vehicleAni[thisId])) {
+        thisAnimation.addClass(vehicleAni[thisId]);
+      } else {
+        if(thisAnimation.css('backgroundPosition') == "0% 0%") {
+          thisAnimation.removeClass(vehicleAni[thisId]);
+
+        }
+      }
+    })
   }
 
-  var assetWidth = {
-    bike:72,
-    bus:101,
-    ferry:101,
-    train:146
-  };
-  var startPoint = {
-    bike:100,
-    bus:0,
-    ferry:60,
-    train:200
-  }
-  var speed = {
-    bike:-6,
-    bus:6,
-    ferry:6,
-    train:-6
-  }
-}
+  return { init: _init }
+
+})();
