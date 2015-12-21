@@ -12,8 +12,7 @@ var ScrollEvent = (function(){
   var highV;
 
   var init = function(){
-    speed = 10;
-    acc = 1.01;
+    speed = 25;
     slides = document.getElementsByClassName('slide');
     firstSlide = document.getElementById("slide-1");
     slideH =  parseInt(window.getComputedStyle(firstSlide,null).getPropertyValue("height").replace("px",""));
@@ -44,7 +43,6 @@ var ScrollEvent = (function(){
 
     if(Math.abs(targetP - getScroll()) > Math.abs(speed)){
       firstMove = true;
-      speed *= acc;
       window.scrollTo(0,scroll+speed);
       setTimeout(function(){
         moveScroll(targetP);
