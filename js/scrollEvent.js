@@ -1,7 +1,6 @@
 var ScrollEvent = (function(){
 
   var speed;
-  var acc;
   var slides;
   var firstSlide;
   var slideH;
@@ -12,7 +11,7 @@ var ScrollEvent = (function(){
   var highV;
 
   var init = function(){
-    speed = 25;
+    speed = 15;
     slides = document.getElementsByClassName('slide');
     firstSlide = document.getElementById("slide-1");
     slideH =  parseInt(window.getComputedStyle(firstSlide,null).getPropertyValue("height").replace("px",""));
@@ -38,7 +37,7 @@ var ScrollEvent = (function(){
     var realTarget;
     if(!firstMove){
       //realTarget = map_range(targetP, 0,window.innerHeight || document.body.clientHeight )
-      (targetP < scroll)? speed = -5 : speed = 5;
+      (targetP < scroll)? speed = -15 : speed = 15;
     }
 
     if(Math.abs(targetP - getScroll()) > Math.abs(speed)){
@@ -50,7 +49,6 @@ var ScrollEvent = (function(){
     }else{
       window.scrollTo(0,targetP);
       firstMove = false;
-      speed = 5;
       activateDots();
     }
   };
