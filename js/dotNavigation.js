@@ -26,7 +26,7 @@ var DotNavigation = (function(){
         var aLink = e.target.getElementsByTagName('a')[0].getAttribute('href');
         aLink = aLink.replace("#","");
         var targetSlide = document.getElementById(aLink);
-        var targetPos = targetSlide.offsetTop - 50;
+        var targetPos = targetSlide.offsetTop +25;
         ScrollEvent.moveScroll(targetPos);
       },false);
     }
