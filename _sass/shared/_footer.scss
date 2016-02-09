@@ -31,6 +31,11 @@ footer {
     }
   }
   .fa { padding-right:5px; }
+  .mapzen-text {
+    text-align: center;
+    margin-bottom: 0;
+    padding-top: 20px;
+  }
 }
 
 @include media-query($on-ipad) {
