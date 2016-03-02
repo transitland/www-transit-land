@@ -1,0 +1,20 @@
+- title: Home
+  path: '/documentation/'
+- title: Feed Registry
+  path: '#'
+  pages:
+    - title: Add a Feed
+      path: /documentation/feed-registry/add-a-feed.html
+- title: Datastore
+  path: '/documentation/datastore/'
+  pages:
+    - title: API Endpoints
+      path: /documentation/datastore/index.html#api-endpoints
+    - title: Changesets
+      path: /documentation/datastore/changesets.html
+    - title: Operator-route-stop relationships
+      path: /documentation/datastore/operator-route-stop-relationships.html
+    - title: Routes and route stop patterns
+      path: /documentation/datastore/routes-and-route-stop-pattern.html
+- title: Glossary
+  path: '/documentation/glossary.html'

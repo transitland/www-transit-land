@@ -1,0 +1,20 @@
+ul.nav.toc {
+  li.toc-top-level {
+    a.toc-subnav{
+      &.active {
+        background-color: #ccc;
+      }
+    }
+    ul.toc-subnav {
+      list-style: none;
+      padding-left: 30px;
+      li {
+        display: block;
+        padding: 5px;
+        &.active {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+}
