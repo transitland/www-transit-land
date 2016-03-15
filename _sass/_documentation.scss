@@ -42,5 +42,8 @@
     & li.github::before {
       content: " \f09b ";
     }
+    & li.help::before {
+      content: " \f059 ";
+    }
   }
 }
