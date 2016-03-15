@@ -3,6 +3,12 @@ title: Schedules
 layout: documentation
 ---
 
+![GTFS schematic](/images/schedule-api/ScheduleAPI_Chart_Final1.png)
+
+First [read a blog post introducing the Transitland Datastore schedule API](/news/2015/11/13/schedule-api.html) and how it collapsed the many elements of a schedule in GTFS (pictured above) into a much simpler to query entity, called the `ScheduleStopPair`, which is documented below.
+
+---
+
 Transitland models each trip between two stops as an edge, called a `ScheduleStopPair`, or SSP. Each SSP contains an origin stop, a destination stop, a route, an operator, and arrival and departure times. Each edge also includes a service calendar, describing which days a trip is possible. Accessibility information for wheelchair and bicycle riders is included, if available. Some of this data is normally split across multiple GTFS tables, but is here denormalized for simpler access: each edge contains enough information to get from one stop to another, to another, and finally to your destination.
 
 ## ScheduleStopPair Data Model
