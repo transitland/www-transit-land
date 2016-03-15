@@ -3,9 +3,11 @@ title: Add a feed to the Transitland Feed Registry
 layout: documentation
 ---
 
+<iframe src="https://player.vimeo.com/video/155911567" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  
+
 [Transitland](https://transit.land) brings together many sources of transit data to build a [directory of operators and feeds](https://transit.land/feed-registry/) that can be edited by transit enthusiasts and developers. Your contributions can help expand Transitland's coverage throughout the world.
 
-This directory is known as the [Transitland Feed Registry](https://transit.land/feed-registry/). Feed submissions are welcomed from everyone; you need not represent a transit organization! To suggest a feed, only need to know the link to it, and any additional information is optional.  
+This directory is known as the [Transitland Feed Registry](https://transit.land/feed-registry/). Feed submissions are welcomed from everyone; you need not represent a transit organization! To suggest a feed, only need to know the link to it, and any additional information is optional.
 
 ## Find the link to the feed
 
