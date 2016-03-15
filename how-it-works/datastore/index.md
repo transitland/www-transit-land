@@ -12,7 +12,7 @@ layout: documentation
 - [Feeds](feeds.html)
 - [Stops](stops.html)
 - [Routes and route stop patterns](routes-and-route-stop-patterns.html)
-- [Schedules](schedules.html)
+- [Querying schedules using the Datastore API](schedules.html)
 - [Identifiers](identifiers.html)
 - [Changesets](changesets.html)
 

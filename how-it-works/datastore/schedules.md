@@ -1,11 +1,11 @@
 ---
-title: Schedules
+title: Querying schedules using the Datastore API
 layout: documentation
 ---
 
 ![GTFS schematic](/images/schedule-api/ScheduleAPI_Chart_Final1.png)
 
-First [read a blog post introducing the Transitland Datastore schedule API](/news/2015/11/13/schedule-api.html) and how it collapsed the many elements of a schedule in GTFS (pictured above) into a much simpler to query entity, called the `ScheduleStopPair`, which is documented below.
+First [read a blog post introducing the Transitland Datastore schedule API](/news/2015/11/13/schedule-api.html) and how it collapsed the many elements of a schedule in [GTFS](/how-it-works/glossary/#gtfs) (pictured above) into a much simpler to query entity, called the `ScheduleStopPair`, which is documented below.
 
 ---
 
