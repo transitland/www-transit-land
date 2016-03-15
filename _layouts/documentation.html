@@ -5,7 +5,7 @@ layout: default
 <section id="documentation" class="jumbotron">
   <div class="container">
     <div class="title col-md-12 center-text">
-      <h2>Documentation</h2>
+      <h2>How it Works</h2>
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-3">
@@ -15,13 +15,15 @@ layout: default
       </div>
       <div class="col-xs-12 col-md-9" role="main">
         <div class="documentation-content">
-          <h2>{{ page.title }}</h2>
+          {% unless page.skip_title %}
+            <h2>{{ page.title }}</h2>
+          {% endunless %}
           {{ content }}
         </div>
-        <p>
+        <p class="pull-right">
           <a href="https://github.com/transitland/www-transit-land/tree/master/{{page.path}}">
             Edit this page on GitHub
-            <i class="fa fa-2x fa-fw fa-github"></i>
+            <i class="fa fa-fw fa-github"></i>
           </a>
         </p>
       </div>

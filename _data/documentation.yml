@@ -1,20 +1,34 @@
-- title: Home
-  path: '/documentation/'
+- title: How it works
+  path: '/how-it-works/'
 - title: Feed Registry
-  path: '#'
+  path: '/how-it-works/feed-registry/'
   pages:
-    - title: Add a Feed
-      path: /documentation/feed-registry/add-a-feed.html
+    - title: Browse
+      path: /how-it-works/feed-registry/browse.html
+    - title: Add a feed
+      path: /how-it-works/feed-registry/add-a-feed.html
 - title: Datastore
-  path: '/documentation/datastore/'
+  path: '/how-it-works/datastore/'
   pages:
-    - title: API Endpoints
-      path: /documentation/datastore/index.html#api-endpoints
-    - title: Changesets
-      path: /documentation/datastore/changesets.html
-    - title: Operator-route-stop relationships
-      path: /documentation/datastore/operator-route-stop-relationships.html
+    - title: API usage and authentication
+      path: /how-it-works/datastore/api-usage-and-authentication.html
+    - title: API endpoints
+      path: /how-it-works/datastore/api-endpoints.html
+    - title: Feeds
+      path: /how-it-works/datastore/feeds.html
+    - title: Stops
+      path: /how-it-works/datastore/stops.html
     - title: Routes and route stop patterns
-      path: /documentation/datastore/routes-and-route-stop-pattern.html
+      path: /how-it-works/datastore/routes-and-route-stop-pattern.html
+    - title: Schedules
+      path: /how-it-works/datastore/schedules.html
+    - title: Identifiers
+      path: /how-it-works/datastore/identifiers.html
+    - title: Changesets
+      path: /how-it-works/datastore/changesets.html
+- title: Playground
+  path: '/how-it-works/playground/'
+- title: Onestop ID scheme
+  path: /how-it-works/onestop-id-scheme/
 - title: Glossary
-  path: '/documentation/glossary.html'
+  path: '/how-it-works/glossary/'

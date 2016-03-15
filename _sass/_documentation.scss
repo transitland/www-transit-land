@@ -1,10 +1,14 @@
 #documentation {
+  padding: 0;
+  .container {
+    max-width: 1100px;
+  }
   ul.nav.toc {
     li.toc-top-level {
-
+      padding-left: 5px;
       a.toc-subnav {
         &.active {
-          background-color: #ccc;
+          border-left: 5px $logo-color-3 solid;
         }
       }
 
@@ -13,18 +17,30 @@
 
       ul.toc-subnav {
         list-style: none;
-        padding-left: 30px;
-
+        padding: 0;
         li {
           display: block;
-          padding: 5px;
+          padding: 4px;
+          padding-left: 30px;
           &.active {
-            background-color: #ccc;
+            border-left: 5px $logo-color-3 solid;
           }
           //this covers up list style of static content
           &::before { content: none;}
         }
       }
+    }
+  }
+  ul.all-links {
+    list-style-type:none;
+    & li::before {
+      font-family: $font-awesome;
+      font-size: $base-font-size - 3px;
+      content: " \f08e ";
+      margin-right: 10px;
+    }
+    & li.github::before {
+      content: " \f09b ";
     }
   }
 }

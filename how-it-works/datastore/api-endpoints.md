@@ -1,29 +1,7 @@
 ---
-title: Datastore API
+title: Datastore API endpoints
 layout: documentation
 ---
-
-## Data Model
-
-Every entity has a globally unique [Onestop ID](https://github.com/transitland/onestop-id-scheme). Entities include:
-
-* `Feed`
-* `Operator`
-* `Stop`
-* `Route`
-* `RouteStopPattern`
-
-The Datastore uses [changesets](doc/changesets.md) to track additions/edits/removals of entities.
-
-Entities are associated with each other using relationship managers:
-
-* [operator-route-stop relationships](doc/operator-route-stop-relationships.md)
-
-Entities also include any number of [identifiers](doc/identifiers.md).
-
-For a complete visualization of the Datastore's data model, see [doc/data-model.svg](doc/data-model.svg)
-
-## API Endpoints
 
 Example URL  | Parameters
 -------------|-----------
@@ -102,7 +80,7 @@ Format:
 - by default, responses are paginated JSON
 - specify `.geojson` instead for GeoJSON on some endpoints. For example: `/api/v1/stops.geojson?bbox=-122.4183,37.7758,-122.4120,37.7858` and `/api/v1/routes.geojson?operatedBy=o-9q9-bayarearapidtransit`
 
-## API Authentication
+### API Authentication
 
 Any API calls that involve writing to the database (creating/editing/applying changesets or running the "feed eater" data ingestion pipeline) require authentication. API keys are specified in `config/application.yml`. The key can be any alphanumeric string. For example:
 
