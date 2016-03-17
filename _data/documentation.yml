@@ -30,5 +30,7 @@
   path: '/how-it-works/playground/'
 - title: Onestop ID scheme
   path: /how-it-works/onestop-id-scheme/
+- title: Dispatcher
+  path: /how-it-works/dispatcher/
 - title: Glossary
   path: '/how-it-works/glossary/'
