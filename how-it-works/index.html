@@ -1,37 +1,37 @@
 ---
 layout: documentation
-title: How it Works
+title: Documentation
 skip_title: true
 ---
 
 <img src="/images/how-it-works-diagram.png" alt="a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other" />
 
-<p><b>Transitland Feed Registry</b> is a directory of public-transit operators and their authoritative data feeds. The directory is a view into Transitland's Datastore API. It lets users browse operators and their feeds, as well as view the license restrictions on each feed and contribute additional operators and feeds.</p>
+<p><b>Onestop ID</b> With data coming from many different sources, we've had to fashion some glue link together stops, routes, and schedules across operators. Onestop is Transitland's experimental attempt to build a stable, globally unique identifier scheme. The Datastore API returns Onestop IDs for every feed, operator, stop, and route.</p>
+<ul class="all-links">
+  <li class="help"><a href="/how-it-works/onestop-id-scheme/">Read more about the Onestop ID scheme</a></li>
+</ul>
+
+<p><b>Feed Registry</b> is a directory of public-transit operators and their authoritative data feeds. The directory is a view into Transitland's Datastore API. It lets users browse operators and their feeds, as well as view the license restrictions on each feed and contribute additional operators and feeds.</p>
 <ul class="all-links">
   <li><a href="/feed-registry">Try the Feed Registry</a></li>
   <li class="help"><a href="/how-it-works/feed-registry/">Read Feed Registry documentation</a></li>
   <li class="github"><a href="http://github.com/transitland/feed-registry">View code on GitHub</a></li>
 </ul>
 
-<p><b>Transitland Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.</p>
-<ul class="all-links">
-  <li class="help"><a href="/how-it-works/feed-registry/">Read Datastore documentation</a></li>
-  <li class="github"><a href="http://github.com/transitland/transitland-datastore">View code on GitHub</a></li>
-</ul>
-
-<p><b>Onestop ID:</b> With data coming from many different sources, we've had to fashion some glue link together stops, routes, and schedules across operators. Onestop is Transitland's experimental attempt to build a stable, globally unique identifier scheme. The Datastore API returns Onestop IDs for every feed, operator, stop, and route.</p>
-<ul class="all-links">
-  <li class="help"><a href="/how-it-works/onestop-id-scheme/">Read more about the Onestop ID scheme</a></li>
-</ul>
-
-<p><b>Transitland Dispatcher:</b> We use an administrative interface to review submissions and monitor feed aggregation. Anyone else can peek in and see what's happening inside the Transitland Datastore.</p>
+<p><b>Dispatcher</b> We use an administrative interface to review submissions and monitor feed aggregation. Anyone else can peek in and see what's happening inside the Transitland Datastore.</p>
 <ul class="all-links">
   <li><a href="/dispatcher">Try the Dispatcher</a></li>
   <li class="help"><a href="/how-it-works/dispatcher/">Read Dispatcher documentation</a></li>
   <li class="github"><a href="http://github.com/transitland/dispatcher">View code on GitHub</a></li>
 </ul>
 
-<p><b>Transitland Playground:</b> If the Feed Registry, Datastore, and Onestop ID scheme are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.</p>
+<p><b>Datastore</b> brings together data from authoritative sources (listed in the Feed Registry) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing.</p>
+<ul class="all-links">
+  <li class="help"><a href="/how-it-works/feed-registry/">Read Datastore documentation</a></li>
+  <li class="github"><a href="http://github.com/transitland/transitland-datastore">View code on GitHub</a></li>
+</ul>
+
+<p><b>Playground</b> If the Feed Registry, Datastore, and Onestop ID scheme are frozen and underwater, then the Playground is the tip of that iceberg, demonstrating all the pieces of the data architecture working together.</p>
 <ul class="all-links">
   <li><a href="/playground/">Try the Playground</a></li>
   <li class="help"><a href="/how-it-works/playground/">Read Playground documentation</a></li>
