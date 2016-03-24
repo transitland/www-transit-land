@@ -1,36 +1,36 @@
-- title: How it works
-  path: '/how-it-works/'
+- title: Overview
+  path: '/documentation/'
 - title: Feed Registry
-  path: '/how-it-works/feed-registry/'
+  path: '/documentation/feed-registry/'
   pages:
     - title: Browse
-      path: /how-it-works/feed-registry/browse.html
+      path: /documentation/feed-registry/browse.html
     - title: Add a feed
-      path: /how-it-works/feed-registry/add-a-feed.html
+      path: /documentation/feed-registry/add-a-feed.html
 - title: Datastore
-  path: '/how-it-works/datastore/'
+  path: '/documentation/datastore/'
   pages:
     - title: API usage and authentication
-      path: /how-it-works/datastore/api-usage-and-authentication.html
+      path: /documentation/datastore/api-usage-and-authentication.html
     - title: API endpoints
-      path: /how-it-works/datastore/api-endpoints.html
+      path: /documentation/datastore/api-endpoints.html
     - title: Feeds
-      path: /how-it-works/datastore/feeds.html
+      path: /documentation/datastore/feeds.html
     - title: Stops
-      path: /how-it-works/datastore/stops.html
+      path: /documentation/datastore/stops.html
     - title: Routes and route stop patterns
-      path: /how-it-works/datastore/routes-and-route-stop-pattern.html
+      path: /documentation/datastore/routes-and-route-stop-pattern.html
     - title: Schedules
-      path: /how-it-works/datastore/schedules.html
+      path: /documentation/datastore/schedules.html
     - title: Identifiers
-      path: /how-it-works/datastore/identifiers.html
+      path: /documentation/datastore/identifiers.html
     - title: Changesets
-      path: /how-it-works/datastore/changesets.html
+      path: /documentation/datastore/changesets.html
 - title: Playground
-  path: '/how-it-works/playground/'
+  path: '/documentation/playground/'
 - title: Onestop ID scheme
-  path: /how-it-works/onestop-id-scheme/
+  path: /documentation/onestop-id-scheme/
 - title: Dispatcher
-  path: /how-it-works/dispatcher/
+  path: /documentation/dispatcher/
 - title: Glossary
-  path: '/how-it-works/glossary/'
+  path: '/documentation/glossary/'

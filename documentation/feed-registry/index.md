@@ -7,8 +7,8 @@ layout: documentation
 
 ### How to use the Feed Registry
 
-- [Browse operators and feeds in the Feed Registry](browse.html)
-- [Add a feed](add-a-feed.html)
+- [Browse operators and feeds in the Feed Registry](browse.md)
+- [Add a feed](add-a-feed.md)
 
 ### News about the Feed Registry
 
