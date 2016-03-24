@@ -40,4 +40,4 @@ In the spirit of collaborative development, he's shared [code for the bot and th
 
 Grazie, Andrea and Francesco. We look forward to seeing what you and your Italian colleagues create next!
 
-Working with Transitland in your corner of the world? We'd love to see your projects. Write us at [transitland@mapzen.com](mailto:transitland@mapzen.com) or [@transitland](https://transit.land).
+Working with Transitland in your corner of the world? We'd love to see your projects. Write us at [transitland@mapzen.com](mailto:transitland@mapzen.com) or [@transitland](https://twitter.com/transitland).
