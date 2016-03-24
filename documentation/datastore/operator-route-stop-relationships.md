@@ -218,7 +218,7 @@ Here's an example [changeset](changesets.md):
 ````
 
 
-## R4: exact arrival/depature times at which a route serves a stop
+## R4: exact arrival/departure times at which a route serves a stop
 
 <div class="mermaid">
   graph LR

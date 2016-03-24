@@ -19,7 +19,7 @@ Just as each transit operator has multiple IDs, each bus stop and train station 
 * It's known in the Long Island Railroad's GTFS feed as `Stop #8`.
 * It's known in New Jersey Transit's GTFS feed as `Stop #105`.
 
-In the [Transitland Feed Registry](/how-it-works/feed-registry/), we've created listings for the San Francisco Municipal Transportation Agency. For the SFMTA, we've assigned the transit agency a Onestop ID of `o-9q8y-sfmta` and its feed a Onestop ID of `f-9q8y-sfmta`. We also use these Onestop IDs in our [Transitland Datastore](/how-it-works/datastore/) service. You can query it for:
+In the [Transitland Feed Registry](/documentation/feed-registry/), we've created listings for the San Francisco Municipal Transportation Agency. For the SFMTA, we've assigned the transit agency a Onestop ID of `o-9q8y-sfmta` and its feed a Onestop ID of `f-9q8y-sfmta`. We also use these Onestop IDs in our [Transitland Datastore](/documentation/datastore/) service. You can query it for:
 
 - the SFMTA feed: [`https://transit.land/api/v1/onestop_id/f-9q8y-sfmta`](https://transit.land/api/v1/onestop_id/f-9q8y-sfmta)
 - the SFMTA operator record: [`https://transit.land/api/v1/onestop_id/o-9q8y-sfmta`](https://transit.land/api/v1/onestop_id/o-9q8y-sfmta)
@@ -65,12 +65,12 @@ Onestop IDs should be no longer than 64 characters.
 
 ## Where is the authority for a Onestop ID
 
-Onestop IDs are currently generated in the [Transitland Datastore web service](/how-it-works/datastore/) hosted at `https://transit.land/api/v1`
+Onestop IDs are currently generated in the [Transitland Datastore web service](/documentation/datastore/) hosted at `https://transit.land/api/v1`
 
-To browse Onestop IDs for feeds and operators, try the [Transitland Feed Registry](/how-it-works/feed-registry/).
+To browse Onestop IDs for feeds and operators, try the [Transitland Feed Registry](/documentation/feed-registry/).
 
-To browse Onestop IDs for operators, stops, and routes, try the [Transitland Playground](/how-it-works/playground/).
+To browse Onestop IDs for operators, stops, and routes, try the [Transitland Playground](/documentation/playground/).
 
-Onestop IDs are also included on all of the [Datastore's API endpoints](/how-it-works/datastore/api-endpoints.html).
+Onestop IDs are also included on all of the [Datastore's API endpoints](/documentation/datastore/api-endpoints.html).
 
 For the future, we're considering distributed mechanisms for registering, updating, and removing Onestop IDs. We welcome your thoughts on how to best share this responsibility among systems and users.

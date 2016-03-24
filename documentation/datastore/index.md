@@ -3,18 +3,18 @@ title: Datastore
 layout: documentation
 ---
 
-**Transitland Datastore** brings together data from authoritative sources (listed in the [Feed Registry](/how-it-works/feed-registry/) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing
+**Transitland Datastore** brings together data from authoritative sources (listed in the [Feed Registry](documentation/feed-registry/) with contributions, edits, and fixes from transit enthusiasts and developers. It's a hosted service that provides a simple web API for query and editing
 
 ### How to use the Datastore
 
-- [API usage and authentication](api-endpoints.html)
-- [API endpoints](api-endpoints.html)
-- [Feeds](feeds.html)
-- [Stops](stops.html)
-- [Routes and route stop patterns](routes-and-route-stop-patterns.html)
-- [Querying schedules using the Datastore API](schedules.html)
-- [Identifiers](identifiers.html)
-- [Changesets](changesets.html)
+- [API usage and authentication](api-endpoints.md)
+- [API endpoints](api-endpoints.md)
+- [Feeds](feeds.md)
+- [Stops](stops.md)
+- [Routes and route stop patterns](routes-and-route-stop-patterns.md)
+- [Querying schedules using the Datastore API](schedules.md)
+- [Identifiers](identifiers.md)
+- [Changesets](changesets.md)
 
 ### News about the Datastore
 

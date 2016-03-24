@@ -3,7 +3,7 @@ title: Feed Registry
 layout: documentation
 ---
 
-**Transitland Feed Registry** is a directory of public-transit operators and their authoritative data feeds. The directory is a view into [Transitland's Datastore API](/documentation/datastore/). It lets users browse operators and their feeds, as well as view the license restrictions on each feed and contribute additional operators and feeds.
+**Transitland Feed Registry** is a directory of public-transit operators and their authoritative data feeds. The directory is a view into [Transitland's Datastore API](/how-it-works/datastore/). It lets users browse operators and their feeds, as well as view the license restrictions on each feed and contribute additional operators and feeds.
 
 ### How to use the Feed Registry
 

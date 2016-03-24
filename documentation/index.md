@@ -1,12 +1,12 @@
 ---
 layout: documentation
-title: How it Works
+title: Documentation
 skip_title: true
 ---
 
 [Transitland](https://transit.land) brings together many sources of transit data to build a [directory of operators and feeds](https://transit.land/feed-registry/) that can be edited by transit enthusiasts and developers.
 
-<img src="/images/how-it-works-diagram.png" alt="a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other" />
+![a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other](/images/how-it-works-diagram.png)
 
 Transitland Feed Registry is a directory of public-transit operators and their authoritative data feeds. The directory is a view into Transitland's Datastore API. It lets users browse operators and their feeds, as well as view the license restrictions on each feed and contribute additional operators and feeds.
 
@@ -19,7 +19,3 @@ Transitland Dispatcher: We use an administrative interface to review submissions
 Transitland Playground demonstrates all the pieces of the data architecture working together.
 
 All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.
-<ul class="all-links">
-  <li><a href="/an-open-project/">Transitland as an open project</a></li>
-  <li><a href="/participate/">Participate in Transitland</a></li>
-</ul>
