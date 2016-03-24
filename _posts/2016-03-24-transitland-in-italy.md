@@ -6,15 +6,15 @@ isThereTitle: true
 title: Transitland Goes to Italy
 ---
 
-With help from many partners, [Transitland arrived in Italy as part of International Open Data Day](https://transit.land/news/2016/03/04/transitland-feed-submission-update.html). Introductory materials, data coverage, and even a chat bot to look up the next bus departure&mdash;all are available now to Italian readers.
+With help from many partners, [Transitland arrived in Italy as part of International Open Data Day](https://transit.land/news/2016/03/04/transitland-feed-submission-update.html) earlier this month. Training materials, data coverage, and even a chat bot to look up the next bus departure&mdash;all are available now to Italian readers.
 
-### Introductory materials
+### Training materials
 
-[Andrea Borruso](https://twitter.com/aborruso), a GIS professional in Palermo, wrote [an introduction to Transitland in Italian](http://blog.spaziogis.it/2016/03/02/transiland-per-mettere-insieme-e-dare-vita-ai-dati-sui-trasporti/). It's a great read, whether you can read Italian yourself or need to make use of an automated translation service. In either case, you'll probably be hungry by the end, since Andrea's explation of API endpoints involves [busiate pasta](https://www.youtube.com/watch?v=-PDpIBxHbMA).
+[Andrea Borruso](https://twitter.com/aborruso), a GIS professional in Palermo, wrote [an introduction to Transitland in Italian](http://blog.spaziogis.it/2016/03/02/transiland-per-mettere-insieme-e-dare-vita-ai-dati-sui-trasporti/). It's a great read, whether you can read Italian yourself or need to make use of an automated translation service. In either case, you'll probably be hungry by the end, since Andrea's explanation of API endpoints involves [busiate pasta](https://www.youtube.com/watch?v=-PDpIBxHbMA).
 
 ### Data coverage
 
-Also thanks to Andrea, the Transitland Feed Registry includes five different Italian operators:
+Also thanks to Andrea, the Transitland Feed Registry includes five different Italian operators. Andrea completed the feed contribution process, which is [open to transit agencies and civic groups around the world](/news/2016/02/19/get-started-add-feeds.html).
 
 [![5 Italian operators in the Feed Registry](/images/transitland-in-italy/italian-feeds-in-feed-registry.png)](https://transit.land/feed-registry)
 
@@ -39,3 +39,5 @@ Don't have a smartphone or a Telegram account? You can try Frencesco's web map, 
 In the spirit of collaborative development, he's shared [code for the bot and the web map at on GitHub](https://github.com/piersoft/panarotre).
 
 Grazie, Andrea and Francesco. We look forward to seeing what you and your Italian colleagues create next!
+
+Working with Transitland in your corner of the world? We'd love to see your projects. Write us at [transitland@mapzen.com](mailto:transitland@mapzen.com) or [@transitland](https://twitter.com/transitland).
