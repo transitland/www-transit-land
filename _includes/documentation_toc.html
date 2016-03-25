@@ -1,0 +1,16 @@
+<ul class="nav toc">
+  {% for category in site.data.documentation %}
+    <li class="toc-top-level">
+      <a href="{{category.path}}" class="toc-subnav {% if category.path == page.url %}active{% endif %}">
+        {{category.title}}
+      </a>
+      <ul class="toc-subnav">
+        {% for doc_page in category.pages %}
+          <li {% if doc_page.path == page.url %} class="active" {% endif %}>
+            <a href="{{doc_page.path}}">{{doc_page.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

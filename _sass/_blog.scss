@@ -1,4 +1,4 @@
-section#blog {
+#blog, #documentation {
   //this is lame way to make footer to stick when post is short
   min-height: calc(100vh - 400px);
 
@@ -11,28 +11,11 @@ section#blog {
     margin-top: $spacing-unit*1.5;
   }
   .container { max-width: 800px;}
+
   p {
     margin-bottom:$spacing-unit;
     margin-top:$spacing-unit;
   }
-
-  .post-wrapper {
-    // This is for post, using whole new header style to make post writing easy
-    width: 100%;
-    height: auto;
-    display: inline-block;
-    padding: 30px 0;
-    border-bottom: 2px solid #eee;
-
-    .post-info {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 32px;
-    }
-
-    .read-more {
-      margin: 10px 0;
-    }
 
     h1 {
       font-size: 28px;
@@ -120,6 +103,7 @@ section#blog {
       border: 2px solid $table-border-color;
       word-break: break-all;
       margin-bottom: 30px;
+      table-layout: fixed;
       @media (min-width: $screen-sm-min) {
         width: 100%;
         word-break: keep-all;
@@ -139,6 +123,24 @@ section#blog {
         vertical-align: top;
       }
     }
+  .post-wrapper {
+    // This is for post, using whole new header style to make post writing easy
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    padding: 30px 0;
+    border-bottom: 2px solid #eee;
+
+    .post-info {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 32px;
+    }
+
+    .read-more {
+      margin: 10px 0;
+    }
+
     .caption {
       font-style: italic;
       color: #666;
