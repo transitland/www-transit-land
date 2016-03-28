@@ -10,16 +10,16 @@
 - title: Datastore
   path: '/how-it-works/datastore/'
   pages:
-    - title: API usage and authentication
-      path: /how-it-works/datastore/api-usage-and-authentication.html
+    #- title: API usage and authentication
+    #  path: /how-it-works/datastore/api-usage-and-authentication.html
     - title: API endpoints
       path: /how-it-works/datastore/api-endpoints.html
-    - title: Feeds
-      path: /how-it-works/datastore/feeds.html
-    - title: Stops
-      path: /how-it-works/datastore/stops.html
-    - title: Routes and route stop patterns
-      path: /how-it-works/datastore/routes-and-route-stop-pattern.html
+    #- title: Feeds
+    #  path: /how-it-works/datastore/feeds.html
+    #- title: Stops
+    #  path: /how-it-works/datastore/stops.html
+    #- title: Routes and route stop patterns
+    #  path: /how-it-works/datastore/routes-and-route-stop-pattern.html
     - title: Schedules
       path: /how-it-works/datastore/schedules.html
     - title: Identifiers
