@@ -4,7 +4,7 @@ layout: documentation
 ---
 
 ### changeset
-A group of edits that need to be applied to the Transitland database (the Datastore). Each changeset contains a JSON payload of actions. When the changeset is applied, those actions are carried out on the database. 
+A group of edits that need to be applied to the Transitland database (the Datastore). Each changeset contains a JSON payload of actions. When the changeset is applied, those actions are carried out on the database.
 
 ### GTFS
 GTFS stands for General Transit Feed Specification. It's a common format of transit operations, including information on the agency, stops, and operations schedule. Transitland lists feeds in the [Feed Registry](/how-it-works/feed-registry/) and aggregates them using the [Datastore](/how-it-works/datastore/). Read more about the [history of GTFS on TransitWiki](http://www.transitwiki.org/TransitWiki/index.php?title=General_Transit_Feed_Specification), or for more details, read the [spec itself at developer.google.com](https://developers.google.com/transit/gtfs/reference).

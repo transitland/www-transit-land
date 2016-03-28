@@ -5,7 +5,7 @@ layout: documentation
 
 Identifiers are strings that can be attached to any entity (operator, stop, route). Identifiers can follow a URI-style scheme.
 
-To add or remove identifiers from an entity, use `identifiedBy` and `notIdentifiedBy` in a [changeset payload](doc/changesets.md).
+To add or remove identifiers from an entity, use `identifiedBy` and `notIdentifiedBy` in a [changeset payload](changesets.md).
 
 For example:
 

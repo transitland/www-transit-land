@@ -5,8 +5,8 @@ layout: documentation
 
 Example URL  | Parameters
 -------------|-----------
-`POST /api/v1/changesets` | include a [changeset payload](doc/changesets.md) in the request body
-`PUT /api/v1/changesets/32`<br/>(a Changeset can only be updated if it hasn't yet been applied)| include a [changeset payload](doc/changesets.md) in the request body ([secured](#api-authentication))
+`POST /api/v1/changesets` | include a [changeset payload](changesets.md) in the request body
+`PUT /api/v1/changesets/32`<br/>(a Changeset can only be updated if it hasn't yet been applied)| include a [changeset payload](changesets.md) in the request body ([secured](#api-authentication))
 `POST /api/v1/changesets/1/check` | ([secured](#api-authentication))
 `POST /api/v1/changesets/1/apply` | ([secured](#api-authentication))
 `POST /api/v1/changesets/1/revert` | ([secured](#api-authentication))

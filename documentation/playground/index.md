@@ -3,7 +3,7 @@ title: Playground
 layout: documentation
 ---
 
-**[Transitland Playground](/playground)** allows users to browse all the operators, stops, and routes in the [Datastore](/how-it-works/datastore/).
+**[Transitland Playground](/playground)** allows users to browse all the operators, stops, and routes in the [Datastore](/documentation/datastore/).
 
 ### News about the Playground
 
