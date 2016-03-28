@@ -1,0 +1,43 @@
+#documentation .toc-docs {
+
+  position: static;
+  top: 300px;
+
+  ul.toc-nav {
+    padding: 0 10px;
+    //this overrides current styles
+    li {
+      background-color: #eee;
+      text-indent: 0;
+
+      &::before {
+        content: none;
+        padding-right: 0;
+      }
+
+      a {
+        display: block;
+        font-weight: 600;
+        color: #666;
+        padding: 6px 15px;
+        &.active, &:hover {
+          background-color: #666;
+          color: #eee;
+        }
+      }
+    }
+
+    ul.toc-subnav {
+      padding-left: 0;
+      li {
+        a {
+          font-weight: 300;
+          &.active, &:hover {
+            background-color: #666;
+            color: #eee;
+          }
+        }
+      }
+    }
+  }
+}

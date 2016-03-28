@@ -1,0 +1,36 @@
+- title: Overview
+  path: '/documentation/'
+- title: Feed Registry
+  path: '/documentation/feed-registry/'
+  pages:
+    - title: Browse
+      path: /documentation/feed-registry/browse.html
+    - title: Add a feed
+      path: /documentation/feed-registry/add-a-feed.html
+- title: Datastore
+  path: '/documentation/datastore/'
+  pages:
+    #- title: API usage and authentication
+    #  path: /how-it-works/datastore/api-usage-and-authentication.html
+    - title: API endpoints
+      path: /documentation/datastore/api-endpoints.html
+    #- title: Feeds
+    #  path: /how-it-works/datastore/feeds.html
+    #- title: Stops
+    #  path: /how-it-works/datastore/stops.html
+    #- title: Routes and route stop patterns
+    #  path: /how-it-works/datastore/routes-and-route-stop-pattern.html
+    - title: Schedules
+      path: /documentation/datastore/schedules.html
+    - title: Identifiers
+      path: /documentation/datastore/identifiers.html
+    - title: Changesets
+      path: /documentation/datastore/changesets.html
+- title: Playground
+  path: '/documentation/playground/'
+- title: Onestop ID scheme
+  path: /documentation/onestop-id-scheme/
+- title: Dispatcher
+  path: /documentation/dispatcher/
+- title: Glossary
+  path: '/documentation/glossary/'
