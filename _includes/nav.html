@@ -8,9 +8,10 @@
 
   <div id="nav-menu-helper"></div>
   <div id="nav-menu-bar" class="navbar-collapse collapse">
+    {% assign currentURL = page.url%}
     <div class="nav-menu">
       <div class="float-left">
-        <a class='{{"/index.html" | activelink: page.url }}' href="{{site.url}}" target="_self">
+        <a class={% if currentURL == "/" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}" target="_self">
         <div class="circle"></div><div class="main">home</div>
         </a>
       </div>
@@ -25,12 +26,12 @@
         </a>
       </div>
       <div class="float-left">
-        <a class='{{"/documentation" | activelink: page.url }}' href="{{site.url}}documentation" target="_self">
+        <a class= {% if currentURL contains "documentation" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}documentation" target="_self">
         <div class="circle"></div><div class="main">Documentation</div>
         </a>
       </div>
       <div class="float-left">
-        <a class= {% if include.link == '/news' %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}news" target="_self">
+        <a class= {% if currentURL contains "news" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}news" target="_self">
         <div class="circle"></div><div class="main">news & updates</div>
         </a>
       </div>

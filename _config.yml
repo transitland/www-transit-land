@@ -19,8 +19,3 @@ exclude:
   - config/
   - lib/
   - deploy/
-# this is the docs part that are not ready to go out
-  - how-it-works/datastore/api-usage-and-authentication.md
-  - how-it-works/datastore/feeds.md
-  - how-it-works/datastore/stops.md
-  - how-it-works/datastore/routes-and-route-stop-pattern.md

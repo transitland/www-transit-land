@@ -1,13 +1,14 @@
 #documentation .toc-docs {
-  position: fixed;
-  top: 300px;
-  ul.toc-nav {
 
+  position: static;
+  top: 300px;
+
+  ul.toc-nav {
+    padding: 0 10px;
     //this overrides current styles
     li {
-      background-color: $grey-color-light;
+      background-color: #eee;
       text-indent: 0;
-      line-height: normal;
 
       &::before {
         content: none;
@@ -15,9 +16,14 @@
       }
 
       a {
-        color: #000;
+        display: block;
         font-weight: 600;
-        padding: 10px 15px;
+        color: #666;
+        padding: 6px 15px;
+        &.active, &:hover {
+          background-color: #666;
+          color: #eee;
+        }
       }
     }
 
@@ -26,6 +32,10 @@
       li {
         a {
           font-weight: 300;
+          &.active, &:hover {
+            background-color: #666;
+            color: #eee;
+          }
         }
       }
     }

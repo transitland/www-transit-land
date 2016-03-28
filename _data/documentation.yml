@@ -13,7 +13,7 @@
     #- title: API usage and authentication
     #  path: /how-it-works/datastore/api-usage-and-authentication.html
     - title: API endpoints
-      path: /how-it-works/datastore/api-endpoints.html
+      path: /documentation/datastore/api-endpoints.html
     #- title: Feeds
     #  path: /how-it-works/datastore/feeds.html
     #- title: Stops
