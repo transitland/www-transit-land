@@ -1,0 +1,33 @@
+#documentation .toc-docs {
+  position: fixed;
+  top: 300px;
+  ul.toc-nav {
+
+    //this overrides current styles
+    li {
+      background-color: $grey-color-light;
+      text-indent: 0;
+      line-height: normal;
+
+      &::before {
+        content: none;
+        padding-right: 0;
+      }
+
+      a {
+        color: #000;
+        font-weight: 600;
+        padding: 10px 15px;
+      }
+    }
+
+    ul.toc-subnav {
+      padding-left: 0;
+      li {
+        a {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

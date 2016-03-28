@@ -15,4 +15,4 @@ layout: documentation
 
 ### About the Playground application
 
-The Feed Registry is written in JavaScript using the [Backbone](http://backbonejs.org/) framework. View Playground code and report bugs [on GitHub](http://github.com/transitland/playground).
+The Playground is written in JavaScript using the [Backbone](http://backbonejs.org/) framework. View Playground code and report bugs [on GitHub](http://github.com/transitland/playground).
