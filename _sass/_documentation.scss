@@ -2,6 +2,16 @@
   .container {
     max-width: 1100px;
   }
+  //api table on datastore/api-endpoints page
+  table#api {
+    margin-top: 30px;
+    th:first-child {
+      width: 80px;
+    }
+    td {
+      word-break: break-all;
+    }
+  }
   ul.nav.toc {
     li.toc-top-level {
       padding-left: 5px;
