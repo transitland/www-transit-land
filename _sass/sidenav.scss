@@ -4,8 +4,7 @@
   top: 300px;
 
   ul.toc-nav {
-    padding: 0 10px;
-    //this overrides current styles
+    //this overrides current ul > li styles
     li {
       background-color: #eee;
       text-indent: 0;
@@ -20,9 +19,12 @@
         font-weight: 600;
         color: #666;
         padding: 6px 15px;
-        &.active, &:hover {
+        &.active{
           background-color: #666;
           color: #eee;
+        }
+        &:not(.active):hover {
+          background-color: #cecece;
         }
       }
     }
@@ -32,9 +34,12 @@
       li {
         a {
           font-weight: 300;
-          &.active, &:hover {
+          &.active {
             background-color: #888;
             color: #eee;
+          }
+          &:not(.active):hover {
+            background-color: #cecece;
           }
         }
       }
