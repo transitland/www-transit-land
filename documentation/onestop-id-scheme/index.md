@@ -33,7 +33,8 @@ Notice how stops and routes are assigned their own Onestop IDs as well.
 
 A Onestop ID is an alphanumeric, global, immutable identifer for transit feeds, operators/agencies, stops/stations, and routes provided by authoritative sources that contain timetable and geographic information for transit networks. Every Onestop ID includes three components, separated by hyphens. For example:
 
-![an example of a Onestop ID: 0-9q9-BART](images/onestop_id_example.png)
+
+<img src="images/onestop_id_example.png" alt="an example of a Onestop ID: 0-9q9-BART" width="590">
 
 1. entity type
 
@@ -44,7 +45,7 @@ A Onestop ID is an alphanumeric, global, immutable identifer for transit feeds, 
 
 2. a [geohash](/news/2015/06/05/geohashes-and-you.html), a set of characters that can be translated into a geographic bounding box around the service area of the operator/agency, the location of the stop/station, or the coverage of a route. The more characters, the more precise and smaller the bounding box. For example, the geohash `9q8zn2j` refers this purple rectangle in San Francisco:
 
-  ![map showing an example geohash in San Francisco](images/geohash_example.png)
+<img src="images/geohash_example.png" alt="map showing an example geohash in San Francisco" width="400">
 
   Want to browse geohashes for your location? Here's a map of geohashes over the entire globe: [mapzen/leaflet-spatial-prefix-tree](http://mapzen.github.io/leaflet-spatial-prefix-tree/)
 
@@ -54,7 +55,7 @@ A Onestop ID is an alphanumeric, global, immutable identifer for transit feeds, 
 
   For example, here is the geohash `9q9` and its eight neighbors. This geohash can refer to Bay Area Rapid Transit (BART), including all its service area.
 
-  ![map showing a geohash bounding box surrounded by its eight neighbors](images/geohash_operator_focal_point.png)
+<img src="images/geohash_operator_focal_point.png" alt="map showing a geohash bounding box surrounded by its eight neighbors" width="600">
 
 3. an abbreviated name that's short but understandable. The only punctuation that is allowed are tildes (`~`) to indicate word breaks. The name doesn't have to be unique across the whole world, but it must be unique within the bounding box of the particular geohash.
 
