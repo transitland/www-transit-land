@@ -6,12 +6,20 @@
     margin: 30px 0;
   }
 
-  .title {
-    margin-bottom: $spacing-unit*2;
-    margin-top: $spacing-unit*1.5;
-  }
   .container { max-width: 800px;}
 
+}
+
+.post-wrapper {
+    // This is for post, using whole new header style to make post writing easy
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    padding: 30px 0;
+    border-bottom: 2px solid #eee;
+}
+//blog and documentation are sharing these text style
+.post-wrapper,.documentation-content {
   p {
     margin-bottom:$spacing-unit;
     margin-top:$spacing-unit;
@@ -125,14 +133,6 @@
         vertical-align: top;
       }
     }
-  .post-wrapper {
-    // This is for post, using whole new header style to make post writing easy
-    width: 100%;
-    height: auto;
-    display: inline-block;
-    padding: 30px 0;
-    border-bottom: 2px solid #eee;
-
     .post-info {
       font-size: 16px;
       font-weight: 300;
@@ -165,8 +165,6 @@
     }
 
   }
-
-}
 
 .infinite-spinner {
   display: block;

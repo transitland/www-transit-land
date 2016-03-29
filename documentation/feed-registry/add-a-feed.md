@@ -8,8 +8,9 @@ layout: documentation
 This directory is known as the [Transitland Feed Registry](https://transit.land/feed-registry/). Feed submissions are welcomed from everyone; you need not represent a transit organization! To suggest a feed, only need to know the link to it, and any additional information is optional.
 
 Here is a video showing the process, which is also described below.
-
+<p>
 <iframe src="https://player.vimeo.com/video/155911567" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</p>
 
 ## Find the link to the feed
 
@@ -66,7 +67,7 @@ After that, the details of the feed will be imported into the Transitland Datast
 
 ### Technical details about the feed submission process
 
-From a technical standpoint, here is the workflow that happens behind the scenes.  
+From a technical standpoint, here is the workflow that happens behind the scenes.
 
 1. You start the [process to add a feed](http://.transit.land/feed-registry/feeds/new). When you enter the GTFS feed's address, the Datastore FeedInfo worker fetches and parses GTFS feed. This populates the operators and some other information on the later steps of the form.
 2. You continue through the process and submit the feed. You will receive an email notification confirming your submission, if you provided your contact information. The Feed Registry submits a changeset to the Datastore API that contains feed and operator models.

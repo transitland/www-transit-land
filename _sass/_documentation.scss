@@ -1,7 +1,16 @@
 #documentation {
+
   .container {
     max-width: 1100px;
   }
+
+  @include media-query($on-small-screen){
+    //give some paddings when side nav goes top
+    .documentation-content {
+      margin-top: 20px;
+    }
+  }
+
   //api table on datastore/api-endpoints page
   table#api {
     margin-top: 30px;
