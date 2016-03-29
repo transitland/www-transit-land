@@ -1,19 +1,13 @@
 #documentation .toc-docs {
 
   position: static;
-  top: 300px;
 
   ul.toc-nav {
     //this overrides current ul > li styles
     li {
       background-color: #eee;
       text-indent: 0;
-
-      &::before {
-        content: none;
-        padding-right: 0;
-      }
-
+      list-style: none;
       a {
         display: block;
         font-weight: 600;
