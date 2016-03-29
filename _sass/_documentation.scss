@@ -15,40 +15,14 @@
   table#api {
     margin-top: 30px;
     th:first-child {
-      width: 80px;
+      width: 90px;
     }
     td {
       word-break: break-all;
     }
   }
-  ul.nav.toc {
-    li.toc-top-level {
-      padding-left: 5px;
-      a.toc-subnav {
-        &.active {
-          border-left: 5px $logo-color-3 solid;
-        }
-      }
 
-      //this covers up list style of static content
-      &::before { content: none;}
-
-      ul.toc-subnav {
-        list-style: none;
-        padding: 0;
-        li {
-          display: block;
-          padding: 4px;
-          padding-left: 30px;
-          &.active {
-            border-left: 5px $logo-color-3 solid;
-          }
-          //this covers up list style of static content
-          &::before { content: none;}
-        }
-      }
-    }
-  }
+  //little icon before list
   ul.all-links {
     list-style-type:none;
     & li::before {
@@ -62,6 +36,17 @@
     }
     & li.help::before {
       content: " \f059 ";
+    }
+  }
+
+  //bottom link to github
+  .edit-action {
+    margin-top: 10px;
+    //github mark
+    i {
+      color:#666;
+      font-size:25px;
+      margin: 2px;
     }
   }
 }
