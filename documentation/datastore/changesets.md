@@ -10,6 +10,7 @@ To create, check, and apply a changeset, you can either do each step as a separa
 ## Create and apply a changeset
 
 1. Create an empty changeset: `POST /api/v1/changesets` with JSON in the request body.
+
   ```json
     {
     "changeset": {
@@ -17,25 +18,28 @@ To create, check, and apply a changeset, you can either do each step as a separa
       }
     }
   ```
+
 2. The response includes an identifier for the changeset.
 3. Add changes to a changeset using the `POST /api/v1/changesets/143/change_payloads` endpoint. Here is an example with a returned identifier of `143`:
-```json
-{
-  "change_payload": {
-    "payload": {
-      "changes": [
-        {
-          "action": "createUpdate",
-          "stop": {
-            "onestopId": "s-9q8yt4b-1avhos",
-            "name": "1st Ave. & Holloway Street"
+
+  ```json
+  {
+    "change_payload": {
+      "payload": {
+        "changes": [
+          {
+            "action": "createUpdate",
+            "stop": {
+              "onestopId": "s-9q8yt4b-1avhos",
+              "name": "1st Ave. & Holloway Street"
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   }
-}
-```
+  ```
+  
 4. Verify that the changeset can be cleanly applied to the database: `POST /api/v1/changesets/143/check`
 5. Apply the changeset: `POST /api/v1/changesets/143/apply`
 
