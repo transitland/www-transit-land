@@ -17,7 +17,10 @@
     th:first-child {
       width: 90px;
     }
-    td:nth-child(2){
+  }
+
+  table {
+    td code {
       word-break: break-all;
     }
   }
