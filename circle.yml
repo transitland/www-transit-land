@@ -1,9 +1,15 @@
 machine:
   ruby:
     version: 2.1.2
+
 database:
   override:
     - echo "we need no database"
+
+general:
+  artifacts:
+    - "_site"
+
 test:
   override:
     - echo "Let's see if the Jekyll site will build"
