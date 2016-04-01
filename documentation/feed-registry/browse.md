@@ -3,7 +3,7 @@ title: Browse operators and feeds in the Feed Registry
 layout: documentation
 ---
 
-The Transitland Feed Registry is a directory of transit operators and feeds. It helps answer questions like what transit operators offer open feeds, and what can you legally do with each feed?
+The Transitland Feed Registry is a directory of transit operators and feeds. It provides information about which transit operators offer open feeds and what can you legally do with each feed.
 
 ## Available feeds
 
@@ -20,5 +20,13 @@ For each operator, the Feed Registry summarizes three aspects about their licens
 3. Can you take this feed and redistribute it to others, in a different context or embedded within a different application?
 
 Each license is summarized with three icons that are color-coded for quick reference. Hold your cursor over an icon in the Feed Registry to get more information about what that license permits, or click the question mark at the top of the License Details column for more information.
+
+The ideal license allows you to:
+
+<div class="license-attr">
+  <h4 style="clear: both;"><div class="not-requires-attr"></div> use the feed's data without attribution. It's up to you to decide where, whether, and how in your map, application, or service you acknowledge your data sources.</h4>
+  <h4 style="clear: both;"><div class="allow-derivation"></div> create derived products from the feed. For example, you can mix the feed with other sources and share the mixed file with others.</h4>
+  <h4 style="clear: both;"><div class="allow-redistribution"></div> redistribute the feed as is, under open terms.</h4>
+</div>
 
 Please note the Feed Registry is provided for informational purposes only and does not constitute legal advice. Transitland makes a good faith effort to ensure accuracy, but cannot guarantee the accuracy or reliability of the information provided in the Feed Registry. You are advised to click through to each feed's license, review it, and consult with a lawyer if you need proper legal advice on using and consuming the data referenced in the Feed Registry.

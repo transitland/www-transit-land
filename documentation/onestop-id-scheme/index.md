@@ -33,36 +33,33 @@ Notice how stops and routes are assigned their own Onestop IDs as well.
 
 A Onestop ID is an alphanumeric, global, immutable identifer for transit feeds, operators/agencies, stops/stations, and routes provided by authoritative sources that contain timetable and geographic information for transit networks. Every Onestop ID includes three components, separated by hyphens. For example:
 
+<img src="images/onestop_id_example.png" alt="an example of a Onestop ID: 0-9q9-BART" width="300">
 
-<img src="images/onestop_id_example.png" alt="an example of a Onestop ID: 0-9q9-BART" width="590">
-
-1. entity type
+1. An entity type
 
     - `f` for feeds
     - `o` for operators/agencies
     - `s` for stops/stations
     - `r` for routes
 
-2. a [geohash](/news/2015/06/05/geohashes-and-you.html), a set of characters that can be translated into a geographic bounding box around the service area of the operator/agency, the location of the stop/station, or the coverage of a route. The more characters, the more precise and smaller the bounding box. For example, the geohash `9q8zn2j` refers this purple rectangle in San Francisco:
-
+2. A [geohash](/news/2015/06/05/geohashes-and-you.html), a set of characters that can be translated into a geographic bounding box around the service area of the operator/agency, the location of the stop/station, or the coverage of a route. The more characters, the more precise and smaller the bounding box. For example, the geohash `9q8zn2j` refers this purple rectangle in San Francisco:
 <img src="images/geohash_example.png" alt="map showing an example geohash in San Francisco" width="400">
 
-  Want to browse geohashes for your location? Here's a map of geohashes over the entire globe: [mapzen/leaflet-spatial-prefix-tree](http://mapzen.github.io/leaflet-spatial-prefix-tree/)
+3. An abbreviated name that is short but understandable. The only punctuation that is allowed are tildes (`~`) to indicate word breaks. The name doesn't have to be unique across the whole world, but it must be unique within the bounding box of the particular geohash.
 
-  Oftentimes an operator's service area won't fit exactly inside a geohash's bounding box. The most extreme example is London, where the tube network crosses the prime meridian. No one geohash can be used to effectively identify the extent of Transport for London's service area.
+Want to browse geohashes for your location? Here's a map of geohashes over the entire globe: [mapzen/leaflet-spatial-prefix-tree](http://mapzen.github.io/leaflet-spatial-prefix-tree/)
 
-  Therefore, the geohash in a Onestop ID is used to refer to a focal point. In the case of feeds and operators, their coverage/service area can extent out to any of the eight neighboring geohash bounding boxes. In the case of routes, they can extend into any of the eight neighbors. The centroid of the feed, operator, or route will always be located in the geohash that's included in the Onestop ID&mdash;the focal point, that is&mdash;but the lines or polygons could extend out into neighbors.
+Sometimes, an operator's service area won't fit exactly inside a geohash's bounding box. The most extreme example is London, where the tube network crosses the prime meridian. No one geohash can be used to effectively identify the extent of Transport for London's service area.
 
-  For example, here is the geohash `9q9` and its eight neighbors. This geohash can refer to Bay Area Rapid Transit (BART), including all its service area.
+Therefore, the geohash in a Onestop ID is used to refer to a focal point. In the case of feeds and operators, their coverage/service area can extent out to any of the eight neighboring geohash bounding boxes. In the case of routes, they can extend into any of the eight neighbors. The centroid of the feed, operator, or route will always be located in the geohash that's included in the Onestop ID&mdash;the focal point, that is&mdash;but the lines or polygons could extend out into neighbors.
+
+For example, here is the geohash `9q9` and its eight neighbors. This geohash can refer to Bay Area Rapid Transit (BART), including all its service area.
 
 <img src="images/geohash_operator_focal_point.png" alt="map showing a geohash bounding box surrounded by its eight neighbors" width="600">
 
-3. an abbreviated name that's short but understandable. The only punctuation that is allowed are tildes (`~`) to indicate word breaks. The name doesn't have to be unique across the whole world, but it must be unique within the bounding box of the particular geohash.
-
-Onestop IDs are case insensitive. We recommend using lower case internally in your systems. When displaying IDs for users, feel free to capitalize for readability.
+Onestop IDs are case insensitive. It is recommended to use lower case internally in your systems. When displaying IDs for users, you can capitalize for readability.
 
 Onestop IDs should be no longer than 64 characters.
-
 
 ## Where is the authority for a Onestop ID
 
@@ -74,4 +71,4 @@ To browse Onestop IDs for operators, stops, and routes, try the [Transitland Pla
 
 Onestop IDs are also included on all of the [Datastore's API endpoints](/documentation/datastore/api-endpoints.html).
 
-For the future, we're considering distributed mechanisms for registering, updating, and removing Onestop IDs. We welcome your thoughts on how to best share this responsibility among systems and users.
+For the future, Transitland may consider distributed mechanisms for registering, updating, and removing Onestop IDs, and welcomes suggestions on how to best share this responsibility among systems and users.
