@@ -8,30 +8,29 @@
 
   <div id="nav-menu-helper"></div>
   <div id="nav-menu-bar" class="navbar-collapse collapse">
-    {% assign currentURL = page.url%}
     <div class="nav-menu">
       <div class="float-left">
-        <a class={% if currentURL == "/" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}" target="_self">
+        <a class={% if page.url == "/" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="/" target="_self">
         <div class="circle"></div><div class="main">home</div>
         </a>
       </div>
       <div class="float-left">
-        <a href="{{site.url}}feed-registry" target="_self">
+        <a href="/feed-registry" target="_self">
         <div class="circle"></div><div class="main">feed registry</div>
         </a>
       </div>
       <div class="float-left">
-        <a href="{{site.playground_url}}" target="_self">
+        <a href="/playground" target="_self">
         <div class="circle"></div><div class="main">playground</div>
         </a>
       </div>
       <div class="float-left">
-        <a class= {% if currentURL contains "documentation" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}documentation" target="_self">
+        <a class= {% if page.url contains "documentation" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="/documentation" target="_self">
         <div class="circle"></div><div class="main">Documentation</div>
         </a>
       </div>
       <div class="float-left">
-        <a class= {% if currentURL contains "news" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="{{site.url}}news" target="_self">
+        <a class= {% if page.url contains "news" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="/news" target="_self">
         <div class="circle"></div><div class="main">news & updates</div>
         </a>
       </div>
