@@ -13,7 +13,7 @@ module Jekyll
         site.config['url'] = 'https://transit.land/'
       elsif site.config['env'] == 'staging'
         site.config['url'] = 'https://dev.transit.land/'
-      elseif site.config['env'] == 'local'
+      elsif site.config['env'] == 'local'
         site.config['url'] = nil
       end
     end
