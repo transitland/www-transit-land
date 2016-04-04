@@ -14,6 +14,6 @@ skip_title: true
 
 ![a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other](/images/how-it-works-diagram.png)
 
-With data coming from many different sources, the Onestop ID is Transitland's experimental attempt to build a stable, globally unique identifier scheme. The Datastore API returns Onestop IDs for every feed, operator, stop, and route.
+With data coming from many different sources, the [Onestop ID scheme](onestop-id-scheme/) is Transitland's experimental attempt to build a stable, globally unique identifier scheme. The Datastore API returns Onestop IDs for every feed, operator, stop, and route.
 
 All of Transitland's software components are available under open-source licenses; all of the data (federated from authoritative sources and contributed by community members) is freely available. You can participate in Transitland by using just one component of this architecture, or come for it all.
