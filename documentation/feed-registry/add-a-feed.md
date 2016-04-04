@@ -12,7 +12,7 @@ Here is a video showing the process, which is also described below.
 <iframe src="https://player.vimeo.com/video/155911567" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </p>
 
-<a name="feedurl">
+<p><a name="feedurl"></a></p>
 
 ## Find the link to the feed
 
