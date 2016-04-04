@@ -79,7 +79,7 @@ Method|Example URL  | Parameters or notes
 ### Pagination for JSON endpoints
 
 - `?offset=50` is the index of the first entity to be displayed (starts with 0)
-- By default, 50 entities are displayed per page
+- By default, 50 entities are displayed per page. To change the number, specify `?per_page=1000`.
 - To show the total number of results, use `?total=true`
 
 ### Format
