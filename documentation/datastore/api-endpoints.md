@@ -82,6 +82,10 @@ Method|Example URL  | Parameters or notes
 - By default, 50 entities are displayed per page. To change the number, specify `?per_page=1000`.
 - To show the total number of results, use `?total=true`
 
+### Max Request Size
+
+If queries have not completed after two minutes, they will be killed and you will receive a timeout response from the Datastore. If your query times out, try reducing the `per_page` count, the bounding box size, etc. If your query seems as small as is possible, [let us know](mailto:transitland@mapzen.com).
+
 ### Format
 
 - By default, responses are paginated JSON
