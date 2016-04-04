@@ -6,7 +6,7 @@ isThereTitle: true
 title: "Made using Transitland: An interactive visualization of New York City transit frequency"
 ---
 
-***A guest post by [Tyler A. Green](http://www.tyleragreen.com/), a public-transit enthusiast and Transitland contributor in Fort Collins, Denver. He's created an interactive visualization of transit frequency across New York City, which he [introduced on his blog](http://www.tyleragreen.com/blog/2016/02/new-york-city-transit-frequency-visualization/) and [described in updated form on his blog](http://www.tyleragreen.com/blog/2016/03/updated-new-york-city-transit-frequency-visualization/). Tyler was kind enough to share his experience:***
+***A guest post by [Tyler A. Green](http://www.tyleragreen.com/), a public-transit enthusiast and Transitland contributor in Fort Collins, Colorado. He's created an interactive visualization of transit frequency across New York City, which he [introduced on his blog](http://www.tyleragreen.com/blog/2016/02/new-york-city-transit-frequency-visualization/) and [described in updated form on his blog](http://www.tyleragreen.com/blog/2016/03/updated-new-york-city-transit-frequency-visualization/). Tyler was kind enough to share his experience:***
 
 As a software geek and a transit fanatic, I was ecstatic when I first learned about Transitland. Are you saying I can practice programming and study transit data at the same time? Sign me up!
 
