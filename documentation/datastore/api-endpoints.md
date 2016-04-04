@@ -79,8 +79,12 @@ Method|Example URL  | Parameters or notes
 ### Pagination for JSON endpoints
 
 - `?offset=50` is the index of the first entity to be displayed (starts with 0)
-- By default, 50 entities are displayed per page
+- By default, 50 entities are displayed per page. To change the number, specify `?per_page=1000`.
 - To show the total number of results, use `?total=true`
+
+### Max Request Size
+
+If queries have not completed after two minutes, they will be killed and you will receive a timeout response from the Datastore. If your query times out, try reducing the `per_page` count, the bounding box size, etc. If your query seems as small as is possible, [let us know](mailto:transitland@mapzen.com).
 
 ### Format
 
@@ -89,17 +93,4 @@ Method|Example URL  | Parameters or notes
 
 ## API authentication
 
-Any API calls that involve writing to the database (creating/editing/applying changesets or running the Feed Eater data ingestion pipeline) require authentication. API keys are specified in `config/application.yml`. The key can be any alphanumeric string. For example:
-
-```yaml
-# config/application.yml
-TRANSITLAND_DATASTORE_AUTH_TOKEN: 1a4494f1fc463ab8e32d6b
-```
-
-You can also use an environment variable. For example, `TRANSITLAND_DATASTORE_AUTH_TOKEN: 1a4494f1fc463ab8e32d6b bundle exec rails server`
-
-To authenticate, include the following in your `POST` or `PUT` request:
-
-header name   | header value
-------------- | ---------------------------------
-`Authorization` | `Token token=fde67e1437ebf73e1f3eW`
+Any API calls that involve writing to the database (creating/editing/applying changesets or running the Feed Eater data ingestion pipeline) require authentication. Currently authentication is limited to Mapzen staff, although we're preparing to share editing and moderation authorization with outsider collaborators in the future.
