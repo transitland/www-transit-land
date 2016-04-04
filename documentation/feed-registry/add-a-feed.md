@@ -12,7 +12,8 @@ Here is a video showing the process, which is also described below.
 <iframe src="https://player.vimeo.com/video/155911567" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </p>
 
-<a name="feedurl"></a>
+<a name="feedurl">
+
 ## Find the link to the feed
 
 The first step in contributing is to open the submission form and find the link to the transit feed. Transitland uses the [General Transit Feed Specification](https://developers.google.com/transit/gtfs/), which is a common way of organizing transit schedules, routes, and associated content. A GTFS feed consists of a .zip file that contains a series of specific text files with this information.
@@ -25,6 +26,7 @@ Your link should point to a .zip file on the web that is hosted by a transit ope
 4. Click Next.
 
 <a name="status"></a>
+
 ### Troubleshoot feed status messages
 
 When you add the URL, Transitland checks that address and validates the contents of the file. If your GTFS feed cannot be parsed for some reason, you will receive a message and be unable to continue adding this feed. If you need help, you can send an email to transitland@mapzen.com, or if you are familiar with GitHub, you can post an issue in the [transitland](https://github.com/transitland/transitland) repository.
