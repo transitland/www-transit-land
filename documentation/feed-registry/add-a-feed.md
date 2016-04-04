@@ -7,7 +7,7 @@ layout: documentation
 
 This directory is known as the [Transitland Feed Registry](https://transit.land/feed-registry/). Feed submissions are welcomed from everyone; you need not represent a transit organization! To suggest a feed, only need to know the link to it, and any additional information is optional.
 
-Here is a video showing the process, which is also described below.
+Here is a video showing the feed submission process.
 <p>
 <iframe src="https://player.vimeo.com/video/155911567" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </p>
@@ -25,7 +25,7 @@ Your link should point to a .zip file on the web that is hosted by a transit ope
 3. Paste the address into the text box.
 4. Click Next.
 
-<a name="status"></a>
+<p><a name="status"></a></p>
 
 ### Troubleshoot feed status messages
 
@@ -35,7 +35,8 @@ If Transitland has difficulty accessing the address, check the URL to make sure 
 
 In some cases, Transitland can download the .zip, but there is something unusual about its formatting. Although GTFS has a [defined set of standards](https://developers.google.com/transit/gtfs/reference), sometimes tables or text files are missing, for example. Note that GTFS-realtime, which is used to share real-time updates about transit, is not currently supported in Transitland.
 
-<a name="operators"></a>
+<p><a name="operators"></a></p>
+
 ## Choose the transit operators in the feed
 
 Some feeds have one operator, while others contain multiple operators. For example, within a metro area, the feed may aggregate different transit types, such as light rail lines, buses, and ferry services. In other cases, smaller operators may combine their data into a feed serving a larger region.
@@ -47,7 +48,8 @@ You need to include at least one operator from the feed, and then add any supple
 3. Add the location information. If the operator serves multiple cities and is spread across multiple regions, you can enter the operator's headquarters.
 4. Click Next.
 
-<a name="license"></a>
+<p><a name="license"></a></p>
+
 ## Identify the license for the feed
 
 Many feeds provide licenses or have terms that apply to their use or redistribution. This part of the process of adding a feed can be tricky, so include as much information about the license as you can. Depending on your role and relationship to the operator, you may not feel comfortable answering all of the license questions, and this is okay. For example, an agency official is likely to know more about the license terms than community member who submits a feed.
@@ -59,7 +61,8 @@ The options for this part of the submission process are determined by how much i
 3. If you are able to understand the terms of the license, provide details on whether the feed requires attribution, others can create products derived from the feed, and if the feed can only be redistributed in its original state or if modification is allowed.
 4. Click Next.
 
-<a name="submit"></a>
+<p><a name="submit"></a></p>
+
 ## Submit the feed
 
 At this point, you have provided information about the feed, its operators and locations, and licensing, and are almost done with the submission process. If you provide your contact information, you will be notified when your feed has been added to the Feed Registry, or if there are any issues along the way.
