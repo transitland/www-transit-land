@@ -112,7 +112,7 @@
     }
 
     ul li::before {
-      content: ' • ';
+      content: ' \00B7 ';
       vertical-align: middle;
       padding-right: 5px;
     }
