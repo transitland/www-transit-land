@@ -2,6 +2,8 @@
 layout: documentation
 title: Documentation
 skip_title: true
+redirect_from:
+  - /how-it-works/
 ---
 
 Transitland brings together many sources of transit data to build a directory of operators and feeds that can be edited by transit enthusiasts and developers. Transitland contains several interlocking parts, including the Feed Registry, the Datastore, and the Playground.
