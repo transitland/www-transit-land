@@ -69,7 +69,7 @@ Method | Example URL | Parameters
 `PUT` |  `/api/v1/feed_versions/c06b4b6b40815f27c81b4fcf486ac1fd70ab1966` | ([secured](#api-authentication)) update `import_level`
 `GET` |  `/api/v1/feed_version_imports?feed_onestop_id=f-9q9-bayarearapidtransit&feed_version_sha1=c06b4b6b40815f27c81b4fcf486ac1fd70ab1966` | filter feed version import records based on `feed_onestop_id` and/or `feed_version_sha1` (both of which can be comma-separated lists of multiple Onestop IDs)
 `GET` |  `/api/v1/feed_version_imports/1` | none required
-`GET` |  `/api/v1/schedule_stop_pairs` | Find all [Schedule Stop Pairs](schedules.index). All options below can be combined.
+`GET` |  `/api/v1/schedule_stop_pairs` | Find all [Schedule Stop Pairs](schedules.html). All options below can be combined.
 `GET` |  `/api/v1/schedule_stop_pairs?origin_onestop_id=s-9q8yyugptw-sanfranciscocaltrainstation` | Find all Schedule Stop Pairs from origin. Accepts multiple Onestop IDs, separated by commas.
 `GET` |  `/api/v1/schedule_stop_pairs?destination_onestop_id=s-9q8yyugptw-sanfranciscocaltrainstation` | Find all Schedule Stop Pairs to a destination. Accepts multiple Onestop IDs, separated by commas.
 `GET` |  `/api/v1/schedule_stop_pairs?date=2015-08-05` | Find all Schedule Stop Pairs from origin on date
@@ -100,4 +100,4 @@ If queries have not completed after two minutes, they will be killed and you wil
 
 ## API authentication
 
-Any API calls that involve writing to the database (creating/editing/applying changesets or running the Feed Eater data ingestion pipeline) require authentication. Currently authentication is limited to Mapzen staff, although we're preparing to share editing and moderation authorization with outsider collaborators in the future.
+Any API calls that involve writing to the database (creating/editing/applying [changesets](changesets.html) or running the Feed Eater data ingestion pipeline) require authentication. Currently authentication is limited to Mapzen staff, although we're preparing to share editing and moderation authorization with outsider collaborators in the future.
