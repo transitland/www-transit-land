@@ -1,0 +1,399 @@
+---
+title: Routes and route stop patterns
+layout: documentation
+---
+
+<!--
+<p>TODO: intro paragraph about routes</p>
+
+<h2>Vehicle types</h2>
+
+<p>TODO: add lists from https://support.google.com/transitpartners/answer/3520902 and https://support.google.com/transitpartners/answer/3520902</p>
+
+<p>TODO: include some example API query URLs</p>
+-->
+
+<h2>Route Stop Patterns</h2>
+
+<p>Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
+
+<p>RouteStopPatterns may also modify the original shape line geometry if necessary. When this is done, a Boolean value named `is_modified` will be set to true. Currently, the line geometry is only modified when it is generated as the result of missing its original GTFS shape id or shape points. In this case, the line geometry becomes the sequential points of the stop pattern, and a separate boolean named `is_generated` will be set to true.</p>
+
+<h3>RouteStopPattern Data Model</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>onestop_id</td>
+      <td>Onestop ID</td>
+      <td>RouteStopPattern</td>
+    </tr>
+    <tr>
+      <td>route_onestop_id</td>
+      <td>Onestop ID</td>
+      <td>Route</td>
+    </tr>
+    <tr>
+      <td>geometry</td>
+      <td>Geography</td>
+      <td>LineString</td>
+    </tr>
+    <tr>
+      <td>stop_pattern</td>
+      <td>Onestop ID array</td>
+      <td>List of stops along geometry in trip order. Stops may reappear.</td>
+    </tr>
+    <tr>
+      <td>stop_distances</td>
+      <td>Number array</td>
+      <td>List of distances in meters of stop_pattern stops along geometry.</td>
+    </tr>
+    <tr>
+      <td>identifiers</td>
+      <td>String array</td>
+      <td>List of identifiers.</td>
+    </tr>
+    <tr>
+      <td>trips</td>
+      <td>String array</td>
+      <td>List of trip ids</td>
+    </tr>
+    <tr>
+      <td>tags</td>
+      <td>Hstore</td>
+      <td>Associated shape id</td>
+    </tr>
+    <tr>
+      <td>is_modified</td>
+      <td>Boolean</td>
+      <td>Geometry has added or removed coordinates from the original shape</td>
+    </tr>
+    <tr>
+      <td>is_generated</td>
+      <td>Boolean</td>
+      <td>Geometry has been created because the original shape reference or coordinates are missing. Currently, geometries are auto-generated solely from the stop points.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Onestop ID</h3>
+<p>RouteStopPatterns are uniquely identified by a Onestop Id, but the composition of this id is different from that of Route, Stop, Feed, and Operator Onestop Ids. The RouteStopPattern Onestop Id has 5 components instead of 3, with each component separated by a dash just as the ids of the latter Transitland entities. The first 3 components are exactly the Route Onestop Id of the Route to which the RouteStopPattern belongs to. The fourth component is the first 6 hexadecimal characters of the MD5 hash produced from the stop pattern string (stop onestop id's separated by comma). The fifth component is the first 6 hexadecimal characters of the MD5 hash produced from geometry coordinates as a string (coordinates separated by comma).</p>
+
+<h3>Distance calculation algorithm</h3>
+<p>Each <a href="schedules.html"><code>ScheduleStopPair</code></a> will be associated to a RouteStopPattern. In addition, two attributes have been added to ScheduleStopPair: <code>origin_distance_traveled</code> and <code>destination_distance_traveled</code>. These are the distances, in meters rounded to the nearest decimeter, of the origin and destination stops along the line geometry from the start point.
+</p>
+
+<p>The algorithm to compute these distances runs as follows:</p>
+
+<ol>
+  <li>Set integer values <code class="highlighter-rouge">a</code>, <code class="highlighter-rouge">b</code>, and
+    <code class="highlighter-rouge">c</code> to 0. These will correspond to index values of segments in a list.</li>
+  <li>For each stop in the RouteStopPattern:
+    <ol>
+      <li>If this stop (the current stop) is the first stop, and is found to lie <a href="#before-and-after-stops">before</a> the geometry, set the distance to 0.0 m and continue.</li>
+      <li>If this stop is the last stop and is found to lie <a href="#before-and-after-stops">after</a> the geometry, set the distance to the length of the line and end the stop iteration.</li>
+    </ol>
+  </li>
+  <li>Otherwise, gather the list of segments of the line. Let:
+    <ol>
+      <li><code class="highlighter-rouge">a</code> = the index of the nearest matching segment for the previous stop. Keep <code class="highlighter-rouge">a</code> at 0 if the current stop is the first.</li>
+      <li><code class="highlighter-rouge">c</code> = the index of the nearest matching segment for the next stop, between the segment at <code class="highlighter-rouge">a</code> and the last line segment, inclusive. Let
+        <code class="highlighter-rouge">c</code> = the index of the last segment if the current stop matches any of these characteristics:
+        <ul>
+          <li>is the last stop in the sequence</li>
+          <li>is the penultimate stop, and the next and last stop lies after the geometry</li>
+          <li>has a next stop that is an outlier (further than 100 m away from the line)</li>
+        </ul>
+      </li>
+
+      <li>Calculate <code class="highlighter-rouge">b</code>, the index of the nearest matching segment between
+        <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">c</code>, inclusive.</li>
+      <li>With <code class="highlighter-rouge">b</code>, calculate the nearest point on the segment from the current stop, and then calculate the distance along the line to the nearest point by adding the distances of the segments up to, but not including,
+        <code class="highlighter-rouge">b</code>, and the distance from the end of the segment before <code class="highlighter-rouge">b</code> to the nearest point.</li>
+      <li>If the computed distance is less than the previous stop's computed distance, recompute <code class="highlighter-rouge">b</code> and the distance using <code class="highlighter-rouge">c</code> = the last segment index.</li>
+      <li>If the final computed nearest point on the line is greater than 100 meters away from the stop, there could be a problem with the stop or line geometry, and it is logged for further evaluation. Then set the stop distance to be:
+        <ul>
+          <li>0.0 if the current stop is first</li>
+          <li>the length of the line geometry if the stop is last</li>
+          <li>the previous stop distance otherwise.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>Set <code class="highlighter-rouge">a</code> equal to <code class="highlighter-rouge">b</code> and continue with the next stop.</li>
+</ol>
+
+<a name="before-and-after-stops"></a>
+<h3>Before and After Stops</h3>
+<p>A stop is considered to be before (after) a RouteStopPattern line geometry if its point satisfies one of two conditions:
+
+  <ol>
+    <li>It is found on the opposite side of the line that is perpendicular to the first (last) line segment and that passes through the first (last) endpoint of the segment.</li>
+    <li>It is greater than 100 meters distant from any point in the line geometry.</li>
+  </ol>
+  <p>For example:</p>
+
+  <strong>Before:</strong>
+<pre>
+    |
+  x |----------->
+    |
+</pre>
+
+  <strong>Before:</strong>
+<pre>
+ |
+ |----------->
+ | ]  100 m
+            x
+</pre>
+  <strong>Not before:</strong>
+<pre>
+|
+|----------->
+| x   ]  100 m
+</pre>
+  <h3>Query parameters</h3>
+
+  <p>The main RouteStopPattern API endpoint is <a href="http://transit.land/api/v1/route_stop_patterns">https://transit.land/api/v1/route_stop_patterns</a>. It accepts the following query parameters, which may be freely combined.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Query parameter</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>onestop_id</td>
+        <td>Onestop ID</td>
+        <td>RouteStopPattern.</td>
+        <td>(<a href="http://transit.land/api/v1/route_stop_patterns?onestop_id=r-9q9-pittsburg%7Ebaypoint%7Esfia%7Emillbrae-49ae87-5ae164">http://transit.land/api/v1/route_stop_patterns?onestop_id=r-9q9-pittsburg~baypoint~sfia~millbrae-49ae87-5ae164</a>)</td>
+      </tr>
+      <tr>
+        <td>traversed_by</td>
+        <td>Onestop ID</td>
+        <td>Route. Accepts multiple route onestop ids separated by commas.</td>
+        <td><a href="http://transit.land/api/v1/route_stop_patterns?traversed_by=r-9q9-pittsburg%7Ebaypoint%7Esfia%7Emillbrae">belonging to Route Pittsburg/Bay Point - SFIA/Millbrae</a></td>
+      </tr>
+      <tr>
+        <td>stops_visited</td>
+        <td>Onestop ID</td>
+        <td>Stop. Accepts multiple separated by commas.</td>
+        <td><a href="http://transit.land/api/v1/route_stop_patterns?stops_visited=s-9q9p1wrwrp-macarthur">Having stop MacArthur</a></td>
+      </tr>
+      <tr>
+        <td>trips</td>
+        <td>String</td>
+        <td>Derived from trip. Accepts multiple trips ids separated by commas.</td>
+        <td><a href="http://transit.land/api/v1/route_stop_patterns?trips=01SFO10,96SFO10">Having trips </a></td>
+      </tr>
+      <tr>
+        <td>bbox</td>
+        <td>Lon1,Lat1,Lon2,Lat2</td>
+        <td>RouteStopPatterns within bounding box</td>
+        <td><a href="http://transit.land/api/v1/route_stop_patterns?bbox=-123.057,36.701,-121.044,38.138">in the Bay Area</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Response format</h3>
+
+  <div class="highlight highlight-source-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>route_stop_patterns<span class="pl-pds">"</span></span>: [
+    {
+      <span class="pl-s"><span class="pl-pds">"</span>identifiers<span class="pl-pds">"</span></span>: [
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/147<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550540<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/155<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/191<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/193<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/199<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/135<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/101<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/139<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/143<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550531<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550532<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550533<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550534<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550535<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550536<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550537<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550538<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/RTD8550539<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>gtfs://f-9q9-caltrain/trip/151<span class="pl-pds">"</span></span>
+        ],
+        <span class="pl-s"><span class="pl-pds">"</span>imported_from_feed_onestop_ids<span class="pl-pds">"</span></span>: [
+          <span class="pl-s"><span class="pl-pds">"</span>f-9q9-caltrain<span class="pl-pds">"</span></span>
+        ],
+        <span class="pl-s"><span class="pl-pds">"</span>imported_from_feed_version_sha1s<span class="pl-pds">"</span></span>: [
+          <span class="pl-s"><span class="pl-pds">"</span>36ba71b654ba6ed1e4866822832c11942c4761e5<span class="pl-pds">"</span></span>
+        ],
+        <span class="pl-s"><span class="pl-pds">"</span>created_or_updated_in_changeset_id<span class="pl-pds">"</span></span>: <span class="pl-c1">10</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>onestop_id<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>r-9q9-local-f68455-dcd599<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>route_onestop_id<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>r-9q9-local<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>stop_pattern<span class="pl-pds">"</span></span>: [
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9k652x5g-caltrain~diridonstation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9k3rbsm5-caltrain~santaclarastation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9hxghghb-caltrain~lawrencestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9hxhefny-caltrain~sunnyvalestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9hwp7n80-caltrain~mountainviewstation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9hv3gt1t-caltrain~sanantoniostation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9hutfdz0-caltrain~californiaavestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9jh06g20-caltrain~paloaltostation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j5dmedf-caltrain~menloparkstation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j681ejk-caltrain~redwoodcitystation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j3uj1fs-caltrain~sancarlosstation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j3w3tux-caltrain~belmontstation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j916p33-caltrain~hillsdalestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j8u1jr3-caltrain~haywardparkstation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q9j8qyzjx-caltrain~sanmateostation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8vzcqbz3-caltrain~burlingamestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8vzh9pm5-caltrain~millbraestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8yn6qcdh-caltrain~sanbrunostation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8ynwfu1e-caltrain~ssanfranciscostation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8yw9n59m-caltrain~bayshorestation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8yycsdkr-caltrain~22ndststation<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>s-9q8yyv42k3-caltrain~sanfranciscostation<span class="pl-pds">"</span></span>
+        ],
+        <span class="pl-s"><span class="pl-pds">"</span>geometry<span class="pl-pds">"</span></span>: {
+          <span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>LineString<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>coordinates<span class="pl-pds">"</span></span>: [
+            [
+              <span class="pl-c1">-121.903447</span>,
+              <span class="pl-c1">37.328642</span>
+            ],
+            [
+              <span class="pl-c1">-121.936346</span>,
+              <span class="pl-c1">37.352892</span>
+            ],
+            [
+              <span class="pl-c1">-121.996437</span>,
+              <span class="pl-c1">37.370515</span>
+            ],
+            [
+              <span class="pl-c1">-122.030683</span>,
+              <span class="pl-c1">37.378613</span>
+            ],
+            [
+              <span class="pl-c1">-122.075954</span>,
+              <span class="pl-c1">37.394458</span>
+            ],
+            [
+              <span class="pl-c1">-122.108158</span>,
+              <span class="pl-c1">37.40796</span>
+            ],
+            [
+              <span class="pl-c1">-122.142258</span>,
+              <span class="pl-c1">37.42952</span>
+            ],
+            [
+              <span class="pl-c1">-122.164182</span>,
+              <span class="pl-c1">37.44334</span>
+            ],
+            [
+              <span class="pl-c1">-122.182266</span>,
+              <span class="pl-c1">37.454382</span>
+            ],
+            [
+              <span class="pl-c1">-122.231594</span>,
+              <span class="pl-c1">37.485892</span>
+            ],
+            [
+              <span class="pl-c1">-122.259862</span>,
+              <span class="pl-c1">37.507648</span>
+            ],
+            [
+              <span class="pl-c1">-122.275574</span>,
+              <span class="pl-c1">37.520713</span>
+            ],
+            [
+              <span class="pl-c1">-122.297001</span>,
+              <span class="pl-c1">37.537416</span>
+            ],
+            [
+              <span class="pl-c1">-122.309097</span>,
+              <span class="pl-c1">37.552181</span>
+            ],
+            [
+              <span class="pl-c1">-122.32325</span>,
+              <span class="pl-c1">37.567616</span>
+            ],
+            [
+              <span class="pl-c1">-122.345145</span>,
+              <span class="pl-c1">37.580246</span>
+            ],
+            [
+              <span class="pl-c1">-122.386097</span>,
+              <span class="pl-c1">37.599223</span>
+            ],
+            [
+              <span class="pl-c1">-122.411291</span>,
+              <span class="pl-c1">37.629831</span>
+            ],
+            [
+              <span class="pl-c1">-122.405821</span>,
+              <span class="pl-c1">37.654972</span>
+            ],
+            [
+              <span class="pl-c1">-122.401366</span>,
+              <span class="pl-c1">37.711202</span>
+            ],
+            [
+              <span class="pl-c1">-122.392318</span>,
+              <span class="pl-c1">37.757692</span>
+            ],
+            [
+              <span class="pl-c1">-122.395406</span>,
+              <span class="pl-c1">37.776541</span>
+            ]
+          ]
+        },
+        <span class="pl-s"><span class="pl-pds">"</span>is_generated<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>is_modified<span class="pl-pds">"</span></span>: <span class="pl-c1">true</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>created_at<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>2016-02-06T20:05:59.645Z<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>updated_at<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>2016-02-06T20:05:59.645Z<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>trips<span class="pl-pds">"</span></span>: [
+          <span class="pl-s"><span class="pl-pds">"</span>147<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550540<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>155<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>191<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>193<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>199<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>135<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>101<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>139<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>143<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550531<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550532<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550533<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550534<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550535<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550536<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550537<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550538<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>RTD8550539<span class="pl-pds">"</span></span>,
+          <span class="pl-s"><span class="pl-pds">"</span>151<span class="pl-pds">"</span></span>
+        ],
+        <span class="pl-s"><span class="pl-pds">"</span>tags<span class="pl-pds">"</span></span>: {
+          <span class="pl-s"><span class="pl-pds">"</span>shape_id<span class="pl-pds">"</span></span>: <span class="pl-c1">null</span>
+        }
+      }
+    ],
+    <span class="pl-s"><span class="pl-pds">"</span>meta<span class="pl-pds">"</span></span>: {
+      <span class="pl-s"><span class="pl-pds">"</span>offset<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>per_page<span class="pl-pds">"</span></span>: <span class="pl-c1">50</span>,
+      <span class="pl-s"><span class="pl-pds">"</span>next<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://dev.transit.land/api/v1/route_stop_patterns?offset=50&amp;per_page=50<span class="pl-pds">"</span></span>
+    }
+}</pre></div>

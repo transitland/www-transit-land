@@ -18,8 +18,8 @@
     #  path: /how-it-works/datastore/feeds.html
     #- title: Stops
     #  path: /how-it-works/datastore/stops.html
-    #- title: Routes and route stop patterns
-    #  path: /how-it-works/datastore/routes-and-route-stop-pattern.html
+    - title: Routes and route stop patterns
+      path: /documentation/datastore/routes-and-route-stop-patterns.html
     - title: Schedules
       path: /documentation/datastore/schedules.html
     - title: Identifiers
