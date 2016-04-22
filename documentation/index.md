@@ -14,6 +14,8 @@ Transitland brings together many sources of transit data to build a directory of
 
 [Transitland Playground](/documentation/playground/) demonstrates all the pieces of the data architecture working together.
 
+[Mapzen Turn-by-Turn](https://mapzen.com/products/turn-by-turn) is a hosted routing service that consumes data from the Datastore API and offers journey planning and analysis.
+
 ![a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other](/images/how-it-works-diagram.png)
 
 With data coming from many different sources, the [Onestop ID scheme](/documentation/onestop-id-scheme/) is Transitland's experimental attempt to build a stable, globally unique identifier scheme. The Datastore API returns Onestop IDs for every feed, operator, stop, and route.
