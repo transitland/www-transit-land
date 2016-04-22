@@ -8,6 +8,8 @@ title: Thanks to GTFS Data Exchange for getting open transit data going
 
 For the past six years, [GTFS Data Exchange](http://www.gtfs-data-exchange.com/) has been the "go to" destination for open transit data. Before [Jehiah Czebotar](http://jehiah.cz/) created the site, [GTFS](/documentation/glossary/#gtfs) files floated around the Internet, available to those who looked, but not easy to find in bulk. Thanks to Jehiah, Trillium Transit, WalkScore, and GTFS Data Exchange's many supporters, these isolated sources of transit routes, stops, and schedules had a centralized home. GTFS Data Exchange has grown to over a thousand feeds.
 
+<!-- more -->
+
 ## Goodbye, GTFS Data Exchange
 
 With this size have come more operational headaches than are reasonable to expect of a hobby project. Starting on April 1, Jehiah is in [the process of retiring GTFS Data Exchange](http://www.gtfs-data-exchange.com/). He's pointing users to Transitland and to [TransitFeeds.com](http://transitfeeds.com/) for future support, and will be offering a historical archive of feed files once the site is put to bed--that is, put into a read-only mode.
