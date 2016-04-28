@@ -13,4 +13,4 @@ After a feed is part of the Feed Registry, you can modify the feed's details, in
 6. Modify only the details you want to change about the feed. 
 7. Submit the feed.
 
-To learn more about what goes in the feed details, see [Add a feed](add-a-feed.html).
+To learn more about what to enter for the feed details, see [Add a feed](add-a-feed.html).
