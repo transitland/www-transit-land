@@ -3,7 +3,7 @@ title: Edit the details about a feed
 layout: documentation
 ---
 
-After a feed is part of the Feed Registry, you can modify the feed's details, such as to update the license or correct any out of date information.
+After a feed is part of the Feed Registry, you can modify the feed's details, including updating the license status or correcting information.
 
 1. Navigate to the [Feed Registry](https://transit.land/feed-registry/) and click Add a feed. You can also start directly from https://transit.land/feed-registry/feeds/new.
 2. Find the URL of the feed. You can get the URL by clicking a feed in the Feed Registry and looking under the Feed Details section. Note: To replace the URL of an existing feed and have Transitland check the feed from a different location, enter the new URL here. 
