@@ -10,7 +10,7 @@ category: news
 
 ![9q8yykv551w](https://s3.amazonaws.com/assets-staging.mapzen.com/images/geohashes-and-you/geohash-blog-header.jpg)
 
-[Transitland](https://transit.land) uses geohashes as a prime component of [Onestop IDs](https://github.com/transitland/onestop-id-scheme/blob/master/introduction.md), our system for creating stable identifiers for public transit operators, routes, and stops. The short length and arbitrary precision of geohashes are extremely useful for approximately geolocating millions of transportation locations. For example, the geohash "[9q8znb12j1](http://geohash.org/9q8znb12j1)" is the location of the San Francisco Embarcadero subway stop, and forms part of the Onestop ID "[s-9q8znb12j1-embarcadero](https://transit.land/api/v1/stops/s-9q8znb12j1-embarcadero)".
+[Transitland](https://transit.land) uses geohashes as a prime component of [Onestop IDs](https://transit.land/documentation/onestop-id-scheme/), our system for creating stable identifiers for public transit operators, routes, and stops. The short length and arbitrary precision of geohashes are extremely useful for approximately geolocating millions of transportation locations. For example, the geohash "[9q8znb12j1](http://geohash.org/9q8znb12j1)" is the location of the San Francisco Embarcadero subway stop, and forms part of the Onestop ID "[s-9q8znb12j1-embarcadero](https://transit.land/api/v1/stops/s-9q8znb12j1-embarcadero)".
 
 <!-- more -->
 
@@ -173,7 +173,7 @@ This method of expanding a geohash to include its neighbors can also be used to 
 
 ![Geohash neighbors](https://s3.amazonaws.com/assets-staging.mapzen.com/images/geohashes-and-you/geohash-neighbors.jpg)
 
-At Transitland, we use this property to specify simple bouding boxes for transit operators as part of a Onestop ID. For example, the [SFMTA](http://www.sfmta.com/) has over [3500 bus stops](https://transit.land/api/v1/stops?servedBy=o-9q8y-sanfranciscomunicipaltransportationagency). As described above, it is quite possible that there is no common geohash prefix shared by every stop in the system (or, if there is, the be so short as to be limited usefulness). In the case of the SFMTA, only "9q" prefix is shared in common, which covers a very large portion of the Southwestern United States. However, the geohash prefix "9q8y", when expanded to include neighbors, provides the 9 prefixes that can be used to find any stop, while covering a much smaller land area. This "neighbors implied" geohash is then used in the Onestop ID for SFMTA: "[f-9q8y-sanfranciscomunicipaltransportationagency](https://github.com/transitland/transitland-feed-registry/blob/master/feeds/f-9q8y-sanfranciscomunicipaltransportationagency.json)".
+At Transitland, we use this property to specify simple bouding boxes for transit operators as part of a Onestop ID. For example, the [SFMTA](http://www.sfmta.com/) has over [3500 bus stops](https://transit.land/api/v1/stops?servedBy=o-9q8y-sfmta). As described above, it is quite possible that there is no common geohash prefix shared by every stop in the system (or, if there is, the be so short as to be limited usefulness). In the case of the SFMTA, only "9q" prefix is shared in common, which covers a very large portion of the Southwestern United States. However, the geohash prefix "9q8y", when expanded to include neighbors, provides the 9 prefixes that can be used to find any stop, while covering a much smaller land area. This "neighbors implied" geohash is then used in the Onestop ID for SFMTA: "[f-9q8y-sfmta](https://transit.land/api/v1/operators?onestop_id=o-9q8y-sfmta)".
 
 ## Start where you are
 
@@ -186,3 +186,7 @@ Use our [Python library](https://github.com/transitland/mapzen-geohash) to compu
 ## And do keep in touch
 
 To read even more about how we're looking at the world's transportation data, find us at [transit.land](https://transit.land) and [@transitland](https://twitter.com/transitland)
+
+## Updates
+
+Transitland API and documentation links updated on May 3, 2016.
