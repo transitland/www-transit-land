@@ -7,6 +7,8 @@
       path: /documentation/feed-registry/browse.html
     - title: Add a feed
       path: /documentation/feed-registry/add-a-feed.html
+    - title: Edit feed details
+      path: /documentation/feed-registry/edit-a-feed.html
 - title: Datastore
   path: '/documentation/datastore/'
   pages:
