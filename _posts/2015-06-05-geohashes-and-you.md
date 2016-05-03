@@ -186,3 +186,7 @@ Use our [Python library](https://github.com/transitland/mapzen-geohash) to compu
 ## And do keep in touch
 
 To read even more about how we're looking at the world's transportation data, find us at [transit.land](https://transit.land) and [@transitland](https://twitter.com/transitland)
+
+## Updates
+
+Transitland API and documentation links updated on May 3, 2016.
