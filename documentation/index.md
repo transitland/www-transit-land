@@ -14,7 +14,7 @@ Transitland brings together many sources of transit data to build a directory of
 
 [Transitland Playground](/documentation/playground/) demonstrates all the pieces of the data architecture working together.
 
-[Mapzen Turn-by-Turn](https://mapzen.com/products/turn-by-turn) is a hosted routing service that consumes data from the Datastore API and offers journey planning and analysis.
+[Mapzen Turn-by-Turn](https://mapzen.com/projects/turn-by-turn) is a hosted routing service that consumes data from the Datastore API and offers journey planning and analysis.
 
 ![a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other](/images/how-it-works-diagram.png)
 
