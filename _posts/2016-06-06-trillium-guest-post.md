@@ -6,7 +6,7 @@ isThereTitle: true
 title: 'Trillium Solutions: "Need to develop with transit data? Go to Transitland."'
 ---
 
-***A guest post by Thomas Craig, the operations manager at [Trillium Solutions](http://trilliumtransit.com/). Trillium is a professional services firm that creates and manages GTFS feeds for over 200 transit agencies around North America. They also help agencies design and operator websites and other ways of using software to reach riders. Trillium has recently contributed many of the feeds under its management to Transitland, [as Thomas described recently on the Trillium blog](http://trilliumtransit.com/2016/06/06/need-to-develop-with-transit-data-go-to-transitland/):***
+***A guest post by Thomas Craig, the operations manager at [Trillium Solutions](http://trilliumtransit.com/). Trillium is a professional services firm that creates and manages GTFS feeds for over 200 transit agencies around North America. They also help agencies design websites and other ways of using software to reach riders. Trillium has recently contributed many of the feeds under its management to Transitland, [as Thomas described recently on the Trillium blog](http://trilliumtransit.com/2016/06/06/need-to-develop-with-transit-data-go-to-transitland/):***
 
 <p>Looking for access to GTFS data for an agency managed or supported by Trillium to utilize in an app you're building? Turn to <a href="https://transit.land/">Transitland</a>, an open-source GTFS aggregator and API hosted and maintained by <a href="https://mapzen.com/">Mapzen</a>.</p>
 
