@@ -83,6 +83,8 @@ The main ScheduleStopPair API endpoint is [/api/v1/schedule_stop_pairs](http://t
 | `trip`                     | String | Trip identifier | [on trip '03SFO11SUN'](http://transit.land/api/v1/schedule_stop_pairs?trip=03SFO11SUN) |
 | `bbox`                     | Lon1,Lat1,Lon2,Lat2 | Origin Stop within bounding box | [in the Bay Area](http://transit.land/api/v1/schedule_stop_pairs?bbox=-123.057,36.701,-121.044,38.138)
 
+Note: When you query `schedule_stop_pair`, the origin and destination must be directly connected without any stops between them. For example, you can query stops that are next to each other or are coupled as an express route. To find all the trips that travel between certain stops, use the [Mapzen Turn-by-Turn API](https://mapzen.com/documentation/turn-by-turn/api-reference/) with multimodal costing, which can extract the intermediate stops and do route planning.
+
 ## Response format
 
 ```json
