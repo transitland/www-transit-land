@@ -76,12 +76,14 @@ The main ScheduleStopPair API endpoint is [/api/v1/schedule_stop_pairs](http://t
 | `route_onestop_id`         | Onestop ID | Route. Accepts multiple separated by commas. | [on Muni N](http://transit.land/api/v1/schedule_stop_pairs?route_onestop_id=r-9q8y-n) |
 | `route_stop_pattern_onestop_id` | Onestop ID | Route Stop Pattern. Accepts multiple separated by commas. | [with Route Stop Pattern](http://transit.land/api/v1/schedule_stop_pairs?route_stop_pattern_onestop_id=r-9q8y-n-21866a-06d86d) |
 | `operator_onestop_id`      | Onestop ID | Operator. Accepts multiple separated by commas. | [on BART](http://transit.land/api/v1/schedule_stop_pairs?operator_onestop_id=o-9q9-bart) |
-| `service_date`             | Date | Service operates on a date | [valid on 2015-10-26](http://transit.land/api/v1/schedule_stop_pairs?date=2015-10-26) |
+| `date`             | Date | Service operates on a date | [valid on 2015-10-26](http://transit.land/api/v1/schedule_stop_pairs?date=2015-10-26) |
 | `service_from_date`        | Date | Service operates on a date, or in the future | [valid on and after 2015-10-26](http://transit.land/api/v1/schedule_stop_pairs?service_from_date=2015-10-26) |
 | `service_before_date`      | Date | Service operates up to and including date | [valid on and before 2015-11-30](http://transit.land/api/v1/schedule_stop_pairs?service_before_date=2015-11-30) |
 | `origin_departure_between` | Time,Time | Origin departure time between two times | [departing between 07:00 - 09:00](http://transit.land/api/v1/schedule_stop_pairs?origin_departure_between=07:00:00,09:00:00) |
 | `trip`                     | String | Trip identifier | [on trip '03SFO11SUN'](http://transit.land/api/v1/schedule_stop_pairs?trip=03SFO11SUN) |
 | `bbox`                     | Lon1,Lat1,Lon2,Lat2 | Origin Stop within bounding box | [in the Bay Area](http://transit.land/api/v1/schedule_stop_pairs?bbox=-123.057,36.701,-121.044,38.138)
+
+Note: When you query `schedule_stop_pair`, the origin and destination must be directly connected without any stops between them. For example, you can query stops that are next to each other or are coupled as an express route. To find all the trips that travel between certain stops, use the [Mapzen Turn-by-Turn API](https://mapzen.com/documentation/turn-by-turn/api-reference/) with multimodal costing, which can extract the intermediate stops and do route planning.
 
 ## Response format
 
