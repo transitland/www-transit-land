@@ -20,3 +20,5 @@ Transitland's Feed Registry now has feeds from transit operators in Florence, Ve
 Right now I'm working through a massive combined feed for the [_Piemonte_ (Piedmont) region](https://whosonfirst.mapzen.com/spelunker/id/404227493/#7/45.275/7.920). The capital is Turin, which is also a province. The region contains part of the Alps mountain range and borders France and Switzerland. 
 
 The feed is managed by the Piedmont government, and comes from [their open data website](http://www.dati.piemonte.it). It contains feeds for 86 operators. Since we prefer to keep combined feeds together, this one will take longer because each of the operators' medata needs to be individually verified. 
+
+Is there a [transit operator](https://transit.land/feed-registry/) we haven't yet included in Transitland? [Submit it through the Feed Registry](https://transit.land/feed-registry/feeds/new). If you've already submitted a feed, I'm thankful for your patience. If you would like it reviewed sooner, [mailto:transitland@mapzen.com](send us an email). 
