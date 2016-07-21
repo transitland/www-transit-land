@@ -1,7 +1,7 @@
 ---
 layout: page
 category: news
-published: false
+published: true
 isThereTitle: true
 title: Expanding our collection of transit data in Italy
 ---
