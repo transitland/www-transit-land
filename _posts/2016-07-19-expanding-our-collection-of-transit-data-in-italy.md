@@ -11,7 +11,7 @@ title: Expanding our collection of transit data in Italy
 
 Since March, when we added our [first feeds of transit operators in Italy](/news/2016/03/24/transitland-in-italy.html) to the Transitland Feed Registry, we've added 27 more! 
 
-Hi, I'm Steven Vance, and I started working for Mapzen last week, reviewing new and edited feed submissions to Transitland for the next few months. When I started looking through the submissions last week I noticed that there was a backlog of many transit feeds from just three Italian contributors. I got to work reviewing their submissions.
+Hi, I'm Steven Vance, and I started working as Transitland's data editor last week, reviewing feed submissions to Transitland for the next few months. When I started looking through the submissions last week I noticed that there was a backlog of many transit feeds from just three Italian contributors. I got to work reviewing their submissions.
 
 In the process I learned a little Italian, realized that "regions" are official Italian administrative boundaries ([there are 20 of them](https://en.wikipedia.org/wiki/Regions_of_Italy)), and delved into some of the complexity of European public transport association hierarchies. 
 
@@ -24,4 +24,4 @@ Right now I'm working through a massive combined feed for the [_Piemonte_ (Piedm
 
 The feed is managed by the Piedmont government, and comes from [their open data website](http://www.dati.piemonte.it). It contains feeds for 86 operators. Since we prefer to keep combined feeds together, this one will take longer because each of the operators' metadata – website, province, and metropolitan area served – needs to be individually verified. 
 
-Is there a [transit operator](https://transit.land/feed-registry/) we haven't yet included in Transitland? [Submit it through the Feed Registry](https://transit.land/feed-registry/feeds/new). If you've already submitted a feed, I'm thankful for your patience. If you would like it reviewed sooner, [mailto:transitland@mapzen.com](send us an email). 
+Is there a [transit operator](https://transit.land/feed-registry/) we haven't yet included in Transitland? [Submit it through the Feed Registry](https://transit.land/feed-registry/feeds/new). If you've already submitted a feed, I'm thankful for your patience. If you would like it reviewed sooner, [send us an email](mailto:transitland@mapzen.com).
