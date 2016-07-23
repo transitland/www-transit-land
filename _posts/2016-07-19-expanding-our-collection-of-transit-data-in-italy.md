@@ -20,7 +20,7 @@ Transitland's Feed Registry now has feeds from transit operators in Florence, Ve
 Right now I'm working through a massive combined feed for the [_Piemonte_ (Piedmont) region](https://whosonfirst.mapzen.com/spelunker/id/404227493/#7/45.275/7.920). The capital is Turin, which is also a province. The region contains part of the Alps mountain range and borders France and Switzerland. 
 
 !["screenshot of Who's On First Spelunker showing Piedmont"](/images/expanding-our-collection-of-transit-data-in-italy/screenshot_of_piemonte_in_whosonfirst.png)
-<p class='caption'>The Who's On First Spelunker lets you browse all kinds of geographies around the world, and see which districts <i>Piemonte</i> contains, and which boundaries contain <i>Piemonte<i/>.</p>
+<p class='caption'>The Who's On First Spelunker lets you browse all kinds of geographies around the world, and see which districts <i>Piemonte</i> contains, and which boundaries contain <i>Piemonte</i>.</p>
 
 The feed is managed by the Piedmont government, and comes from [their open data website](http://www.dati.piemonte.it). It contains feeds for 86 operators. Since we prefer to keep combined feeds together, this one will take longer because each of the operators' metadata – website, province, and metropolitan area served – needs to be individually verified. 
 
