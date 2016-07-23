@@ -22,6 +22,6 @@ Right now I'm working through a massive combined feed for the [_Piemonte_ (Piedm
 !["screenshot of Who's On First Spelunker showing Piedmont"](/images/expanding-our-collection-of-transit-data-in-italy/screenshot_of_piemonte_in_whosonfirst.png)
 <p class='caption'>The Who's On First Spelunker lets you browse all kinds of geographies around the world, and see which districts <i>Piemonte</i> contains, and which boundaries contain <i>Piemonte</i>.</p>
 
-The feed is managed by the Piedmont government, and comes from [their open data website](http://www.dati.piemonte.it). It contains feeds for 86 operators. Since we prefer to keep combined feeds together, this one will take longer because each of the operators' metadata – website, province, and metropolitan area served – needs to be individually verified. 
+The feed is managed by the Piedmont government, and comes from [their open data website](http://www.dati.piemonte.it). It contains feeds for 86 operators. Since we prefer to keep combined feeds together, this one will take longer because each of the operators' metadata&mdash;website, province, and metropolitan area served&mdash;needs to be individually verified.
 
 Is there a [transit operator](https://transit.land/feed-registry/) we haven't yet included in Transitland? [Submit it through the Feed Registry](https://transit.land/feed-registry/feeds/new). If you've already submitted a feed, I'm thankful for your patience. If you would like it reviewed sooner, [send us an email](mailto:transitland@mapzen.com).
