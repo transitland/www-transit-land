@@ -11,7 +11,9 @@ title: We prepared for State of the Map by importing nearly all of the transit f
 !["A RapidRide bus"](/images/seattle-sotmus-recap/rapid_ride_vance.jpg)
 <p class='caption'>RapidRide is an express bus service – it makes fewer stops – operated by King County Metro.</p>
 
-Mapzen's Mobility team imported seven of the eight available feeds for Seattle area transit agencies into Transitland in time for [a talk by my colleagues Meghan Hade and Ekta Daryanani](http://stateofthemap.us/2016/beyond-aesthetic-icing/) at the OpenStreetMap "State of the Map" U.S. conference last weekend. We wanted to be ready to answer questions about Transitland at the conference, and use our hosts as an example. 
+Just in time for the OpenStreetMap "State of the Map" conference in Seattle, Washington, two weekends ago, the Mapzen Mobility team and I imported into Transitland a vast majority of the transit feeds for Seattle area transit operators. Meghan Hade, who leads design on the [open source](https://github.com/transitland/playground) Transitland Playground, and Ekta Daryanani, were [going to give a talk](http://stateofthemap.us/2016/beyond-aesthetic-icing/) about how they designed it to be [fun and easy to use](http://transit.land/playground/) to find and discover transit data from contributors around the world. 
+
+As an independent editor of the feeds people submit to the [Feed Registry](https://transit.land/feed-registry/) that Mapzen hosts, I suggested that we work together, and quickly, to ensure any OpenStreetMappers at the conference would have access to transit feeds in the conference's host city.
 
 Transit in the Seattle region is provided by the City of Seattle, King County (which contains Seattle), the multi-county Sound Transit (and the only rail operator), and adjacent counties. 
 
