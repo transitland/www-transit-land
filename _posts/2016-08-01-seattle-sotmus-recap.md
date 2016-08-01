@@ -15,6 +15,8 @@ Just in time for the OpenStreetMap "State of the Map" conference in Seattle, Was
 
 As an independent editor of the feeds people submit to the [Feed Registry](https://transit.land/feed-registry/) that Mapzen hosts, I suggested that we work together, and quickly, to ensure any OpenStreetMappers at the conference would have access to transit feeds in the conference's host city.
 
+<!-- more -->
+
 Transit in the Seattle region is provided by the City of Seattle, King County (which contains Seattle), the multi-county Sound Transit (and the only rail operator), and adjacent counties. 
 
 A Sound Transit employee pointed us to a Sound Transit webpage that [listed most of the feeds](http://www.soundtransit.org/Developer-resources/Data-downloads) that covered the Seattle area. I quickly reviewed them and added them to our database. I learn a lot about a metro area's transit systems just by reviewing their feeds, the feeds' coverage areas, and the operators that deliver hundreds of thousands of people to their homes, workplaces, and outings. 
