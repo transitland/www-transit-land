@@ -13,7 +13,7 @@ title: We prepared for State of the Map by importing nearly all of the transit f
 
 Just in time for the OpenStreetMap "State of the Map" conference in Seattle, Washington, two weekends ago, the Mapzen Mobility team and I imported into Transitland a vast majority of the transit feeds for Seattle area transit operators. Meghan Hade, who leads design on the [open source](https://github.com/transitland/playground) Transitland Playground, and Ekta Daryanani, were [going to give a talk](http://stateofthemap.us/2016/beyond-aesthetic-icing/) about how they designed it to be [fun and easy to use](http://transit.land/playground/) to find and discover transit data from contributors around the world. 
 
-As an independent editor of the feeds people submit to the [Feed Registry](https://transit.land/feed-registry/) that Mapzen hosts, I suggested that we work together, and quickly, to ensure any OpenStreetMappers at the conference would have access to transit feeds in the conference's host city.
+As the independent editor of the feeds people submit to the [Feed Registry](https://transit.land/feed-registry/), I suggested that we work together, and quickly, to ensure any OpenStreetMappers at the conference would have access to transit feeds in the conference's host city.
 
 <!-- more -->
 
