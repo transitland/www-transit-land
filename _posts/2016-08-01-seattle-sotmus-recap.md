@@ -3,7 +3,7 @@ layout: page
 category: news
 published: true
 isThereTitle: true
-title: We prepared for State of the Map by importing nearly all of the transit feeds in Seattle
+title: We prepared for State of the Map US by importing nearly all of the transit feeds in Seattle
 ---
 
 ### Sound Transit provided most of the feeds
@@ -11,7 +11,7 @@ title: We prepared for State of the Map by importing nearly all of the transit f
 !["A RapidRide bus"](/images/seattle-sotmus-recap/rapid_ride_vance.jpg)
 <p class='caption'>RapidRide is an express bus service – it makes fewer stops – operated by King County Metro.</p>
 
-Just in time for the OpenStreetMap "State of the Map" conference in Seattle, Washington, two weekends ago, the Mapzen Mobility team and I imported into Transitland a vast majority of the transit feeds for Seattle area transit operators. Meghan Hade, who leads design on the [open source](https://github.com/transitland/playground) Transitland Playground, and Ekta Daryanani, were [going to give a talk](http://stateofthemap.us/2016/beyond-aesthetic-icing/) about how they designed it to be [fun and easy to use](http://transit.land/playground/) to find and discover transit data from contributors around the world. 
+Just in time for the OpenStreetMap "State of the Map US" conference in Seattle, Washington, two weekends ago, the Mapzen Mobility team and I imported into Transitland a vast majority of the transit feeds for Seattle area transit operators. Meghan Hade, who leads development on the [open source](https://github.com/transitland/playground) Transitland Playground, and Ekta Daryanani, who leads design and user experience at Mapzen, were [going to give a talk](http://stateofthemap.us/2016/beyond-aesthetic-icing/) about how they designed it to be [fun and easy to use](http://transit.land/playground/) to find and discover transit data from contributors around the world. 
 
 As the independent editor of the feeds people submit to the [Feed Registry](https://transit.land/feed-registry/), I suggested that we work together, and quickly, to ensure any OpenStreetMappers at the conference would have access to transit feeds in the conference's host city.
 
@@ -40,7 +40,7 @@ After my review, and after I had landed in Seattle, I noticed one transit route 
 [!["Seattle Monorail"](/images/seattle-sotmus-recap/seattle_monorail_vance.jpg)](https://www.flickr.com/photos/jamesbondsv/28595116115/in/datetaken-public/)
 <p class='caption'>The Seattle Monorail soars over a building in the Belltown neighborhood.</p>
 
-Our system was unable to import transit feed for the Joint Base Lewis-McChord's GO transit, and we're reaching out to that operator to see if they can fix the data issue. Additionally, when I was verifying the seven working feeds listed on Sound Transit's website, I discovered regional pecularities of how routes were organized in the feeds. 
+Our system was unable to import the transit feed for the Joint Base Lewis-McChord's GO transit, and we're reaching out to that operator to see if they can fix the data issue. Additionally, when I was verifying the seven working feeds listed on Sound Transit's website, I discovered regional peculiarities of how routes were organized in the feeds. 
 
 The 28 Sound Transit express bus routes are operated by three county transit agencies in branded vehicles owned by Sound Transit. There isn't a single feed that contains the details for all routes; they are divided amongst the [King County Metro feed](https://transit.land/feed-registry/operators/o-c23-metrotransit) (the operator for buses in the City of Seattle), [Pierce Transit](https://transit.land/feed-registry/operators/o-c22u-piercetransit), and [Community Transit](https://transit.land/feed-registry/operators/o-c29-communitytransit). Sound Transit also operates the Link light rail in Seattle, the Link streetcar in Tacoma, and the two Sounder commuter rail lines. 
 
