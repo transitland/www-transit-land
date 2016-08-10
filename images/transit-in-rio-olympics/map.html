@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Web Map</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://mapzen.com/js/mapzen.css">
+    <script src="https://mapzen.com/js/mapzen.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+    <style>
+      #map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+    html,body{margin: 0; padding: 0}
+  </style>
+
+  </head>
+  <body onload="createMap()">
+    <div id="map"></div>
+    <script>
+	    function popUp(feature, layer) {
+			layer.bindPopup(feature.properties.name);
+		}
+	    
+		function createMap() {
+	    	map = L.Mapzen.map('map');
+			map.setView([-22.91210, -43.22919], 16);
+			
+			addLayer("maracana_stadium.geojson", "stadium");
+			addLayer("routes_serving_maracana.geojson", "routes");
+			addLayer("stops_near_maracana.geojson", "stops");
+			
+			return map;
+		}
+		
+		function addLayer(file, name) {
+			var layers = [];
+			$.getJSON(file)
+				.done(function(data) {
+					layers[name] = L.geoJson(data, {
+						style: styler(name),
+						 onEachFeature: onEachFeature
+					} );
+					
+					layers[name].addTo(map);
+				});
+		}
+		
+		function onEachFeature(feature, layer) {
+		    if (feature.properties && feature.properties.name) {
+		        layer.bindPopup(feature.properties.name);
+		    }
+		}
+		
+		function styler(name) {
+			switch(name) {
+				case "stadium":
+					style = {
+						weight: 2,
+		                opacity: 1,
+		                color: '#4EB023',
+					}
+					break;
+				
+				case "routes":
+					style = {
+						weight: 4,
+		                opacity: 0.8,
+		                color: '#FFCC0A',
+					}
+					break;
+				
+				case "stops":
+					style = {
+						
+					}
+					break;
+			} // end switch
+			
+			return style;
+		}
+    </script>
+  </body>
+</html>
