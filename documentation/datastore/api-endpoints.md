@@ -5,7 +5,7 @@ layout: documentation
 
 To query the Transitland Datastore API, use the base URL of `https://transit.land/`, appended with the endpoint information below. For example, to find routes operated by the San Francisco Municipal Transportation Agency (SFMTA), you can use this query: `https://transit.land/api/v1/routes?operated_by=o-9q8y-sfmta`.
 
-The following endpoints are available in Transitland Datatstore API.
+The following endpoints are available in Transitland Datastore API.
 
 {:#api}
 Method | Example URL | Parameters
