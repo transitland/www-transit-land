@@ -13,8 +13,6 @@ layout: documentation
 <p>TODO: include some example API query URLs</p>
 -->
 
-<h2>Route Stop Patterns</h2>
-
 <p>Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
 
 <p>RouteStopPatterns may also modify the original shape line geometry if necessary. When this is done, a Boolean value named `is_modified` will be set to true. Currently, the line geometry is only modified when it is generated as the result of missing its original GTFS shape id or shape points. In this case, the line geometry becomes the sequential points of the stop pattern, and a separate boolean named `is_generated` will be set to true.</p>
