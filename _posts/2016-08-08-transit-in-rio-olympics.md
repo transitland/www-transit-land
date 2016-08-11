@@ -21,7 +21,7 @@ Rio de Janeiro has more transit modes than most cities. A [funicular](https://en
 
 The city has a [vintage tram](http://www.nycsubway.org/wiki/Rio_de_Janeiro_Santa_Teresa_Tram), light rail, subway, commuter rail to the suburbs, ferries, and local buses (both with and without air conditioning). Rio, like most large cities in Latin and South America, has BRT, or bus rapid transit, a bus innovation [invented in Brazil](https://en.wikipedia.org/wiki/Bus_rapid_transit) that uses buses to provide subway-like service on exclusive roads. 
 
-The opening of *Linha 4& a week before the Olympics wasn't the only close call. The city's new light rail train opened in June. The [VLT Carioca](http://www.vltrio.com.br) – the denomym for [someone from Rio](https://en.wikipedia.org/wiki/Carioca) – takes riders on several routes in the city center, including to the airport and port. 
+The opening of *Linha 4* a week before the Olympics wasn't the only close call. The city's new light rail train opened in June. The [VLT Carioca](http://www.vltrio.com.br) – Carioca is the demonym for [someone from Rio](https://en.wikipedia.org/wiki/Carioca) – takes riders on several routes in the city center, including to the airport and port. 
 
 <!-- more -->
 
@@ -29,7 +29,7 @@ The opening of *Linha 4& a week before the Olympics wasn't the only close call. 
 
 We're still looking for transit feeds for the trains and ferries, but we have data for 378 bus routes. If you know where any of these feeds live, become a Transitland contributor and [submit it on our form](https://transit.land/feed-registry/feeds/new). *Se você conhece o URL de feed torne-se um contribuidor e o [envie em nosso formulário](https://transit.land/feed-registry/feeds/new).*
 
-*Fetranspor *provides a combined feed for all of the local bus routes operated by the many companies with concessions to provide public transport services in the state of Rio de Janeiro. 
+*Fetranspor* provides a combined feed for all of the local bus routes operated by the many companies with concessions to provide public transport services in the state of Rio de Janeiro. 
 
 The [feed for Fetranspor](https://transit.land/feed-registry/operators/o-75cj-fetranspor) was submitted to Transitland before the Olympics, but the impending opening ceremony last week was an impetus for me as the independent reviewer of incoming data to try increase coverage of Brazil on Transitland. 
 
@@ -72,6 +72,6 @@ First, let's find Maracanã stadium using a simple query on Overpass Turbo. Over
 
 7. That call returns 35 routes. Again, we can get **GeoJSON** as a response, ready for mapping, by adding `.geojson`, [like this](https://transit.land/api/v1/routes.geojson?serves=s-75cm8m3b4z-avenidapresidentecastelobrancopróximoao217,s-75cm8kdx69-avenidamaracanapróximoao331,s-75cm8kfbxg-avenidamaracanapróximoao331,s-75cm8k8j6s-ruaprofessoreuricorabelopróximoao61,s-75cm8kgg7k-ruamatamachadopróximoao1,s-75cm8k379v-avenidamaracanapróximoao457,s-75cm8k3e12-avenidamaracanapróximoao467).
 
-8. Now you have three **GeoJSON** files with which you can turn into a map, which I've embedded below. You can [grab the code](/images/transit-in-rio-olympics/map.html) for that, too.
+8. Now you have three **GeoJSON** files with which you can turn into a map, which I've embedded below. You can [grab the code](https://github.com/transitland/www-transit-land/blob/master/images/transit-in-rio-olympics/map.html) for that, too.
 
 <iframe src="/images/transit-in-rio-olympics/map.html" height="400" width="100%" style="border:0;"></iframe>
