@@ -9,11 +9,11 @@ title: Morgantown Personal Rapid Transit is the only one in the world, and it ha
 ## Experimental transit from the 1970s is still running
 
 !["Personal Rapid Transit vehicle in Morgantown"](/images/morgantown-prt/3096010105_view_down_tracks.jpg)
-<p class='caption'>A yellow Personal Rapid Transit vehicle drives down the guideway in Morgantown, West Virginia. Photo by <a href="https://www.flickr.com/photos/70428838@N00/3096010105/in/photolist-7Cnump-7CnyaZ-7CnvNT-7Crnhd-Croajt-CsFoYH-7CnxLc-7Cropy-7CnwJT-7CrkZE-7Crp4f-4ScPUz-7CnvrD-7Cnx6Z-5HzRWz-7CnyWR" target="_blank">Jen & Elwood</a>.</p>
+<p class='caption'>A yellow Personal Rapid Transit vehicle drives down the guideway in Morgantown, West Virginia. Photo by <a href="https://www.flickr.com/photos/70428838@N00/3096010105/" target="_blank">Jen & Elwood</a>.</p>
 
 Morgantown is a small city of 30,000 people in West Virginia, which grows by another 30,000 people when classes start each year at West Virginia University. The university has two campuses two miles apart and transported students and staff on free buses between them. The mountain and river geography causes all roads to lead through the city center, and the many buses along with other motor vehicles created gridlock. [The university](https://en.wikipedia.org/wiki/West_Virginia_University) also has over 9,000 faculty and staff. 
 
-The current transit buses of Morgantown are part of the vast collection of transit schedules and maps that Transitland provides, but the city's [unique Personal Rapid Transit system](https://en.wikipedia.org/wiki/Morgantown_Personal_Rapid_Transit) of small vehicles – they look like vans or miniature buses – driving autonomously on a track stands out. 
+The current [Mountain Line Transit Authority buses](https://transit.land/feed-registry/operators/o-dpp-mountainlinetransitauthority) of Morgantown are part of the vast collection of transit schedules, maps, and associated APIs, that Transitland provides, but the city's [unique Personal Rapid Transit system](https://en.wikipedia.org/wiki/Morgantown_Personal_Rapid_Transit) of small vehicles – they look like vans or miniature buses – driving autonomously on a track stands out. 
 
 Here's how Personal Rapid Transit at WVU works: A rider at one of the five stations approaches a turnstile, pays 50 cents for the ride, and selects a button that designates one of the four destinations. Pressing the button tells the computer controller to dispatch a vehicle to that station and programs it to stop at a specific position on the platform. After the rider boards, the vehicle is programmed to drive directly to that station without stopping. The vehicles can bypass three intermediate stations on extra "express" tracks. 
 
