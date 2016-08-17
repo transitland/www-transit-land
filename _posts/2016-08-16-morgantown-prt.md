@@ -37,9 +37,6 @@ Alden staRRcar, the product selected after the study, however, was deemed unfit 
 
 At around the same time, the U.S. DOT was also funding experimental transit technologies that led to the construction of the People Movers in [Detroit](https://en.wikipedia.org/wiki/Detroit_People_Mover) and Miami. In the 1970s, there was a proposal to extend the Seattle Center Monorail – built for the Seattle World's Fair called [Century 21 Exposition](https://en.wikipedia.org/wiki/Century_21_Exposition) – that would use [funds from the UMTA](http://www.globaltelematics.com/pitf/monopaper.htm). 
 
-!["A view of OpenStreetMap's transit layer shows the multiple track layout at the Beechurst Station, including the bypass tracks under the station."](/images/morgantown-prt/openstreetmap_morgantown_prt.png)
-<p class='caption'>A view of <a href="http://www.openstreetmap.org/#map=18/39.63459/-79.95677&layers=T" target="_blank">OpenStreetMap's transit layer</a> shows the multiple track layout at the Beechurst Station, including the bypass tracks under the station.</p>
-
 If you're familiar with the General Transit Feed Spefication-based feeds that power countless apps and [mapping websites](https://mapzen.com/products/turn-by-turn/?d=0&lat=40.7259&lng=-73.9805&z=12&c=multimodal&st_lat=37.744092&st_lng=-122.422073&st=La%20Lengua&end_lat=37.80927&end_lng=-122.25981&end=Fairyland&use_bus=0.5&use_rail=0.6&use_transfers=0.4&dt=2016-08-23T08%3A00&dt_type=1) that tell you how to get around a city via transit, you might question how an on-demand transit network like Morgantown's PRT fits into that scheme. The GTFS specification generally requires that a feed list fixed routes that have fixed schedules. 
 
 The [PRT's feed](https://transit.land/feed-registry/operators/o-dpp1s-wvuprt), however, uses the optional `frequencies.txt` file that [defines frequencies](https://developers.google.com/transit/gtfs/reference/frequencies-file) (also called headways), which is the time between departures at the same bus stop or train station. When a feed provides that file, then fixed schedule stop patterns aren't necessary. The Morgantown PRT's feed lists five minute frequencies, but the system is technically capable of [running vehicles 15 seconds apart](http://faculty.washington.edu/jbs/itrans/morg.htm).
@@ -50,3 +47,8 @@ Transitland's [Valhalla](https://mapzen.com/blog/valhalla-intro/) doesn't curren
 
 !["Map from a traffic impact study after construction showing the as-yet unbuilt Phase 2 extension"](/images/morgantown-prt/morgantown_prt_map_phase1.png)
 <p class='caption'>WVU studied the PRT's operational costs and impact on local driving and transit use in 1979, publishing this map before Phase II was built that year. Hosted by the <a href="https://archive.org/details/prtimpactstudyop00elia" target="_blank">Internet Archive</a>.</p>
+
+<iframe width="100%" height="500" style="border:0;"
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://gist.githubusercontent.com/stevevance/95af1ed0314f618fb0ee5232432a19f3/raw/ac13a858dd7d423b5fac2df2d2b18a8a8063fce3/prt.yaml#15/39.6427/-79.9623"></iframe>
+
+This map of the PRT route was automatically generated using [Mapzen Tangram vector tiles](https://mapzen.com/products/tangram/) and [this YAML scene code](https://gist.githubusercontent.com/stevevance/95af1ed0314f618fb0ee5232432a19f3/raw/ac13a858dd7d423b5fac2df2d2b18a8a8063fce3/prt.yaml). You can [change the scene interactively](https://mapzen.com/tangram/play/?scene=https://gist.githubusercontent.com/stevevance/95af1ed0314f618fb0ee5232432a19f3/raw/ac13a858dd7d423b5fac2df2d2b18a8a8063fce3/prt.yaml#16.0000/39.6428/-79.9658) with Tangram Play.
