@@ -1,0 +1,57 @@
+import: https://mapzen.com/carto/zinc-style/zinc-style.yaml
+    
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+    stops:
+        type: GeoJSON
+        url: https://transit.land/api/v1/stops.geojson?served_by=o-dpp1s-wvuprt
+
+styles:
+    ants:
+        base: lines
+        blend: overlay
+        texcoords: true
+        animated: true
+        shaders:
+            blocks:
+                color: |
+                    color.a = step(.95,fract((u_time/10.50)-v_texcoord.y*.05));
+layers:
+    PRT:
+        data:
+            source: mapzen
+            layer: roads 
+        filter: { name: PRT }
+        draw:
+            lines:
+                order: 499
+                width: 2px
+                color: [0.290, 0.290, 0.835, 1.00]
+            outlines:
+                style: lines
+                order: 4
+                color: cyan
+                width: 3px
+                order: 498
+    stops:
+        data:
+            source: stops
+        draw:
+            points1:
+                style: points
+                collide: false
+                color: [0.812, 0.651, 0.129, 0.80]
+                size: 30px
+            points2:
+                style: points
+                collide: false
+                color: [1.000, 1.000, 1.000, 1.00]
+                size: 20px
+            text:
+                font:
+                    family: Helvetica
+                    size: 50px
+                    fill: red
+                order: global.order-top
