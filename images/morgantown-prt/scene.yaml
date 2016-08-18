@@ -47,7 +47,7 @@ layers:
             points2:
                 style: points
                 collide: false
-                color: [1.000, 1.000, 1.000, 1.00]
+                color: [1.000, 1.000, 1.000, 0.40]
                 size: 20px
             text:
                 font:
