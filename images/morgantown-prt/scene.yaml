@@ -18,6 +18,20 @@ styles:
             blocks:
                 color: |
                     color.a = step(.95,fract((u_time/10.50)-v_texcoord.y*.05));
+styles:
+    text-overlay:
+        base: text
+        #texture: pois
+        interactive: true
+        blend: overlay
+        blend_order: 3
+    point-overlay:
+        base: points
+        #texture: pois
+        interactive: true
+        blend: inlay
+        blend_order: 3        
+
 layers:
     PRT:
         data:
@@ -28,30 +42,37 @@ layers:
             lines:
                 order: 499
                 width: 2px
-                color: [0.290, 0.290, 0.835, 1.00]
+#                color: [0.290, 0.290, 0.835, 1.00]
+                color: blue
             outlines:
                 style: lines
                 order: 4
-                color: cyan
-                width: 3px
+                color: aqua
+                width: 4px
                 order: 498
-    stops:
+    right_label:
         data:
             source: stops
         draw:
             points1:
                 style: points
                 collide: false
-                color: [0.812, 0.651, 0.129, 0.80]
-                size: 30px
+                color:  [0,0,1,0.9]
+                size: 20px
             points2:
                 style: points
                 collide: false
-                color: [1.000, 1.000, 1.000, 0.40]
-                size: 20px
-            text:
+                color: [1,1,0,.8]
+                size: 14px
+            left:
+                style: text-overlay
+                collide: false
+                anchor: left
+                offset: [-15px,0px]
                 font:
                     family: Helvetica
-                    size: 50px
-                    fill: red
-                order: global.order-top
+                    size: 12px
+                    fill: yellow
+                    stroke:
+                        color: black
+                        width: 3.5
