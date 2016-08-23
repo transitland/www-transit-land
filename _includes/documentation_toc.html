@@ -7,9 +7,8 @@
         </a>
         <ul class="toc-subnav">
           {% for doc_page in category.pages %}
-            {% assign pagetitle = doc_page.title|downcase|replace: ' ','-' %}
             <li>
-              <a  {% if page.url contains pagetitle %} class="active" {% endif %} href="{{doc_page.path}}">{{doc_page.title}}</a>
+              <a  {% if page.url contains doc_page.path %} class="active" {% endif %} href="{{doc_page.path}}">{{doc_page.title}}</a>
             </li>
           {% endfor %}
         </ul>

@@ -1,5 +1,10 @@
-- title: Overview
+- title: Documentation
   path: '/documentation/'
+  pages:
+    - title: Overview
+      path: /documentation/index.html
+    - title: Introductory tutorial
+      path: /documentation/intro-tutorial.html
 - title: Feed Registry
   path: '/documentation/feed-registry/'
   pages:
@@ -12,14 +17,18 @@
 - title: Datastore
   path: '/documentation/datastore/'
   pages:
-    #- title: API usage and authentication
-    #  path: /how-it-works/datastore/api-usage-and-authentication.html
-    - title: API endpoints
-      path: /documentation/datastore/api-endpoints.html
-    #- title: Feeds
-    #  path: /how-it-works/datastore/feeds.html
-    #- title: Stops
-    #  path: /how-it-works/datastore/stops.html
+    - title: API usage and authentication
+      path: /documentation/datastore/api-usage-and-authentication.html
+    - title: API endpoint quick reference
+      path: /documentation/datastore/api-endpoint-quick-reference.html
+    - title: Entity quick reference
+      path: /documentation/datastore/entity-quick-reference.html
+    - title: "Feeds, Feed versions, and the FeedEater pipeline"
+      path: /documentation/datastore/feeds.html
+    - title: Operators
+      path: /documentation/datastore/operators.html
+    - title: Stops
+      path: /documentation/datastore/stops.html
     - title: Routes and route stop patterns
       path: /documentation/datastore/routes-and-route-stop-patterns.html
     - title: Schedules
