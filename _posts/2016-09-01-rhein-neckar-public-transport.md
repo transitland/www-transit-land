@@ -41,17 +41,17 @@ When we arrived in [Heidelberg](https://whosonfirst.mapzen.com/spelunker/id/1017
 
 The current organization of public transport in Germany lends itself to high-quality service characteristics like low headways (the time between vehicles at a particular stop) and high frequency, and short waits for a transfer vehicle. German local and regional transit operations are more complex because of the interconnected relationships among governments on all levels, public and private companies, and companies that are simply in charge of scheduling. 
 
-In the USA, there are typically two structures. The first, most commonly found in the largest cities, is that all transit service is provided by a governmental corporation created by authority of the state's legislature. In Chicago, where I live, the Chicago Transit Authority, Pace, and Metra, are state-owned but independently operated corporations. They were created by the state legislature and can only be dissolved or merged by an action of the state legislature.
+In the USA, there are typically two structures. The first, most commonly found in the largest cities, is that all transit service is provided by a governmental corporation created by authority of the state's legislature. In Chicago, where I live, the [Chicago Transit Authority](https://transit.land/feed-registry/operators/o-dp3-chicagotransitauthority), [Pace](https://transit.land/feed-registry/operators/o-dp3-pace), and [Metra](https://transit.land/feed-registry/operators/o-dp3-metra), are state-owned but independently operated corporations. They were created by the state legislature and can only be dissolved or merged by an action of the state legislature.
 
 The second structure is for the transit agency to be a department of a city or county's transportation or public works department. 
 
 In Germany however, there are multiple layers, and they start with regions, not states. Heidelberg, Ladenburg, and Mannheim, for example, are all in the [Rhine-Neckar Metropolitan Region](https://en.wikipedia.org/wiki/Rhine-Neckar), named after the two rivers that converge in Mannheim. 
 
-## Peeling back the layers of transit organizations in Mannheim-Heidelberg
+## Peeling back the layers of transit organizations in Mannheim & Heidelberg
 
 The *Verkehrsverbund Rhein-Neckar* ([Rhine-Neckar Transport Association](https://en.wikipedia.org/wiki/Verkehrsverbund_Rhein-Neckar), VRN) is a "network" that sets the fares and coordinates routes and timed transfers for transit in the region – including both public and private agencies that operate buses and trains in the area. 
 
-The VRN is singly owned by the *Zweckverband Verkehrsverbund Rhein-Neckar* (ZRN), a special purpose group specific to Germany that allows local government authorities to form an association. Other examples of zweckverbands in Germany include unions that run hospitals and ambulance services. The three states, and 24 cities, city districts, and counties in the Rhein-Neckar region make up the ZRN.
+The VRN is singly owned by the *[Zweckverband Verkehrsverbund Rhein-Neckar](http://www.vrn.de/vrn/unternehmen/vrn-verbund/index.html)* (ZRN), a special purpose group specific to Germany that allows local government authorities to form an association. Other examples of zweckverbands in Germany include consortiums that run hospitals and ambulance services and [monitor traffic](http://www.kvs-oberland.de/für-verkehrsteilnehmer/faqs-english-version.html#2-what-is-the-legal-form). The three states, and 24 cities, city districts, and counties in the Rhein-Neckar region make up the ZRN.
 
 The transit operator in this region is a separate company called [Rhein-Neckar-Verkehr](http://www.rnv-online.de/english.html) (RNV). RNV was created and is owned, jointly, by the five former transit operators in the region. On trams in Heidelberg you'll see the RNV logo, but the logo for the old HSB, or Heidelberger Straßen- und Bergbahn, is also there!
 
@@ -70,7 +70,7 @@ At the end of the day, this integrated web of companies, subsidiaries, operators
 The three agencies in Chicago are moving slowly to have fare integration, but there are no visible efforts to coordinate transfers or consolidate fares. Last year it became possible to use a single online payment account to pay for rides on CTA, Pace, and Metra, although with two fare mediums. Riders use a chip card to ride CTA and Pace, but must have an app to buy Metra tickets using the same electronic fare money. 
 
 ## Make a map
-The Rhein-Neckar-Verkehr transit feed in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the S-bahn routes, or the RegioExpress and RegioBahn inter-regional routes. 
+The Rhein-Neckar-Verkehr transit feed in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the [S-bahn routes](https://en.wikipedia.org/wiki/Rhine-Neckar_S-Bahn), or the RegioExpress and RegioBahn inter-regional routes. 
 
 Using the [Transitland API](https://transit.land/documentation/datastore/api-endpoints.html) I can find which tram and bus routes would carry my sister and I from the Heidelberg Hauptbahnhof to Bismarckplatz, the start of the pedestrian shopping area. First I need to find the `onestopId` for the two stops. 
 
@@ -98,10 +98,11 @@ https://transit.land/api/v1/route_stop_patterns.geojson?stops_visited=s-u0y1j3y5
 
 That call returns an array of 38 "route stop patterns", which are a custom identifer that are uniquely defined by a route, a stop pattern, and a line geometry. In the 38 RSPs there are three tram routes. Tram route 23 has two RSPs that service the trip between the Heidelberg Hauptbahnhof and the Bismarckplatz stations; route 9 has four RSPs, and tram route 5 has 32 route stop patterns (its `onestopId` is `r-u0y1-5`). 
 
+Those GeoJSON calls become the source data in a Play "scene" that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. 
+
+<iframe width="100%" style="height: 65vh;"
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml#15.1624/49.4079/8.6838"></iframe>
+
 ## Bonus thought on transit integration
 
 DB is a singular authority on transit timetables and routing for the entire country. They have every regional transit operators' schedules available on Bahn.com for routing within and between cities, and even on intercity trains across Europe. Their *DB Navigator* app is [indispensible for local and international travelers](http://www.stevencanplan.com/2016/05/essential-apps-for-traveling-in-parts-of-europe/) – you can even buy certain tickets on it. 
-
-CHANGE MAP
-<iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/morgantown-blog-post/images/morgantown-prt/scene.yaml#14/39.6425/-79.9659"></iframe>
