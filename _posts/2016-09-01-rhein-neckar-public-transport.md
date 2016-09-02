@@ -98,10 +98,12 @@ https://transit.land/api/v1/route_stop_patterns.geojson?stops_visited=s-u0y1j3y5
 
 That call returns an array of 38 "route stop patterns", which are a custom identifer that are uniquely defined by a route, a stop pattern, and a line geometry. In the 38 RSPs there are three tram routes. Tram route 23 has two RSPs that service the trip between the Heidelberg Hauptbahnhof and the Bismarckplatz stations; route 9 has four RSPs, and tram route 5 has 32 route stop patterns (its `onestopId` is `r-u0y1-5`). 
 
-Those GeoJSON calls become the source data in [my Play "scene"](https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. [Open this scene in Tangram](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) to play around with the data and symbology.
+Those GeoJSON calls become the source data in [my Play "scene"](https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. The tram lines don't follow the rides because RNV's GTFS feed doesn't provide the `shapes.txt` file so Transitland has derived the route shape by drawing straight lines between stops. 
 
 <iframe width="100%" style="height: 65vh;"
 src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml#15.1624/49.4079/8.6838"></iframe>
+
+[Open this scene in Tangram](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) to play around with the data and symbology. 
 
 ## Bonus thought on transit integration
 
