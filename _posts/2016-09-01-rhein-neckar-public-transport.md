@@ -8,14 +8,16 @@ title: German transit's tight integration ensures timely connections in small ci
 
 ## Taking regional trains from a city of 12,000 to a city of 155,000 is a piece of cake
 
-!["Tram in Heidelberg, Germany"](/images/rhein-necker-transit/tram-at-heidelberg-hauptbahnhof.jpg)
+### by Steven Vance
+
+!["Tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-heidelberg-hauptbahnhof.jpg)
 <p class='caption'>Trams and buses run frequently to and from the Heidelberg Hauptbahnhof (main station) in the German state Baden-Württemberg. In the story below, this is the origin of a trip by tram.</p>
 
-*I've done my best trying to make sense of how regional transit providers in one part of Germany are organized, but if you think I could be more accurate, please email transitland@mapzen.com.*
+**I've done my best trying to make sense of how regional transit providers in one part of Germany are organized, but if you think I could be more accurate, please email transitland@mapzen.com.**
 
-In June my sister and I traveled to Germany. I went to visit a friend I met in Chicago and it was my sister's first trip in Europe. We stayed with my friend in Ladenburg, a village of about 12,000 people in the state Baden-Württemberg, and equidistant to Mannheim and Heidelberg. 
+In June my sister and I traveled to Germany. I went to visit a friend I met in Chicago and it was my sister's first trip in Europe. We stayed with my friend in [Ladenburg](https://en.wikipedia.org/wiki/Ladenburg), a village of about 12,000 people in the state Baden-Württemberg, and equidistant to Mannheim and Heidelberg. 
 
-Ladenburg has a train station with three tracks and two platforms. During our stay there the third track was under construction. We visited Heidelberg twice, taking trains from Ladenburg on both days. 
+Ladenburg has a [train station](http://www.openstreetmap.org/node/21412509) with three tracks and two platforms. During our stay there the third track was under construction. We visited Heidelberg twice, taking trains from Ladenburg on both days. 
 
 We traveled at the same time each day – between 12:00 and 14:00 – so it caught my attention that the second journey into Heidelberg – a city with a large, well-known university – took a different route than the trip the day before. 
 
@@ -29,7 +31,7 @@ The train service and connections were so incredibly well-timed and on-time that
 
 To further illustrate the level of connectivity on this route, the first train was an inter-regional train of the RegioBahn (RB) class, and the second was an S-bahn class. Different companies operated each. 
 
-This kind of rigid, rider-friendly timing on a two-seat ride wasn't devised by mistake. It's often prohibitively expensive to run transit routes non-stop between every origin and destination. Airlines don't do it exclusively, and though the Personal Rapid Transit system in Morgantown does that during off-peak hours, it has five stations and only the smaller, less-used PRT at Heathrow airport has been built since.
+This kind of rigid, rider-friendly timing on a two-seat ride wasn't devised by mistake. It's often prohibitively expensive to run transit routes non-stop between every origin and destination. Airlines don't do it exclusively, and though the [Personal Rapid Transit system in Morgantown](/news/2016/08/16/morgantown-prt.html) does that during off-peak hours, it has five stations and only the smaller, less-used PRT at Heathrow airport has been built since.
 
 Running a transit system where vehicles, operated by one or more companies, as in Germany, "meet" each other is a hallmark of a well-integrated system. 
 
@@ -43,7 +45,7 @@ In the USA, there are typically two structures. The first, most commonly found i
 
 The second structure is for the transit agency to be a department of a city or county's transportation or public works department. 
 
-In Germany however, there are multiple layers, and they start with regions, not states. Heidelberg, Ladenburg, and Mannheim, for example, are all in the Rhine-Neckar Metropolitan Region, named after the two rivers that converge in Mannheim. 
+In Germany however, there are multiple layers, and they start with regions, not states. Heidelberg, Ladenburg, and Mannheim, for example, are all in the [Rhine-Neckar Metropolitan Region](https://en.wikipedia.org/wiki/Rhine-Neckar), named after the two rivers that converge in Mannheim. 
 
 ## Peeling back the layers of transit organizations in Mannheim-Heidelberg
 
@@ -55,22 +57,22 @@ The transit operator in this region is a separate company called [Rhein-Neckar-V
 
 RNV, the main transit operator, and the *Unternehmensgesellschaft Verkehrsverbund Rhein-Neckar* (URN), a union of over 50 transit operators, are members of the VRN network. 
 
-!["another tram in Heidelberg, Germany"](/images/rhein-necker-transit/tram-at-bismarckplatz.jpg)
-<p class='caption'>Trams and buses run frequently to and from Bismarckplatz at the western end of the pedestrian shopping street. In the story, this is the destination of a trip by tram.</p>
+!["another tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-bismarckplatz.jpg)
+<p class='caption'>Trams and buses run frequently to and from the *haltestelle* (stop) at Bismarckplatz at the western end of the pedestrian shopping street. In the story, this is the destination of a trip by tram.</p>
 
 The RNV, like many other operators in Germany, has its own subsidiary company, operating buses in Viernheim, Hesse. John Pucher and Ralph Buehler wrote in their 2010 paper *[Making public transport financially sustainable](http://www.reconnectingamerica.org/assets/Uploads/2010BuehlerPucherPublicTransport.pdf)* that companies use new subsidiaries to control labor costs because employees of the new companies have new contracts, that may have different wages and work rules, but also to grow the company. "Transit agencies are planning to use these new subsidiaries to win bids in future calls for tender in other cities and regions—thus potentially increasing the company’s market share and geographic reach."
 
 At the end of the day, this integrated web of companies, subsidiaries, operators, networks, and schedules doesn’t really matter to the rider: which company operates which route has no bearing on the rider. A single organization – VRN, the "network" company for Heidelberg – is in charge of the timetables, and in providing GTFS feeds for Transitland. VRN is in charge of standardizing fares across and between cities and operators, so costs are the same for similar distance trips, no matter which operator happened to be driving.
 
-!["Pedestrian shopping street in Heidelberg, Germany"](/images/rhein-necker-transit/heidelberg-pedestrian-street.jpg)
+!["Pedestrian shopping street in Heidelberg, Germany"](/images/rhein-neckar-transit/heidelberg-pedestrian-street.jpg)
 <p class='caption'>A pedestrian shopping street is common to (probably) all municipalities in Germany.</p>
 
 The three agencies in Chicago are moving slowly to have fare integration, but there are no visible efforts to coordinate transfers or consolidate fares. Last year it became possible to use a single online payment account to pay for rides on CTA, Pace, and Metra, although with two fare mediums. Riders use a chip card to ride CTA and Pace, but must have an app to buy Metra tickets using the same electronic fare money. 
 
-**Make a map**
+## Make a map
 The Rhein-Neckar-Verkehr transit feed in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the S-bahn routes, or the RegioExpress and RegioBahn inter-regional routes. 
 
-Using the Transitland API I can find which tram and bus routes would carry my sister and I from the Heidelberg Hauptbahnhof to Bismarckplatz, the start of the pedestrian shopping area. First I need to find the `onestopId` for the two stops. 
+Using the [Transitland API](https://transit.land/documentation/datastore/api-endpoints.html) I can find which tram and bus routes would carry my sister and I from the Heidelberg Hauptbahnhof to Bismarckplatz, the start of the pedestrian shopping area. First I need to find the `onestopId` for the two stops. 
 
 Klokan's [BoundingBox](http://boundingbox.klokantech.com) website gives me the coordinates for any rectangular area on the earth, that I can use to call the API to return the stops in that area. 
 
@@ -96,7 +98,8 @@ https://transit.land/api/v1/route_stop_patterns.geojson?stops_visited=s-u0y1j3y5
 
 That call returns an array of 38 "route stop patterns", which are a custom identifer that are uniquely defined by a route, a stop pattern, and a line geometry. In the 38 RSPs there are three tram routes. Tram route 23 has two RSPs that service the trip between the Heidelberg Hauptbahnhof and the Bismarckplatz stations; route 9 has four RSPs, and tram route 5 has 32 route stop patterns (its `onestopId` is `r-u0y1-5`). 
 
-**Bonus thought on transit integration**
+## Bonus thought on transit integration
+
 DB is a singular authority on transit timetables and routing for the entire country. They have every regional transit operators' schedules available on Bahn.com for routing within and between cities, and even on intercity trains across Europe. Their *DB Navigator* app is [indispensible for local and international travelers](http://www.stevencanplan.com/2016/05/essential-apps-for-traveling-in-parts-of-europe/) – you can even buy certain tickets on it. 
 
 CHANGE MAP
