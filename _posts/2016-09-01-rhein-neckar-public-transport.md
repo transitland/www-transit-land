@@ -62,6 +62,9 @@ RNV, the main transit operator, and the *Unternehmensgesellschaft Verkehrsverbun
 
 The RNV, like many other operators in Germany, has its own subsidiary company, operating buses in Viernheim, Hesse. John Pucher and Ralph Buehler wrote in their 2010 paper *[Making public transport financially sustainable](http://www.reconnectingamerica.org/assets/Uploads/2010BuehlerPucherPublicTransport.pdf)* that companies use new subsidiaries to control labor costs because employees of the new companies have new contracts, that may have different wages and work rules, but also to grow the company. "Transit agencies are planning to use these new subsidiaries to win bids in future calls for tender in other cities and regions—thus potentially increasing the company’s market share and geographic reach."
 
+!["My sister and I riding a tram in Heidelberg"](/images/rhein-neckar-transit/steven-and-jenny-riding-tram.jpg)
+<p class='caption'>Proof that we rode a tram in Heidelberg on the first day. We rode a bus on the next day because it departed first.</p>
+
 At the end of the day, this integrated web of companies, subsidiaries, operators, networks, and schedules doesn’t really matter to the rider: which company operates which route has no bearing on the rider. A single organization – VRN, the "network" company for Heidelberg – is in charge of the timetables, and in providing GTFS feeds for Transitland. VRN is in charge of standardizing fares across and between cities and operators, so costs are the same for similar distance trips, no matter which operator happened to be driving.
 
 !["Pedestrian shopping street in Heidelberg, Germany"](/images/rhein-neckar-transit/heidelberg-pedestrian-street.jpg)
