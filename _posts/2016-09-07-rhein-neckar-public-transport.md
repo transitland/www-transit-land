@@ -73,7 +73,7 @@ At the end of the day, this integrated web of companies, subsidiaries, operators
 The three agencies in Chicago are moving slowly to have fare integration, but there are no visible efforts to coordinate transfers or consolidate fares. Last year it became possible to use a single online payment account to pay for rides on CTA, Pace, and Metra, although with two fare mediums. Riders use a chip card to ride CTA and Pace, but must have an app to buy Metra tickets using the same electronic fare money. 
 
 ## Make a map
-The Rhein-Neckar-Verkehr transit feed in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the [S-bahn routes](https://en.wikipedia.org/wiki/Rhine-Neckar_S-Bahn), or the RegioExpress and RegioBahn inter-regional routes. 
+The [Rhein-Neckar-Verkehr transit feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the [S-bahn routes](https://en.wikipedia.org/wiki/Rhine-Neckar_S-Bahn), or the RegioExpress and RegioBahn inter-regional routes. 
 
 Using the [Transitland API](https://transit.land/documentation/datastore/api-endpoints.html) I can find which tram and bus routes would carry my sister and I from the Heidelberg Hauptbahnhof to Bismarckplatz, the start of the pedestrian shopping area. First I need to find the `onestopId` for the two stops. 
 
@@ -87,9 +87,9 @@ https://transit.land/api/v1/stops?bbox=8.66272,49.396005,8.704262,49.419237
 https://transit.land/api/v1/stops.geojson?bbox=8.66272,49.396005,8.704262,49.419237
 ````
 
-I used QGIS, a free and open source GIS application, to inspect a GeoJSON file of those stops in Heidelberg I fetched using the bounding box. Our upcoming Mobility Explorer will make it easier than downloading files and using third-party apps to find this kind of specific transit data. 
+I used [QGIS](http://qgis.org/en/site/), a free and open source GIS application, to inspect a GeoJSON file of those stops in Heidelberg I fetched using the bounding box
 
-Once I have the stops' `onestopId` I can plug that into the `route_stop_patterns` API endpoint, like this:
+Once I have the stops' [Onestop IDs](https://transit.land/documentation/onestop-id-scheme/) I can plug that into the `route_stop_patterns` API endpoint, like this:
 
 ````
 # Standard call
@@ -99,9 +99,9 @@ https://transit.land/api/v1/route_stop_patterns?stops_visited=s-u0y1j3y5c4-hdhau
 https://transit.land/api/v1/route_stop_patterns.geojson?stops_visited=s-u0y1j3y5c4-hdhauptbahnhof,s-u0y1jff1q1-bismarckplatz
 ````
 
-That call returns an array of 38 "route stop patterns", which are a custom identifer that are uniquely defined by a route, a stop pattern, and a line geometry. In the 38 RSPs there are three tram routes. Tram route 23 has two RSPs that service the trip between the Heidelberg Hauptbahnhof and the Bismarckplatz stations; route 9 has four RSPs, and tram route 5 has 32 route stop patterns (its `onestopId` is `r-u0y1-5`). 
+That call returns an array of 38 [route stop patterns](https://transit.land/documentation/datastore/routes-and-route-stop-patterns.html), which are a custom identifer that are uniquely defined by a route, a stop pattern, and a line geometry. In the 38 RSPs there are three tram routes. Tram route 23 has two RSPs that service the trip between the Heidelberg Hauptbahnhof and the Bismarckplatz stations; route 9 has four RSPs, and tram route 5 has 32 route stop patterns (its `onestopId` is `r-u0y1-5`). 
 
-Those GeoJSON calls become the source data in [my Play "scene"](https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. The tram lines don't follow the rides because RNV's GTFS feed doesn't provide the `shapes.txt` file so Transitland has derived the route shape by drawing straight lines between stops. 
+Those GeoJSON calls become the source data in [my Play "scene"](https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. The tram lines don't follow the rides because [RNV's GTFS feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) doesn't provide the `shapes.txt` file so Transitland has derived the route shape by drawing straight lines between stops. 
 
 <iframe width="100%" style="height: 65vh;"
 src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml#15.1624/49.4079/8.6838"></iframe>
