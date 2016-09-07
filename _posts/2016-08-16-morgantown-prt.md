@@ -49,6 +49,6 @@ Transitland's [Valhalla](https://mapzen.com/blog/valhalla-intro/) doesn't curren
 <p class='caption'>WVU studied the PRT's operational costs and impact on local driving and transit use in 1979, publishing this map before Phase II was built that year. Hosted by the <a href="https://archive.org/details/prtimpactstudyop00elia" target="_blank">Internet Archive</a>.</p>
 
 <iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/morgantown-blog-post/images/morgantown-prt/scene.yaml#14/39.6425/-79.9659"></iframe>
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/morgantown-prt/scene.yaml#14/39.6425/-79.9659"></iframe>
 
 This map of the PRT route was automatically generated using [Mapzen Tangram vector tiles](https://mapzen.com/products/tangram/) and [this YAML scene code](https://raw.githubusercontent.com/transitland/www-transit-land/morgantown-blog-post/images/morgantown-prt/scene.yaml); stops were pulled from the Transitland API [as GeoJSON](https://transit.land/api/v1/stops.geojson?served_by=o-dpp1s-wvuprt). 
