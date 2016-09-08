@@ -58,7 +58,7 @@ The transit operator in this region is a separate company called [Rhein-Neckar-V
 RNV, the main transit operator, and the *Unternehmensgesellschaft Verkehrsverbund Rhein-Neckar* (URN), a union of over 50 transit operators, are members of the VRN network. 
 
 !["another tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-bismarckplatz.jpg)
-<p class='caption'>Trams and buses run frequently to and from the *haltestelle* (stop) at Bismarckplatz at the western end of the pedestrian shopping street. In the story, this is the destination of a trip by tram.</p>
+<p class='caption'>Trams and buses run frequently to and from the <i>haltestelle</i> (stop) at Bismarckplatz at the western end of the pedestrian shopping street. In the story, this is the destination of a trip by tram.</p>
 
 The RNV, like many other operators in Germany, has its own subsidiary company, operating buses in Viernheim, Hesse. John Pucher and Ralph Buehler wrote in their 2010 paper *[Making public transport financially sustainable](http://www.reconnectingamerica.org/assets/Uploads/2010BuehlerPucherPublicTransport.pdf)* that companies use new subsidiaries to control labor costs because employees of the new companies have new contracts, that may have different wages and work rules, but also to grow the company. "Transit agencies are planning to use these new subsidiaries to win bids in future calls for tender in other cities and regions—thus potentially increasing the company’s market share and geographic reach."
 
@@ -73,7 +73,7 @@ At the end of the day, this integrated web of companies, subsidiaries, operators
 The three agencies in Chicago are moving slowly to have fare integration, but there are no visible efforts to coordinate transfers or consolidate fares. Last year it became possible to use a single online payment account to pay for rides on CTA, Pace, and Metra, although with two fare mediums. Riders use a chip card to ride CTA and Pace, but must have an app to buy Metra tickets using the same electronic fare money. 
 
 ## Make a map
-The [Rhein-Neckar-Verkehr transit feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the [S-bahn routes](https://en.wikipedia.org/wiki/Rhine-Neckar_S-Bahn), or the RegioExpress and RegioBahn inter-regional routes. 
+The [Rhein-Neckar-Verkehr transit feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) in our Feed Registry covers buses, trams, and [this interurban tram](https://en.wikipedia.org/wiki/Upper_Rhine_Railway_Company). It doesn't include the [S-bahn routes](https://en.wikipedia.org/wiki/Rhine-Neckar_S-Bahn), or the Regionalexpress and Regionalbahn intra and inter-regional routes that make fewer stops. 
 
 Using the [Transitland API](https://transit.land/documentation/datastore/api-endpoints.html) I can find which tram and bus routes would carry my sister and I from the Heidelberg Hauptbahnhof to Bismarckplatz, the start of the pedestrian shopping area. First I need to find the `onestopId` for the two stops. 
 
@@ -101,12 +101,12 @@ https://transit.land/api/v1/route_stop_patterns.geojson?stops_visited=s-u0y1j3y5
 
 That call returns an array of 38 [route stop patterns](https://transit.land/documentation/datastore/routes-and-route-stop-patterns.html), which are a custom identifer that are uniquely defined by a route, a stop pattern, and a line geometry. In the 38 RSPs there are three tram routes. Tram route 23 has two RSPs that service the trip between the Heidelberg Hauptbahnhof and the Bismarckplatz stations; route 9 has four RSPs, and tram route 5 has 32 route stop patterns (its `onestopId` is `r-u0y1-5`). 
 
-Those GeoJSON calls become the source data in [my Play "scene"](https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. The tram lines don't follow the rides because [RNV's GTFS feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) doesn't provide the `shapes.txt` file so Transitland has derived the route shape by drawing straight lines between stops. 
+Those GeoJSON calls become the source data in [my Play "scene"](https://transit.land/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. The tram lines don't follow the rides because [RNV's GTFS feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) doesn't provide the `shapes.txt` file so Transitland has derived the route shape by drawing straight lines between stops. 
 
 <iframe width="100%" style="height: 65vh;"
 src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml#15.1624/49.4079/8.6838"></iframe>
 
-[Open this scene in Tangram](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml) to play around with the data and symbology. 
+[Open this scene in Tangram](https://mapzen.com/tangram/play/?scene=https://transit.land/images/rhein-neckar-transit/scene.yaml) to play around with the data and symbology. 
 
 ## Bonus thought on transit integration
 
