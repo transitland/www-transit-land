@@ -1,0 +1,95 @@
+import: https://mapzen.com/carto/zinc-style/zinc-style.yaml
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+    routes:
+        type: GeoJSON
+        url: https://transit.land/api/v1/route_stop_patterns.geojson?stops_visited=s-u0y1j3y5c4-hdhauptbahnhof,s-u0y1jff1q1-bismarckplatz
+    stops:
+        type: GeoJSON
+        url: https://transit.land/api/v1/stops.geojson?bbox=8.66272,49.396005,8.704262,49.419237
+
+styles:
+    text-overlay:
+        base: text
+        #texture: pois
+        interactive: true
+        blend: overlay
+        blend_order: 3
+    point-overlay:
+        base: points
+        #texture: pois
+        interactive: true
+        blend: inlay
+        blend_order: 3
+
+layers:
+
+    line5:
+        data:
+            source: routes
+        filter: { route_onestop_id: r-u0y1-5 }
+        draw:
+            lines:
+                order: 499
+                width: 6px
+                color: green
+
+
+    trams:
+        data:
+            source: routes
+        filter:
+            not: { route_onestop_id: r-u0y1-5 }
+        draw:
+            lines:
+                order: 499
+                width: 2px
+                color: blue
+
+    allstopslabel:
+        data:
+            source: stops
+        filter:
+            not: { onestop_id: [s-u0y1j3y5c4-hdhauptbahnhof, s-u0y1jff1q1-bismarckplatz]}
+        draw:
+            points1:
+                style: points
+                collide: false
+                color:  [0,0,1,0.9]
+                size: 20px
+            points2:
+                style: points
+                collide: false
+                color: [1,1,0,.8]
+                size: 14px
+
+    stopslabel:
+        data:
+            source: stops
+        filter: { onestop_id: [s-u0y1j3y5c4-hdhauptbahnhof, s-u0y1jff1q1-bismarckplatz]}
+        draw:
+            points1:
+                style: points
+                collide: false
+                color:  [0,0,1,0.9]
+                size: 20px
+            points2:
+                style: points
+                collide: false
+                color: [1,1,0,.8]
+                size: 14px
+            left:
+                style: text-overlay
+                collide: false
+                anchor: left
+                offset: [-15px,0px]
+                font:
+                    family: Helvetica
+                    size: 12px
+                    fill: yellow
+                    stroke:
+                        color: black
+                        width: 3.5
