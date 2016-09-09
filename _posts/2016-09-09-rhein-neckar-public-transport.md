@@ -8,7 +8,7 @@ title: German transit's tight integration ensures timely connections in small ci
 
 ## Taking regional trains from a city of 12,000 to a city of 155,000 is a piece of cake
 
-### by Steven Vance
+### by [Steven Vance](http://stevevance.net/)
 
 !["Tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-heidelberg-hauptbahnhof.jpg)
 <p class='caption'>Trams and buses run frequently to and from the Heidelberg Hauptbahnhof (main station) in the German state Baden-Württemberg. In the story below, this is the origin of a trip by tram.</p>
