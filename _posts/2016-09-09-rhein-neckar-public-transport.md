@@ -11,11 +11,11 @@ title: German transit's tight integration ensures timely connections in small ci
 ### by [Steven Vance](http://stevevance.net/)
 
 !["Tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-heidelberg-hauptbahnhof.jpg)
-<p class='caption'>Trams and buses run frequently to and from the Heidelberg Hauptbahnhof (main station) in the German state Baden-Württemberg. In the story below, this is the origin of a trip by tram.</p>
-
-In June my sister and I traveled to Germany. I went to visit a friend I met in Chicago and it was my sister's first trip in Europe. We stayed with my friend in [Ladenburg](https://en.wikipedia.org/wiki/Ladenburg), a village of about 12,000 people in the state Baden-Württemberg, and equidistant to Mannheim and Heidelberg.
+<p class='caption'>Trams and buses run frequently to and from the Heidelberg Hauptbahnhof (main station) in the German state Baden-Württemberg. In the story below, this is the origin of a trip by tram. And it's one of the stations highlighted in an interactive map that you can learn how to make with Transitland's API, the Tangram Play map style editor, and a bit of QGIS too.</p>
 
 <!-- more -->
+
+In June my sister and I traveled to Germany. I went to visit a friend I met in Chicago and it was my sister's first trip in Europe. We stayed with my friend in [Ladenburg](https://en.wikipedia.org/wiki/Ladenburg), a village of about 12,000 people in the state Baden-Württemberg, and equidistant to Mannheim and Heidelberg.
 
 Ladenburg has a [train station](http://www.openstreetmap.org/node/21412509) with three tracks and two platforms. During our stay there the third track was under construction. We visited Heidelberg twice, taking trains from Ladenburg on both days. 
 
