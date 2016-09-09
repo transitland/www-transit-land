@@ -15,7 +15,9 @@ title: German transit's tight integration ensures timely connections in small ci
 
 **I've done my best trying to make sense of how regional transit providers in one part of Germany are organized, but if you think I could be more accurate, please email transitland@mapzen.com.**
 
-In June my sister and I traveled to Germany. I went to visit a friend I met in Chicago and it was my sister's first trip in Europe. We stayed with my friend in [Ladenburg](https://en.wikipedia.org/wiki/Ladenburg), a village of about 12,000 people in the state Baden-Württemberg, and equidistant to Mannheim and Heidelberg. 
+In June my sister and I traveled to Germany. I went to visit a friend I met in Chicago and it was my sister's first trip in Europe. We stayed with my friend in [Ladenburg](https://en.wikipedia.org/wiki/Ladenburg), a village of about 12,000 people in the state Baden-Württemberg, and equidistant to Mannheim and Heidelberg.
+
+<!-- more -->
 
 Ladenburg has a [train station](http://www.openstreetmap.org/node/21412509) with three tracks and two platforms. During our stay there the third track was under construction. We visited Heidelberg twice, taking trains from Ladenburg on both days. 
 
