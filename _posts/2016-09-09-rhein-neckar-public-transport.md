@@ -104,7 +104,7 @@ That call returns an array of 38 [route stop patterns](https://transit.land/docu
 Those GeoJSON calls become the source data in [my Play "scene"](https://transit.land/images/rhein-neckar-transit/scene.yaml) that tells the embedded Tangram map what and how to display it. The green line is tram route 5, and the blue line are the other two tram routes. All three carry riders between "HD Hauptbahnhof" and "Bismarckplatz", the only two stops labeled. The tram lines don't follow the rides because [RNV's GTFS feed](https://transit.land/feed-registry/operators/o-u0y1-rhein%7Eneckar%7Everkehrgmbhrnv) doesn't provide the `shapes.txt` file so Transitland has derived the route shape by drawing straight lines between stops. 
 
 <iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/mannheim-germany-blog-post/images/rhein-neckar-transit/scene.yaml#15.1624/49.4079/8.6838"></iframe>
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/rhein-neckar-transit/scene.yaml#15.1624/49.4079/8.6838"></iframe>
 
 [Open this scene in Tangram](https://mapzen.com/tangram/play/?scene=https://transit.land/images/rhein-neckar-transit/scene.yaml) to play around with the data and symbology. 
 
