@@ -8,6 +8,8 @@ title: Morgantown "Personal Rapid Transit" is the world's longest running PRT, a
 
 ## Experimental transit from the 1970s is still running
 
+### by [Steven Vance](https://twitter.com/stevevance)
+
 !["Personal Rapid Transit vehicle in Morgantown"](/images/morgantown-prt/3096010105_view_down_tracks.jpg)
 <p class='caption'>A yellow Personal Rapid Transit vehicle drives down the guideway in Morgantown, West Virginia. Photo by <a href="https://www.flickr.com/photos/70428838@N00/3096010105/" target="_blank">Jen & Elwood</a>.</p>
 
@@ -49,6 +51,6 @@ Transitland's [Valhalla](https://mapzen.com/blog/valhalla-intro/) doesn't curren
 <p class='caption'>WVU studied the PRT's operational costs and impact on local driving and transit use in 1979, publishing this map before Phase II was built that year. Hosted by the <a href="https://archive.org/details/prtimpactstudyop00elia" target="_blank">Internet Archive</a>.</p>
 
 <iframe width="100%" height="700" style="border:0;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/morgantown-blog-post/images/morgantown-prt/scene.yaml#15/39.6427/-79.9623"></iframe>
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=http://transit.land/images/morgantown-prt/scene.yaml#15/39.6427/-79.9623"></iframe>
 
-This map of the PRT route was automatically generated using [Mapzen Tangram vector tiles](https://mapzen.com/products/tangram/) and [this YAML scene code](https://raw.githubusercontent.com/transitland/www-transit-land/morgantown-blog-post/images/morgantown-prt/scene.yaml); stops were pulled from the Transitland API [as GeoJSON](https://transit.land/api/v1/stops.geojson?served_by=o-dpp1s-wvuprt). You can [change the scene interactively](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/transitland/www-transit-land/morgantown-blog-post/images/morgantown-prt/scene.yaml#16.0000/39.6428/-79.9658) with Tangram Play.
+This map of the PRT route was automatically generated using [Mapzen Tangram vector tiles](https://mapzen.com/products/tangram/) and [this YAML scene code](http://transit.land/images/morgantown-prt/scene.yaml); stops were pulled from the Transitland API [as GeoJSON](https://transit.land/api/v1/stops.geojson?served_by=o-dpp1s-wvuprt). You can [change the scene interactively](https://mapzen.com/tangram/play/?scene=http://transit.land/images/morgantown-prt/scene.yaml#16.0000/39.6428/-79.9658) with Tangram Play.
