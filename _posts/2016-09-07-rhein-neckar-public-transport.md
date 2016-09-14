@@ -8,7 +8,7 @@ title: German transit's tight integration ensures timely connections in small ci
 
 ## Taking regional trains from a city of 12,000 to a city of 155,000 is a piece of cake
 
-### by Steven Vance
+### by [Steven Vance](https://twitter.com/stevevance)
 
 !["Tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-heidelberg-hauptbahnhof.jpg)
 <p class='caption'>Trams and buses run frequently to and from the Heidelberg Hauptbahnhof (main station) in the German state Baden-Württemberg. In the story below, this is the origin of a trip by tram.</p>
@@ -45,22 +45,22 @@ In the USA, there are typically two structures. The first, most commonly found i
 
 The second structure is for the transit agency to be a department of a city or county's transportation or public works department. 
 
-In Germany however, there are multiple layers, and they start with regions, not states. Heidelberg, Ladenburg, and Mannheim, for example, are all in the [Rhine-Neckar Metropolitan Region](https://en.wikipedia.org/wiki/Rhine-Neckar), named after the two rivers that converge in Mannheim. 
+In Germany however, there are multiple layers, and they start with regions, not the states. The cities of Heidelberg, Ladenburg, Ludwigshafen, and Mannheim, for example, are all in the [Rhine-Neckar Metropolitan Region](https://en.wikipedia.org/wiki/Rhine-Neckar), named after the two rivers that converge in Mannheim. 
 
 ## Peeling back the layers of transit organizations in Mannheim & Heidelberg
 
 The *Verkehrsverbund Rhein-Neckar* ([Rhine-Neckar Transport Association](https://en.wikipedia.org/wiki/Verkehrsverbund_Rhein-Neckar), VRN) is a "network" that sets the fares and coordinates routes and timed transfers for transit in the region – including both public and private agencies that operate buses and trains in the area. 
 
-The VRN is singly owned by the *[Zweckverband Verkehrsverbund Rhein-Neckar](http://www.vrn.de/vrn/unternehmen/vrn-verbund/index.html)* (ZRN), a special purpose group specific to Germany that allows local government authorities to form an association. Other examples of zweckverbands in Germany include consortiums that run hospitals and ambulance services and [monitor traffic](http://www.kvs-oberland.de/für-verkehrsteilnehmer/faqs-english-version.html#2-what-is-the-legal-form). The three states, and 24 cities, city districts, and counties in the Rhein-Neckar region make up the ZRN.
+The VRN is singly owned by the *[Zweckverband Verkehrsverbund Rhein-Neckar](http://www.vrn.de/vrn/unternehmen/vrn-verbund/index.html)* (ZRN), a special purpose group specific to Germany that allows local government authorities to form an association. Other examples of Zweckverbände in Germany include consortiums that run hospitals and ambulance services and [monitor traffic](http://www.kvs-oberland.de/für-verkehrsteilnehmer/faqs-english-version.html#2-what-is-the-legal-form). The three states, and 24 cities, city districts, and counties in the Rhein-Neckar Region make up the ZRN.
 
-The transit operator in this region is a separate company called [Rhein-Neckar-Verkehr](http://www.rnv-online.de/english.html) (RNV). RNV was created and is owned, jointly, by the five former transit operators in the region. On trams in Heidelberg you'll see the RNV logo, but the logo for the old HSB, or Heidelberger Straßen- und Bergbahn, is also there!
+The transit operator in this region is a separate company called [Rhein-Neckar-Verkehr](http://www.rnv-online.de/english.html) (rnv). *rnv* was created and is owned, jointly, by the five former transit operators in the region. On trams in Heidelberg you'll see the RNV logo, but the logo for the old HSB, or Heidelberger Straßen- und Bergbahn, is also there!
 
-RNV, the main transit operator, and the *Unternehmensgesellschaft Verkehrsverbund Rhein-Neckar* (URN), a union of over 50 transit operators, are members of the VRN network. 
+*rnv*, the major transit operator, and the *Unternehmensgesellschaft Verkehrsverbund Rhein-Neckar* (URN), a union of over 50 transit operators and *rnv*, are members of the VRN network. 
 
 !["another tram in Heidelberg, Germany"](/images/rhein-neckar-transit/tram-at-bismarckplatz.jpg)
 <p class='caption'>Trams and buses run frequently to and from the <i>haltestelle</i> (stop) at Bismarckplatz at the western end of the pedestrian shopping street. In the story, this is the destination of a trip by tram.</p>
 
-The RNV, like many other operators in Germany, has its own subsidiary company, operating buses in Viernheim, Hesse. John Pucher and Ralph Buehler wrote in their 2010 paper *[Making public transport financially sustainable](http://www.reconnectingamerica.org/assets/Uploads/2010BuehlerPucherPublicTransport.pdf)* that companies use new subsidiaries to control labor costs because employees of the new companies have new contracts, that may have different wages and work rules, but also to grow the company. "Transit agencies are planning to use these new subsidiaries to win bids in future calls for tender in other cities and regions—thus potentially increasing the company’s market share and geographic reach."
+*rnv*, like many other operators in Germany, has its own subsidiary company, operating buses in Viernheim, Hessen. John Pucher and Ralph Buehler wrote in their 2010 paper *[Making public transport financially sustainable](http://www.reconnectingamerica.org/assets/Uploads/2010BuehlerPucherPublicTransport.pdf)* that companies use new subsidiaries to control labor costs because employees of the new companies have new contracts, that may have different wages and work rules, but also to grow the company. "Transit agencies are planning to use these new subsidiaries to win bids in future calls for tender in other cities and regions - thus potentially increasing the company’s market share and geographic reach."
 
 !["My sister and I riding a tram in Heidelberg"](/images/rhein-neckar-transit/steven-and-jenny-riding-tram.jpg)
 <p class='caption'>Proof that we rode a tram in Heidelberg on the first day. We rode a bus on the next day because it departed first.</p>
@@ -111,3 +111,5 @@ src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubus
 ## Bonus thought on transit integration
 
 DB is a singular authority on transit timetables and routing for the entire country. They have every regional transit operators' schedules available on Bahn.com for routing within and between cities, and even on intercity trains across Europe. Their *DB Navigator* app is [indispensible for local and international travelers](http://www.stevencanplan.com/2016/05/essential-apps-for-traveling-in-parts-of-europe/) – you can even buy certain tickets on it. 
+
+*Updated Sep. 14 to correct words and names in German.*
