@@ -11,3 +11,10 @@ This tutorial goes over some basic API calls to the Datastore. Some basic unders
 
 ### Make an API call with the Datastore API
 In this tutorial, we're going to practice making a few queries using the Datastore API to get information for identifying routes, stops, or schedules for transit agencies in a particular area.
+
+To make a query in the Datastore API, we use a format where the base URL is `https://transit.land/` with the query added after. A complete list of API endpoints is in the [documentation](https://transit.land/documentation/datastore/api-endpoints.html).
+
+#### List all routes in a given area
+To list all the routes in a particular area, we need to create an API constraint. This will narrow the JSON results to places only inside the constraint. We're going to use a bounding box, which will use two coordinates to create a rectangular area, for this example. To create a bounding box, we need the coordinates of the southwest latitude and longitude and the northeast latitude and longitude. 
+
+[bounding box example](bounding-box.png)
