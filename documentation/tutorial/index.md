@@ -12,9 +12,15 @@ This tutorial goes over some basic API calls to the Datastore. Some basic unders
 ### Make an API call with the Datastore API
 In this tutorial, we're going to practice making a few queries using the Datastore API to get information for identifying routes, stops, or schedules for transit agencies in a particular area.
 
-To make a query in the Datastore API, we use a format where the base URL is `https://transit.land/` with the query added after. A complete list of API endpoints is in the [documentation](https://transit.land/documentation/datastore/api-endpoints.html).
+To make a query in the Datastore API, we use a format where the base URL is `https://transit.land/api/v1/{API endpoint}` with the query added after. A complete list of API endpoints is in the [documentation](https://transit.land/documentation/datastore/api-endpoints.html).
 
 #### List all routes in a given area
 The first query that we're going to make will return all of the routes in a given area. To do this, we have to create an endpoint that limits our query to a defined geographic area. The Datastore API has a GET method for creating a bounding box, which lets us define a rectangular area with two coordinates, for specifying where we want route information. To use the bounding box, we need the coordinates of the southwest and northeast corners.
 
+For this example, we'll be querying all the routes in San Francisco, CA:
+
 [bounding box example](bounding-box.png)
+
+The coordinates for bounding box need to be in a longitude, latitude format. Once you have the coordinates, you can write out the API call: 
+
+`https://transit.land/api/v1/routes?bbox=-122.4183,37.7758,-122.4120,37.7858`
