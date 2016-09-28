@@ -35,6 +35,9 @@ The GTFS feed for TART transit data, which is listed on Transitland's [Feed Regi
 
 [BlueGo](http://www.tahoetransportation.org/transit) operates routes in Lake Tahoe's South Shore area. The other, [North Lake Tahoe Express](https://www.northlaketahoeexpress.com/), is a shuttle service that requires reservations and picks up travelers from the Reno Tahoe International airport. It has three fixed routes, with fixed stop times, reaching dozens of ski resorts. Since it requires reservations, it shouldn't allow a potential passenger to assume they can hop on. 
 
+!["BlueGo bus in Kings Beach, Caliornia"](/images/truckee-transit/9473930715_bluego_bus.jpg)
+<p class='caption'>A BlueGo bus on a highway in Kings Beach, California. Photo by <a href="https://www.flickr.com/photos/southerncalifornian/9473930715/" target="_blank">So Cal Metro</a>.</p>
+
 GTFS is all about standardizing transit data into a single format, so how do you highlight this important difference?
 
 Agencies communicate this unique service requirement by adding a descriptive phrase to its name in the `agency.txt` file. Transitland captures the name "North Lake Tahoe Express - 24 hour advance reservations required" and shows it on its [public Feed Registry entry](https://transit.land/feed-registry/operators/o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired) and when [fetching](https://transit.land/api/v1/routes?operated_by=o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired) it on our API.
