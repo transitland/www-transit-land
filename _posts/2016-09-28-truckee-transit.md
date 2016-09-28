@@ -3,7 +3,7 @@ layout: page
 category: news
 published: true
 isThereTitle: true
-title: Transit around Truckee and Lake Tahoe
+title: Transit around Truckee and Lake Tahoe, California
 ---
 
 ## Rural transit provides rides for residents and tourists
