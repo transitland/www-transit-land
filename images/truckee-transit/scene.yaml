@@ -1,10 +1,13 @@
 import: https://mapzen.com/carto/zinc-style/zinc-style.yaml
-#import: https://mapzen.com/carto/bubble-wrap-style/4/bubble-wrap.yaml
 
 sources:
     mapzen:
         type: TopoJSON
         url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+    coverage:
+        type: GeoJSON
+        url: https://transit.land/api/v1/operators/o-9qfx-tahoeareametroaltransit.geojson
+        #url: https://transit.land/api/v1/feeds/f-9qf-laketahoe~ca~us.geojson
     tart:
         type: GeoJSON
         url: https://transit.land/api/v1/routes.geojson?operated_by=o-9qfx-tahoeareametroaltransit
@@ -19,20 +22,17 @@ sources:
         url: https://transit.land/api/v1/stops.geojson?served_by=o-9qfx-tahoeareametroaltransit
 
 styles:
-    text-overlay:
-        base: text
-        #texture: pois
-        interactive: true
-        blend: overlay
-        blend_order: 3
-    point-overlay:
-        base: points
-        #texture: pois
-        interactive: true
+   blend:
+        base: polygons
         blend: inlay
-        blend_order: 3
 
 layers:
+    coverage:
+        data: {source: coverage}
+        draw:
+            blend:
+                order: 390
+                color: [1.000, 1.000, 1.000, 0.25]
     tart:
         data: { source: tart,}
         filter:
@@ -41,14 +41,8 @@ layers:
             lines:
                 order: 499
                 width: 5px
-#                color: [0.290, 0.290, 0.835, 1.00]
                 color: [0.871, 0.259, 0.439, 1.00]
-            # outlines:
-            #     style: lines
-            #     order: 4
-            #     color: [0.498, 0.216, 0.757, 1.00]
-            #     width: 4px
-            #     order: 498
+
 
     mainline:
         data:
@@ -59,24 +53,15 @@ layers:
                 order: 400
                 width: 10px
                 color: [0.000, 0.090, 1.000, 1.00]
-            # outlines:
-            #     style: lines
-            #     color: aqua
-            #     width: 4px
-            #     order: 599
+
     bluego:
         data:
             source: bluego
         draw:
             lines:
-                order: 400
-                width: 4px
+                order: 600
+                width: 2px
                 color: [0.459, 0.776, 0.235, 1.00]
-            # outlines:
-            #     style: lines
-            #     color: aqua
-            #     width: 4px
-            #     order: 599
 
     express:
         data:
@@ -86,37 +71,3 @@ layers:
                 order: 600
                 width: 2px
                 color: [1.000, 0.933, 0.263, 1.00]
-            # outlines:
-            #     style: lines
-            #     color: aqua
-            #     width: 4px
-            #     order: 599
-
-    # label:
-    #     data:
-    #         source: stops
-    #     draw:
-    #         points1:
-    #             order: 400
-    #             style: points
-    #             collide: false
-    #             color:  [0,0,1,0.9]
-    #             size: 20px
-    #         points2:
-    #             order: 399
-    #             style: points
-    #             collide: false
-    #             color: [1,1,0,.8]
-    #             size: 14px
-            # left:
-            #     style: text-overlay
-            #     collide: false
-            #     anchor: left
-            #     offset: [-15px,0px]
-            #     font:
-            #         family: Helvetica
-            #         size: 12px
-            #         fill: yellow
-            #         stroke:
-            #             color: black
-            #             width: 3.5
