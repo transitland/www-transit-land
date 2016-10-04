@@ -22,7 +22,7 @@ After looking at the coverage area for Tahoe Truckee Area Regional Transit, or [
 Grabbing an operator service area's map is a piece of cake. The "view" link on its Feed Registry page opens a map immediately in geojson.io. I can also include the GeoJSON returned from the Transitland Datastore API on a Tangram map: 
 
 <iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/truckee-transit/scene.yaml#14/39.6425/-79.9659"></iframe>
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/truckee-transit/scene.yaml#10.2878/39.1949/-120.1148"></iframe>
 
 *[Edit this map yourself](https://mapzen.com/tangram/play/?scene=http%3A%2F%2Ftransit.land%2Fimages%2Ftruckee-transit%2Fscene.yaml#10.2878/39.1949/-120.1148) in Tangram Play.*
 
