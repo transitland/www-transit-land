@@ -1,0 +1,73 @@
+import: https://mapzen.com/carto/zinc-style/zinc-style.yaml
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+    coverage:
+        type: GeoJSON
+        url: https://transit.land/api/v1/operators/o-9qfx-tahoeareametroaltransit.geojson
+        #url: https://transit.land/api/v1/feeds/f-9qf-laketahoe~ca~us.geojson
+    tart:
+        type: GeoJSON
+        url: https://transit.land/api/v1/routes.geojson?operated_by=o-9qfx-tahoeareametroaltransit
+    express:
+        type: GeoJSON
+        url: https://transit.land/api/v1/routes.geojson?operated_by=o-9qfx-northlaketahoeexpress~24houradvancereservationsrequired
+    bluego:
+        type: GeoJSON
+        url: https://transit.land/api/v1/routes.geojson?operated_by=o-9qft-bluego
+    stops:
+        type: GeoJSON
+        url: https://transit.land/api/v1/stops.geojson?served_by=o-9qfx-tahoeareametroaltransit
+
+styles:
+   blend:
+        base: polygons
+        blend: inlay
+
+layers:
+    coverage:
+        data: {source: coverage}
+        draw:
+            blend:
+                order: 390
+                color: [1.000, 1.000, 1.000, 0.25]
+    tart:
+        data: { source: tart,}
+        filter:
+            $zoom: { min: 8, max: 20 }
+        draw:
+            lines:
+                order: 499
+                width: 5px
+                color: [0.871, 0.259, 0.439, 1.00]
+
+
+    mainline:
+        data:
+            source: tart
+        filter: { name: "TART Mainline" }
+        draw:
+            lines:
+                order: 400
+                width: 10px
+                color: [0.000, 0.090, 1.000, 1.00]
+
+    bluego:
+        data:
+            source: bluego
+        draw:
+            lines:
+                order: 600
+                width: 2px
+                color: [0.459, 0.776, 0.235, 1.00]
+
+    express:
+        data:
+            source: express
+        draw:
+            lines:
+                order: 600
+                width: 2px
+                color: [1.000, 0.933, 0.263, 1.00]
