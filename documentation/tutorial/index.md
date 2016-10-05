@@ -17,10 +17,20 @@ To make a query in the Datastore API, we use a format where the base URL is `htt
 #### List all routes in a given area
 The first query that we're going to make will return all of the routes in a given area. To do this, we have to create an endpoint that limits our query to a defined geographic area. The Datastore API has a GET method for creating a bounding box, which lets us define a rectangular area with two coordinates, for specifying where we want route information. To use the bounding box, we need the coordinates of the southwest and northeast corners.
 
-For this example, we'll be querying all the routes in San Francisco, CA:
+For this example, we'll be querying all the operators in Victoria, British Columbia:
 
 [bounding box example](bounding-box.png)
 
-The coordinates for bounding box need to be in a longitude, latitude format. Once you have the coordinates, you can write out the API call: 
+The coordinates for bounding box need to be in a longitude, latitude format with the southwest coordinates first and then the northeast coordinates. Once you have the coordinates, you can write out the API call:
 
-`https://transit.land/api/v1/routes?bbox=-122.4183,37.7758,-122.4120,37.7858`
+`https://transit.land/api/v1/operators?bbox=-123.4017,48.3993,-123.3275,48.4502`
+
+The query results are returned in a JSON format:
+
+```
+
+```
+
+There are some important features of the query results:
+- onestopIDS
+- (ask Steve about this)
