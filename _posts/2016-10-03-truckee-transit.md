@@ -24,7 +24,7 @@ Grabbing an operator service area's map is a piece of cake. The "view" link on i
 <iframe width="100%" style="height: 65vh;"
 src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/truckee-transit/scene.yaml#10.2878/39.1949/-120.1148"></iframe>
 
-*[Edit this map yourself](https://mapzen.com/tangram/play/?scene=http%3A%2F%2Ftransit.land%2Fimages%2Ftruckee-transit%2Fscene.yaml#10.2878/39.1949/-120.1148) in Tangram Play.*
+*[Edit this map yourself](https://mapzen.com/tangram/play/?scene=transit.land/images/truckee-transit/scene.yaml#10.2878/39.1949/-120.1143) in Tangram Play.*
 
  The route shapes come from three calls to the [Transitland Datastore API](https://transit.land/documentation/datastore/api-endpoints.html), which are returned as GeoJSON. The yellow line is the North Lake Tahoe Express shuttle from the airport in Reno, Nevada. The red lines are TART's routes, and the blue line is TART's very long "Mainline" route. Green lines are routes run by BlueGo. 
 
