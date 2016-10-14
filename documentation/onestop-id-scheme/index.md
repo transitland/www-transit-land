@@ -5,7 +5,7 @@ layout: documentation
 
 The Onestop ID is an attempt to link transit data across disparate sources. At present, each transit operator, each government department, and each software developer has their own scheme for identifying and labeling their data. Take, for example, the San Francisco Municipal Transportation Agency:
 
-* It's known colloquially to locals as: `MUNI`.
+* It's known colloquially as: `MUNI`.
 * It's known in its [GTFS](https://en.wikipedia.org/wiki/General_Transit_Feed_Specification) feed as `SFMTA`.
 * It's known in the [US National Transit Database](http://www.ntdprogram.gov) as `#9015`.
 * It's known on the [GTFS Data Exchange](http://www.gtfs-data-exchange.com/) as `san-francisco-municipal-transportation-agency`
@@ -51,7 +51,7 @@ Want to browse geohashes for your location? Here's a map of geohashes over the e
 
 Sometimes, an operator's service area won't fit exactly inside a geohash's bounding box. The most extreme example is London, where the tube network crosses the prime meridian. No one geohash can be used to effectively identify the extent of Transport for London's service area.
 
-Therefore, the geohash in a Onestop ID is used to refer to a focal point. In the case of feeds and operators, their coverage/service area can extent out to any of the eight neighboring geohash bounding boxes. In the case of routes, they can extend into any of the eight neighbors. The centroid of the feed, operator, or route will always be located in the geohash that's included in the Onestop ID&mdash;the focal point, that is&mdash;but the lines or polygons could extend out into neighbors.
+Therefore, the geohash in a Onestop ID is used to refer to a focal point. In the case of feeds and operators, their coverage/service area can extend out to any of the eight neighboring geohash bounding boxes. In the case of routes, they can extend into any of the eight neighbors. The centroid of the feed, operator, or route will always be located in the geohash that's included in the Onestop ID&mdash;the focal point, that is&mdash;but the lines or polygons could extend out into neighbors.
 
 For example, here is the geohash `9q9` and its eight neighbors. This geohash can refer to Bay Area Rapid Transit (BART), including all its service area.
 
