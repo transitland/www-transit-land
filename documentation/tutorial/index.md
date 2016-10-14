@@ -3,7 +3,7 @@ title: Tutorial
 layout: documentation
 ---
 
-## Get Transitland data
+## Get Transitland data 
 Transitland is an aggregation data service of transit networks around the world. All of that information from the Feed Registry can be queried using the Datastore using its web API. This tutorial will cover the basics of API calls from the datastore to get your hands on transit data for your app, visualization, or analytics tool.
 
 ### Things to know
