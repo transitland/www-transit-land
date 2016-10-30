@@ -19,7 +19,7 @@ Find the coordinates for any place in the world on [Mapzen's "I am here" website
 
 ### Make your first API request
 
-Once you have that information it's easy to create a Transitland API request using the `stops` endpoint that looks for all transit stops (no matter the mode) within a specified distance from your given point, where we have coverage. I've chosen the Maracanã Stadium's location. 
+Once you have that information it's easy to create a Transitland API request using the `stops` [endpoint](https://transit.land/documentation/datastore/api-endpoints.html) that looks for all transit stops (no matter the mode) within a specified distance from your given point, where we have coverage. I've chosen the Maracanã Stadium's location. 
 
 ````
 https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400
@@ -28,13 +28,13 @@ https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400
 # "r" is the attribute for radius, in meters
 ````
 
-Go ahead and paste that query URL in your web browser's location bar and press "Enter". A moment later a block of text will appear that looks like this:
+Go ahead and paste that query URL in your web browser's location bar and press "Enter" – [or click here](https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400). A moment later a block of text will appear that looks like this:
 
 ````
-{"stops":[{"identifiers":["gtfs://f-75cj-fetranspor/s/18232257"]: [snipped]
+{"stops":[{"identifiers":["gtfs://f-75cj-fetranspor/s/18232257"]: [...snipped...]
 ````
 
-This particular call returns seven stops in a JSON-formatted response. The `meta` property contains pagination information and describes how your request was sorted, and which "page" of results it contains. 
+This particular call returns seven transit stops in a JSON-formatted response. The `meta` property in the response contains pagination information and describes how your request was sorted, and which "page" of results it contains. 
 
 ### Put your results on a map
 
@@ -54,7 +54,7 @@ If you really are that business owner and you want to embed this map on your sho
 On *geojson.io*, with your transit stops marked, click on the *Share* button above the map. A dialog box will appear with a URL to a full-screen view of your map. Copy that URL and paste it into the embed code below. 
 
 ````
-<iframe src="[insert URL here]"></iframe>
+<iframe src="insert URL here"></iframe>
 ````
 
 Now copy this `<iframe>` embed code into the HTML of your website where you want the map to appear and save that page. 
@@ -75,15 +75,15 @@ Now our query URL looks like this:
 https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true
 ````
 
-There are a couple other parameters we can add to this request that can narrow our results. The GTFS specification that all of the transit feeds in our datastore allows transit operators to specify if a stop allows wheelchair boarding. This is most important to transit routes that use trains or bus-rapid transit (BRT) because their stations may not yet be equipped.
+There are a couple other parameters we can add to this request that can narrow our results. The [GTFS specification](https://developers.google.com/transit/gtfs/reference/) that all of the transit feeds in our datastore allows transit operators to specify if a stop allows wheelchair boarding. This is most important to transit routes that use trains or bus-rapid transit (BRT) because their stations may not yet be equipped.
 
-Add these parameters to your query URL `&tag_key=wheelchair_boarding&tag_value=1`, making the query URL look like this:
+Add these parameters – also from [the `stops` endpoint](https://transit.land/documentation/datastore/api-endpoints.html) – to your query URL `&tag_key=wheelchair_boarding&tag_value=1`, making the query URL look like this:
 
 ````
 https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1
 ````
 
-Visit that URL in your web browser and press "Enter". It turns out that the response is empty, and returned zero stops! Now, that doesn't mean that none of the stops are wheelchair accessible at this point, because not all operators have applied this property to their transit data. However, a `tag_value=1` means that this stop *definitely* has wheelchair-accessible boarding. Let's remove that latest addition to the query URL. 
+Visit that URL in your web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1). It turns out that the response is empty, and returned zero stops! Now, that doesn't mean that none of the stops are wheelchair accessible at this point, because not all operators have applied this property to their transit data. However, a `tag_value=1` means that this stop *definitely* has wheelchair-accessible boarding. Let's remove that latest addition to the query URL. 
 
 ### Check for routing capabilities
 
@@ -107,13 +107,13 @@ Add `.geojson` after the `stops` endpoint parameter in the query URL, like this:
 https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true
 ````
 
-Insert that URL in the web browser and press "Enter". A file called `stops.geojson` will download to your computer. (If you're accessing the API through an app you're building, the file won't be downloaded.)
+Insert that URL in the web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true). A file called `stops.geojson` will download to your computer. (If you're accessing the API through an app you're building, the file won't be downloaded.)
 
 ### Advanced mapping
 
 With the GeoJSON file, you can visualize the transit stops in more maps and applications. 
 
-- You can open this file in the open source desktop application [QGIS](http://qgis.org)
+- Open this file in the open source desktop application [QGIS](http://qgis.org)
 - [Add the data to a Leaflet map](http://leafletjs.com/examples/geojson/) to embed on your website
 - [Call the Transitland API](https://transit.land/news/2016/08/11/transit-in-rio-olympics-copy.html) with Mapzen's Tangram Play product
 - [Use the file](https://www.mapbox.com/help/uploads/) in a [Mapbox map](https://www.mapbox.com/help/creating-new-map/)
