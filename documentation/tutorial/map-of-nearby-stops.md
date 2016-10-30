@@ -1,19 +1,21 @@
-# Use the Transitland API to make a map of nearby transit stops
+# Use Transitland's API to make a map of nearby transit stops
 
 Transitland's API unwraps our vast datastore of transit schedules from around the world – contributed by many – which can be included in your apps and maps. It's possible to start in the browser, however, to see the possibilities before you create your map or app. 
 
 This tutorial will walk you through **creating a map of transit stops near a given location**. You can choose any distance, but to show walking distance you'll want to show only those within 400 meters (about a quarter mile) of a starting point. 
 
 ## Why make this map
-You're a business owner and you want to add a map to your website that shows that it's possible to walk to your shop from one of several bus stops or train stations. 
 
-TK another example
+- You're a business owner and you want to add a map to your website that shows that it's possible to walk to your shop from one of several bus stops or train stations. 
+- By knowing how many transit stops are within walking distance of people's homes you can begin to analyze accessibility to transit
 
 ## Find your starting location
 
 First, you'll need to know the latitude and longitude coordinates of the starting place. If you're starting at [Fontana di Trevi](http://www.openstreetmap.org/way/23322002#map=19/41.90097/12.48328) in Rome, Italy, the latitude is 41.90097 and the longitude is 12.48328. 
 
-The [Maracanã Stadium](http://www.openstreetmap.org/relation/4587734#map=18/-22.91209/-43.23013) in Rio de Janeiro, Brasil, is at -22.91210, -43.22919. You can find the coordinates for any place in the world on [Mapzen's "I am here" website](https://whosonfirst.mapzen.com/iamhere/#7/38.514/-98.320). 
+The [Maracanã Stadium](http://www.openstreetmap.org/relation/4587734#map=18/-22.91209/-43.23013) in Rio de Janeiro, Brasil, is at -22.91210, -43.22919. 
+
+Find the coordinates for any place in the world on [Mapzen's "I am here" website](https://whosonfirst.mapzen.com/iamhere/#7/38.514/-98.320). 
 
 ### Make your first API request
 
@@ -46,6 +48,8 @@ Now it's time to see what this looks like on a map, in under a minute.
 
 If you really are that business owner and you want to embed this map on your shop's website, you can grab a special URL from *geojson.io*. 
 
+![screenshot of geojson.io](geojson-dot-io_screenshot.png "Showing API response with *geojson.io*")
+
 ### Embed your map
 On *geojson.io*, with your transit stops marked, click on the *Share* button above the map. A dialog box will appear with a URL to a full-screen view of your map. Copy that URL and paste it into the embed code below. 
 
@@ -53,7 +57,7 @@ On *geojson.io*, with your transit stops marked, click on the *Share* button abo
 <iframe src="[insert URL here]"></iframe>
 ````
 
-Now copy this `<iframe>` embed code into the HTML of your website where you want the map to appear. 
+Now copy this `<iframe>` embed code into the HTML of your website where you want the map to appear and save that page. 
 
 ## Try more options
 
@@ -90,6 +94,8 @@ https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&i
 ````
 
 All 7 stops from our first API request are back, meaning we can ask the Valhalla routing service to give us directions on how to get from point A to point B in Rio de Janeiro via transit. [Open a Valhalla demo in Rio](http://valhalla.github.io/demos/routing/multimodal.html#loc=13,-22.914584812068586,-43.44649824378031) and click on two points. 
+
+![screenshot of Valhalla routing in Rio de Janeiro](valhalla_routing_rio.png "Routing in Rio de Janeiro using Mapzen Valhalla")
 
 ### Export API requests as GeoJSON
 
