@@ -2,7 +2,9 @@
 
 Transitland's API unwraps our vast datastore of transit schedules from around the world – contributed by many – which can be included in your apps and maps. It's possible to start in the browser, however, to see the possibilities before you create your map or app. 
 
-This tutorial will walk you through **creating a map of transit stops near a given location**. You can choose any distance, but to show walking distance you'll want to show only those within 400 meters (about a quarter mile) of a starting point. 
+This tutorial will walk you through **creating a map of transit stops near a given location** in less than 5 minutes. You can choose any distance, but to show walking distance you'll want to show only those within 400 meters (about a quarter mile) of a starting point. 
+
+After you've made the first map, the tutorial continues with progressively more advanced suggestions to using the Transitland API. 
 
 ## Why make this map
 
@@ -11,9 +13,9 @@ This tutorial will walk you through **creating a map of transit stops near a giv
 
 ## Find your starting location
 
-First, you'll need to know the latitude and longitude coordinates of the starting place. If you're starting at [Fontana di Trevi](http://www.openstreetmap.org/way/23322002#map=19/41.90097/12.48328) in Rome, Italy, the latitude is 41.90097 and the longitude is 12.48328. 
+First, you'll need to know the latitude and longitude coordinates of the starting place. If you're starting at [Fontana di Trevi](http://www.openstreetmap.org/way/23322002#map=19/41.90097/12.48328) in Rome, Italy, the latitude is `41.90097` and the longitude is `12.48328`. 
 
-The [Maracanã Stadium](http://www.openstreetmap.org/relation/4587734#map=18/-22.91209/-43.23013) in Rio de Janeiro, Brasil, is at -22.91210, -43.22919. 
+The [Maracanã Stadium](http://www.openstreetmap.org/relation/4587734#map=18/-22.91209/-43.23013) in Rio de Janeiro, Brasil, is at `-22.91210, -43.22919`. 
 
 Find the coordinates for any place in the world on [Mapzen's "I am here" website](https://whosonfirst.mapzen.com/iamhere/#7/38.514/-98.320). 
 
@@ -77,13 +79,19 @@ https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true
 
 There are a couple other parameters we can add to this request that can narrow our results. The [GTFS specification](https://developers.google.com/transit/gtfs/reference/) that all of the transit feeds in our datastore allows transit operators to specify if a stop allows wheelchair boarding. This is most important to transit routes that use trains or bus-rapid transit (BRT) because their stations may not yet be equipped.
 
-Add these parameters – also from [the `stops` endpoint](https://transit.land/documentation/datastore/api-endpoints.html) – to your query URL `&tag_key=wheelchair_boarding&tag_value=1`, making the query URL look like this:
+Add these parameters to your query URL `&tag_key=wheelchair_boarding&tag_value=1`, making the query URL look like this:
 
 ````
 https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1
 ````
 
-Visit that URL in your web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1). It turns out that the response is empty, and returned zero stops! Now, that doesn't mean that none of the stops are wheelchair accessible at this point, because not all operators have applied this property to their transit data. However, a `tag_value=1` means that this stop *definitely* has wheelchair-accessible boarding. Let's remove that latest addition to the query URL. 
+These parameters are also from [the `stops` endpoint](https://transit.land/documentation/datastore/api-endpoints.html).
+
+Visit that URL in your web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1). It turns out that the response is empty, and returned zero stops! Now, that doesn't mean that none of the stops are wheelchair accessible at this point, because not all operators have applied this property to their transit data. 
+
+However, a `tag_value=1` means that this stop *definitely* has wheelchair-accessible boarding. 
+
+Before we move on to the next API option, remove the `wheelchair_boarding` parameters from the query URL or you might have zero results returned in the next request. 
 
 ### Check for routing capabilities
 
