@@ -6,11 +6,6 @@ This tutorial will walk you through **creating a map of transit stops near a giv
 
 After you've made the first map, the tutorial continues with progressively more advanced suggestions to using the Transitland API. 
 
-## Why make this map
-
-- You're a business owner and you want to add a map to your website that shows that it's possible to walk to your shop from one of several bus stops or train stations. 
-- By knowing how many transit stops are within walking distance of people's homes you can begin to analyze accessibility to transit
-
 ## Find your starting location
 
 First, you'll need to know the latitude and longitude coordinates of the starting place. If you're starting at [Fontana di Trevi](http://www.openstreetmap.org/way/23322002#map=19/41.90097/12.48328) in Rome, Italy, the latitude is `41.90097` and the longitude is `12.48328`. 
@@ -40,15 +35,21 @@ This particular call returns seven transit stops in a JSON-formatted response. T
 
 ### Put your results on a map
 
-Now it's time to see what this looks like on a map, in under a minute. 
+Now it's time to see what this looks like on a map. To make it, we need to slightly change the query URL so Transitland will output the same data in the **GeoJSON** format. 
+
+Add `.geojson` after the `stops` endpoint parameter in the query URL, like this:
+
+````
+https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true
+````
+
+Insert that URL in the web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true). A file called `stops.geojson` will download to your computer. (If you're accessing the API through an app you're building, the file won't be downloaded.)
 
 1. In your web browser, go to [http://geojson.io](http://geojson.io). 
 2. Then, open the downloaded file in a text editor (like Notepad on Windows, or TextEdit on Mac). 
 3. Copy the text from the text editor. 
 4. Paste it into the text area on the right half of *geojson.io*.
 5. A map appears on the left half! (This may take longer if you have more than 100 points.)
-
-If you really are that business owner and you want to embed this map on your shop's website, you can grab a special URL from *geojson.io*. 
 
 ![screenshot of geojson.io](geojson-dot-io_screenshot.png "Showing API response with *geojson.io*")
 
@@ -104,18 +105,6 @@ https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&i
 All 7 stops from our first API request are back, meaning we can ask the Valhalla routing service to give us directions on how to get from point A to point B in Rio de Janeiro via transit. [Open a Valhalla demo in Rio](http://valhalla.github.io/demos/routing/multimodal.html#loc=13,-22.914584812068586,-43.44649824378031) and click on two points. 
 
 ![screenshot of Valhalla routing in Rio de Janeiro](valhalla_routing_rio.png "Routing in Rio de Janeiro using Mapzen Valhalla")
-
-### Export API requests as GeoJSON
-
-The last step is to output this data so that we can map it. You can output any of the Transitland API requests as **GeoJSON**, a human-readable and standard way to represent places. 
-
-Add `.geojson` after the `stops` endpoint parameter in the query URL, like this:
-
-````
-https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true
-````
-
-Insert that URL in the web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true). A file called `stops.geojson` will download to your computer. (If you're accessing the API through an app you're building, the file won't be downloaded.)
 
 ### Advanced mapping
 
