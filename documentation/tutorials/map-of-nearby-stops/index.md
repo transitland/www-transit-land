@@ -83,15 +83,15 @@ https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true
 
 There are a couple other parameters we can add to this request that can narrow our results. The [GTFS specification](https://developers.google.com/transit/gtfs/reference/) that all of the transit feeds in our datastore allows transit operators to specify if a stop allows wheelchair boarding. This is most important to transit routes that use trains or bus-rapid transit (BRT) because their stations may not yet be equipped.
 
-Add these parameters to your query URL `&tag_key=wheelchair_boarding&tag_value=1`, making the query URL look like this:
+Add these parameters to your query URL `&wheelchair_boarding=true`, making the query URL look like this:
 
 ````
-https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1
+https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&wheelchair_boarding=true
 ````
 
 These parameters are also from [the `stops` endpoint](https://transit.land/documentation/datastore/api-endpoints.html).
 
-Visit that URL in your web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&tag_key=wheelchair_boarding&tag_value=1). It turns out that the response is empty, and returned zero stops! Now, that doesn't mean that none of the stops are wheelchair accessible at this point, because not all operators have applied this property to their transit data. 
+Visit that URL in your web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops?lat=-22.91210&lon=-43.22919&r=400&total=true&wheelchair_boarding=true). It turns out that the response is empty, and returned zero stops! Now, that doesn't mean that none of the stops are wheelchair accessible at this point, because not all operators have applied this property to their transit data. 
 
 However, a `tag_value=1` means that this stop *definitely* has wheelchair-accessible boarding. 
 
