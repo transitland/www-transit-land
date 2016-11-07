@@ -48,10 +48,10 @@ Insert that URL in the web browser and press "Enter" – or [click here](https:/
 1. In your web browser, go to [http://geojson.io](http://geojson.io). 
 2. Then, open the downloaded file in a text editor (like Notepad on Windows, or TextEdit on Mac). 
 3. Copy the text from the text editor. 
-4. Paste it into the text area on the right half of *geojson.io*.
-5. A map appears on the left half! (This may take longer if you have more than 100 points.)
+4. Delete all the existing text on the right half of *geojson.io* and paste in your text.
+5. A map will appear on the left! (This may take longer if you have more than 100 points.)
 
-![screenshot of geojson.io](geojson-dot-io_screenshot.png "Showing API response with *geojson.io*")
+![screenshot of geojson.io](show_transitland_results_in_geojson.gif "Copying and pasting GeoJSON into *geojson.io*")
 
 ### Embed your map
 On *geojson.io*, with your transit stops marked, click on the *Share* button above the map. A dialog box will appear with a URL to a full-screen view of your map. Copy that URL and paste it into the embed code below. 
