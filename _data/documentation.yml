@@ -1,5 +1,10 @@
 - title: Overview
   path: '/documentation/'
+- title: Tutorials
+  path: /documentation/tutorials/
+  pages:
+    - title: Create a Map of Nearby Stops
+      path: /documentation/tutorials/map-of-nearby-stops/
 - title: Feed Registry
   path: '/documentation/feed-registry/'
   pages:
