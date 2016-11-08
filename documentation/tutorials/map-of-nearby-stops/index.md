@@ -46,11 +46,11 @@ Add `.geojson` after the `stops` endpoint parameter in the query URL, like this:
 https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true
 ````
 
-Insert that URL in the web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true). A file called `stops.geojson` will download to your computer. (If you're accessing the API through an app you're building, the file won't be downloaded.)
+Insert that URL in the web browser and press "Enter" – or [click here](https://transit.land/api/v1/stops.geojson?lat=-22.91210&lon=-43.22919&r=400&total=true). Safari and Firefox will download a file called `stops.geojson` to your computer. (If you're accessing the API through an app you're building, the file won't be downloaded.)
 
 1. In your web browser, go to [http://geojson.io](http://geojson.io). 
-2. Then, open the downloaded file in a text editor (like Notepad on Windows, or TextEdit on Mac). 
-3. Copy the text from the text editor. 
+2. Safari and Firefox: Open the downloaded file in a text editor (like Notepad on Windows, or TextEdit on Mac). 
+3. Copy the text from the browser (if you used Chrome), or from the text editor (if you used Safari or Firefox). 
 4. Delete all the existing text on the right half of *geojson.io* and paste in your text.
 5. A map will appear on the left! (This may take longer if you have more than 100 points.)
 
