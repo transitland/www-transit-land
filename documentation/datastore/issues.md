@@ -8,20 +8,18 @@ layout: documentation
 ## Background
 
 Transit data specifications have rules for data field types and referential integrity between those fields,
-but often their values do not accurately reflect the geographical, temporal, or other characteristic of the data content. For example, GTFS Shape points may be accidentally stored in reverse, or a Feed URL may be invalid. In other words, quality is
+but often their values are not accurate with regard to the geographical, temporal, or other characteristic of the data content. For example, GTFS Shape points may be accidentally stored in reverse, or a Feed URL may be invalid. In other words, quality is
 a concern outside of validation.
 
 
-Transitland's Datastore offers a mechanism to check the quality, create records of issues if found, and a way to
-resolve those issues through Changesets.
+Transitland's Datastore offers a mechanism to check the data quality, create records of issues if found, and resolve those issues through Changesets.
 
 
 ## Issue Data Model
 
 An Issue instance represents a single occurrence of an issue type. This typically means the issue is
-associated with one entity, such as a Route or Feed, although sometimes the issue type can cover the interrelationship
-between two entities. For example, an issue flagging an unusual stop distance from a route would be associated
-with both those particular Route and Stop instances.
+associated with at least one entity, such as a Route or Feed, although sometimes the issue type can cover the interrelationship
+between two entities. For example, an issue flagging an unusual distance between a Stop and RouteStopPattern would have an association with both those particular Route and Stop instances.
 
 | Attribute | Type | Description |
 |-----------|------|---------|
@@ -30,7 +28,7 @@ with both those particular Route and Stop instances.
 | `details` | String | Automatic or Manual text that describes issue |
 | `created_by_changeset_id` | Number | Changeset, if any, that produced Issue |
 | `resolved_by_changeset_id` | Number | Changeset, if any, that resolved Issue |
-| `open` | Boolean | The issue is not resolved or is no resolution action is necessary. |
+| `open` | Boolean | The issue is not resolved or no resolution action is necessary. |
 
 Issues are connected to entities through the join table represented by the model EntityWithIssues.
 
@@ -45,15 +43,46 @@ Issues are connected to entities through the join table represented by the model
 ## Issue Life Cycle and Deprecation
 It is important to distinguish between different types of Changesets when understanding the issue life cycle.
 Changesets are created and applied on import and through client-side API requests (link). And within the context of
-issues, API changesets can come in the form of those resolving issues and those adding, updating, or deleting data.
+issues, API Changesets can come in two forms: those resolving issues and those adding, updating, or deleting data.
 
 Furthermore, issues can come into being outside of the Changeset process, either through backend services or
 through an Issue API endpoint (link) separate from that of Changesets. On the backend, two examples of services where issues are created are in the Stop conflation service and the Feed fetcher service.
 
-### Changesets and Issues
+### Definitions
+`Deprecation`: A state in which an Issue no longer serves any active purpose other than an historical record.  
+`Equivalence`: Two Issues are equivalent if they share the same issue type, entity associations and entity attribute blame  
+`Computed Attribute`: An Transitland-specific entity model attribute that is generated from 1 or more fields of the incoming raw data.  
+
+### Processes
+
+#### Quality Check
+The Datastore has a service named `QualityCheck`, subclassed by independent classes, each handling an area of quality, such as geometry. Each subclass has a `check` method which run a prescribed set of conditions to evaluate
+incoming transit data and produce new issues if necessary. An example of one of these conditions is whether a RouteStopPattern
+instance's stop distances are increasing or not. Every Changeset conducts quality checks.
+
+#### Computed Attributes
+
+
+### Changesets and Issues Sequence
 
 <div class="mermaid">
 sequenceDiagram
-    Changeset->>apply
-    John-->>Alice: Great!
+    participant Apply Change Payloads
+    participant Update Computed Attributes
+    participant Quality Check
+    participant Cycle Issues
+    Apply Change Payloads->>Cycle Issues: Issues to Deprecate
+    Apply Change Payloads->>Cycle Issues: Issues to Resolve
+    Update Computed Attributes->>Cycle Issues: Issues to Deprecate
+    Quality Check->>Cycle Issues: New Issues
 </div>
+
+Within the Changeset `apply!` method, the sequence of issue generation and deprecation runs as follows:
+
+1.  The Change Payloads of the Changeset are each applied, and if there were any issue ids specified in the "issuesResolved"
+field, those issues will be found, collected, and passed on to `cycle_issues`. In addition, if entities' attributes are changed,
+and if there are any issues on those changing entities, those issues will be collected, marked for deprecation, and passed on to `cycle_issues`.
+2.  If the Changeset is *not* an import, attributes derived from the incoming data will be computed. This step is not necessary if the Changeset is an import, because GTFSGraph already handles the same computations (this may change in the near future).
+Computing the derived attributes will produce issues to deprecate, and those are returned and passed on to `cycle_issues`.  
+3.  Quality checks are next. This is where new issues are generated on the final outcome of both the incoming data and computed attributes. The new issues are passed on to `cycle_issues`.
+4.  `cycle_issues` is where the critical work is done to ensure issues are resolved, saved, and deprecated appropriately. It takes as input the issues from the previous steps. First, the methods check whether the issues marked by the Changeset for resolution are actually being resolved. It does this by searching for an equivalent issue (see above definition of equivalency) within the new issues generated by the quality checks in step 3. If any equivalent issue exist, an error is thrown and the Changeset does not finish applying. Otherwise, the resolving issues are closed out, all new issues are saved, and the issues marked for deprecation are deprecated. Currently, deprecated issues are logged and then destroyed.
