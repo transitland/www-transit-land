@@ -52,15 +52,13 @@ Example Issue Types
 | `uncategorized` | A catch-all encompassing an Issue type not matching the existing types. |
 
 ## Issue Life Cycle and Deprecation
-It is important to distinguish between different types of Changesets when understanding the issue life cycle, because
-different types of Changesets have slight variations in the issue cycle.
 
-First, Changesets are created and applied in two ways: on import and through client-side [API requests](api-endpoints.html). Second, within the context of issues, API Changesets can come in two forms: those adding, updating, or deleting data, and those specifically resolving
-issues.
+As the overview diagram below shows, Issues can end up in the Datastore through several different processes. These include import Changesets,
+regular [API Changesets](changesets.html), API Changesets that resolve issues (and can create completely new issues!), and directly through an Issues API.
 
 ![Issues through Changesets](issues_through_changesets.png)
 
-The next few sections will focus on the issue life cycle within a Changeset.
+The next few sections will focus on the issue life cycle within a Changeset, but first some definitions.
 
 ### Definitions
 `Deprecation`: A state in which an Issue no longer serves any active purpose other than an historical record.  
