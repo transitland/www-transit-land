@@ -59,7 +59,7 @@ First, Changesets are created and applied in two ways: on import and through cli
 issues, API Changesets can come in two forms: those adding, updating, or deleting data, and those specifically resolving
 issues.
 
-![Issues through Changesets](Issue_Tracking_Changesets.png)
+![Issues through Changesets](issues_through_changesets.png)
 
 The next few sections will focus on the issue life cycle within a Changeset.
 
