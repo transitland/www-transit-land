@@ -55,7 +55,7 @@ Example Issue Types
 It is important to distinguish between different types of Changesets when understanding the issue life cycle, because
 different types of Changesets have slight variations in the issue cycle.
 
-First, Changesets are created and applied in two ways: on import and through client-side API requests (link). Second, within the context of
+First, Changesets are created and applied in two ways: on import and through client-side [API requests](api-endpoints.html). Second, within the context of
 issues, API Changesets can come in two forms: those adding, updating, or deleting data, and those specifically resolving
 issues.
 
@@ -104,5 +104,5 @@ and if there are any issues on those changing entities, those issues will be col
 ### Issues outside of Changesets
 
 Issues can also come into being outside of the Changeset process, either through backend services or
-through an Issue API endpoint (link) separate from that of Changesets. On the backend, two examples of services where issues are created are in the Stop conflation service and the Feed fetcher service. In any case where Issues are created outside of a Changeset, those Issues are
+through an Issue API endpoint separate from that of Changesets. On the backend, two examples of services where issues are created are in the Stop conflation service and the Feed fetcher service. In any case where Issues are created outside of a Changeset, those Issues are
 expected to be deprecated appropriately, and it is up to the programmer to implement this accordingly when extending Issue functionality.
