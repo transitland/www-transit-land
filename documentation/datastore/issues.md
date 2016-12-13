@@ -82,14 +82,14 @@ look something like this:
 
 ## Issue life cycle and deprecation
 
-A consumer of the issues API may wonder why issues having a specific numeric id value may disappear sometimes (and reappear with a different id), or how issues even come into being at all.
+A consumer of the issues API may wonder why issues having a specific numeric id value may sometimes disappear and reappear with a different id, or how issues even come into being at all.
 
-Issues are created during changeset application, including through feed version imports and the changeset API, and directly through the issues API endpoint. Each changeset application will deprecate - log and delete - any existing issues on the changeset's entities and attributes, and check the data quality of the changeset's entities for new issues to create. In addition, any changeset that resolves an Issue can produce new Issues not related to the resolving Issue.
+Issues are created during changeset application, including through feed version imports and the changeset API, and directly through the issues API endpoint. Each changeset application will deprecate - log and delete - any existing issues on the changeset's entities and attributes, and check the data quality of the changeset's entities for new issues to create. In addition, any changeset that resolves an issue can produce new issues not related to the resolving issue.
 
 A typical issue life cycle may run as follows:  
 
 An import creates an issue, e.g. a stop is too far from a route. Then the next feed version import, assuming it has the same two stop and route entities with a gap, will remove the previous issue record and create a new one. Now suppose someone submits an issue-resolving changeset that moves the stop location closer to the route. The changeset application closes and deprecates the issue. The next import will not produce the same issue
-because the stop geometry will remain unmodified from the incoming data.    
+because the stop geometry will remain unmodified from the incoming data.     
 
 The [Changesets section](changesets.md) describes the issue life cycle within a changeset in more detail.
 
