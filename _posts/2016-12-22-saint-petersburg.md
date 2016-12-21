@@ -27,7 +27,7 @@ One of the features in Mapzen's new Mobility Explorer, [launched in late Novembe
 
 Once you're [in Mobility Explorer](https://mapzen.com/mobility/explorer/), search for "Saint Petersburg, Russia" and click on the result. On the left sidebar, click on "show routes" and you'll see that all of the routes in SPb will appear in the same color. 
 
-[![Using "style by mode" on Mobility Explorer](/images/saint-petersburg/mobility_explorer_style_by_mode.gif)]
+![Using "style by mode" on Mobility Explorer](/images/saint-petersburg/mobility_explorer_style_by_mode.gif)
 
 Click "style by: mode" to distinguish the tram, ferry, bus, and trolley bus routes in different colors. 
 
