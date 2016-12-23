@@ -3,7 +3,7 @@ layout: page
 category: news
 published: true
 isThereTitle: true
-title: Transitland now covers Санкт-Петербу́рг (St. Petersburg)
+title: Transitland now covers Санкт-Петербу́рг (Saint Petersburg, Russia)
 ---
 
 [![St. Petersburg Tramway Russia 2013](/images/saint-petersburg/9223683510_8a2f4201f9_z.jpg)](https://www.flickr.com/photos/hrs51/9223683510/ "St. Petersburg Tramway Russia 2013") 
