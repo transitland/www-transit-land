@@ -84,7 +84,8 @@ Each payload can contain one or more change actions. The possible actions includ
 
 Payloads are validated using JSON schemas found in `/app/models/json_schemas`. Note that the API consumes and produces JSON with `"camelCaseKeysInQuotationMarks"`, while internally, the Datastore uses `ruby_symbols_with_underscores`.
 
-## API Queries
+{#api-requests-responses}
+## API endpoints: Requests and responses
 
 `GET` |  `/api/v1/changesets` | view and filter through [changesets](changesets.html)
 `POST` |  `/api/v1/changesets` | create a new [changeset](changeset.html)

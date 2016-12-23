@@ -69,3 +69,7 @@ If queries have not completed after two minutes, they will be killed and you wil
 ## API authentication
 
 Any API calls that involve writing to the database (creating/editing/applying [changesets](changesets.html) or running the Feed Eater data ingestion pipeline) require authentication. Currently authentication is limited to a small number of maintainers, although we're preparing to share editing and moderation authorization with many more outside collaborators in the future.
+
+## In Source Code
+
+The Datastore source code is posted in full on GitHub. Like all web applications built with the Ruby on Rails framework, Its API endpoints are defined in [the `config/routes.rb` file](https://github.com/transitland/transitland-datastore/blob/production/config/routes.rb).
