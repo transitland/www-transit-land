@@ -3,8 +3,11 @@
   pages:
     - title: Overview
       path: /documentation/index.html
-    - title: Introductory tutorial
-      path: /documentation/intro-tutorial.html
+- title: Tutorials
+  path: /documentation/tutorials/
+  pages:
+    - title: Create a Map of Nearby Stops
+      path: /documentation/tutorials/map-of-nearby-stops/
 - title: Feed Registry
   path: '/documentation/feed-registry/'
   pages:
