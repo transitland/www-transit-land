@@ -20,10 +20,8 @@
 - title: Datastore
   path: '/documentation/datastore/'
   pages:
-    - title: API usage and authentication
-      path: /documentation/datastore/api-usage-and-authentication.html
-    - title: API endpoint quick reference
-      path: /documentation/datastore/api-endpoint-quick-reference.html
+    - title: API endpoints and usage
+      path: /documentation/datastore/api-endpoints.html
     - title: Entity quick reference
       path: /documentation/datastore/entity-quick-reference.html
     - title: "Feeds, Feed versions, and the FeedEater pipeline"
