@@ -33,7 +33,7 @@ The following endpoints are available to work with GTFS feeds (from which the Da
 
 ### Internal Data Endpoints
 {:#internal-data-processing-endpoints}
-The following endpoints are available to work with the Datastore's internal records of data entities created/updated/destroyed and issues with data quality. [API authentication](#api-authentication)) is required for actions that will make lasting database changes.
+The following endpoints are available to work with the Datastore's internal records of data entities created/updated/destroyed and issues with data quality. [API authentication](#api-authentication) is required for actions that will make lasting database changes.
 
 * [`https://transit.land/api/v1/activity_updates`](https://transit.land/api/v1/activity_updates) to view an overview of data activity across the entire Datastore
 * [`https://transit.land/api/v1/changesets`](https://transit.land/api/v1/changesets) to search, create, edit, check, apply, and delete [changesets](changesets.html)
