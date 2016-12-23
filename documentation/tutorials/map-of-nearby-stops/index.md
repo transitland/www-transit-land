@@ -1,9 +1,9 @@
 ---
-title: Use Transitland's API to make a map of nearby transit stops
+title: Use Transitland Datastore API to make a map of nearby transit stops
 layout: documentation
 ---
 
-Transitland's API unwraps our vast datastore of transit schedules from around the world – contributed by many – which can be included in your apps and maps. It's possible to start in the browser, however, to see the possibilities before you create your map or app. 
+Transitland's Datastore API unwraps our vast datastore of transit schedules from around the world&mdash;contributed by many&mdash;which can be included in your apps and maps. It's possible to start in the browser, however, to see the possibilities before you create your map or app. 
 
 This tutorial will walk you through **creating a map of transit stops near a given location** in less than 5 minutes. You can choose any distance, but to show walking distance you'll want to show only those within 400 meters (about a quarter mile) of a starting point. 
 
