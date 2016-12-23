@@ -1,3 +1,11 @@
+---
+layout: page
+category: news
+published: true
+isThereTitle: true
+title: Transitland now covers Санкт-Петербу́рг (and supports Cyrillic)
+---
+
 [![St. Petersburg Tramway Russia 2013](/images/saint-petersburg/9223683510_8a2f4201f9_z.jpg)](https://www.flickr.com/photos/hrs51/9223683510/ "St. Petersburg Tramway Russia 2013") 
 
 *Photo of a Russian-built tram in Saint Petersburg by Hans-Rudolf Stoll*
@@ -11,6 +19,8 @@ St. Petersburg (SPb) also has trolley bus routes, which drive using electricit
 *   51 trolley bus routes
 *   Remaining are bus routes using conventional buses.
 
+<!-- more -->
+
 I couldn't find ridership information for these routes, but the statistics on the Wikipedia article say that a much higher proportion of SPb residents ride the subway each weekday than people in Chicago ride the 'L'  in my hometown. The 'L' runs mostly on elevated track, but has some subway and at-grade sections. 
 
 We don't yet have the GTFS feed for the SPb subway and we could use your help. If you know the URL to the SPb's subway feed, [submit it on this form](https://transit.land/feed-registry/feeds/new). 
@@ -23,7 +33,7 @@ It's very common see regular length buses with three doors in Europe, while buse
 
 **The Transitland connection** 
 
-One of the features in Mapzen's new Mobility Explorer, [launched in late November](https://mapzen.com/blog/introducing-mobility-explorer), is to drill down into the transit routes, stops, and operators in a city – all of that data is based on what's available in Transitland. It visualizes this data quickly and easily; think of it as an expansion of what Transitland's Playground does. 
+One of the features in Mapzen's new Mobility Explorer, [launched in late November](https://mapzen.com/blog/introducing-mobility-explorer), is to drill down into the transit routes, stops, and operators in a city&mdash;all of that data is based on what's available in Transitland. It visualizes this data quickly and easily.
 
 Once you're [in Mobility Explorer](https://mapzen.com/mobility/explorer/), search for "Saint Petersburg, Russia" and click on the result. On the left sidebar, click on "show routes" and you'll see that all of the routes in SPb will appear in the same color. 
 
