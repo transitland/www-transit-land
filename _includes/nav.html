@@ -20,8 +20,8 @@
         </a>
       </div>
       <div class="float-left">
-        <a href="/playground" target="_self">
-        <div class="circle"></div><div class="main">playground</div>
+        <a class= {% if page.url contains "gallery" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="/gallery" target="_self">
+        <div class="circle"></div><div class="main">Gallery of Projects</div>
         </a>
       </div>
       <div class="float-left">
