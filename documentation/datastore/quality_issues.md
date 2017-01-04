@@ -1,5 +1,5 @@
 ---
-title: Issues
+title: Quality Issues
 layout: documentation
 ---
 
@@ -9,7 +9,7 @@ Transit data specifications have rules for populating data field types and refer
 but often their values are not accurate with regard to the geographical, temporal, or other more subjective characteristics of the data content. For example, GTFS Shape points may be accidentally stored in reverse, or a Feed URL may not point to a GTFS feed. In other words, the quality of the data content is a concern outside of format.
 
 
-Transitland's Datastore offers a mechanism to check the data quality, create records of issues if found, and resolve those issues through Changesets.
+Transitland's Datastore offers a mechanism to check the data quality, create records of quality issues if found, and resolve those issues through Changesets.
 
 
 ## Issue data model
