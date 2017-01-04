@@ -28,8 +28,8 @@
       path: /documentation/datastore/identifiers.html
     - title: Changesets
       path: /documentation/datastore/changesets.html
-    - title: Issues
-      path: /documentation/datastore/issues.html
+    - title: Quality issues
+      path: /documentation/datastore/quality_issues.html
 - title: Playground
   path: '/documentation/playground/'
 - title: Onestop ID scheme
