@@ -86,46 +86,36 @@ Payloads are validated using JSON schemas found in `/app/models/json_schemas`. N
 
 ## Changesest issue resolution
 
-Submitting changesets is not only the way to create, edit, and delete data, but also to resolve issues with those actions. The next few sections explain the processes a changeset application conducts to verify and complete an issue resolution.
+Submitting changesets is not only the way to create, edit, and delete data, but also the means to formally resolve issues with those actions.
+A changeset resolving an issue will contain a field named "issuesResolved" that contains an array of Issue integer ids: 
 
-### Definitions
-`Deprecation`: A state in which an issue no longer serves any active purpose other than an historical record.  
-`Equivalence`: Two issues are equivalent if they share the same issue type, entity associations and entity attribute blame  
-`Computed Attribute`: A Transitland-specific entity model attribute that is generated from 1 or more fields of the incoming raw data.  
-`Edited Attribute`: An instance array that keeps track of which of the entity's attribute values should not be modified by subsequent imports
-`Sticky Attribute`: A class array that specifies which model attributes, if any, are allowed to be marked as an `edited attribute`
+```json
+{
+"change_payload": {
+  "payload": {
+    "changes": [
+      {
+        "action": "createUpdate",
+        "issuesResolved": [1,2,3],
+        "stop": {
+          "onestopId": "s-9q8yt4b-1avhos",
+          "name": "1st Ave. & Holloway Street"
+        }
+      }
+    ]
+  }
+ }
+}
+```
 
-### Processes
+When a changeset is applied, verification is done to ensure that the issues specified in the "issuesResolved" are actually being
+resolved. An error occurs otherwise, and the changeset is not applied. This can happen when the changeset did not include all of the entities associated with the issues, or the quality checks performed during the changeset application produced equivalent issues to the ones being resolved.
 
+The attribute values of any entities of a changeset that is not an import, which includes the typical issue-resolving changeset, will not be overwritten by subsequent imports. This, however, applies only for a given set of attributes. These include:
 
-#### Quality check
-The Datastore has a service named `QualityCheck`, composed of independent subclasses, each handling an area of quality, such as geometry. Each subclass has a `check` method which runs a prescribed set of conditions to evaluate
-incoming transit data and produce new issues if necessary. An example of one of these conditions is whether a route stop pattern
-instance's stop distances are increasing or not. Every changeset conducts quality checks.
-
-#### Computed attributes
-Examples of computed attributes are the RouteStopPattern `stop_distances`, the Operator `bbox`, and the Route `geometry`. All of these attributes need to be updated when the attribute values that produced them have changed. For example, the Operator `bbox` is computed from Stop geometries, and so when a Stop moves outside of that bounding box, the Operator `bbox` has to be expanded. In Changeset, there is a method that handles the computation of attributes derived from attributes of different models. Otherwise, if a model attribute is only derived from attributes of that single model, the computation can be done on the model level.
-
-#### Cycle issues
-A process that coordinates saving newly generated issues, resolving specified issues, and deprecating irrelevant issues.
-
-### Changesets and issues sequence
-
-<div class="mermaid">
-sequenceDiagram
-    participant Apply Change Payloads
-    participant Update Computed Attributes
-    participant Quality Check
-    participant Cycle Issues
-    Apply Change Payloads->>Cycle Issues: Issues to Deprecate
-    Apply Change Payloads->>Cycle Issues: Issues to Resolve
-    Update Computed Attributes->>Cycle Issues: Issues to Deprecate
-    Quality Check->>Cycle Issues: New Issues
-</div>
-
-Within the application of the Changeset, the sequence of issue generation and deprecation runs as follows:
-
-1.  `Change Payload(s) Apply`. The Change Payloads of the Changeset are each applied, and if there were any issue ids specified in the "issuesResolved" field, those issues will be found, collected, and passed on to `Cycle Issues`. In addition, if entities' attributes are changed, and if there are any issues on those changing entities, those issues will be collected, marked for deprecation, and passed on to `Cycle Issues`. Note: any attribute values that have been marked as "sticky" and have been edited will be ignored and kept intact.
-2.  `Update Computed Attributes`. If the Changeset is *not* an import, attributes derived from the incoming data will be computed. This step is not necessary if the Changeset is an import, because GTFSGraph already handles the same computations. Computing the derived attributes will produce issues to deprecate, and those are returned and passed on to `Cycle Issues`.  
-3.  `Quality Checks` come next. This is where new issues are generated on the final outcome of both the incoming data and computed attributes. The new issues are passed on to `Cycle Issues`.
-4.  `Cycle Issues` is where work is done to ensure issues are resolved, saved, and deprecated appropriately. It takes as input the issues from the previous steps. First, the methods check whether the issues marked by the Changeset for resolution are actually being resolved. It does this by searching for an equivalent issue (see above definition of equivalency) within the new issues generated by the quality checks in step 3. If any equivalent issue exist, an error is thrown and the Changeset does not finish applying. Otherwise, the resolving issues are closed out and deprecated, all new issues are saved, and the issues marked for deprecation are deprecated. Currently, deprecated issues are logged and then destroyed.
+| Model | Attributes |
+|-----------|------|
+| `Stop` | `geometry`,`name`, `wheelchair_boarding` |
+| `Route` | `geometry`, `name`, `color`, `vehicle_type` |
+| `RouteStopPattern` | `geometry` |
+| `Operator` | `short_name`, `country`, `metro`, `state`, `website` |
