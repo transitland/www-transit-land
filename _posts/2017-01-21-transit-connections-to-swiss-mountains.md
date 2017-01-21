@@ -28,6 +28,8 @@ Mount Rigi has multiple peaks, the tallest of which is Rigi Kulm at 1,798 meter
 
 You can use the Swiss Federal Railways (SBB) [smartphone app](http://www.micro.sbb.ch/mobile/en/home.html?WT.ac=sbb-mobile-weitere-en.html) or [website](http://www.sbb.ch/en/home.html) to plan a trip from anywhere in Switzerland to the cog railway station below the restaurant atop Rigi Kulm. Seriously. 
 
+<!-- more -->
+
 I wanted to use as many modes as possible, and I don't like going on the same route more than once, so I adjusted SBB's recommended route to travel from Zurich to Rigi Kulm via Lucerne and Vitznau. This was my outgoing itinerary:
 
 *   Depart Zurich HB at 10:04 on InterRegio 2637 to Lucerne, arriving at 10:49
@@ -35,8 +37,6 @@ I wanted to use as many modes as possible, and I don't like going on the same ro
 *   Depart Vitznau on Rigi-Bahnen 1127 at 12:15, arriving to the peak at 12:47
 
 After spending about five hours on the mountain – I took a small cable car to a second peak – I heaaded down the mountain on a different cog railway to Arth-Goldau, a valley town with InterCity train service direct to Zurich. 
-
-<!-- more -->
 
 [![SBB website trip planner](/images/switzerland-transit/sbb_trip_planner.png)]
 
