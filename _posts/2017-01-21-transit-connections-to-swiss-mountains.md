@@ -5,7 +5,7 @@ published: true
 isThereTitle: true
 title: Swiss transit journey planners can guide you to the top of any mountain
 ---
-### Follow me from Zurich to the top of Mount Rigi
+### Follow my route on transit from Zurich to the top of Mount Rigi
 
 #### by [Steven Vance](http://stevencanplan.com)
 
