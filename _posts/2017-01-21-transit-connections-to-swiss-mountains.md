@@ -13,7 +13,7 @@ title: Swiss transit journey planners can guide you to the top of any mountain
 
 *Looking west from Mount Rigi-Kulm and you can see the cloud layer that prevents you from seeing Lake Lucerne. The two cog railways are parked in the middle.*
 
-About a month ago I hopped over to Germany to start a holiday trip over Christmas and the New Year. I flew into Frankfurt but I would be returning to Chicago from Zurich, Switzerland, almost three weeks later. I had spent two hours in Zurich in 2016 on a layover, and I was struck by the city's beauty and their amazing public transport system. I made it a priority to revisit Zurich, to have a proper stay. 
+A month ago I hopped over to Germany to start a holiday trip over Christmas and the New Year. I flew into Frankfurt but I would be returning to Chicago from Zurich, Switzerland, almost three weeks later. I had spent two hours in Zurich in 2016 on a layover, and I was struck by the city's beauty and their amazing public transport system. I made it a priority to revisit Zurich, to have a proper stay. 
 
 Before I left, I was already working to import the single GTFS transit feed for the whole country into Transitland, so I was aware of some of the transit systems. That work continues because the feed is massive; it has more than 400 operators and I need to add metadata about each of them. 
 
