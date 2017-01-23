@@ -65,6 +65,11 @@ You can take a _sesselbahn_ (chair/ski lift) from Feldis/Veulden to avoid an up
 
 We're working to import all of them into the Transitland datastore, and we'll get there eventually (it takes a lot of time to add metadata like an operator's metropolitan coverage area and canton). For now, though, we've added the stops and routes for 11 operators, including all of the ones that covered my trip to Mount Rigi.
 
+<iframe width="100%" style="height: 65vh;"
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/truckee-transit/scene.yaml#10.2878/39.1949/-120.1148"></iframe>
+
+*[Edit this map yourself](https://mapzen.com/tangram/play/?scene=transit.land/images/truckee-transit/scene.yaml#10.2878/39.1949/-120.1143) in Tangram Play.*
+
 *   [Rigi-Bahnen (RB)](https://transit.land/feed-registry/operators/o-u0q59-rbrigi~bahnen) - operates the two cog railways
 *   [Schweizerische Bundesbahnen - SBB CFF FFS (SBB)](https://transit.land/feed-registry/operators/o-u0-sbbschweizerischebundesbahnensbb) - Swiss Federal Railways, which covered the InterRegio trips between Zurich and Lucerne, and Zurich and Arth-Goldau
 *   [Schifffahrtsgesellschaft des Vierwaldstättersees (SGV) ](https://transit.land/feed-registry/operators/o-u0q5-sgvvierwaldst%C3%A4ttersee)- operates the boats on Lake Lucerne
