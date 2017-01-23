@@ -15,6 +15,8 @@ title: Swiss transit journey planners can guide you to the top of any mountain
 
 About a month ago I hopped over to Germany to start a holiday trip over Christmas and the New Year. I flew into Frankfurt but I would be returning to Chicago from Zurich, Switzerland, almost three weeks later. I had spent two hours in Zurich in 2016 on a layover, and I was struck by the city's beauty and their amazing public transport system. I made it a priority to revisit Zurich, to have a proper stay. 
 
+Before I left, I was already working to import the single GTFS transit feed for the whole country into Transitland, so I was aware of some of the transit systems. That work continues because the feed is massive; it has more than 400 operators and I need to add metadata about each of them. 
+
 I arrived the night before my mountain trip to a hotel – a 3 minute walk to the nearest entrance to Zurich's _hauptbahnhof_ (main station) – and I spent that whole evening planning an epic transit and mountain adventure the next day. (I stayed in because it's also pretty expensive to go out in Zurich, so I was also saving my money for what turned out to be an _expensive _ epic trip.) 
 
 **When in Switzerland, I figured, you should spend time outside on a mountain. And there's no exception in the winter.**
@@ -59,7 +61,7 @@ The [Swiss railway clock's](https://en.wikipedia.org/wiki/Swiss_railway_clock) s
 
 **Get to know the Swiss timetable** 
 
-There's one GTFS feed for Switzerland, and it clocks in at over 400 operators. This includes the Swiss Federal Railways (SBB), city transit systems, intercity buses like [PostAuto](https://transit.land/feed-registry/operators/o-u0-pagpostautoschweiz), funiculars, cable cars, cog railways, and even chair lifts. 
+The single feed includes the Swiss Federal Railways (SBB), city transit systems, intercity buses like [PostAuto](https://transit.land/feed-registry/operators/o-u0-pagpostautoschweiz), funiculars, cable cars, cog railways, and even chair lifts. 
 
 You can take a _sesselbahn_ (chair/ski lift) from Feldis/Veulden to avoid an uphill hike to Mutta; it's operated by [Sesselbahn und Skilifte Feldis AG](http://www.viamala.ch/winter/wintersport/wintersportgebiete/feldis/betriebszeiten-tarife/betriebszeiten/sesselbahn-und-skilifte-feldis-ag-ssf.html). You can find its two stops and straight route up the mountain [in Transitland's Feed Registry](https://transit.land/feed-registry/operators/o-u0qdny-sfmsesselbahnfeldis~mutta). 
 
