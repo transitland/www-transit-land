@@ -68,7 +68,7 @@ You can take a _sesselbahn_ (chair/ski lift) from Feldis/Veulden to avoid an up
 We're working to import all of them into the Transitland datastore, and we'll get there eventually (it takes a lot of time to add metadata like an operator's metropolitan coverage area and canton). For now, though, we've added the stops and routes for 11 operators, including all of the ones that covered my trip to Mount Rigi.
 
 <iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/switzerland/images/switzerland-transit/scene.yaml#10.6461/47.2020/8.4729"></iframe>
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://raw.githubusercontent.com/transitland/www-transit-land/switzerland/images/switzerland-transit/scene.yaml#10.6461/47.1304/8.4492"></iframe>
 
 *[Edit this map yourself](https://mapzen.com/tangram/play/?scene=https://raw.githubusercontent.com/transitland/www-transit-land/switzerland/images/switzerland-transit/scene.yaml#10.6461/47.2020/8.4729) in Tangram Play.*
 
