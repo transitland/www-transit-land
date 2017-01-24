@@ -88,7 +88,7 @@ Issues are created during changeset application, including through feed version 
 
 A typical issue life cycle may run as follows:  
 
-An import creates an issue, e.g. a stop is too far from a route. Then the next feed version import, assuming it has the same two stop and route entities with a gap, will remove the previous issue record and create a new one. Now suppose someone submits an issue-resolving changeset that moves the stop location closer to the route. The changeset application closes and deprecates the issue. The next import will not produce the same issue
+An import creates an issue, e.g. a stop is too far from a route stop pattern. Then the next feed version import, assuming it has the same two stop and route entities with a gap, will remove the previous issue record and create a new one. Now suppose someone submits an issue-resolving changeset that moves the stop location closer to the route. The changeset application closes and deprecates the issue. The next import will not produce the same issue
 because the stop geometry will remain unmodified from the incoming data.     
 
 The [Changesets section](changesets.html) describes the issue life cycle within a changeset in more detail.
