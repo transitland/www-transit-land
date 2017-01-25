@@ -7,7 +7,7 @@ sources:
 
     rigiroute:
         type: GeoJSON
-        url: https://raw.githubusercontent.com/transitland/www-transit-land/switzerland/images/switzerland-transit/route_to_mount_rigi.geojson
+        url: https://transit.land/images/switzerland-transit/route_to_mount_rigi.geojson
 
 styles:
    blend:
