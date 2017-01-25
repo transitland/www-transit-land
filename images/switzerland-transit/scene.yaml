@@ -70,3 +70,10 @@ layers:
                 order: 600
                 width: 2px
                 color: [1.000, 1.000, 1.000, 1.00]
+            text:
+                font:
+                    size: 10px
+                    fill: white
+                    stroke:
+                        color: black
+                        width: 3
