@@ -1,0 +1,79 @@
+import: https://mapzen.com/carto/zinc-style/zinc-style.yaml
+
+sources:
+    mapzen:
+        type: TopoJSON
+        url: https://vector.mapzen.com/osm/all/{z}/{x}/{y}.topojson
+
+    rigiroute:
+        type: GeoJSON
+        url: https://raw.githubusercontent.com/transitland/www-transit-land/switzerland/images/switzerland-transit/route_to_mount_rigi.geojson
+
+styles:
+   blend:
+        base: polygons
+        blend: inlay
+
+layers:
+    coverage:
+        data: {source: coverage}
+        draw:
+            blend:
+                order: 390
+                color: [1.000, 1.000, 1.000, 0.25]
+
+    boat:
+        data:
+            source: rigiroute
+        filter: [name: "Lucerne to Vitznau"]
+        draw:
+            lines:
+                order: 400
+                width: 10px
+                color: [0.529, 0.565, 0.898, 1.00]
+
+    cog:
+        data:
+            source: rigiroute
+        filter: {name: ["Vitznau to Kulm", "Kulm to Kräbel", "Kräbel to Arth-Goldau"]}
+        draw:
+            lines:
+                order: 400
+                width: 10px
+                color: [0.451, 0.565, 0.369, 1.00]
+
+    sbb:
+        data:
+            source: rigiroute
+        filter: {name: ["Zurich to Lucerne", "Arth-Goldau to Zurich"]}
+        draw:
+            lines:
+                order: 400
+                width: 10px
+                color: [0.992, 0.235, 0.310, 1.00]
+
+    cablecar:
+        data:
+            source: rigiroute
+        filter: {name: ["Kräbel to Scheidegg"]}
+        draw:
+            lines:
+                order: 400
+                width: 10px
+                color: [0.361, 0.835, 0.675, 1.00]
+
+    full:
+        data:
+            source: rigiroute
+        draw:
+            lines:
+                order: 600
+                width: 2px
+                color: [1.000, 1.000, 1.000, 1.00]
+            text:
+                font:
+                    size: 10px
+                    fill: white
+                    stroke:
+                        color: black
+                        width: 3
