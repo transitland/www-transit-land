@@ -67,10 +67,9 @@ You can take a _sesselbahn_ (chair/ski lift) from Feldis/Veulden to avoid an up
 
 We're working to import all of them into the Transitland datastore, and we'll get there eventually (it takes a lot of time to add metadata like an operator's metropolitan coverage area and canton). For now, though, we've added the stops and routes for 11 operators, including all of the ones that covered my trip to Mount Rigi.
 
-<iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/switzerland-transit/scene.yaml#10.6461/47.1304/8.4492"></iframe>
+<iframe width="100%" style="height: 65vh;" src="https://tangrams.github.io/tangram-frame/?noscroll&maxbounds=46.891,7.667,47.501,9.198&url=https://transit.land/images/switzerland-transit/scene.yaml#10.6461/47.1304/8.4492"></iframe>
 
-*[Edit this map yourself](https://mapzen.com/tangram/play/?scene=https://transit.land/images/switzerland-transit/scene.yaml#10.6461/47.2020/8.4729) in Tangram Play. These routes were extracted via [Mobility Explorer](https://mapzen.com/mobility/explorer/#/routes?bbox=8.520240783691406%2C47.36065881870707%2C8.582038879394531%2C47.383590101876045&pin=47.379289429545324%2C8.54101449251175) and its direct connection to the Transitland API and I edited some of them because many of routes in the Swiss feed are very simplified.*
+*[Edit this map yourself](https://mapzen.com/tangram/play/?maxbounds=46.891,7.667,47.501,9.198&scene=https://transit.land/images/switzerland-transit/scene.yaml#10.6461/47.2020/8.4729) in Tangram Play. These routes were extracted via [Mobility Explorer](https://mapzen.com/mobility/explorer/#/routes?bbox=8.520240783691406%2C47.36065881870707%2C8.582038879394531%2C47.383590101876045&pin=47.379289429545324%2C8.54101449251175) and its direct connection to the Transitland API and I edited some of them because many of routes in the Swiss feed are very simplified.*
 
 *   [Rigi-Bahnen (RB)](https://transit.land/feed-registry/operators/o-u0q59-rbrigi~bahnen) - operates the two cog railways (shown in green)
 *   [Schweizerische Bundesbahnen - SBB CFF FFS (SBB)](https://transit.land/feed-registry/operators/o-u0-sbbschweizerischebundesbahnensbb) - Swiss Federal Railways, which covered the InterRegio trips between Zurich and Lucerne, and Zurich and Arth-Goldau (red)
