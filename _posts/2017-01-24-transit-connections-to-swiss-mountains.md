@@ -41,7 +41,7 @@ I wanted to use as many modes as possible, and I don't like going on the same ro
 
 After spending about five hours on the mountain – I took a small cable car to a second peak – I heaaded down the mountain on a different cog railway to Arth-Goldau, a valley town with InterCity train service direct to Zurich. 
 
-[SBB website trip planner](/images/switzerland-transit/sbb_trip_planner.png)
+![SBB website trip planner](/images/switzerland-transit/sbb_trip_planner.png "SBB website trip planner")
 
 *The SBB website shows my actual itinerary. This isn't the first recommended itinerary because there are more direct and faster ways to get to Rigi Kulm from Switzerland, but I wanted to ride in a boat so I added the "via" stop in Lucerne.*
 
