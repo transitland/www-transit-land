@@ -23,6 +23,9 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/changesets/1/change_payloads/1` |
 `PUT` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
 `DELETE` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
+`GET` | `/api/v1/issues` |
+`GET` | `/api/v1/issues/1` | 
+`GET` | `/api/v1/issues/categories` | all available categories and issue_types of each category
 `GET` |  `/api/v1/onestop_id/o-9q8y-SFMTA` | final part of the path can be a Onestop ID for any type of entity (for example, a stop or an operator)
 `GET` |  `/api/v1/stops` | none required
 `GET` |  `/api/v1/stops?identifier=4973` | `identifier` can be any type of stop identifier
