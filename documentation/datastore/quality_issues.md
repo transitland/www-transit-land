@@ -45,8 +45,6 @@ Issues are connected to entities through the join table represented by the model
 | | `feed_fetch_invalid_zip` | Feed source zip file is not structured according to expectations |
 | | `feed_fetch_invalid_source` | Feed source is not valid according to the GTFS specification |
 | | `feed_fetch_invalid_response` | Feed fetch on URL returned an HTTP status error |
-| station_hierarchy | `stop_platforms_too_close` | StopPlatform has the same coordinates as sibling. |
-| | `stop_platform_parent_distance_gap` | StopPlatform and its parent are over 500 meters apart. |
 | uncategorized | `missing_stop_conflation_result` | An attempt was made to conflate the stop with OSM data, but nothing returned. |
 | | `other`| A catch-all encompassing an issue type not matching the existing types. |
 
