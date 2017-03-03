@@ -3,19 +3,713 @@ title: Routes and route stop patterns
 layout: documentation
 ---
 
+<p>Transit routes are geographical areas of service. Transitland has two models to effectively represent routes and their connection to services:
+ the <code>Route</code> and the <a href="#route_stop_patterns">RouteStopPattern</a>. Routes are essentially a summary of the aggregate characteristics of the whole transit route. RouteStopPatterns are geographical representations of the services that make up the Route.</p>
+
+<h3>Route Data Model</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>onestop_id</td>
+      <td>Onestop ID</td>
+      <td>Route</td>
+    </tr>
+    <tr>
+      <td>name</td>
+      <td>String</td>
+      <td>Name of Route</td>
+    </tr>
+    <tr>
+      <td>vehicle_type</td>
+      <td>Integer</td>
+      <td><a href="#vehicle_types">Type of transportation used</a></td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>String</td>
+      <td>Route color in 6 hexidecimal characters</td>
+    </tr>
+    <tr>
+      <td>geometry</td>
+      <td>Geography</td>
+      <td>MultiLineString</td>
+    </tr>
+    <tr>
+      <td>wheelchair_accessible</td>
+      <td>Boolean</td>
+      <td>Wheelchair accessible: true, false, or null (unknown)</td>
+    </tr>
+    <tr>
+      <td>bikes_allowed</td>
+      <td>Boolean</td>
+      <td>Bike accessible: true, false, or null (unknown)</td>
+    </tr>
+  </tbody>
+</table>
+
+<a name="vehicle_types"><h3>Vehicle Types</h3></a>
+<table>
+    <tbody>
+      <tr>
+        <th>Route Type</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>100</td>
+        <td>Railway Service</td>
+
+      </tr>
+      <tr>
+        <td>101</td>
+        <td>High Speed Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>102</td>
+        <td>Long Distance Trains</td>
+
+      </tr>
+      <tr>
+        <td>103</td>
+        <td>Inter Regional Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>104</td>
+        <td>Car Transport Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>105</td>
+        <td>Sleeper Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>106</td>
+        <td>Regional Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>107</td>
+        <td>Tourist Railway Service</td>
+
+      </tr>
+      <tr>
+        <td>108</td>
+        <td>Rail Shuttle (Within Complex)</td>
+
+      </tr>
+      <tr>
+        <td>109</td>
+        <td>Suburban Railway</td>
+
+      </tr>
+      <tr>
+        <td>110</td>
+        <td>Replacement Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>111</td>
+        <td>Special Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>112</td>
+        <td>Lorry Transport Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>113</td>
+        <td>All Rail Services</td>
+
+      </tr>
+      <tr>
+        <td>114</td>
+        <td>Cross-Country Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>115</td>
+        <td>Vehicle Transport Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>116</td>
+        <td>Rack and Pinion Railway</td>
+
+      </tr>
+      <tr>
+        <td>117</td>
+        <td>Additional Rail Service</td>
+
+      </tr>
+      <tr>
+        <td>200</td>
+        <td>Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>201</td>
+        <td>International Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>202</td>
+        <td>National Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>203</td>
+        <td>Shuttle Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>204</td>
+        <td>Regional Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>205</td>
+        <td>Special Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>206</td>
+        <td>Sightseeing Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>207</td>
+        <td>Tourist Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>208</td>
+        <td>Commuter Coach Service</td>
+
+      </tr>
+      <tr>
+        <td>209</td>
+        <td>All Coach Services</td>
+
+      </tr>
+      <tr>
+        <td>300</td>
+        <td>Suburban Railway Service</td>
+
+      </tr>
+      <tr>
+        <td>400</td>
+        <td>Urban Railway Service</td>
+
+      </tr>
+      <tr>
+        <td>401</td>
+        <td>Metro Service</td>
+
+      </tr>
+      <tr>
+        <td>402</td>
+        <td>Underground Service</td>
+
+      </tr>
+      <tr>
+        <td>403</td>
+        <td>Urban Railway Service</td>
+
+      </tr>
+      <tr>
+        <td>404</td>
+        <td>All Urban Railway Services</td>
+
+      </tr>
+      <tr>
+        <td>405</td>
+        <td>Monorail</td>
+
+      </tr>
+      <tr>
+        <td>500</td>
+        <td>Metro Service</td>
+
+      </tr>
+      <tr>
+        <td>600</td>
+        <td>Underground Service</td>
+
+      </tr>
+      <tr>
+        <td>700</td>
+        <td>Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>701</td>
+        <td>Regional Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>702</td>
+        <td>Express Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>703</td>
+        <td>Stopping Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>704</td>
+        <td>Local Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>705</td>
+        <td>Night Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>706</td>
+        <td>Post Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>707</td>
+        <td>Special Needs Bus</td>
+
+      </tr>
+      <tr>
+        <td>708</td>
+        <td>Mobility Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>709</td>
+        <td>Mobility Bus for Registered Disabled</td>
+
+      </tr>
+      <tr>
+        <td>710</td>
+        <td>Sightseeing Bus</td>
+
+      </tr>
+      <tr>
+        <td>711</td>
+        <td>Shuttle Bus</td>
+
+      </tr>
+      <tr>
+        <td>712</td>
+        <td>School Bus</td>
+
+      </tr>
+      <tr>
+        <td>713</td>
+        <td>School and Public Service Bus</td>
+
+      </tr>
+      <tr>
+        <td>714</td>
+        <td>Rail Replacement Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>715</td>
+        <td>Demand and Response Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>716</td>
+        <td>All Bus Services</td>
+
+      </tr>
+      <tr>
+        <td>800</td>
+        <td>Trolleybus Service</td>
+
+      </tr>
+      <tr>
+        <td>900</td>
+        <td>Tram Service</td>
+
+      </tr>
+      <tr>
+        <td>901</td>
+        <td>City Tram Service</td>
+
+      </tr>
+      <tr>
+        <td>902</td>
+        <td>Local Tram Service</td>
+
+      </tr>
+      <tr>
+        <td>903</td>
+        <td>Regional Tram Service</td>
+
+      </tr>
+      <tr>
+        <td>904</td>
+        <td>Sightseeing Tram Service</td>
+
+      </tr>
+      <tr>
+        <td>905</td>
+        <td>Shuttle Tram Service</td>
+
+      </tr>
+      <tr>
+        <td>906</td>
+        <td>All Tram Services</td>
+
+      </tr>
+      <tr>
+        <td>1000</td>
+        <td>Water Transport Service</td>
+
+      </tr>
+      <tr>
+        <td>1001</td>
+        <td>International Car Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1002</td>
+        <td>National Car Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1003</td>
+        <td>Regional Car Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1004</td>
+        <td>Local Car Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1005</td>
+        <td>International Passenger Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1006</td>
+        <td>National Passenger Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1007</td>
+        <td>Regional Passenger Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1008</td>
+        <td>Local Passenger Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1009</td>
+        <td>Post Boat Service</td>
+
+      </tr>
+      <tr>
+        <td>1010</td>
+        <td>Train Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1011</td>
+        <td>Road-Link Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1012</td>
+        <td>Airport-Link Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1013</td>
+        <td>Car High-Speed Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1014</td>
+        <td>Passenger High-Speed Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1015</td>
+        <td>Sightseeing Boat Service</td>
+
+      </tr>
+      <tr>
+        <td>1016</td>
+        <td>School Boat</td>
+
+      </tr>
+      <tr>
+        <td>1017</td>
+        <td>Cable-Drawn Boat Service</td>
+
+      </tr>
+      <tr>
+        <td>1018</td>
+        <td>River Bus Service</td>
+
+      </tr>
+      <tr>
+        <td>1019</td>
+        <td>Scheduled Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1020</td>
+        <td>Shuttle Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1021</td>
+        <td>All Water Transport Services</td>
+
+      </tr>
+      <tr>
+        <td>1100</td>
+        <td>Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1101</td>
+        <td>International Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1102</td>
+        <td>Domestic Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1103</td>
+        <td>Intercontinental Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1104</td>
+        <td>Domestic Scheduled Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1105</td>
+        <td>Shuttle Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1106</td>
+        <td>Intercontinental Charter Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1107</td>
+        <td>International Charter Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1108</td>
+        <td>Round-Trip Charter Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1109</td>
+        <td>Sightseeing Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1110</td>
+        <td>Helicopter Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1111</td>
+        <td>Domestic Charter Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1112</td>
+        <td>Schengen-Area Air Service</td>
+
+      </tr>
+      <tr>
+        <td>1113</td>
+        <td>Airship Service</td>
+
+      </tr>
+      <tr>
+        <td>1114</td>
+        <td>All Air Services</td>
+
+      </tr>
+      <tr>
+        <td>1200</td>
+        <td>Ferry Service</td>
+
+      </tr>
+      <tr>
+        <td>1300</td>
+        <td>Telecabin Service</td>
+
+      </tr>
+      <tr>
+        <td>1301</td>
+        <td>Telecabin Service</td>
+
+      </tr>
+      <tr>
+        <td>1302</td>
+        <td>Cable Car Service</td>
+
+      </tr>
+      <tr>
+        <td>1303</td>
+        <td>Elevator Service</td>
+
+      </tr>
+      <tr>
+        <td>1304</td>
+        <td>Chair Lift Service</td>
+
+      </tr>
+      <tr>
+        <td>1305</td>
+        <td>Drag Lift Service</td>
+
+      </tr>
+      <tr>
+        <td>1306</td>
+        <td>Small Telecabin Service</td>
+
+      </tr>
+      <tr>
+        <td>1307</td>
+        <td>All Telecabin Services</td>
+
+      </tr>
+      <tr>
+        <td>1400</td>
+        <td>Funicular Service</td>
+
+      </tr>
+      <tr>
+        <td>1401</td>
+        <td>Funicular Service</td>
+
+      </tr>
+      <tr>
+        <td>1402</td>
+        <td>All Funicular Service</td>
+
+      </tr>
+      <tr>
+        <td>1500</td>
+        <td>Taxi Service</td>
+
+      </tr>
+      <tr>
+        <td>1501</td>
+        <td>Communal Taxi Service</td>
+
+      </tr>
+      <tr>
+        <td>1502</td>
+        <td>Water Taxi Service</td>
+
+      </tr>
+      <tr>
+        <td>1503</td>
+        <td>Rail Taxi Service</td>
+
+      </tr>
+      <tr>
+        <td>1504</td>
+        <td>Bike Taxi Service</td>
+
+      </tr>
+      <tr>
+        <td>1505</td>
+        <td>Licensed Taxi Service</td>
+
+      </tr>
+      <tr>
+        <td>1506</td>
+        <td>Private Hire Service Vehicle</td>
+
+      </tr>
+      <tr>
+        <td>1507</td>
+        <td>All Taxi Services</td>
+
+      </tr>
+      <tr>
+        <td>1600</td>
+        <td>Self Drive</td>
+
+      </tr>
+      <tr>
+        <td>1601</td>
+        <td>Hire Car</td>
+
+      </tr>
+      <tr>
+        <td>1602</td>
+        <td>Hire Van</td>
+
+      </tr>
+      <tr>
+        <td>1603</td>
+        <td>Hire Motorbike</td>
+
+      </tr>
+      <tr>
+        <td>1604</td>
+        <td>Hire Cycle</td>
+
+      </tr>
+      <tr>
+        <td>1700</td>
+        <td>Miscellaneous Service</td>
+
+      </tr>
+      <tr>
+        <td>1701</td>
+        <td>Cable Car</td>
+
+      </tr>
+      <tr>
+        <td>1702</td>
+        <td>Horse-drawn Carriage</td>
+
+      </tr>
+    </tbody>
+  </table>
+
 <!--
-<p>TODO: intro paragraph about routes</p>
-
-<h2>Vehicle types</h2>
-
-<p>TODO: add lists from https://support.google.com/transitpartners/answer/3520902 and https://support.google.com/transitpartners/answer/3520902</p>
 
 <p>TODO: include some example API query URLs</p>
 -->
 
-<p>Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
+<h3><a name="route_stop_patterns">RouteStopPattern</a></h3>
 
-<p>RouteStopPatterns may also modify the original shape line geometry if necessary. When this is done, a Boolean value named `is_modified` will be set to true. Currently, the line geometry is only modified when it is generated as the result of missing its original GTFS shape id or shape points. In this case, the line geometry becomes the sequential points of the stop pattern, and a separate boolean named `is_generated` will be set to true.</p>
+<p>In addition to the Route, Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed and its services. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
+
+<p>RouteStopPatterns may also modify the original shape line geometry if necessary. Currently, the line geometry is only modified when it is generated as the result of missing its original GTFS shape id or shape points. In this case, the line geometry becomes the sequential points of the stop pattern, and a separate boolean named `is_generated` will be set to true.</p>
 
 <h3>RouteStopPattern Data Model</h3>
 
@@ -69,14 +763,9 @@ layout: documentation
       <td>Associated shape id</td>
     </tr>
     <tr>
-      <td>is_modified</td>
-      <td>Boolean</td>
-      <td>Geometry has added or removed coordinates from the original shape</td>
-    </tr>
-    <tr>
       <td>is_generated</td>
       <td>Boolean</td>
-      <td>Geometry has been created because the original shape reference or coordinates are missing. Currently, geometries are auto-generated solely from the stop points.</td>
+      <td>Geometry has been created because the original shape reference or coordinates are missing. Currently, geometries are auto-generated solely from the stop points. The value will always be true if the RSP was generated on the initial import.</td>
     </tr>
   </tbody>
 </table>
@@ -84,49 +773,9 @@ layout: documentation
 <h3>Onestop ID</h3>
 <p>RouteStopPatterns are uniquely identified by a Onestop Id, but the composition of this id is different from that of Route, Stop, Feed, and Operator Onestop Ids. The RouteStopPattern Onestop Id has 5 components instead of 3, with each component separated by a dash just as the ids of the latter Transitland entities. The first 3 components are exactly the Route Onestop Id of the Route to which the RouteStopPattern belongs to. The fourth component is the first 6 hexadecimal characters of the MD5 hash produced from the stop pattern string (stop onestop id's separated by comma). The fifth component is the first 6 hexadecimal characters of the MD5 hash produced from geometry coordinates as a string (coordinates separated by comma).</p>
 
-<h3>Distance calculation algorithm</h3>
-<p>Each <a href="schedules.html"><code>ScheduleStopPair</code></a> will be associated to a RouteStopPattern. In addition, two attributes have been added to ScheduleStopPair: <code>origin_distance_traveled</code> and <code>destination_distance_traveled</code>. These are the distances, in meters rounded to the nearest decimeter, of the origin and destination stops along the line geometry from the start point.
+<h3>Distance calculation heuristic algorithm</h3>
+<p>Each <a href="schedules.html"><code>ScheduleStopPair</code></a> has a RouteStopPattern. In addition, two attributes have been added to ScheduleStopPair: <code>origin_distance_traveled</code> and <code>destination_distance_traveled</code>. These are the distances, in meters rounded to the nearest decimeter, of the origin and destination stops along the line geometry from the start point.
 </p>
-
-<p>The algorithm to compute these distances runs as follows:</p>
-
-<ol>
-  <li>Set integer values <code class="highlighter-rouge">a</code>, <code class="highlighter-rouge">b</code>, and
-    <code class="highlighter-rouge">c</code> to 0. These will correspond to index values of segments in a list.</li>
-  <li>For each stop in the RouteStopPattern:
-    <ol>
-      <li>If this stop (the current stop) is the first stop, and is found to lie <a href="#before-and-after-stops">before</a> the geometry, set the distance to 0.0 m and continue.</li>
-      <li>If this stop is the last stop and is found to lie <a href="#before-and-after-stops">after</a> the geometry, set the distance to the length of the line and end the stop iteration.</li>
-    </ol>
-  </li>
-  <li>Otherwise, gather the list of segments of the line. Let:
-    <ol>
-      <li><code class="highlighter-rouge">a</code> = the index of the nearest matching segment for the previous stop. Keep <code class="highlighter-rouge">a</code> at 0 if the current stop is the first.</li>
-      <li><code class="highlighter-rouge">c</code> = the index of the nearest matching segment for the next stop, between the segment at <code class="highlighter-rouge">a</code> and the last line segment, inclusive. Let
-        <code class="highlighter-rouge">c</code> = the index of the last segment if the current stop matches any of these characteristics:
-        <ul>
-          <li>is the last stop in the sequence</li>
-          <li>is the penultimate stop, and the next and last stop lies after the geometry</li>
-          <li>has a next stop that is an outlier (further than 100 m away from the line)</li>
-        </ul>
-      </li>
-
-      <li>Calculate <code class="highlighter-rouge">b</code>, the index of the nearest matching segment between
-        <code class="highlighter-rouge">a</code> and <code class="highlighter-rouge">c</code>, inclusive.</li>
-      <li>With <code class="highlighter-rouge">b</code>, calculate the nearest point on the segment from the current stop, and then calculate the distance along the line to the nearest point by adding the distances of the segments up to, but not including,
-        <code class="highlighter-rouge">b</code>, and the distance from the end of the segment before <code class="highlighter-rouge">b</code> to the nearest point.</li>
-      <li>If the computed distance is less than the previous stop's computed distance, recompute <code class="highlighter-rouge">b</code> and the distance using <code class="highlighter-rouge">c</code> = the last segment index.</li>
-      <li>If the final computed nearest point on the line is greater than 100 meters away from the stop, there could be a problem with the stop or line geometry, and it is logged for further evaluation. Then set the stop distance to be:
-        <ul>
-          <li>0.0 if the current stop is first</li>
-          <li>the length of the line geometry if the stop is last</li>
-          <li>the previous stop distance otherwise.</li>
-        </ul>
-      </li>
-    </ol>
-  </li>
-  <li>Set <code class="highlighter-rouge">a</code> equal to <code class="highlighter-rouge">b</code> and continue with the next stop.</li>
-</ol>
 
 <a name="before-and-after-stops"></a>
 <h3>Before and After Stops</h3>
@@ -138,21 +787,21 @@ layout: documentation
   </ol>
   <p>For example:</p>
 
-  <strong>Before:</strong>
+  Before:
 <pre>
     |
   x |----------->
     |
 </pre>
 
-  <strong>Before:</strong>
+  Before:
 <pre>
  |
  |----------->
  | ]  100 m
             x
 </pre>
-  <strong>Not before:</strong>
+  Not before:
 <pre>
 |
 |----------->
@@ -392,6 +1041,6 @@ layout: documentation
     <span class="pl-s"><span class="pl-pds">"</span>meta<span class="pl-pds">"</span></span>: {
       <span class="pl-s"><span class="pl-pds">"</span>offset<span class="pl-pds">"</span></span>: <span class="pl-c1">0</span>,
       <span class="pl-s"><span class="pl-pds">"</span>per_page<span class="pl-pds">"</span></span>: <span class="pl-c1">50</span>,
-      <span class="pl-s"><span class="pl-pds">"</span>next<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://dev.transit.land/api/v1/route_stop_patterns?offset=50&amp;per_page=50<span class="pl-pds">"</span></span>
+      <span class="pl-s"><span class="pl-pds">"</span>next<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>https://transit.land/api/v1/route_stop_patterns?offset=50&amp;per_page=50<span class="pl-pds">"</span></span>
     }
 }</pre></div>
