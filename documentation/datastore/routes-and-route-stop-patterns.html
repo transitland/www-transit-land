@@ -4,7 +4,9 @@ layout: documentation
 ---
 
 <p>Transit routes are geographical areas of service. Transitland has two models to effectively represent routes and their connection to services:
- the <code>Route</code> and the <a href="#route_stop_patterns">RouteStopPattern</a>. Routes are essentially a summary of the aggregate characteristics of the whole transit route. RouteStopPatterns are geographical representations of the services that make up the Route.</code></p>
+ the <a href="#route">Route</a> and the <a href="#route_stop_patterns">RouteStopPattern</a>. Routes are essentially a summary of the aggregate characteristics of the whole transit route. RouteStopPatterns are geographical representations of the services that make up the Route.</code></p>
+
+<a name="routes"></a><h3>Routes</h3>
 
 <h5>Route Data Model</h5>
 
@@ -19,8 +21,8 @@ layout: documentation
   <tbody>
     <tr>
       <td>onestop_id</td>
-      <td>Onestop ID</td>
-      <td>Route</td>
+      <td><a href="/documentation/onestop-id-scheme/">Onestop ID</a></td>
+      <td>A unique identifier for this route</td>
     </tr>
     <tr>
       <td>name</td>
@@ -55,7 +57,7 @@ layout: documentation
   </tbody>
 </table>
 
-<a name="vehicle_types"><h5>Vehicle Types</h5></a>
+<a name="vehicle_types"></a><h5>Vehicle Types</h5>
 <table>
   <tbody>
     <tr>
@@ -710,7 +712,7 @@ layout: documentation
 <p>TODO: include some example API query URLs</p>
 -->
 
-<h3><a name="route_stop_patterns">RouteStopPattern</a></h3>
+<a name="route_stop_patterns"></a><h3>RouteStopPattern</h3>
 
 <p>In addition to the Route, Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed and its services. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
 
@@ -729,12 +731,12 @@ layout: documentation
   <tbody>
     <tr>
       <td>onestop_id</td>
-      <td>Onestop ID</td>
+      <td><a href="/documentation/onestop-id-scheme/">Onestop ID</a></td>
       <td>RouteStopPattern</td>
     </tr>
     <tr>
       <td>route_onestop_id</td>
-      <td>Onestop ID</td>
+      <td><a href="/documentation/onestop-id-scheme/">Onestop ID</a></td>
       <td>Route</td>
     </tr>
     <tr>
