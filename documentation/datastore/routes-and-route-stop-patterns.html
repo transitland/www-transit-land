@@ -746,7 +746,7 @@ layout: documentation
     </tr>
     <tr>
       <td>stop_pattern</td>
-      <td>Onestop ID array</td>
+      <td><a href="/documentation/onestop-id-scheme">Onestop ID</a> array</td>
       <td>List of stops along geometry in trip order. Stops may reappear.</td>
     </tr>
     <tr>
@@ -766,8 +766,8 @@ layout: documentation
     </tr>
     <tr>
       <td>tags</td>
-      <td>Hstore</td>
-      <td>Associated shape id</td>
+      <td>Object of keys and values</td>
+      <td>When imported from GTFS, includes the associated <code>shape_id</code></td>
     </tr>
     <tr>
       <td>is_generated</td>
@@ -833,19 +833,19 @@ layout: documentation
     <tbody>
       <tr>
         <td>onestop_id</td>
-        <td>Onestop ID</td>
+        <td><a href="/documentation/onestop-id-scheme">Onestop ID</a></td>
         <td>RouteStopPattern.</td>
-        <td>(<a href="http://transit.land/api/v1/route_stop_patterns?onestop_id=r-9q9-pittsburg%7Ebaypoint%7Esfia%7Emillbrae-49ae87-5ae164">http://transit.land/api/v1/route_stop_patterns?onestop_id=r-9q9-pittsburg~baypoint~sfia~millbrae-49ae87-5ae164</a>)</td>
+        <td><a href="http://transit.land/api/v1/route_stop_patterns?onestop_id=r-9q9-pittsburg%7Ebaypoint%7Esfia%7Emillbrae-49ae87-5ae164">with <a href="/documentation/onestop-id-scheme">Onestop ID</a> r-9q9-pittsburg~baypoint~sfia~millbrae-49ae87-5ae164</a></td>
       </tr>
       <tr>
         <td>traversed_by</td>
-        <td>Onestop ID</td>
+        <td><a href="/documentation/onestop-id-scheme">Onestop ID</a></td>
         <td>Route. Accepts multiple route onestop ids separated by commas.</td>
         <td><a href="http://transit.land/api/v1/route_stop_patterns?traversed_by=r-9q9-pittsburg%7Ebaypoint%7Esfia%7Emillbrae">belonging to Route Pittsburg/Bay Point - SFIA/Millbrae</a></td>
       </tr>
       <tr>
         <td>stops_visited</td>
-        <td>Onestop ID</td>
+        <td><a href="/documentation/onestop-id-scheme">Onestop ID</a></td>
         <td>Stop. Accepts multiple separated by commas.</td>
         <td><a href="http://transit.land/api/v1/route_stop_patterns?stops_visited=s-9q9p1wrwrp-macarthur">Having stop MacArthur</a></td>
       </tr>
