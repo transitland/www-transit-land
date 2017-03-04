@@ -115,10 +115,13 @@ When a changeset is applied, automatic verification is done to ensure that the i
 
 ## Sticky Attributes
 Changesets can fall into two broad types: those automatically generated and applied from feed version imports, and all others (non-import changesets). The distinction comes into play as entity attribute values (e.g. stop coordinates) can be left unmodified from import changesets.
-This can happen if:  
+This can happen if:
+
 1.  The entities have been imported from an initial import.
+
 2.  The changing attributes have been flagged to allow values to remain unmodified, or "sticky" as Transitland calls them. The full list of attributes   is enumerated in the table below.
-3.  A non-import changeset has been submitted, and it includes sticky attributes
+
+3.  A non-import changeset has been submitted, and it includes sticky attributes 
 
 | Model | Sticky Attributes |
 |-----------|------|

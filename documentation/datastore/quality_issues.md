@@ -8,7 +8,7 @@ layout: documentation
 Transit data specifications have rules for populating data field types and referential integrity between those fields,
 but often their values are not accurate with regard to the geographical, temporal, or other more subjective characteristics of the data content. For example, GTFS Shape points may accidentally be stored in reverse, or a Feed URL may not point to a GTFS feed. In other words, the quality of the data content is a concern outside of format.
 
-Transitland's Datastore offers a mechanism to check the data quality, create records of quality issues if found, and resolve those issues through Changesets.
+Transitland's Datastore offers a mechanism to check the data quality, create records of quality issues if found, and resolve those issues through [Changesets](changesets.html).
 
 
 ## Issue data model
@@ -45,9 +45,7 @@ Issues are connected to entities through the join table represented by the model
 | | `feed_fetch_invalid_zip` | Feed source zip file is not structured according to expectations |
 | | `feed_fetch_invalid_source` | Feed source is not valid according to the GTFS specification |
 | | `feed_fetch_invalid_response` | Feed fetch on URL returned an HTTP status error |
-| station_hierarchy | `stop_platforms_too_close` | |
-| | `stop_platform_parent_distance_gap` | |
-| `uncategorized` | `missing_stop_conflation_result` | An attempt was made to conflate the stop with OSM data, but nothing returned. |
+| uncategorized | `missing_stop_conflation_result` | An attempt was made to conflate the stop with OSM data, but nothing returned. |
 | | `other`| A catch-all encompassing an issue type not matching the existing types. |
 
 Here's an example query on the Issues API: https://transit.land/api/v1/issues?category=route_geometry&total=true&per_page=1.
