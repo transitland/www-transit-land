@@ -29,8 +29,6 @@
       path: /documentation/datastore/routes-and-route-stop-patterns.html
     - title: Schedules
       path: /documentation/datastore/schedules.html
-    - title: Identifiers
-      path: /documentation/datastore/identifiers.html
     - title: Changesets
       path: /documentation/datastore/changesets.html
     - title: Quality issues
