@@ -44,7 +44,11 @@ These are the attributes and data types of a ScheduleStopPair.
 | `wheelchair_accessible`        | Boolean | Wheelchair accessible: true, false, or null (unknown) |
 | `bikes_allowed`                | Boolean | Bike accessible: true, false, or null (unknown) |
 | `drop_off_type`                | Enum | Passenger drop-off |
-| `pickup_type`                  | Enum | Passenger pickup
+| `pickup_type`                  | Enum | Passenger pickup |
+| `frequency_type`               | Enum | Frequency-based schedule |
+| `frequency_headway_seconds`    | Integer | Frequency-based schedule headway, in seconds |
+| `frequency_start_time`         | Time | Start of frequency based schedule |
+| `frequency_end_time`           | Time | End of frequency based schedule |
 
 ## Data types
 
@@ -64,6 +68,15 @@ Times can be specified with more than 24 hours, as indicated by GTFS. For exampl
  * unavailable: Pickup or drop-off not available
  * ask_driver: Ask the driver for pickup or drop-off
  * ask_agency: Phone the agency to schedule in advance
+
+### Frequency based schedule
+
+When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See [GTFS frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) documentation.
+
+The values for `frequency_type` are:
+
+ * exact: service is exactly scheduled.
+ * not_exact: service repeats, but timepoints are not exact
 
 ## Query parameters
 
