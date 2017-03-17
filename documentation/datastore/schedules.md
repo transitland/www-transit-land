@@ -71,7 +71,7 @@ Times can be specified with more than 24 hours, as indicated by GTFS. For exampl
 
 ### Frequency based schedule
 
-When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See [GTFS frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) documentation.
+When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See [GTFS frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) documentation.x
 
 The values for `frequency_type` are:
 
@@ -95,6 +95,13 @@ The main ScheduleStopPair API endpoint is [/api/v1/schedule_stop_pairs](http://t
 | `origin_departure_between` | Time,Time | Origin departure time between two times | [departing between 07:00 - 09:00](http://transit.land/api/v1/schedule_stop_pairs?origin_departure_between=07:00:00,09:00:00) |
 | `trip`                     | String | Trip identifier | [on trip '03SFO11SUN'](http://transit.land/api/v1/schedule_stop_pairs?trip=03SFO11SUN) |
 | `bbox`                     | Lon1,Lat1,Lon2,Lat2 | Origin Stop within bounding box | [in the Bay Area](http://transit.land/api/v1/schedule_stop_pairs?bbox=-123.057,36.701,-121.044,38.138)
+
+The `date` and `origin_departure_between` query parameters accept special values.
+
+ * `date=today`: Use the current local date.
+ * `time=now`: Use the current time. You can also specify `now+<seconds>` or `now-<seconds>`. Example: `time=now-600,now+600`.
+
+ For both of these options, a local timezone must be specified by providing one of the following parameters: `origin_onestop_id`, `destination_onestop_id`, or `operator_onestop_id`.
 
 Note: When you query `schedule_stop_pair`, the origin and destination must be directly connected without any stops between them. For example, you can query stops that are next to each other or are coupled as an express route. To find all the trips that travel between certain stops, use the [Mapzen Turn-by-Turn API](https://mapzen.com/documentation/turn-by-turn/api-reference/) with multimodal costing, which can extract the intermediate stops and do route planning.
 
