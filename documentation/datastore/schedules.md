@@ -71,7 +71,7 @@ Times can be specified with more than 24 hours, as indicated by GTFS. For exampl
 
 ### Frequency based schedule
 
-When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See [GTFS frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) documentation.x
+When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See [GTFS frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) documentation.
 
 The values for `frequency_type` are:
 
