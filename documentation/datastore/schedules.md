@@ -15,6 +15,8 @@ These are the attributes and data types of a ScheduleStopPair.
 
 | Attribute | Type | Description |
 |-----------|------|---------|
+| `feed_onestop_id`               | Onestop ID | Feed |
+| `feed_version_sha`              | String | Feed Version |
 | `route_onestop_id`             | Onestop ID | Route |
 | `route_stop_pattern_onestop_id` | Onestop ID | Route Stop Pattern |
 | `operator_onestop_id`         | Onestop ID | Operator |
@@ -49,6 +51,7 @@ These are the attributes and data types of a ScheduleStopPair.
 | `frequency_headway_seconds`    | Integer | Frequency-based schedule headway, in seconds |
 | `frequency_start_time`         | Time | Start of frequency based schedule |
 | `frequency_end_time`           | Time | End of frequency based schedule |
+
 
 ## Data types
 
