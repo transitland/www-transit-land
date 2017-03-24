@@ -49,8 +49,8 @@ These are the attributes and data types of a ScheduleStopPair.
 | `pickup_type`                  | Enum | Passenger pickup |
 | `frequency_type`               | Enum | Frequency-based schedule |
 | `frequency_headway_seconds`    | Integer | Frequency-based schedule headway, in seconds |
-| `frequency_start_time`         | Time | Start of frequency based schedule |
-| `frequency_end_time`           | Time | End of frequency based schedule |
+| `frequency_start_time`         | Time | Start of frequency-based schedule |
+| `frequency_end_time`           | Time | End of frequency-based schedule |
 
 
 ## Data types
@@ -59,27 +59,27 @@ Times can be specified with more than 24 hours, as indicated by GTFS. For exampl
 
 ### Timepoint source
 
- * gtfs_exact: An exact timepoint in the GTFS
- * gtfs_interpolated: An interpolated timepoint in the GTFS
- * transitland_interpolated_linear: Interpolated based on linear stop sequence
- * transitland_interpolated_geometric: Interpolated based on straight-line distance
- * transitland_interpolated_shape: Interpolated based on shape_dist_traveled
+ * `gtfs_exact`: An exact timepoint in the GTFS
+ * `gtfs_interpolated`: An interpolated timepoint in the GTFS
+ * `transitland_interpolated_linear`: Interpolated based on linear stop sequence
+ * `transitland_interpolated_geometric`: Interpolated based on straight-line distance
+ * `transitland_interpolated_shape`: Interpolated based on shape_dist_traveled
 
 ### Pickup (origin) and drop-off (destination)
 
- * null: Regularly scheduled pickup and drop-off
- * unavailable: Pickup or drop-off not available
- * ask_driver: Ask the driver for pickup or drop-off
- * ask_agency: Phone the agency to schedule in advance
+ * `null`: Regularly scheduled pickup and drop-off
+ * `unavailable`: Pickup or drop-off not available
+ * `ask_driver`: Ask the driver for pickup or drop-off
+ * `ask_agency`: Phone the agency to schedule in advance
 
-### Frequency based schedule
+### Frequency-based schedules
 
-When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See [GTFS frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) documentation.
+A frequency-based schedule runs at an interval, instead of at specific departure and arrival times. When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See the [GTFS documentation for frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) for more information.
 
 The values for `frequency_type` are:
 
- * exact: service is exactly scheduled.
- * not_exact: service repeats, but timepoints are not exact
+ * `exact`: service is exactly scheduled.
+ * `not_exact`: service repeats, but timepoints are not exact
 
 ## Query parameters
 
