@@ -63,7 +63,7 @@ Times can be specified with more than 24 hours, as indicated by GTFS. For exampl
  * `gtfs_interpolated`: An interpolated timepoint in the GTFS
  * `transitland_interpolated_linear`: Interpolated based on linear stop sequence
  * `transitland_interpolated_geometric`: Interpolated based on straight-line distance
- * `transitland_interpolated_shape`: Interpolated based on shape_dist_traveled
+ * `transitland_interpolated_shape`: Interpolated based on `shape_dist_traveled`
 
 ### Pickup (origin) and drop-off (destination)
 
