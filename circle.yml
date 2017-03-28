@@ -16,15 +16,11 @@ test:
     - bundle exec jekyll build
 
 deployment:
-  staging:
+  production:
     branch: master
     commands:
       - sudo pip install -U awscli
       - TARGET=staging bundle exec jekyll build
       - AWS_ACCESS_KEY_ID=${STAGING_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${STAGING_AWS_SECRET_ACCESS_KEY} aws s3 sync _site s3://staging.transit.land/
-  production:
-    branch: production
-    commands:
-      - sudo pip install -U awscli
       - TARGET=prod bundle exec jekyll build
       - AWS_ACCESS_KEY_ID=${PROD_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PROD_AWS_SECRET_ACCESS_KEY} aws s3 sync _site s3://transit.land/
