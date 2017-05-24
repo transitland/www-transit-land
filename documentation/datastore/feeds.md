@@ -5,7 +5,7 @@ layout: documentation
 
 ## Feeds
 
-A Feed represents a unique, publicly accessible GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, and the geographic extent of the Feed, the details of the Feed's license.
+A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, and the geographic extent of the Feed, the details of the Feed's license.
 
 #### Feed data model
 
@@ -24,7 +24,7 @@ A Feed represents a unique, publicly accessible GTFS data source. Each Feed has 
 | `license_attribution_text`           | String     | Required attribution text |
 | `license_url`                        | URL        | URL to Feed License       |
 | `tags`                | Object       | Tags |
-| `feed_versions`       | Feed Version | Feed Version IDs (SHA1) for this Feed |
+| `feed_versions`       | Feed Versions| Feed Version IDs (SHA1) for this Feed |
 | `active_feed_version` | Feed Version | Active Feed Version ID              |
 | `operators_in_feed`   | Object array | Mapping of gtfs `agency_id`s to Operators |
 | `changesets_imported_from_this_feed` | Changesets | Changesets created from Feed |
@@ -47,10 +47,10 @@ Approximately once per day, the URL for each Feed is checked. When a new version
 | `fetched_at`          | DateTime     | Time was originally fetched       |
 | `url`                 | URL          | URL when fetched                  |
 | `download_url`        | URL          | Archived copy of Feed Version, if allowed |
-| `feedvalidator_url`   | URL          | Archived Google FeedValidator report |
+| `feedvalidator_url`   | URL          | Archived Google feedvalidator.py report |
 | `earliest_calendar_date` | Date      | First day of scheduled service    |
 | `latest_calendar_date` | Date        | Last day of scheduled service     |
-| `imported_at`         | DateTime     | Time Feed Version was imported    |
+| `imported_at`         | DateTime     | Last time Feed Version was imported    |
 | `import_level`        | Integer      | Import level (0-4)                |
 | `import_status`       | Enum         | Import status, e.g. `most_recent_succeeded` |
 | `feed_version_imports`| IDs          | Feed Version Import IDs           |
