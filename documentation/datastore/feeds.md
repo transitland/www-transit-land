@@ -88,7 +88,7 @@ Endpoint: `/api/v1/feed_version_infos`
 | Query parameter        | Type | Description | Example |
 |------------------------|------|-------------|---------|
 | `feed_onestop_id`    | Onestop ID | Filter by Feed | [Caltrain](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain) |
-| `feed_version_sha1`  | Feed Version | Filter by Feed Version | [Caltrain](https://transit.land/api/v1/feed_version_infos?feed_version_sha1=36ba71b654ba6ed1e4866822832c11942c4761e5) |
+| `feed_version_sha1`  | Feed Version | Filter by Feed Version | [Caltrain, single Feed Version](https://transit.land/api/v1/feed_version_infos?feed_version_sha1=36ba71b654ba6ed1e4866822832c11942c4761e5) |
 | `type`                 | Enum | Filter by report type | [Caltrain statistics](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain&type=FeedVersionInfoStatistics) |
 
 ### FeedVersionInfoStatistics reports
