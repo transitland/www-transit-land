@@ -19,7 +19,7 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 | `geometry`            | Geometry     | Convex hull of Stops in the Feed |
 | `last_fetched_at`     | DateTime     | Last time the Feed was retrieved |
 | `last_imported_at`    | DateTime     | Last time the Feed was imported  |
-| `license_name`                       | String     | License name, e.g. `MIT`  |
+| `license_name`                       | String     | License name, such as `MIT`  |
 | `license_use_without_attribution`    | Enum       | `yes`, `no`, `unknown`    |
 | `license_create_derived_product`     | Enum       | `yes`, `no`, `unknown`    |
 | `license_redistribute`               | Enum       | `yes`, `no`, `unknown`    |
