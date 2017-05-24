@@ -46,13 +46,13 @@ layout: documentation
     </tr>
     <tr>
       <td>wheelchair_accessible</td>
-      <td>Boolean</td>
-      <td>Wheelchair accessible: true, false, or null (unknown)</td>
+      <td>String</td>
+      <td>Wheelchair accessible: some_trips, all_trips, no_trips, or unknown</td>
     </tr>
     <tr>
       <td>bikes_allowed</td>
-      <td>Boolean</td>
-      <td>Bike accessible: true, false, or null (unknown)</td>
+      <td>String</td>
+      <td>Bike accessible: some_trips, all_trips, no_trips, or unknown</td>
     </tr>
   </tbody>
 </table>
@@ -985,7 +985,7 @@ layout: documentation
     </tr>
     <tr>
       <td>shapes_txt_with_dist_traveled</td>
-      <td>Shape points exist and have distance information.</td>
+      <td>Shape points exist and have distance information. This also indicates that stop times has distance information.</td>
     </tr>
     <tr>
       <td>user_edited</td>
@@ -1000,13 +1000,15 @@ layout: documentation
 <h5>Distance calculation heuristic algorithm</h5>
 <p>RouteStopPatterns' <code>stop_distances</code> are useful for cutting a slice of the route line between two stops for visualization, among other reasons. Each <a href="schedules.html"><code>ScheduleStopPair</code></a> has an associated RouteStopPattern. In addition, two attributes have been added to ScheduleStopPair: <code>origin_distance_traveled</code> and <code>destination_distance_traveled</code>. These are the distances, in meters rounded to the nearest decimeter, of the origin and destination stops along the line geometry from the start point.</p>
 
-<p>The current algorithm runs as follows, with some details omitted. While iterating through each stop of the RouteStopPattern, we look ahead to the next stop (if there is one), and behind to the previous stop (if there is one). For the stop point ahead, we find the globally closest segment match. Lets call this segment <code>c</code>. For the previous stop, we use the previously found matching segment. Let’s call that segment <code>a</code>. If there is no previous stop, we use the first segment of the line. Then for the segments in between our two segments <code>a</code> and <code>c</code>, we find the closest match. Let’s call that segment <code>b</code>. With <code>b</code> we compute the closest point to the stop along that segment, then compute the distance along the line to that point. Sometimes the <code>b</code> segment results in a distance that is less than the previous stop’s distance. If this happens, we bump up our <code>a</code> segment index by 1 and try again.</p>
+<p>The algorithm for calculating <code>stop_distances</code> must first solve the problem of matching stops to a set of optimal segments of the route line. A set of segment matches for the RSP stops is optimal if the distances between the stops and the nearest points of the chosen segments are minimized, with the constraint that distances <i>along</i> the route line of the nearest points of the chosen segments (<code>stop_distances</code>) are increasing for each subsequent stop.</p><p>The current algorithm runs as follows, with some details omitted. First, it computes reasonable segment matching possibilities for each stop based on a threshold of how far the stop is from the segment. Then for each stop in order, the algorithm loops through each segment match possibility in sorted order of distance from the line, until it finds a list of all subsequent stop distances along the line ahead that are in increasing order. Each stop's segment evaluation results in a recursive call to the next stop. Recursion is valuable because a poor segment choice for one stop can cause inaccuracies that aren't apparent until much later along the stop pattern for other stops.</p><p>The distance threshold for segment matches is computed for each RouteStopPattern, and its value is computed as follows. Imagine the two triangle legs formed by the average of all stops' minimum distance to the line and half the average distance between the two neighboring stops on either side of a single stop (so the threshold value can be different for each stop). The threshold value is the length, in meters, of the hypotenuse formed from these legs.</p>
+
+<img alt="Threshold computation" src="/images/transitland-route-geometries/triangle.png" height="400" width="400"></a>
 
 <p>The distance calcuation is not always perfect, unfortunately. Transitland logs inaccuracies through <a href="quality_issues.html">Quality Issues.</a> If any inaccuracies are found for a particular RouteStopPattern, the <code>stop_distances</code> for that RouteStopPattern are set to null.</p>
 
 <a name="before-and-after-stops"></a>
 <h5>Before and After Stops</h5>
-<p>Sometimes stops at the beginning and end of route lines are found to be off the route line. We need to identify these stops so that their distances can be set to 0.0 meters for stops before the route line, and the length of the route line for stops after. Here are the conditions for determining these "before" and "after" stops. The examples are for "before" stops, but the same logic applies in reverse for "after" stops. A stop is considered to be before a RouteStopPattern line geometry if its point satisfies one of two conditions:
+<p>Sometimes stops at the beginning and end of route lines are found to be off the route line. The algorithm needs to identify these stops so that their distances can be set to 0.0 meters for stops before the route line, and the length of the route line for stops after. Here are the conditions for determining these "before" and "after" stops. The examples are for "before" stops, but the same logic applies in reverse for "after" stops. A stop is considered to be before a RouteStopPattern line geometry if its point satisfies one of two conditions:
 
   <ol>
     <li>It is found on the opposite side of the line that is perpendicular to the first line segment that passes through the first endpoint of the segment.</li>
