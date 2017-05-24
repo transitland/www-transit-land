@@ -3,7 +3,11 @@ title: Feeds and feed versions
 layout: documentation
 ---
 
+## Feeds
+
 A Feed represents a unique, publicly accessible GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, the geographic extent of the Feed, the details of the Feed's license.
+
+#### Feed data model
 
 | Attribute             | Type         | Description                      |
 |-----------------------|--------------|----------------------------------|
@@ -25,9 +29,15 @@ A Feed represents a unique, publicly accessible GTFS data source. Each Feed has 
 | `operators_in_feed`   | Object array | Mapping of gtfs `agency_id`s to Operators |
 | `changesets_imported_from_this_feed` | Changesets | Changesets created from Feed |
 
+#### Feeds API
+
+Endpoint: `/api/v1/feeds`
+
 ## Feed versions
 
 Approximately once per day, the URL for each Feed is checked. When a new version of the Feed is found, a Feed Version is created. The ID for each Feed Version is the SHA1 checksum of the GTFS archive.
+
+#### Feed versions data model
 
 | Attribute             | Type         | Description                       |
 |-----------------------|--------------|-----------------------------------|
@@ -48,6 +58,57 @@ Approximately once per day, the URL for each Feed is checked. When a new version
 | `is_active_feed_version` | Boolean   | `true` if Feed Version is active  |
 | `changesets_imported_from_this_feed_version` | Changesets | Changesets created from Feed Version |
 
-## Feed version imports
+#### Feed versions API
+
+Endpoint: `/api/v1/feed_versions`
 
 ## Feed version reports
+
+The Transitland Datastore creates a number of validation &amp; statistical reports for each Feed Version. The currently defined types of reports are:
+
+- `FeedVersionInfoStatistics`: General statistics
+- `FeedVersionInfoConveyalValidation`: Conveyal gtfs-lib validation results
+
+Additionally, the results of Google's feedvalidator.py HTML output will be stored on the Feed Version as `feedvalidator_url` when available. In the future, this may instead be stored as an additional type of report as above.
+
+#### FeedVersionInfo data model
+
+| Attribute             | Type         | Description                       |
+|-----------------------|--------------|-----------------------------------|
+| `id`                  | Integer      | ID                                |
+| `type`                | Enum         | Report type                       |
+| `feed_version_sha1`   | SHA1         | Parent Feed Version               |
+| `feed_onestop_id`     | Onestop ID   | Parent Feed                       |
+| `data`                | JSON         | JSON blob containing report data  |
+
+#### FeedVersionInfo API
+
+Endpoint: `/api/v1/feed_version_infos`
+
+| Query parameter        | Type | Description | Example |
+|------------------------|------|-------------|---------|
+| `feed_version_sha1`    | Onestop ID | Filter by Feed | [Caltrain](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain) |
+| `feed_onestop_id`      | SHA1       | Filter by Feed Version | [Caltrain](https://transit.land/api/v1/feed_version_infos?feed_version_sha1=36ba71b654ba6ed1e4866822832c11942c4761e5) |
+| `type`                 | Enum | Filter by report type | [Caltrain statistics](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain&type=FeedVersionInfoStatistics) |
+
+### FeedVersionInfoStatistics reports
+
+This report contains basic details about the files in the GTFS archive and basic statistics about the CSV columns and values.
+
+- `filenames`: The filenames present in the directory of the archive containing the CSV files.
+- `statistics`: Data for each GTFS CSV file and column, with the `total` number of rows with data for that column, the `unique` number of values encountered, as well as the `min` and `max` values.
+- `scheduled_service`: Key-value data for the number of seconds of scheduled service for each date the Feed has scheduled trips.
+
+[Example FeedVersionInfoConveyalValidation report](https://transit.land/api/v1/feed_version_infos/845)
+
+### FeedVersionInfoConveyalValidation reports
+
+This report contains the JSON output of Conveyal's gtfs-lib validator.
+
+[Example FeedVersionInfoStatistics report](https://transit.land/api/v1/feed_version_infos/8115)
+
+### Google feedvalidator.py reports
+
+The HTML output of Google feedvalidator.py. Currently, this is stored on the actual Feed Version record as `feedvalidator_url` as a link to a copy of the report stored on S3.
+
+[Example Feed Version with Google feedvalidator.py report](https://transit.land/api/v1/feed_versions/36ba71b654ba6ed1e4866822832c11942c4761e5)
