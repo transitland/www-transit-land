@@ -69,9 +69,9 @@ The Transitland Datastore creates a number of validation &amp; statistical repor
 - `FeedVersionInfoStatistics`: General statistics
 - `FeedVersionInfoConveyalValidation`: [Conveyal gtfs-lib](https://github.com/conveyal/gtfs-lib) validation results
 
-Additionally, the results of [Google's feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator) HTML output will be stored on the Feed Version as `feedvalidator_url` when available. In the future, this may instead be stored as an additional type of report as above.
+Additionally, the results of [Google's feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator) HTML output will be stored on the Feed Version as `feedvalidator_url` when available. In the future, this may instead be stored as an additional type of report.
 
-#### FeedVersionInfo data model
+#### Feed version report data model
 
 | Attribute             | Type         | Description                       |
 |-----------------------|--------------|-----------------------------------|
@@ -81,7 +81,7 @@ Additionally, the results of [Google's feedvalidator.py](https://github.com/goog
 | `feed_onestop_id`     | Onestop ID   | Parent Feed                       |
 | `data`                | JSON         | JSON blob containing report data  |
 
-#### FeedVersionInfo API
+#### Feed version report API
 
 Endpoint: `/api/v1/feed_version_infos`
 
