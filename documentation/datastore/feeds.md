@@ -7,9 +7,9 @@ Transitland is built on publicly available GTFS data contributed by our user com
 
 ## Feeds
 
-A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, and the geographic extent of the Feed, the details of the Feed's license.
+A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, the geographic extent of the Feed, and the details of the Feed's license.
 
-#### Feed data model
+### Feed data model
 
 | Attribute             | Type         | Description                      |
 |-----------------------|--------------|----------------------------------|
@@ -31,7 +31,7 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 | `operators_in_feed`   | Object array | Mapping of gtfs `agency_id`s to Operators |
 | `changesets_imported_from_this_feed` | Changesets | Changesets created from Feed |
 
-#### Feeds API
+### Feeds API
 
 Endpoint: `/api/v1/feeds`
 
@@ -39,7 +39,7 @@ Endpoint: `/api/v1/feeds`
 
 Approximately once per day, the URL for each Feed is checked. When a new version of the Feed is found, a Feed Version is created. The ID for each Feed Version is the SHA1 checksum of the GTFS archive.
 
-#### Feed versions data model
+### Feed versions data model
 
 | Attribute             | Type         | Description                       |
 |-----------------------|--------------|-----------------------------------|
@@ -54,26 +54,26 @@ Approximately once per day, the URL for each Feed is checked. When a new version
 | `latest_calendar_date` | Date        | Last day of scheduled service     |
 | `imported_at`         | DateTime     | Last time Feed Version was imported    |
 | `import_level`        | Integer      | Import level (0-4)                |
-| `import_status`       | Enum         | Import status, e.g. `most_recent_succeeded` |
+| `import_status`       | Enum         | Import status, such as `most_recent_succeeded` |
 | `feed_version_imports`| IDs          | Feed Version Import IDs           |
 | `feed_version_infos`  | IDs          | Feed Version Info IDs             |
 | `is_active_feed_version` | Boolean   | `true` if Feed Version is active  |
 | `changesets_imported_from_this_feed_version` | Changesets | Changesets created from Feed Version |
 
-#### Feed versions API
+### Feed versions API
 
 Endpoint: `/api/v1/feed_versions`
 
-## Feed version reports
+### Feed version reports
 
-The Transitland Datastore creates a number of validation &amp; statistical reports for each Feed Version. The currently defined types of reports are:
+The Transitland Datastore creates a number of validation and statistical reports for each Feed Version. The currently defined types of reports are:
 
 - `FeedVersionInfoStatistics`: General statistics
 - `FeedVersionInfoConveyalValidation`: [Conveyal gtfs-lib](https://github.com/conveyal/gtfs-lib) validation results
 
 Additionally, the results of [Google's feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator) HTML output will be stored on the Feed Version as `feedvalidator_url` when available. In the future, this may instead be stored as an additional type of report.
 
-#### Feed version report data model
+### Feed version report data model
 
 | Attribute             | Type         | Description                       |
 |-----------------------|--------------|-----------------------------------|
@@ -83,7 +83,7 @@ Additionally, the results of [Google's feedvalidator.py](https://github.com/goog
 | `feed_onestop_id`     | Onestop ID   | Parent Feed                       |
 | `data`                | JSON         | JSON blob containing report data  |
 
-#### Feed version report API
+### Feed version report API
 
 Endpoint: `/api/v1/feed_version_infos`
 
