@@ -5,7 +5,7 @@ layout: documentation
 
 ## Feeds
 
-A Feed represents a unique, publicly accessible GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, the geographic extent of the Feed, the details of the Feed's license.
+A Feed represents a unique, publicly accessible GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, and the geographic extent of the Feed, the details of the Feed's license.
 
 #### Feed data model
 
@@ -77,7 +77,7 @@ Additionally, the results of Google's feedvalidator.py HTML output will be store
 |-----------------------|--------------|-----------------------------------|
 | `id`                  | Integer      | ID                                |
 | `type`                | Enum         | Report type                       |
-| `feed_version_sha1`   | SHA1         | Parent Feed Version               |
+| `feed_version_sha1`   | Feed Version | Parent Feed Version               |
 | `feed_onestop_id`     | Onestop ID   | Parent Feed                       |
 | `data`                | JSON         | JSON blob containing report data  |
 
@@ -87,8 +87,8 @@ Endpoint: `/api/v1/feed_version_infos`
 
 | Query parameter        | Type | Description | Example |
 |------------------------|------|-------------|---------|
-| `feed_version_sha1`    | Onestop ID | Filter by Feed | [Caltrain](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain) |
-| `feed_onestop_id`      | SHA1       | Filter by Feed Version | [Caltrain](https://transit.land/api/v1/feed_version_infos?feed_version_sha1=36ba71b654ba6ed1e4866822832c11942c4761e5) |
+| `feed_onestop_id`    | Onestop ID | Filter by Feed | [Caltrain](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain) |
+| `feed_version_sha1`  | Feed Version | Filter by Feed Version | [Caltrain](https://transit.land/api/v1/feed_version_infos?feed_version_sha1=36ba71b654ba6ed1e4866822832c11942c4761e5) |
 | `type`                 | Enum | Filter by report type | [Caltrain statistics](https://transit.land/api/v1/feed_version_infos/?feed_onestop_id=f-9q9-caltrain&type=FeedVersionInfoStatistics) |
 
 ### FeedVersionInfoStatistics reports
