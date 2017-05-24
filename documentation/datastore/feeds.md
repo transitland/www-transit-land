@@ -3,6 +3,8 @@ title: Feeds and feed versions
 layout: documentation
 ---
 
+Transitland is built on publicly available GTFS data contributed by our user community. Detailed information is kept on each Feed, and updated whenever a new version of each Feed is discovered.
+
 ## Feeds
 
 A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, and the geographic extent of the Feed, the details of the Feed's license.
