@@ -24,7 +24,7 @@ Method | Example URL | Parameters
 `PUT` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
 `DELETE` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
 `GET` | `/api/v1/issues` |
-`GET` | `/api/v1/issues/1` | 
+`GET` | `/api/v1/issues/1` |
 `GET` | `/api/v1/issues/categories` | all available categories and issue_types of each category
 `GET` |  `/api/v1/onestop_id/o-9q8y-SFMTA` | final part of the path can be a Onestop ID for any type of entity (for example, a stop or an operator)
 `GET` |  `/api/v1/stops` | none required
@@ -52,7 +52,7 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/routes?tag_key=route_color&tag_value=FEF0B5` | find all routes that have a tag of `tag_key` and a value of `tag_value`
 `GET` |  `/api/v1/routes?traverses=r-9q9-pittsburg~baypoint~sfia~millbrae-49ae87-5ae164` | find all routes having specified route stop patterns
 `GET` |  `/api/v1/routes?import_level=4` | find all routes with a given import level
-`GET` |  `/api/v1/routes?include_geometry=true` | determine whether to return the route geometry. The default is `true`, which means route geometry is part of the response. 
+`GET` |  `/api/v1/routes?include_geometry=true` | determine whether to return the route geometry. The default is `true`, which means route geometry is part of the response.
 `GET` |  `/api/v1/route_stop_patterns` | none required
 `GET` |  `/api/v1/route_stop_patterns?traversed_by=r-9q8y-richmond~dalycity~millbrae` | find all Route Stop Patterns belonging to route
 `GET` |  `/api/v1/route_stop_patterns?bbox=-122.4183,37.7758,-122.4120,37.7858` | `bbox` is a search bounding box with southwest longitude, southwest latitude, northeast longitude, northeast latitude (separated by commas)
@@ -84,6 +84,9 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/schedule_stop_pairs?bbox=-121.0,35.0,-124.0,37.0` | Find all Schedule Stop Pairs originating within a bounding box
 `GET` |  `/api/v1/schedule_stop_pairs?active=true` | Schedule Stop Pairs from active FeedVersions
 `GET` |  `/api/v1/schedule_stop_pairs?import_level=2` | Schedule Stop Pairs from FeedVersion with a given import_level
+`GET` |  `/api/v1/feed_version_infos?feed_version_sha1=700753c9707f4fb203776d13fcb1e372d7b068fa` | FeedVersionInfo records for a given Feed Version
+`GET` |  `/api/v1/feed_version_infos?feed_onestop_id=f-9q9-caltrain` | FeedVersionInfo records for a given Feed
+`GET` |  `/api/v1/feed_version_infos?type=FeedVersionInfoStatistics` | FeedVersionInfo by info type
 
 ### Pagination for JSON endpoints
 
