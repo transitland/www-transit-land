@@ -67,9 +67,9 @@ Endpoint: `/api/v1/feed_versions`
 The Transitland Datastore creates a number of validation &amp; statistical reports for each Feed Version. The currently defined types of reports are:
 
 - `FeedVersionInfoStatistics`: General statistics
-- `FeedVersionInfoConveyalValidation`: Conveyal gtfs-lib validation results
+- `FeedVersionInfoConveyalValidation`: [Conveyal gtfs-lib](https://github.com/conveyal/gtfs-lib) validation results
 
-Additionally, the results of Google's feedvalidator.py HTML output will be stored on the Feed Version as `feedvalidator_url` when available. In the future, this may instead be stored as an additional type of report as above.
+Additionally, the results of [Google's feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator) HTML output will be stored on the Feed Version as `feedvalidator_url` when available. In the future, this may instead be stored as an additional type of report as above.
 
 #### FeedVersionInfo data model
 
@@ -103,12 +103,12 @@ This report contains basic details about the files in the GTFS archive and basic
 
 ### FeedVersionInfoConveyalValidation reports
 
-This report contains the JSON output of Conveyal's gtfs-lib validator.
+This report contains the JSON output of [Conveyal's gtfs-lib](https://github.com/conveyal/gtfs-lib) validator.
 
 [Example FeedVersionInfoStatistics report](https://transit.land/api/v1/feed_version_infos/8115)
 
 ### Google feedvalidator.py reports
 
-The HTML output of Google feedvalidator.py. Currently, this is stored on the actual Feed Version record as `feedvalidator_url` as a link to a copy of the report stored on S3.
+The HTML output of [Google feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator). Currently, this is stored on the actual Feed Version record as `feedvalidator_url` as a link to a copy of the report stored on S3.
 
 [Example Feed Version with Google feedvalidator.py report](https://transit.land/api/v1/feed_versions/36ba71b654ba6ed1e4866822832c11942c4761e5)
