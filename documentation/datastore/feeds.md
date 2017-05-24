@@ -95,19 +95,19 @@ Endpoint: `/api/v1/feed_version_infos`
 
 ### FeedVersionInfoStatistics reports
 
-This report contains basic details about the files in the GTFS archive and basic statistics about the CSV columns and values.
+This report contains details about the files in the GTFS archive and basic statistics about the CSV columns and values.
 
 - `filenames`: The filenames present in the directory of the archive containing the CSV files.
 - `statistics`: Data for each GTFS CSV file and column, with the `total` number of rows with data for that column, the `unique` number of values encountered, as well as the `min` and `max` values.
 - `scheduled_service`: Key-value data for the number of seconds of scheduled service for each date the Feed has scheduled trips.
 
-[Example FeedVersionInfoConveyalValidation report](https://transit.land/api/v1/feed_version_infos/845)
+[Example FeedVersionInfoStatistics  report](https://transit.land/api/v1/feed_version_infos/845)
 
 ### FeedVersionInfoConveyalValidation reports
 
 This report contains the JSON output of [Conveyal's gtfs-lib](https://github.com/conveyal/gtfs-lib) validator.
 
-[Example FeedVersionInfoStatistics report](https://transit.land/api/v1/feed_version_infos/8115)
+[Example FeedVersionInfoConveyalValidation report](https://transit.land/api/v1/feed_version_infos/8115)
 
 ### Google feedvalidator.py reports
 
