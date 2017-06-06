@@ -3,7 +3,7 @@ title: Feeds and feed versions
 layout: documentation
 ---
 
-Transitland is built on publicly available GTFS data contributed by our user community. Detailed information is kept on each Feed, and updated whenever a new version of each Feed is discovered.
+Transitland is built on publicly available GTFS data [contributed](/documentation/feed-registry/add-a-feed.html) by our user community. Detailed information is kept on each Feed, and updated whenever a new version of each Feed is discovered. Feed versions are both archived for download (as `.zip` files) and imported into the Transitland Datastore for API querying by operators, stops, [routes](routes-and-route-stop-patterns.html), [schedules](schedules.html), etc.
 
 ## Feeds
 
@@ -19,7 +19,7 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 | `geometry`            | Geometry     | Convex hull of Stops in the Feed |
 | `last_fetched_at`     | DateTime     | Last time the Feed was retrieved |
 | `last_imported_at`    | DateTime     | Last time the Feed was imported  |
-| `license_name`                       | String     | License name, such as `MIT`  |
+| `license_name`                       | String     | [License](#feed-license-information) name, such as `MIT`  |
 | `license_use_without_attribution`    | Enum       | `yes`, `no`, `unknown`    |
 | `license_create_derived_product`     | Enum       | `yes`, `no`, `unknown`    |
 | `license_redistribute`               | Enum       | `yes`, `no`, `unknown`    |
@@ -27,7 +27,7 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 | `license_url`                        | URL        | URL to Feed License       |
 | `tags`                | Object       | Tags |
 | `feed_versions`       | Feed Versions| Feed Version IDs (SHA1) for this Feed |
-| `active_feed_version` | Feed Version | Active Feed Version ID              |
+| `active_feed_version` | Feed Version | [Active Feed Version ID](#active-feed-version) |
 | `operators_in_feed`   | Object array | Mapping of gtfs `agency_id`s to Operators |
 | `changesets_imported_from_this_feed` | Changesets | Changesets created from Feed |
 
@@ -35,9 +35,14 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 
 Endpoint: `/api/v1/feeds`
 
+<a name="feed-license-information"></a>
+### Feed license information
+
+To learn more about how Transitland classifies the licenses associated with a feed, see [this overview of Transitland legal and licensing issues](http://localhost:4000/an-open-project/).
+
 ## Feed versions
 
-Approximately once per day, the URL for each Feed is checked. When a new version of the Feed is found, a Feed Version is created. The ID for each Feed Version is the SHA1 checksum of the GTFS archive.
+Approximately once per day, the URL for each Feed is checked. When a new version of the Feed is found, a Feed Version is created. The ID for each Feed Version is the [SHA1 checksum](https://en.wikipedia.org/wiki/SHA-1) of the GTFS archive.
 
 ### Feed versions data model
 
@@ -57,12 +62,27 @@ Approximately once per day, the URL for each Feed is checked. When a new version
 | `import_status`       | Enum         | Import status, such as `most_recent_succeeded` |
 | `feed_version_imports`| IDs          | Feed Version Import IDs           |
 | `feed_version_infos`  | IDs          | Feed Version Info IDs             |
-| `is_active_feed_version` | Boolean   | `true` if Feed Version is active  |
+| `is_active_feed_version` | Boolean   | `true` if Feed Version is [active](#active-feed-version)  |
 | `changesets_imported_from_this_feed_version` | Changesets | Changesets created from Feed Version |
 
 ### Feed versions API
 
 Endpoint: `/api/v1/feed_versions`
+
+<a name="active-feed-version"></a>
+### Active feed version
+
+The most recent version of a feed that has been imported into the Transitland Datastore is marked as active. The [schedule API endpoint](schedules.html) only allows querying of the trips and calendars in the active feed version.
+
+The [FeedMaintenance service](https://github.com/transitland/transitland-datastore/blob/master/app/services/feed_maintenance_service.rb) within Transitland Datastore automatically decides when to import a newly fetched feed version. If no need feed version is available when existing ScheduleStopPairs are about to expire, the FeedMaintenance service will extend them into the future.
+
+### Most recent feed version
+
+Are you looking for the most recently fetched Feed Version? This is not necessarily the Feed Version where `is_active_feed_version=true`.
+
+To query for the most recently fetched version of a feed, use an API query like: `https://transit.land/api/v1/feed_versions?feed_onestop_id=f-9v6-capitalmetro&per_page=1&sort_by=fetched_at&sort_order=desc` (replacing `feed_onestop_id` as appropriate).
+
+To directly download a copy of the most recently fetched version of a feed, use: `https://transit.land/api/v1/feeds/f-9v6-capitalmetro/download_latest_feed_version` (replacing the Onestop ID as appropriate). Note that downloading is not allowed for Feeds where `license_redistribute=no`.
 
 ### Feed version reports
 
