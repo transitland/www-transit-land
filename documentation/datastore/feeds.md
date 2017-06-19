@@ -36,6 +36,7 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 Endpoint: `/api/v1/feeds`
 
 <a name="feed-license-information"></a>
+
 ### Feed license information
 
 To learn more about how Transitland classifies the licenses associated with a feed, see [this overview of Transitland legal and licensing issues](http://localhost:4000/an-open-project/).
@@ -70,6 +71,7 @@ Approximately once per day, the URL for each Feed is checked. When a new version
 Endpoint: `/api/v1/feed_versions`
 
 <a name="active-feed-version"></a>
+
 ### Active feed version
 
 The most recent version of a feed that has been imported into the Transitland Datastore is marked as active. The [schedule API endpoint](schedules.html) only allows querying of the trips and calendars in the active feed version.
