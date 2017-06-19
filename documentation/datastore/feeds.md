@@ -39,7 +39,7 @@ Endpoint: `/api/v1/feeds`
 
 ### Feed license information
 
-To learn more about how Transitland classifies the licenses associated with a feed, see [this overview of Transitland legal and licensing issues](http://localhost:4000/an-open-project/).
+To learn more about how Transitland classifies the licenses associated with a feed, see [this overview of Transitland legal and licensing issues](https://transit.land/an-open-project/).
 
 ## Feed versions
 
