@@ -1,5 +1,5 @@
 ---
-title: Stops
+title: Stops and stations
 layout: documentation
 ---
 

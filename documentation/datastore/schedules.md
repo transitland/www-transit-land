@@ -15,6 +15,8 @@ These are the attributes and data types of a ScheduleStopPair.
 
 | Attribute | Type | Description |
 |-----------|------|---------|
+| `feed_onestop_id`               | Onestop ID | Feed |
+| `feed_version_sha`              | String | Feed Version |
 | `route_onestop_id`             | Onestop ID | Route |
 | `route_stop_pattern_onestop_id` | Onestop ID | Route Stop Pattern |
 | `operator_onestop_id`         | Onestop ID | Operator |
@@ -44,7 +46,12 @@ These are the attributes and data types of a ScheduleStopPair.
 | `wheelchair_accessible`        | Boolean | Wheelchair accessible: true, false, or null (unknown) |
 | `bikes_allowed`                | Boolean | Bike accessible: true, false, or null (unknown) |
 | `drop_off_type`                | Enum | Passenger drop-off |
-| `pickup_type`                  | Enum | Passenger pickup
+| `pickup_type`                  | Enum | Passenger pickup |
+| `frequency_type`               | Enum | Frequency-based schedule |
+| `frequency_headway_seconds`    | Integer | Frequency-based schedule headway, in seconds |
+| `frequency_start_time`         | Time | Start of frequency-based schedule |
+| `frequency_end_time`           | Time | End of frequency-based schedule |
+
 
 ## Data types
 
@@ -52,18 +59,27 @@ Times can be specified with more than 24 hours, as indicated by GTFS. For exampl
 
 ### Timepoint source
 
- * gtfs_exact: An exact timepoint in the GTFS
- * gtfs_interpolated: An interpolated timepoint in the GTFS
- * transitland_interpolated_linear: Interpolated based on linear stop sequence
- * transitland_interpolated_geometric: Interpolated based on straight-line distance
- * transitland_interpolated_shape: Interpolated based on shape_dist_traveled
+ * `gtfs_exact`: An exact timepoint in the GTFS
+ * `gtfs_interpolated`: An interpolated timepoint in the GTFS
+ * `transitland_interpolated_linear`: Interpolated based on linear stop sequence
+ * `transitland_interpolated_geometric`: Interpolated based on straight-line distance
+ * `transitland_interpolated_shape`: Interpolated based on `shape_dist_traveled`
 
 ### Pickup (origin) and drop-off (destination)
 
- * null: Regularly scheduled pickup and drop-off
- * unavailable: Pickup or drop-off not available
- * ask_driver: Ask the driver for pickup or drop-off
- * ask_agency: Phone the agency to schedule in advance
+ * `null`: Regularly scheduled pickup and drop-off
+ * `unavailable`: Pickup or drop-off not available
+ * `ask_driver`: Ask the driver for pickup or drop-off
+ * `ask_agency`: Phone the agency to schedule in advance
+
+### Frequency-based schedules
+
+A frequency-based schedule runs at an interval, instead of at specific departure and arrival times. When `frequency_type` is present, the trip is repeated every `frequency_headway_seconds` beginning at `frequency_start_time` and ending at `frequency_end_time`. See the [GTFS documentation for frequencies.txt](https://developers.google.com/transit/gtfs/reference/frequencies-file) for more information.
+
+The values for `frequency_type` are:
+
+ * `exact`: service is exactly scheduled.
+ * `not_exact`: service repeats, but timepoints are not exact
 
 ## Query parameters
 
@@ -83,63 +99,66 @@ The main ScheduleStopPair API endpoint is [/api/v1/schedule_stop_pairs](http://t
 | `trip`                     | String | Trip identifier | [on trip '03SFO11SUN'](http://transit.land/api/v1/schedule_stop_pairs?trip=03SFO11SUN) |
 | `bbox`                     | Lon1,Lat1,Lon2,Lat2 | Origin Stop within bounding box | [in the Bay Area](http://transit.land/api/v1/schedule_stop_pairs?bbox=-123.057,36.701,-121.044,38.138)
 
+The `date` and `origin_departure_between` query parameters accept special values.
+
+ * `date=today`: Use the current local date.
+ * `time=now`: Use the current time. You can also specify `now+<seconds>` or `now-<seconds>`. Example: `time=now-600,now+600`.
+
+ For both of these options, a local timezone must be specified by providing one of the following parameters: `origin_onestop_id`, `destination_onestop_id`, or `operator_onestop_id`.
+
 Note: When you query `schedule_stop_pair`, the origin and destination must be directly connected without any stops between them. For example, you can query stops that are next to each other or are coupled as an express route. To find all the trips that travel between certain stops, use the [Mapzen Turn-by-Turn API](https://mapzen.com/documentation/turn-by-turn/api-reference/) with multimodal costing, which can extract the intermediate stops and do route planning.
 
 ## Response format
 
 ```json
 {
-    "schedule_stop_pairs": [
-        {
-            "route_onestop_id": "r-dr5r-2",
-            "operator_onestop_id": "o-dr5r-nyct",
-            "origin_onestop_id": "s-dr5ru0smu8-18st",
-            "origin_arrival_time": "25:35:00",
-            "origin_departure_time": "25:35:00",
-            "origin_timepoint_source": "gtfs_exact",
-            "origin_timezone": "America/New_York",
-            "destination_onestop_id": "s-dr5ru1np2p-23st",
-            "destination_arrival_time": "25:36:00",
-            "destination_departure_time": "25:36:00",
-            "destination_timepoint_source": "gtfs_exact",
-            "destination_timezone": "America/New_York",
-            "window_end": "25:36:00",
-            "window_start": "25:35:00",
-            "trip": "A20150614WKD_149100_2..N08R",
-            "trip_headsign": "WAKEFIELD - 241 ST",
-            "trip_short_name": null,
-            "block_id": null,
-            "service_start_date": "2015-06-14",
-            "service_end_date": "2016-12-31",
-            "service_days_of_week": [
-                true,
-                true,
-                true,
-                true,
-                true,
-                false,
-                false
-            ],
-            "service_added_dates": [],
-            "service_except_dates": [
-                "2015-09-07",
-                "2015-11-26"
-            ],
-            "shape_dist_traveled": 0.0,
-            "wheelchair_accessible": true,
-            "bikes_allowed": true,
-            "drop_off_type": null,
-            "pickup_type": null,
-            "created_at": "2015-10-14T15:42:57.705Z",
-            "updated_at": "2015-10-14T15:42:57.705Z",
-        }
-    ],
-    "meta": {
-        "next": "http://transit.land/api/v1/schedule_stop_pairs?offset=2&per_page=1",
-        "offset": 1,
-        "per_page": 1,
-        "prev": "http://transit.land/api/v1/schedule_stop_pairs?offset=0&per_page=1",
-        "total": 2817329
-    }    
+	"schedule_stop_pairs": [{
+		"origin_onestop_id": "s-69y7pexjtx-plazademayo<1076s",
+		"destination_onestop_id": "s-69y7pesyw0-perú<1075s",
+		"route_onestop_id": "r-69y7n-a",
+		"route_stop_pattern_onestop_id": "r-69y7n-a-f48841-3c4d66",
+		"operator_onestop_id": "o-69y7-sbase",
+		"feed_onestop_id": "f-69y7-recursosdatabuenosairesgobar",
+		"feed_version_sha1": "95742a1a65826abfa23f5aeaeeb082e45f066801",
+		"origin_timezone": "America/Argentina/Buenos_Aires",
+		"destination_timezone": "America/Argentina/Buenos_Aires",
+		"trip": "A01",
+		"trip_headsign": "San Pedrito",
+		"block_id": null,
+		"trip_short_name": null,
+		"wheelchair_accessible": null,
+		"bikes_allowed": null,
+		"pickup_type": null,
+		"drop_off_type": null,
+		"shape_dist_traveled": 0.34,
+		"origin_arrival_time": "05:00:00",
+		"origin_departure_time": "05:00:24",
+		"destination_arrival_time": "05:00:58",
+		"destination_departure_time": "05:01:22",
+		"origin_dist_traveled": 58.7,
+		"destination_dist_traveled": 343.2,
+		"service_start_date": "2014-03-01",
+		"service_end_date": "2017-12-31",
+		"service_added_dates": [],
+		"service_except_dates": ["2015-01-01", "2015-02-16"],
+		"service_days_of_week": [true, true, true, true, true, false, false],
+		"window_start": "05:00:24",
+		"window_end": "05:00:58",
+		"origin_timepoint_source": "gtfs_exact",
+		"destination_timepoint_source": "gtfs_exact",
+		"frequency_start_time": "05:00:00",
+		"frequency_end_time": "05:56:00",
+		"frequency_headway_seconds": 480,
+		"frequency_type": "exact",
+		"created_at": "2017-02-22T03:42:22.827Z",
+		"updated_at": "2017-02-22T03:42:22.827Z"
+	}],
+	"meta": {
+		"sort_key": "id",
+		"sort_order": "asc",
+		"offset": 0,
+		"per_page": 1,
+		"next": "https://transit.land/api/v1/schedule_stop_pairs?feed_onestop_id=f-69y7-recursosdatabuenosairesgobar&offset=1&per_page=1&sort_key=id&sort_order=asc"
+	}
 }
 ```

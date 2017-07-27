@@ -28,16 +28,16 @@
       path: /documentation/datastore/feeds.html
     - title: Operators
       path: /documentation/datastore/operators.html
-    - title: Stops
-      path: /documentation/datastore/stops.html
+    - title: Stops and stations
+      path: /documentation/datastore/stops-and-stations.html
     - title: Routes and route stop patterns
       path: /documentation/datastore/routes-and-route-stop-patterns.html
     - title: Schedules
       path: /documentation/datastore/schedules.html
-    - title: Identifiers
-      path: /documentation/datastore/identifiers.html
     - title: Changesets
       path: /documentation/datastore/changesets.html
+    - title: Quality issues
+      path: /documentation/datastore/quality_issues.html
 - title: Playground
   path: '/documentation/playground/'
 - title: Onestop ID scheme
