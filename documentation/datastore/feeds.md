@@ -82,7 +82,7 @@ The [FeedMaintenance service](https://github.com/transitland/transitland-datasto
 
 Are you looking for the most recently fetched Feed Version? This is not necessarily the Feed Version where `is_active_feed_version=true`.
 
-To query for the most recently fetched version of a feed, use an API query like: `https://transit.land/api/v1/feed_versions?feed_onestop_id=f-9v6-capitalmetro&per_page=1&sort_by=fetched_at&sort_order=desc` (replacing `feed_onestop_id` as appropriate).
+To query for the most recently fetched version of a feed, use an API query like: `https://transit.land/api/v1/feed_versions?feed_onestop_id=f-9v6-capitalmetro&per_page=1&sort_key=fetched_at&sort_order=desc` (replacing `feed_onestop_id` as appropriate).
 
 To directly download a copy of the most recently fetched version of a feed, use: `https://transit.land/api/v1/feeds/f-9v6-capitalmetro/download_latest_feed_version` (replacing the Onestop ID as appropriate). Note that downloading is not allowed for Feeds where `license_redistribute=no`.
 
