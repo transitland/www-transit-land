@@ -5,6 +5,29 @@ layout: documentation
 
 Transitland is built on publicly available GTFS data [contributed](/documentation/feed-registry/add-a-feed.html) by our user community. Detailed information is kept on each Feed, and updated whenever a new version of each Feed is discovered. Feed versions are both archived for download (as `.zip` files) and imported into the Transitland Datastore for API querying by operators, stops, [routes](routes-and-route-stop-patterns.html), [schedules](schedules.html), etc.
 
+TODO: introduce
+
+stable URLs, "source of truth" on agency or civic group server. What does “authoritative source” mean? 
+
+link to GTFS spec on GitHub
+
+## FeedFetcher pipeline
+
+fetch frequency
+
+FeedVersions with an example of JSON from API endpoint and a screenshot from Dispatcher
+
+TODO: diagram by Ian and Ekta showing the feed fetch process
+
+## FeedEater pipeline
+
+import levels
+
+import frequencies
+
+TODO: diagram by Ian and Ekta showing the feed eater process
+
+
 ## Feeds
 
 A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly accessible GTFS archive, a mapping of GTFS `agency_id` values to Transitland Operators, the geographic extent of the Feed, and the details of the Feed's license.
@@ -136,3 +159,11 @@ This report contains the JSON output of [Conveyal's gtfs-lib](https://github.com
 The HTML output of [Google feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator). Currently, this is stored on the actual Feed Version record as `feedvalidator_url` as a link to a copy of the report stored on S3.
 
 [Example Feed Version with Google feedvalidator.py report](https://transit.land/api/v1/feed_versions/36ba71b654ba6ed1e4866822832c11942c4761e5)
+
+## API endpoints: Requests and responses
+
+- `/api/v1/feeds`
+- `/api/v1/feed_versions`
+- `/api/v1/feed_version_imports`
+- `/api/v1/webhooks/feed_fetcher`
+- `/api/v1/webhooks/feed_eater`

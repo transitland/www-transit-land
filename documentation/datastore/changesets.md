@@ -84,6 +84,22 @@ Each payload can contain one or more change actions. The possible actions includ
 
 Payloads are validated using JSON schemas found in `/app/models/json_schemas`. Note that the API consumes and produces JSON with `"camelCaseKeysInQuotationMarks"`, while internally, the Datastore uses `ruby_symbols_with_underscores`.
 
+{#api-requests-responses}
+## API endpoints: Requests and responses
+
+`GET` |  `/api/v1/changesets` | view and filter through [changesets](changesets.html)
+`POST` |  `/api/v1/changesets` | create a new [changeset](changeset.html)
+`PUT` |  `/api/v1/changesets/1` | update an existing [changeset](changeset.html) ([secured](#api-authentication))
+`POST` |  `/api/v1/changesets/1/check` | check that a [changeset](changeset.html) can be applied ([secured](#api-authentication))
+`POST` |  `/api/v1/changesets/1/apply` | apply a [changeset](changeset.html) ([secured](#api-authentication))
+`DELETE` |  `/api/v1/changesets/1` | delete a [changeset](changeset.html)  ([secured](#api-authentication))
+`GET` |  `/api/v1/changesets/1/change_payloads` | view and filter through the individual payloads in a [changeset](changeset.html) 
+`PUT` |  `/api/v1/changesets/1/change_payloads` | add an additional payload to a [changeset](changeset.html)  ([secured](#api-authentication))
+`POST` |  `/api/v1/changesets/1/change_payloads` |
+`GET` |  `/api/v1/changesets/1/change_payloads/1` |
+`PUT` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
+`DELETE` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
+
 ## Quality checks
 The changeset application process will conduct checks on the qualitative characteristics of the incoming data. If certain standards are not met, the checks will generate [quality issues](quality_issues.md). These standards correspond to the quality issue category and type listed in on the Quality Issues page. Once quality checks are complete, the changeset application process also handles the deprecation - logging and deleting records and associations - of old issues in addition to writing the new issues.   
 

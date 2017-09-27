@@ -901,7 +901,13 @@ layout: documentation
 <p>TODO: include some example API query URLs</p>
 -->
 
+<<<<<<< HEAD
+<h2>Route Stop Patterns</h2>
+
+<p>Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
+=======
 <a name="route_stop_patterns"></a><h3>RouteStopPattern</h3>
+>>>>>>> master
 
 <p>In addition to the Route, Transitland models route geometries by breaking them into individual components called RouteStopPatterns, or sometimes RSPs. RouteStopPatterns are uniquely defined by a route, a stop pattern, and a line geometry; all three derived from the trip routes, trip stop sequences, and shapes of a GTFS feed and its services. Because of this, it is possible to have two distinct RouteStopPatterns within one route, both sharing the same line geometry but having different stop patterns, and vice versa. Individual RouteStopPatterns also have records of the GTFS trips and the single shape used to create them; a typical RouteStopPattern will reference back to one or many trips having the same stop pattern, but only references the one shape shared by those trips. When a RouteStopPattern's trips have no shapes or empty shapes, there will be no shape reference.</p>
 
