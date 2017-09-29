@@ -136,3 +136,23 @@ This report contains the JSON output of [Conveyal's gtfs-lib](https://github.com
 The HTML output of [Google feedvalidator.py](https://github.com/google/transitfeed/wiki/FeedValidator). Currently, this is stored on the actual Feed Version record as `feedvalidator_url` as a link to a copy of the report stored on S3.
 
 [Example Feed Version with Google feedvalidator.py report](https://transit.land/api/v1/feed_versions/36ba71b654ba6ed1e4866822832c11942c4761e5)
+
+## Feed version update statistics
+
+The Feeds API also provides simple statistics characterizing when &amp; how a Feed is updated. This includes the total number of Feed Versions, the average number of days between publication of new Feed Versions, the average number of service days in each Feed Version schedule, and the average number of days of overlapping schedule between subsequent Feed Versions. Note: because the `fetched_at` value is used to sort the Feed Versions, manually uploaded files are excluded from statistics.
+
+ [Example](http://transit.land/api/v1/feeds/f-c2g5-bctransit~kelownaregionaltransitsystem/feed_version_update_statistics)
+
+Endpoint: `/api/v1/feeds/:feed_onestop_id/feed_version_update_statistics`
+
+### Response
+
+| Attribute | Type | Description |
+|-----------|------|-------------|
+| `feed_onestop_id` | Onestop ID | Feed Onestop ID |
+| `feed_versions_total` | Integer | Total number of Feed Versions |
+| `feed_versions_filtered` | Integer | Total, excluding manually updated Feed Versions |
+| `feed_versions_filtered_sha1` | Feed Versions | Filtered Feed Versions ordered by `fetched_at` |
+| `fetched_at_frequency` | Integer | Average days between new Feed Versions |
+| `scheduled_service_duration_average` | Float | Average number of days in each schedule |
+| `scheduled_service_overlap_average` | Float | Average number of days overlap between subsequent schedules |
