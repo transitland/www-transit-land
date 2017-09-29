@@ -139,7 +139,7 @@ The HTML output of [Google feedvalidator.py](https://github.com/google/transitfe
 
 ## Feed version update statistics
 
-The Feeds API also provides simple statistics characterizing when &amp; how a Feed is updated. This includes the total number of Feed Versions, the average number of service days in each Feed Version schedule, the average number of days between publication of new Feed Versions, and the average number of days of overlapping schedule between subsequent Feed Versions. Note: because the `fetched_at` value is used to sort the Feed Versions, manually uploaded files are excluded from statistics.
+The Feeds API also provides simple statistics characterizing when &amp; how a Feed is updated. This includes the total number of Feed Versions, the average number of days between publication of new Feed Versions, the average number of service days in each Feed Version schedule, and the average number of days of overlapping schedule between subsequent Feed Versions. Note: because the `fetched_at` value is used to sort the Feed Versions, manually uploaded files are excluded from statistics.
 
  [Example](http://transit.land/api/v1/feeds/f-c2g5-bctransit~kelownaregionaltransitsystem/feed_version_update_statistics)
 
