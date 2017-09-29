@@ -153,6 +153,6 @@ Endpoint: `/api/v1/feeds/:feed_onestop_id/feed_version_update_statistics`
 | feed_versions_total | Integer | Total number of Feed Versions for this feed |
 | feed_versions_filtered | Integer | Total, excluding manually updated Feed Versions |
 | feed_versions_filtered_sha1 | Feed Versions | Filtered Feed Versions ordered by `fetched_at` |
-| fetched_at_frequency | Float | Average days between new Feed Versions |
+| fetched_at_frequency | Integer | Average days between new Feed Versions |
 | scheduled_service_duration_average | Float | Average number of days in each schedule |
 | scheduled_service_overlap_average | Float | Average number of days overlap between subsequent schedules |
