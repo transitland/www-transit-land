@@ -3,7 +3,7 @@ layout: page
 category: news
 published: true
 isThereTitle: true
-title: Placeholder operators
+title: Help us expand our worldwide coverage
 ---
 
 *written by Steven Vance*
@@ -15,7 +15,7 @@ The Transitland [Feed Registry](https://transit.land/feed-registry/) has maps, s
 
 Our current coverage of the United States, Canada, Mexico, and most countries in Europe is excellent, and we have very good coverage of the most populated areas in Australia and New Zealand. 
 
-The initial group of "placeholders", as we're calling them, was populated by identifying the most populous cities in the world that are missing from our map. In addition, I also added cities that are in regions and continents that have less representation in our map. This includes cities in South America, India, South Korea, and one country in Africa. 
+The initial group of "placeholders", [as we're calling them](https://github.com/transitland/transitland/issues/261), was populated by identifying the most populous cities in the world that are missing from our map. In addition, I also added cities that are in regions and continents that have less representation in our map. This includes cities in South America, India, South Korea, and one country in Africa. 
 
 The placeholders list is incomplete, and we're asking for help from people who live in these areas to help us find GTFS feeds if they're available, or educate transit operators and encourage them to develop a feed. The benefits of having a feed listed in our Feed Registry and integrated in our data store are that makes it easier for app developers to include transit service in those cities in their apps, and researchers can analyze the quality of transit service around the world. 
 
