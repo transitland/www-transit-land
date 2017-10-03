@@ -30,6 +30,8 @@ The placeholders list is incomplete, and we're asking for help from people who l
 - South America
 - China
 
-Send us the name and location of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) – whether or not they have a GTFS feed. (We are also missing operators from elsewhere in the world, but please check our Feed Registry before submitting a place outside the countries listed above.)
+[Send us the name and location](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) – whether or not they have a GTFS feed. 
 
-You can explore the coverage we have in the world using [Mobility Explorer](https://mapzen.com/mobility/explorer/). Search or pan to any area on earth and click "show operators". 
+(We are also missing operators from elsewhere in the world, but please check our Feed Registry before submitting a place outside the countries listed above.)
+
+You can explore the coverage we have in the world using [Mobility Explorer](https://mapzen.com/mobility/explorer/). Search or pan to any area on earth and click "show operators".
