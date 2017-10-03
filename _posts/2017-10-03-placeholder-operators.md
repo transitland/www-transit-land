@@ -20,8 +20,15 @@ The initial group of "placeholders", as we're calling them, was populated by ide
 The placeholders list is incomplete, and we're asking for help from people who live in these areas to help us find GTFS feeds if they're available, or educate transit operators and encourage them to develop a feed. The benefits of having a feed listed in our Feed Registry and integrated in our data store are that makes it easier for app developers to include transit service in those cities in their apps, and researchers can analyze the quality of transit service around the world. 
 
 ## We could use your knowledge
-We have very limited coverage of metropolitan areas in **South Asia**, **Southeast Asia**, **Japan**, **Africa**, and **South America**. We have no data for anywhere in **China**. 
 
-Send us the name and location of a missing transit operator in those areas if you're familiar with them, [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform). 
+**We have very limited coverage of metropolitan areas in**:
+- South Asia
+- Southeast Asia
+- Japan
+- Africa
+- South America
+- China
+
+Send us the name and location of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) – whether or not they have a GTFS feed. (We are also missing operators from elsewhere in the world, but please check our Feed Registry before submitting a place outside the countries listed above.)
 
 You can explore the coverage we have in the world using [Mobility Explorer](https://mapzen.com/mobility/explorer/). Search or pan to any area on earth and click "show operators". 
