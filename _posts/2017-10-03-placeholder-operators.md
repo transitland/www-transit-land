@@ -22,6 +22,7 @@ The placeholders list is incomplete, and we're asking for help from people who l
 ## We could use your knowledge
 
 **We have very limited coverage of metropolitan areas in**:
+
 - South Asia
 - Southeast Asia
 - Japan
