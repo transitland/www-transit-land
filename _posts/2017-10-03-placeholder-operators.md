@@ -6,7 +6,7 @@ isThereTitle: true
 title: Help us expand our worldwide coverage
 ---
 
-*written by Steven Vance*
+**by [Steven Vance](http://twitter.com/stevevance)**
 
 ![Coverage map for the United States, by Kuan Butts](/images/placeholders/united_states_coverage_map_kuan_butts.jpg "Coverage map for the United States, by Kuan Butts")
 *Coverage map of the United States, [created by Kuan Butts](https://twitter.com/buttsmeister/status/913445125396639744), using data from Transitland*
