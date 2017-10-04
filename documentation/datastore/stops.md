@@ -18,6 +18,7 @@ Endpoint: `/api/v1/stops`
 | Query parameter        | Type | Description | Example |
 |------------------------|------|-------------|---------|
 
+### Stop import process
 
 ## Stations
 
