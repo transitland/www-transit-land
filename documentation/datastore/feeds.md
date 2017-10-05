@@ -15,6 +15,7 @@ A Feed represents a unique GTFS data source. Each Feed has a URL to a publicly a
 |-----------------------|--------------|----------------------------------|
 | `onestop_id`          | Onestop ID   | Feed Onestop ID                  |
 | `url`                 | URL          | Publicly accessible GTFS archive |
+| `name`                | String       | Feed name                        |
 | `feed_format`         | Enum         | Currently: `gtfs`                |
 | `geometry`            | Geometry     | Convex hull of Stops in the Feed |
 | `last_fetched_at`     | DateTime     | Last time the Feed was retrieved |
