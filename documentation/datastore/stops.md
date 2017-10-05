@@ -28,8 +28,14 @@ layout: documentation
 
 Endpoint: `/api/v1/stops`
 
-| Query parameter        | Type | Description | Example |
-|------------------------|------|-------------|---------|
+Standard entity query parameters, plus:
+
+| Query parameter           | Type | Description | Example |
+|---------------------------|------|-------------|---------|
+| `served_by`               | Onestop ID | Served by Operator or Route | |
+| `served_by_vehicle_types` | String     | Served by vehicle types     | |
+| `wheelchair_boarding`     | Boolean    | Wheelchair accessible       | |
+
 
 ### Stop import process
 
