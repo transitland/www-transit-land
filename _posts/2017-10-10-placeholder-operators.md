@@ -29,7 +29,9 @@ The placeholders list is incomplete, and we're asking for help from people who l
 - South America
 - China
 
-[Send us the name and location](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) – whether or not they have a GTFS feed. If you know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new).
+[Send us the name and location](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) – whether or not they have a GTFS feed. 
+
+If you know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new).
 
 <iframe width="100%" style="height: 65vh;"
 src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/india.yaml#5.702/18.554/79.547"></iframe>
