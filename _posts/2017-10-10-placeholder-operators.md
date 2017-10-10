@@ -32,7 +32,7 @@ The placeholders list is incomplete, and we're asking for help from people who l
 [Send us the name and location](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) – whether or not they have a GTFS feed. If you know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new).
 
 <iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://github.com/transitland/www-transit-land/raw/placeholder-operators/images/placeholders/india.yaml#5.702/18.554/79.547"></iframe>
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/india.yaml#5.702/18.554/79.547"></iframe>
 *Our only coverage of India, shown in red areas over Mumbai, Ahmedebahd, Chennnai, and Kolkata, is the manually drawn placeholders.*
 
 (We are also missing operators from elsewhere in the world, but please check our Feed Registry before submitting a place outside the countries listed above.)
