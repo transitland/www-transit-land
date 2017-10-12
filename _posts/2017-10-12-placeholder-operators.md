@@ -7,10 +7,8 @@ title: Help us expand our worldwide listings of transit operators
 ---
 **by [Steven Vance](http://twitter.com/stevevance)**
 
-TODO: switch the Tangram map to screenshot of John's version showing South Korea
-<iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/india.yaml#5.702/18.554/79.547"></iframe>
-*Our only coverage of India, shown in red areas over Mumbai, Ahmedebahd, Chennnai, and Kolkata, is the manually drawn placeholders.*
+<a href="http://tangrams.github.io/tangram-frame/?noscroll&url=http://transit.land/images/placeholders/placeholder-operators.yaml#22/1114#7.60175/36.970/127.532"><img src="/images/placeholders/korean-placeholders.png" alt="map of operator service bounding boxes displayed on South Korea" /></a>
+*A map showing "placeholder" operator records in Transitland in South Korea. Open a [map of all placeholder operator records](http://tangrams.github.io/tangram-frame/?noscroll&url=http://transit.land/images/placeholders/placeholder-operators.yaml#22/1114#7.60175/36.970/127.532).*
 
 The [Transitland Feed Registry](https://transit.land/feed-registry/) lists maps, schedules, stops, and route information for 879 transit feeds containing over 2,275 transit operators. Our current coverage of the United States, Canada, Mexico, and most countries in Europe is excellent, and we have very good coverage of the most populated areas in Australia and New Zealand.
 
@@ -31,7 +29,8 @@ For each of the placeholders, we have created a Transitland operator record. Thi
 
 We're now asking for your help to create additional placeholder operators, as well as to help find GTFS feeds that are available for any placeholder operators. Together, we can help build Transitland as both a deep source of data, where it's available, and a broad overview of where we know transit service exists but detailed open data is not yet available.
 
-TODO: put in a screenshot of some of the placeholder listings in Feed Registry
+ <a href="https://transit.land/feed-registry/?country=KR"><img src="/images/placeholders/feed-registry-south-korean-placeholders.png" alt="screenshot of Feed Registry"/></a>
+ *Transitland Feed Registry now lists "placeholder" operators added for South Korea. Browse them in the [Feed Registry](https://transit.land/feed-registry/?country=KR).*
 
 ## We could use your knowledge
 
