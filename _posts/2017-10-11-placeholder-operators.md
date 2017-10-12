@@ -7,6 +7,11 @@ title: Help us expand our worldwide listings of transit operators
 ---
 **by [Steven Vance](http://twitter.com/stevevance)**
 
+TODO: switch the Tangram map to screenshot of John's version showing South Korea
+<iframe width="100%" style="height: 65vh;"
+src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/india.yaml#5.702/18.554/79.547"></iframe>
+*Our only coverage of India, shown in red areas over Mumbai, Ahmedebahd, Chennnai, and Kolkata, is the manually drawn placeholders.*
+
 The [Transitland Feed Registry](https://transit.land/feed-registry/) lists maps, schedules, stops, and route information for 879 transit feeds containing over 2,275 transit operators. Our current coverage of the United States, Canada, Mexico, and most countries in Europe is excellent, and we have very good coverage of the most populated areas in Australia and New Zealand.
 
 Transitland, however, still has no information about public-transit service in other places around the world. Now we're creating "placeholder" records for transit operators for which Transitland does not &mdash; yet &mdash; have complete stop/route/schedule data.
@@ -26,6 +31,8 @@ For each of the placeholders, we have created a Transitland operator record. Thi
 
 We're now asking for your help to create additional placeholder operators, as well as to help find GTFS feeds that are available for any placeholder operators. Together, we can help build Transitland as both a deep source of data, where it's available, and a broad overview of where we know transit service exists but detailed open data is not yet available.
 
+TODO: put in a screenshot of some of the placeholder listings in Feed Registry
+
 ## We could use your knowledge
 
 **We have very limited coverage of metropolitan areas in**:
@@ -40,10 +47,6 @@ We're now asking for your help to create additional placeholder operators, as we
 [Send us the name and location](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform), whether or not they have a GTFS feed. 
 
 If you do know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new).
-
-<iframe width="100%" style="height: 65vh;"
-src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/india.yaml#5.702/18.554/79.547"></iframe>
-*Our only coverage of India, shown in red areas over Mumbai, Ahmedebahd, Chennnai, and Kolkata, is the manually drawn placeholders.*
 
 (We are also missing operators from elsewhere in the world, but please check the [Feed Registry](/feed-registry) before submitting a place outside the countries listed above.)
 
