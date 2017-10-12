@@ -47,6 +47,6 @@ We're now asking for your help to create additional placeholder operators, as we
 
 If you do know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new).
 
-(We are also missing operators from elsewhere in the world, but please check the [Feed Registry](/feed-registry) before submitting a place outside the countries listed above.)
+(We are also missing operators from elsewhere in the world, but please check the [Feed Registry](/feed-registry) before submitting a place outside the countries and contintents listed above.)
 
 You can explore the coverage we have in the world using [Mobility Explorer](https://mapzen.com/mobility/explorer/). Search or pan to any area on earth and click "Show Operators". Or use the [Transitland Datastore API](/documentation/datastore/api-endpoints.html) to query the `/api/v1/operators` endpoint from your favorite scripting language or command-line tool.
