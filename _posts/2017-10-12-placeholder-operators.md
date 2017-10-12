@@ -7,8 +7,8 @@ title: Help us expand our worldwide listings of transit operators
 ---
 **by [Steven Vance](http://twitter.com/stevevance)**
 
-<a href="http://tangrams.github.io/tangram-frame/?noscroll&url=http://transit.land/images/placeholders/placeholder-operators.yaml#22/1114#7.60175/36.970/127.532"><img src="/images/placeholders/korean-placeholders.png" alt="map of operator service bounding boxes displayed on South Korea" /></a>
-*A map showing "placeholder" operator records in Transitland in South Korea. Open a [map of all placeholder operator records](http://tangrams.github.io/tangram-frame/?noscroll&url=http://transit.land/images/placeholders/placeholder-operators.yaml#22/1114#7.60175/36.970/127.532).*
+<a href="http://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/placeholder-operators.yaml#7.60917/36.580/127.537"><img src="/images/placeholders/korean-placeholders.png" alt="map of operator service bounding boxes displayed on South Korea" /></a>
+*A map showing "placeholder" operator records in Transitland in South Korea. Open a [map of all placeholder operator records](http://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land/images/placeholders/placeholder-operators.yaml#7.60917/36.580/127.537).*
 
 The [Transitland Feed Registry](https://transit.land/feed-registry/) lists maps, schedules, stops, and route information for 879 transit feeds containing over 2,275 transit operators. Our current coverage of the United States, Canada, Mexico, and most countries in Europe is excellent, and we have very good coverage of the most populated areas in Australia and New Zealand.
 
