@@ -13,7 +13,7 @@ Recently, I posted the above image on Twitter. It generated [some positive respo
 
 <!-- more -->
 
-Before I continue, I should note that the Transitland website already has solid documentation. In particular, the [API](https://Transitland/documentation/datastore/api-endpoints.html) page has a nice table that explains what each of the possible endpoints are and how the requisite parameter must be formatted. It also includes an example for each. Also, the [Mapzen Mobility Explorer](https://mapzen.com/mobility/explorer/) is a web app that allows easy querying and mapping of much (but not all) of the data in Transitland.
+Before I continue, I should note that the Transitland website already has solid documentation. In particular, the [API](https://transit.land/documentation/datastore/api-endpoints.html) page has a nice table that explains what each of the possible endpoints are and how the requisite parameter must be formatted. It also includes an example for each. Also, the [Mapzen Mobility Explorer](https://mapzen.com/mobility/explorer/) is a web app that allows easy querying and mapping of much (but not all) of the data in Transitland.
 
 # Setting up a search environment
 
@@ -69,7 +69,7 @@ def recursive_query(target_area=None, full_url=None):
     
     if target_area:
         bbox = ','.join(map(lambda x: str(x), target_area.bounds))
-        resp = requests.get(url='https://Transitland/api/v1/operators', params={'bbox': bbox, 'per_page': 50})
+        resp = requests.get(url='https://transit.land/api/v1/operators', params={'bbox': bbox, 'per_page': 50})
     else:
         resp = requests.get(url=full_url)
     resp_json = json.loads(resp.text)
