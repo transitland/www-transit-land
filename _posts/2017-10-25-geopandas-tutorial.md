@@ -231,9 +231,13 @@ Merging the two should result in the above image.
 
 Above, another plot, this time of Europe and western Russia. As you can see, this pattern is easily reproducible anywhere.
 
+![world](/images/geopandas-tutorial/world.png)
+
 # Conclusion
 
-At this point you should be free to explore the feeds available on Transitland &mdash; there's a ton of them! Need ideas for what to explore next? How about choosing a more refined base layer if you'd like to work at a "closer" scale and explore and work with transit bounds data at, for example, the county and census tract scale in the United States.
+At this point you should be free to explore the feeds available on Transitland &mdash; there's a ton of them! Need ideas for what to explore next? How about choosing a more refined base layer if you'd like to work at a "closer" scale and explore and work with transit bounds data at, for example, the county and census tract scale in the United States. For example, here are the number of transit operators provided by Transitland within each U.S. Census [combined statistical area](https://www.census.gov/geo/reference/webatlas/csa.html):
+
+![USA CSAs](/images/geopandas-tutorial/usa-census-csa.png)
 
 Once you find a feed you like, you can continue to explore its contents using the other [Transitland API endpoints](/documentation/datastore/api-endpoints.html) or the [Mobility Explorer](https://mapzen.com/mobility/explorer) user interface.
 
