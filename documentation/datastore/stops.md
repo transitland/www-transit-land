@@ -57,7 +57,7 @@ Several `Stops` can be grouped together into a `StopStation` complex. A `StopSta
 
 The `StopStation`, `StopPlatforms` and `StopEgresses` models are very similar to the plain `Stop` model.
 
-The significant differences are that a `StopStation` will include nested `StopPlatforms` in `stop_platforms` and `StopEgresses` in `stop_egresses`. Additionally, the top-level `Station` will include `operators_serving_stop_and_platforms`, `routes_serving_stop_and_platforms`, and `vehicle_types_serving_stop_and_platforms` instead of the similarly named `Stop` relations.
+The significant differences are that a `StopStation` will include nested `StopPlatforms` in `stop_platforms` and `StopEgresses` in `stop_egresses`. Additionally, the top-level `StopStation` will include `operators_serving_stop_and_platforms`, `routes_serving_stop_and_platforms`, and `vehicle_types_serving_stop_and_platforms` instead of the similarly named `Stop` relations.
 
 A `StopEgress` includes an additional `directionality` attribute to note if a pedestrian can `enter` (street-to-station), `exit` (station-to-street), or `both` enter and exit the station. A `StopEgress` does not include `operators_serving_stop` and `routes_serving_stop`, since it is not visited by trips.
 
