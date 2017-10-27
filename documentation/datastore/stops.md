@@ -63,9 +63,7 @@ A `StopEgress` includes an additional `directionality` attribute to note if a pe
 
 A `StopPlatform` does not include `osm_way_id`, `last_conflated_at`, or `directionality`, since it does not connect to the street network.
 
-### Generated platforms and egresses
-
-### Stations API
+### StopStations API
 
 Endpoint: `/api/v1/stop_stations`
 
@@ -75,3 +73,7 @@ The `StopStations` endpoint has the same query parameters as the `Stop` endpoint
 |------------------------|------|-------------|---------|
 | `min_platforms`        | Integer | Minimum number of `StopPlatforms` | |
 | `min_egresses`         | Integer | Minimum number of `StopEgresses` | |
+
+### Generated platforms and egresses
+
+By default, the `StopStations` endpoint will include a generated `StopEgress` or `StopPlatform` if none exist, using the values from the `StopStation`. Any generated entity will have a `generated` attribute with a value of `true`. This commonly happens when a regular `Stop` with no platforms or egresses defined is accessed through the `StopStations` endpoint. This behavior can be disabled by setting the `exclude` query parameter to `generated`.
