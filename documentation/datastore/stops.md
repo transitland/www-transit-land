@@ -26,11 +26,12 @@ The `Stops` API endpoint also includes several relations to `Operators` and `Rou
 | `name`                    | String       | Stop name |
 | `timezone`                | String       | Stop timezone |
 | `osm_way_id`              | Integer      | Conflated OSM way ID |
+| `last_conflated_at`       | Datetime     | Timestamp of last time osm_way_id was checked |
 | `served_by_vehicle_types` | Array        | Vehicle types that visit this Stop |
 | `wheelchair_boarding`     | Boolean      | Wheelchair accessible |
 | `geometry_reversegeo`     | Geometry     | Alternate geometry; always a Point |
 | `geometry_centroid`       | Geometry     | Stop centroid; always a Point |
-| `operators_serving_stop`  | Object array | Opeartors serving this Stop |
+| `operators_serving_stop`  | Object array | Operators serving this Stop |
 | `routes_serving_stop`     | Object array | Routes serving this Stop |
 | `tags`                    | Object       | Tags |
 
@@ -39,7 +40,7 @@ The `Stops` API endpoint also includes several relations to `Operators` and `Rou
 
 Endpoint: `/api/v1/stops`
 
-Standard entity query parameters, plus:
+Standard entity query parameters (link), plus:
 
 | Query parameter           | Type | Description | Example |
 |---------------------------|------|-------------|---------|
@@ -47,12 +48,23 @@ Standard entity query parameters, plus:
 | `served_by_vehicle_types` | String     | Served by vehicle types     | |
 | `wheelchair_boarding`     | Boolean    | Wheelchair accessible       | |
 
-
 ### Stop import process
+
+When a new GTFS feed is imported, existing Transitland `Stops` are matched with GTFS `stops.txt` stops based on the GTFS `stop_id` used in the last import. If a match is found, the existing Transitland `Stop` is updated; if not found, a new Transitland `Stop` is created.
 
 ## Stations
 
+Several `Stops` can be grouped together into a `StopStation` complex. A `StopStation` can have several `StopPlatforms`, each representing a platform where a transit vehicle can stop, and several `StopEgresses`, where pedestrians may enter or exit a station.
+
 ### Stations data model
+
+The `StopStation`, `StopPlatforms` and `StopEgresses` models are very similar to the plain `Stop` model.
+
+The significant differences are that a `Station` will include nested `StopPlatforms` in `stop_platforms` and `StopEgresses` in `stop_egresses`. Additionally, the top-level `Station` will include `operators_serving_stop_and_platforms`, `routes_serving_stop_and_platforms`, and `vehicle_types_serving_stop_and_platforms` instead of the similarly named `Stop` relations.
+
+A `StopEgress` includes an additional `directionality` attribute to note if a pedestrian can `enter` (street-to-station), `exit` (station-to-street), or `both` enter and exit the station. A `StopEgress` does not include `operators_serving_stop` and `routes_serving_stop`, since it is not visited by trips.
+
+A `StopPlatform` does not include `osm_way_id`, `last_conflated_at`, or `directionality`, since it does not connect to the street network.
 
 ### Stations API
 
