@@ -7,7 +7,7 @@ Transitland represents each place a person may board or exit a transit vehicle a
 
 ### Stop data model
 
-Each Transitland `Stop` has a unique `onestop_id`, such as `s-9q9p1bbfkc-lakemerritt`; the [Onestop ID](https://transit.land/documentation/onestop-id-scheme/) (link) format includes an `s` prefix, a geohash encoding the approximate location, and a short identifier.
+Each Transitland `Stop` has a unique `onestop_id`, such as `s-9q9p1bbfkc-lakemerritt`; the [Onestop ID](https://transit.land/documentation/onestop-id-scheme/) format includes an `s` prefix, a geohash encoding the approximate location, and a short identifier.
 
 Basic `Stop` attributes include `name`, a simple name for the station that would be used on printed schedules, and `timezone` for the local timezone. The `wheelchair_boarding` attribute contains accessibility information: when `true`, the location is generally wheelchair accessible, when `false` it is known not to be accessible, and when `null` the accessibility is not known.
 
