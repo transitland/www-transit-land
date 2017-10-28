@@ -23,10 +23,10 @@
       path: /documentation/datastore/api-endpoints.html
     - title: Feeds
       path: /documentation/datastore/feeds.html
-    #- title: Stops
-    #  path: /how-it-works/datastore/stops.html
     - title: Routes and route stop patterns
       path: /documentation/datastore/routes-and-route-stop-patterns.html
+    - title: Stops
+      path: /documentation/datastore/stops.html
     - title: Schedules
       path: /documentation/datastore/schedules.html
     - title: Changesets
