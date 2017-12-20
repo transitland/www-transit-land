@@ -96,7 +96,7 @@ Method | Example URL | Parameters
 
 ### Max Request Size
 
-If queries have not completed after two minutes, they will be killed and you will receive a timeout response from the Datastore. If your query times out, try reducing the `per_page` count, the bounding box size, etc. If your query seems as small as is possible, [let us know](mailto:transitland@mapzen.com).
+If queries have not completed after two minutes, they will be killed and you will receive a timeout response from the Datastore. If your query times out, try reducing the `per_page` count, the bounding box size, etc. If your query seems as small as is possible, [let us know](mailto:hello@transit.land).
 
 ### Format
 

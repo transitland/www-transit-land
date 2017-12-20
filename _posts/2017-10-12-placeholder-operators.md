@@ -45,7 +45,7 @@ We're now asking for your help to create additional placeholder operators, as we
 
 [Send us the name and location](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform) of a missing transit operator in those areas if you're familiar with them [through our Google Form](https://docs.google.com/forms/d/e/1FAIpQLSfMMVmGnfrlwpbZViW16bvQ99Sb1y1bRuNqKtUk_7ZEFfon1w/viewform), whether or not they have a GTFS feed. 
 
-If you do know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new). We can host an operator's GTFS feed if they cannot &mdash; [contact us by email](mailto:transitland@mapzen.com). 
+If you do know the GTFS feed, [submit it to the Feed Registry here](https://transit.land/feed-registry/feeds/new). We can host an operator's GTFS feed if they cannot &mdash; [contact us by email](mailto:hello@transit.land). 
 
 (We are also missing operators from elsewhere in the world, but please check the [Feed Registry](/feed-registry) before submitting a place outside the countries and contintents listed above.)
 

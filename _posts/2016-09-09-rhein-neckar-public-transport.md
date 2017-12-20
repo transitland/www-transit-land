@@ -112,4 +112,4 @@ src="https://tangrams.github.io/tangram-frame/?noscroll&url=https://transit.land
 
 DB is a singular authority on transit timetables and routing for the entire country. They have every regional transit operators' schedules available on Bahn.com for routing within and between cities, and even on intercity trains across Europe. Their *DB Navigator* app is [indispensible for local and international travelers](http://www.stevencanplan.com/2016/05/essential-apps-for-traveling-in-parts-of-europe/) – you can even buy certain tickets on it. 
 
-**I've done my best trying to make sense of how regional transit providers in one part of Germany are organized, but if you think I could be more accurate, please email [transitland@mapzen.com](mailto:transitland@mapzen.com).**
+**I've done my best trying to make sense of how regional transit providers in one part of Germany are organized, but if you think I could be more accurate, please email [hello@transit.land](mailto:hello@transit.land).**
