@@ -10,7 +10,7 @@ title: Transitcat: Intuitive Isochrones and Vulnerability Analysis for Public Tr
 
 **by [Aaron Aquino](https://aaronaquino.github.io), [Tracey Lin](mailto:traceylin@alumni.stanford.edu), and [Erik Raucher](mailto:eraucher@yahoo.com)**
 
-All Computer Science majors at Stanford are required to carry out a senior capstone project, so during our final quarter as undergrads we teamed up to build [Transitcat](https://github.com/aaronaquino/transitcat), a web application aimed at helping public transit planners visualize and better understand their networks. In order to narrow down what we wanted to work on, we conducted needfinding interviews with folks from many professions, including public transit planners, urban studies lecturers, and software developers who work on other public transit-oriented products. Based on these interviews, we were able to identify gaps in the market and decided to build a tool that:
+All computer science majors at Stanford are required to carry out a senior capstone project, so during our final quarter as undergrads we teamed up to build [Transitcat](https://github.com/aaronaquino/transitcat), a web application aimed at helping public transit planners visualize and better understand their networks. In order to narrow down what we wanted to work on, we conducted need-finding interviews with folks from many professions, including public transit planners, urban studies lecturers, and software developers who work on other public transit-oriented products. Based on these interviews, we were able to identify gaps in the market and decided to build a tool that:
 
 * is user-friendly and designed for public transit planners with minimal technical experience,
 * provides vulnerability analysis,
