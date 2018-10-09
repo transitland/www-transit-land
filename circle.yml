@@ -1,24 +1,39 @@
-machine:
-  ruby:
-    version: 2.1.2
-
-database:
-  override:
-    - echo "we need no database"
-
-general:
-  artifacts:
-    - "_site"
-
-test:
-  override:
-    - echo "Let's see if the Jekyll site will build"
-    - bundle exec jekyll build
-
-deployment:
-  production:
-    branch: master
-    commands:
-      - sudo pip install -U awscli
-      - TARGET=prod bundle exec jekyll build
-      - aws s3 sync _site s3://transitland-www/
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.0-jessie-node
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - bundle-v2-{{ checksum "Gemfile.lock" }}
+            - bundle-v2-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - build:
+          name: Build static site using Jekyll
+          command: TARGET=prod bundle exec jekyll build
+  deploy:
+    - run: sudo pip install -U awscli
+    - run: aws s3 sync _site s3://transitland-www/
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
