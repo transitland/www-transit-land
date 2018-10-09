@@ -3,7 +3,7 @@ layout: page
 category: news
 published: true
 isThereTitle: true
-title: Transitcat: Intuitive Isochrones and Vulnerability Analysis for Public Transit Planners
+title: "Transitcat: Intuitive Isochrones and Vulnerability Analysis for Public Transit Planners"
 ---
 ![transitcat_home](/images/transitcat/transitcat_home.png)
 *The Transitcat home page*
