@@ -7,7 +7,7 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://transit.land" # the base hostname & protocol for your site
 
-gems:
+plugins:
   - jekyll-redirect-from
 
 # Build settings
