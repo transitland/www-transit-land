@@ -24,7 +24,9 @@ jobs:
           command: TARGET=prod bundle exec jekyll build
       - run:
           name: install AWS CLI
-          command: sudo pip install -U awscli
+          command: |
+            apk add --update python python-dev py-pip build-base
+            pip install awscli
       - deploy:
           name: deploy to S3
           command: |
