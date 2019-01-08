@@ -19,7 +19,7 @@ jobs:
           key: bundle-v2-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      - build:
+      - run:
           name: Build static site using Jekyll
           command: TARGET=prod bundle exec jekyll build
       - run:
