@@ -47,7 +47,7 @@ A Onestop ID is an alphanumeric, global, immutable identifer for transit feeds, 
 
 3. An abbreviated name that is short but understandable. The only punctuation that is allowed are tildes (`~`) to indicate word breaks. The name doesn't have to be unique across the whole world, but it must be unique within the bounding box of the particular geohash.
 
-Want to browse geohashes for your location? Here's a map of geohashes over the entire globe: [mapzen/leaflet-spatial-prefix-tree](http://mapzen.github.io/leaflet-spatial-prefix-tree/)
+Want to browse geohashes for your location? Here's a map of geohashes over the entire globe: [missinglink/leaflet-spatial-prefix-tree](http://missinglink.github.io/leaflet-spatial-prefix-tree/)
 
 Sometimes, an operator's service area won't fit exactly inside a geohash's bounding box. The most extreme example is London, where the tube network crosses the prime meridian. No one geohash can be used to effectively identify the extent of Transport for London's service area.
 
