@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.5.0-jessie
+      - image: circleci/ruby:2.5.0-stretch-node
     working_directory: ~/www-transit-land
     environment:
       BUNDLE_PATH: vendor/bundle
