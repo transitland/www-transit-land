@@ -25,7 +25,7 @@ jobs:
       - run:
           name: install AWS CLI
           command: |
-            apk add --update python python-dev py-pip build-base
+            apt-get install python python-dev py-pip build-base
             pip install awscli
       - deploy:
           name: deploy to S3
