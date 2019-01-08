@@ -7,6 +7,8 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://transit.land" # the base hostname & protocol for your site
 
+future: true # show posts with future dates, rather than using drafts
+
 plugins:
   - jekyll-redirect-from
 
