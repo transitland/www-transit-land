@@ -8,6 +8,7 @@ jobs:
       BUNDLE_PATH: vendor/bundle
     steps:
       - checkout
+      - run: sudo apt-get update -Y
       - restore_cache:
           keys:
             - bundle-v2-{{ checksum "Gemfile.lock" }}
@@ -25,7 +26,7 @@ jobs:
       - run:
           name: install AWS CLI
           command: |
-            sudo apt-get install python python-pip
+            sudo apt-get install python python-pip -Y
             sudo pip install -U awscli
       - deploy:
           name: deploy to S3
