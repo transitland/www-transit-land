@@ -35,7 +35,7 @@ We're working together with a series of partners and sponsors on new Transitland
 
 - GTFS-realtime support
 - feed validation and best-practices report cards
-- feed merging
+- [feed merging](https://www.interline.io/blog/metropolitan-transportation-commission-selects-interline/)
 - "Transitland Tiles" for bulk download and analysis
 - website and documentation updates
 - an experimental, distributed replacement to the Transitland Feed Registry
@@ -47,3 +47,7 @@ We're working together with a series of partners and sponsors on new Transitland
 **All Transitland Community Members**: Thanks for sticking with us over the past year. Despite all the work happening behind the scenes, we weren't able to share full news of Transitland's progress publicly. We're excited to return to our previous cadance of public announcements and conversations. Watch this website for updates. We also welcome questions and participation from potential partners in the above topics and others — please write to [hello@transit.land](mailto:hello@transit.land).
 
 Here's to a new year of open transit data!
+
+---
+
+_Edit on 10 January 2019: adding a link to [a relevant Interline blog post](https://www.interline.io/blog/metropolitan-transportation-commission-selects-interline/)_.
