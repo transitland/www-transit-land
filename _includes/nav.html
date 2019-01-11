@@ -20,9 +20,14 @@
         </a>
       </div>
       <div class="float-left">
+      <!-- TODO:
         <a class= {% if page.url contains "gallery" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="/gallery" target="_self">
-        <div class="circle"></div><div class="main">Gallery of Projects</div>
+          <div class="circle"></div><div class="main">Gallery of Projects</div>
         </a>
+      -->
+      <a class= {% if page.url contains "gallery" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="https://mobility-explorer.interline.io" target="_self">
+        <div class="circle"></div><div class="main">Mobility Explorer</div>
+      </a>
       </div>
       <div class="float-left">
         <a class= {% if page.url contains "documentation" %}{{ 'active' }}{% else %}{{ 'inactive' }}{% endif %} href="/documentation" target="_self">

@@ -12,9 +12,11 @@ Transitland brings together many sources of transit data to build a directory of
 
 [Transitland Datastore](/documentation/datastore/) brings together data from the Feed Registry with contributions, edits, and fixes from transit enthusiasts and developers. The Datastore is a hosted service that provides a web API for querying and editing.
 
-[Transitland Playground](/documentation/playground/) demonstrates all the pieces of the data architecture working together.
+[Mobility Explorer](https://mobility-explorer.interline.io) is an interactive interface for querying the Transitland Dtastore API.
 
-[Mapzen Turn-by-Turn](https://mapzen.com/projects/turn-by-turn) is a hosted routing service that consumes data from the Datastore API and offers journey planning and analysis.
+[Transitland Dispatcher](/documentation/dispatcher/) is an administrative interface, which also queries the Datastore API.
+
+[Valhalla](https://www.interline.io/valhalla/) is an open-source routing engine that consumes data from the Datastore API and offers journey planning and analysis.
 
 ![a diagram showing the Transitland Feed Registry, Datastore, and Playground communicating with each other](/images/how-it-works-diagram.png)
 
