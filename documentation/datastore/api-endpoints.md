@@ -23,10 +23,12 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/changesets/1/change_payloads/1` |
 `PUT` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
 `DELETE` |  `/api/v1/changesets/1/change_payloads/1` | ([secured](#api-authentication))
+`GET` | `/api/v1/issues` |
+`GET` | `/api/v1/issues/1` |
+`GET` | `/api/v1/issues/categories` | all available categories and issue_types of each category
 `GET` |  `/api/v1/onestop_id/o-9q8y-SFMTA` | final part of the path can be a Onestop ID for any type of entity (for example, a stop or an operator)
 `GET` |  `/api/v1/stops` | none required
-`GET` |  `/api/v1/stops?identifier=4973` | `identifier` can be any type of stop identifier
-`GET` |  `/api/v1/stops?identifier_starts_with=gtfs://f-9q9` | `identifier_starts_with` can be any type of stop identifier fragment
+`GET` |  `/api/v1/stops?imported_with_gtfs_id=true&gtfs_id=PITT` | `gtfs_id` is the ID used in a GTFS feed's stops.txt file
 `GET` |  `/api/v1/stops?lon=-121.977772198&lat=37.413530093&r=100` | `lon` is longitude; `lat` is latitude; `r` is radius of search in meters (if not specified, defaults to 100 meters)
 `GET` |  `/api/v1/stops?bbox=-122.4183,37.7758,-122.4120,37.7858` | `bbox` is a search bounding box with southwest longitude, southwest latitude, northeast longitude, northeast latitude (separated by commas)
 `GET` |  `/api/v1/stops?served_by=o-9q9-BART,r-9q8y-richmond~dalycity~millbrae` | `served_by` can be any number of Onestop ID's for operators and routes
@@ -34,16 +36,15 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/stops?tag_key=wheelchair_boarding&tag_value=1` | find all stops that have a tag of `tag_key` and a value of `tag_value`
 `GET` |  `/api/v1/stops?import_level=4` | find all stops with a given import level
 `GET` |  `/api/v1/operators` | none required
-`GET` |  `/api/v1/operators?identifier=SFMUNI` | `identifier` can be any type of operator identifier
-`GET` |  `/api/v1/operators?identifier_starts_with=gtfs://f-9q9` | `identifier_starts_with` can be any type of operator identifier fragment
+`GET` |  `/api/v1/operators?imported_with_gtfs_id=true&gtfs_id=CT` | `gtfs_id` is the ID used in a GTFS feed's agencies.txt file
 `GET` |  `/api/v1/operators?lon=-121.977772198&lat=37.413530093&r=100` | `lon` is longitude; `lat` is latitude; `r` is radius of search in meters (if not specified, defaults to 100 meters)
 `GET` |  `/api/v1/operators?bbox=-122.4183,37.7758,-122.4120,37.7858` | `bbox` is a search bounding box with southwest longitude, southwest latitude, northeast longitude, northeast latitude (separated by commas)
 `GET` |  `/api/v1/operators?tag_key=agency_timezone` | find all operators that have a tag of `tag_key` with any value
 `GET` |  `/api/v1/operators?tag_key=agency_timezone&tag_value=America/Los_Angeles` | find all operators that have a tag of `tag_key` and a value of `tag_value`
 `GET` |  `/api/v1/operators?import_level=4` | find all operators with a given import level
 `GET` |  `/api/v1/routes` | none required
-`GET` |  `/api/v1/routes?identifier=19X` | `identifier` can be any type of route identifier
-`GET` |  `/api/v1/routes?identifier_starts_with=gtfs://f-9q9` | `identifier_starts_with` can be any type of route identifier fragment
+`GET` |  `/api/v1/routes?imported_with_gtfs_id=true&gtfs_id=Lo-16APR` | `gtfs_id` is the ID used in a GTFS feed's routes.txt file
+`GET` |  `/api/v1/routes?imported_with_gtfs_id=true&gtfs_id=Lo-16APR&imported_from_feed_version=fd0bf2327f8034ceabff6d914220531def1e3903` | `gtfs_id` is the ID used in a GTFS feed's routes.txt file and `imported_from_feed_version` is a feed version SHA1 hash
 `GET` |  `/api/v1/routes?operated_by=o-9q9-BART` | `operated_by` is a Onestop ID for an operator/agency
 `GET` |  `/api/v1/routes?vehicle_type=bus,4` | find all routes with vehicle type(s) by integer or string. Possible values defined by the GTFS spec for [the `route_type` column](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#routestxt) and [the Extended GTFS Route Types](https://support.google.com/transitpartners/answer/3520902). Separate multiple vehicle types by commas.
 `GET` |  `/api/v1/routes?bbox=-122.4183,37.7758,-122.4120,37.7858` | `bbox` is a search bounding box with southwest longitude, southwest latitude, northeast longitude, northeast latitude (separated by commas)
@@ -51,6 +52,7 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/routes?tag_key=route_color&tag_value=FEF0B5` | find all routes that have a tag of `tag_key` and a value of `tag_value`
 `GET` |  `/api/v1/routes?traverses=r-9q9-pittsburg~baypoint~sfia~millbrae-49ae87-5ae164` | find all routes having specified route stop patterns
 `GET` |  `/api/v1/routes?import_level=4` | find all routes with a given import level
+`GET` |  `/api/v1/routes?include_geometry=true` | determine whether to return the route geometry. The default is `true`, which means route geometry is part of the response.
 `GET` |  `/api/v1/route_stop_patterns` | none required
 `GET` |  `/api/v1/route_stop_patterns?traversed_by=r-9q8y-richmond~dalycity~millbrae` | find all Route Stop Patterns belonging to route
 `GET` |  `/api/v1/route_stop_patterns?bbox=-122.4183,37.7758,-122.4120,37.7858` | `bbox` is a search bounding box with southwest longitude, southwest latitude, northeast longitude, northeast latitude (separated by commas)
@@ -82,6 +84,9 @@ Method | Example URL | Parameters
 `GET` |  `/api/v1/schedule_stop_pairs?bbox=-121.0,35.0,-124.0,37.0` | Find all Schedule Stop Pairs originating within a bounding box
 `GET` |  `/api/v1/schedule_stop_pairs?active=true` | Schedule Stop Pairs from active FeedVersions
 `GET` |  `/api/v1/schedule_stop_pairs?import_level=2` | Schedule Stop Pairs from FeedVersion with a given import_level
+`GET` |  `/api/v1/feed_version_infos?feed_version_sha1=700753c9707f4fb203776d13fcb1e372d7b068fa` | FeedVersionInfo records for a given Feed Version
+`GET` |  `/api/v1/feed_version_infos?feed_onestop_id=f-9q9-caltrain` | FeedVersionInfo records for a given Feed
+`GET` |  `/api/v1/feed_version_infos?type=FeedVersionInfoStatistics` | FeedVersionInfo by info type
 
 ### Pagination for JSON endpoints
 
@@ -91,7 +96,7 @@ Method | Example URL | Parameters
 
 ### Max Request Size
 
-If queries have not completed after two minutes, they will be killed and you will receive a timeout response from the Datastore. If your query times out, try reducing the `per_page` count, the bounding box size, etc. If your query seems as small as is possible, [let us know](mailto:transitland@mapzen.com).
+If queries have not completed after two minutes, they will be killed and you will receive a timeout response from the Datastore. If your query times out, try reducing the `per_page` count, the bounding box size, etc. If your query seems as small as is possible, [let us know](mailto:hello@transit.land).
 
 ### Format
 

@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.0-stretch-node
+    working_directory: ~/www-transit-land
+    environment:
+      BUNDLE_PATH: vendor/bundle
+    steps:
+      - checkout
+      - run: sudo apt-get update -y
+      - restore_cache:
+          keys:
+            - bundle-v2-{{ checksum "Gemfile.lock" }}
+            - bundle-v2-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: bundle-v2-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Build static site using Jekyll
+          command: TARGET=prod bundle exec jekyll build
+      - run:
+          name: install AWS CLI
+          command: |
+            sudo apt-get install python python-pip -y
+            sudo pip install -U awscli
+      - deploy:
+          name: deploy to S3
+          command: |
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              aws s3 sync _site s3://transitland-www/
+            else
+              echo "Not master branch, dry run only"
+            fi

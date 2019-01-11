@@ -2,6 +2,7 @@ require 'rubygems'
 require 'optparse'
 require 'yaml'
 require 'fileutils'
+require 'date'
 
 desc "creates a new post"
 task :newpost do

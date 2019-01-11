@@ -1,13 +1,15 @@
 # Site settings
 title: Transitland
-email: transitland@mapzen.com
+email: hello@transit.land
 description: >
   A community-edited data service aggregating transit networks
   across metropolitan and rural areas around the world.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://transit.land" # the base hostname & protocol for your site
 
-gems:
+future: true # show posts with future dates, rather than using drafts
+
+plugins:
   - jekyll-redirect-from
 
 # Build settings

@@ -29,7 +29,7 @@ Your link should point to a .zip file on the web that is hosted by a transit ope
 
 ### Troubleshoot feed status messages
 
-When you add the URL, Transitland checks that address and validates the contents of the file. If your GTFS feed cannot be parsed for some reason, you will receive a message and be unable to continue adding this feed. If you need help, you can send an email to transitland@mapzen.com, or if you are familiar with GitHub, you can post an issue in the [transitland](https://github.com/transitland/transitland) repository.
+When you add the URL, Transitland checks that address and validates the contents of the file. If your GTFS feed cannot be parsed for some reason, you will receive a message and be unable to continue adding this feed. If you need help, you can send an email to hello@transit.land, or if you are familiar with GitHub, you can post an issue in the [transitland](https://github.com/transitland/transitland) repository.
 
 If Transitland has difficulty accessing the address, check the URL to make sure you did not enter a typographic error and try again. Otherwise, there could be a problem on the transit operator's side, such as the server or network being offline temporarily. You may also see a [status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) that may give more information about the problem. If your address is correct and the error persists, you can try checking with the transit operator.
 

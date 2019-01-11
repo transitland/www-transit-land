@@ -1,0 +1,55 @@
+import:
+    - https://mapzen.com/carto/refill-style/refill-style.yaml
+    - https://mapzen.com/carto/refill-style/9/themes/color-gray-gold.zip
+    - https://mapzen-assets.s3.amazonaws.com/resources/demo.yaml
+
+global:
+    brighter_color: |
+        function(){
+            var seconds
+            var d = new Date(feature.created_at)
+            seconds = d.getMilliseconds()
+            seconds = seconds/.15
+            return 'hsl(' + seconds + ',100%,50%)'
+            }
+    darker_color: |
+        function(){
+            var seconds
+            var d = new Date(feature.created_at)
+            seconds = d.getMilliseconds()
+            seconds = seconds/.15
+            return 'hsl(' + seconds + ',40%,50%)'
+            }
+
+sources:
+    coverage:
+        type: GeoJSON
+        url: https://transit.land/api/v1/operators.geojson?without_feed=true
+        generate_label_centroids: true
+styles:
+    _text:
+        base: text
+        blend_order: 2
+
+layers:
+    coverage:
+        data: {source: coverage}
+        draw:
+            lines:
+                order: 490
+                color: global.brighter_color
+                width: 3px
+        labels:
+            filter: {label_placement : true}
+            draw:
+                _text:
+                    offset: [0px,25px]
+                    text_source: |
+                        function(){
+                            return feature.name + '\n' + feature.metro + ', ' + feature.country
+                            }
+                    font:
+                        fill: white
+                        stroke:
+                            color: global.darker_color
+                            width: 3
