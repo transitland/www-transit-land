@@ -1,6 +1,7 @@
 ---
 title: Playground
 layout: documentation
+redirect_to: https://github.com/transitland/mobility-explorer/blob/master/docs/overview.md
 ---
 
 **[Transitland Playground](/playground)** allows users to browse all the operators, stops, and routes in the [Datastore](/documentation/datastore/).

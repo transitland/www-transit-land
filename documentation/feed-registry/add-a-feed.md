@@ -71,7 +71,7 @@ At this point, you have provided information about the feed, its operators and l
 2. Agree to the contributor agreement.
 3. Click Submit feed.
 
-If the submission was successful, you will receive a confirmation message. As soon as the Transitland team reviews your feed, you will see its operators listed in the [Feed Registry](https://transit.land/feed-registry/), and it will be accessible in the Transitland [Playground](https://transit.land/playground/) and [Datastore API](https://github.com/transitland/transitland-datastore).
+If the submission was successful, you will receive a confirmation message. As soon as the Transitland team reviews your feed, you will see its operators listed in the [Feed Registry](https://transit.land/feed-registry/), and it will be accessible in the [Datastore API](https://github.com/transitland/transitland-datastore).
 
 After that, the details of the feed will be imported into the Transitland Datastore. This will make available the stops, routes, and schedule data that are contained in the feed. This import process may take a few days to complete. In some cases, there are issues in the import process that could delay or make the feed unacceptable for posting.
 

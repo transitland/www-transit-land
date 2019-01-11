@@ -67,7 +67,7 @@ Onestop IDs are currently generated in the [Transitland Datastore web service](/
 
 To browse Onestop IDs for feeds and operators, try the [Transitland Feed Registry](/documentation/feed-registry/).
 
-To browse Onestop IDs for operators, stops, and routes, try the [Transitland Playground](/documentation/playground/).
+To browse Onestop IDs for operators, stops, and routes, try the [Mobility Explorer](https://mobility-explorer.interline.io).
 
 Onestop IDs are also included on all of the [Datastore's API endpoints](/documentation/datastore/api-endpoints.html).
 
