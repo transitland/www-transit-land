@@ -33,7 +33,7 @@ Now that Transitland again has a stable foundation of support, post Mapzen, we c
 
 We're working together with a series of partners and sponsors on new Transitland platform features and data additions in 2019. The list of topics tentatively includes:
 
-- GTFS-realtime support
+- [GTFS-realtime support](https://www.interline.io/blog/transportation-research-board-funds-gtfs-realtime/)
 - feed validation and best-practices report cards
 - [feed merging](https://www.interline.io/blog/metropolitan-transportation-commission-selects-interline/)
 - "Transitland Tiles" for bulk download and analysis
@@ -51,3 +51,5 @@ Here's to a new year of open transit data!
 ---
 
 _Edit on 10 January 2019: adding a link to [a relevant Interline blog post](https://www.interline.io/blog/metropolitan-transportation-commission-selects-interline/)_.
+
+_Edit on 24 January 2019: adding a link to [another relevant Interline blog post](https://www.interline.io/blog/transportation-research-board-funds-gtfs-realtime/)_.
