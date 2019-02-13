@@ -2,8 +2,10 @@
 title: Transitland
 email: hello@transit.land
 description: >
-  A community-edited data service aggregating transit networks
-  across metropolitan and rural areas around the world.
+  A community-edited data service aggregating transit networks across
+  metropolitan and rural areas around the world. Transitland collects and
+  validates GTFS feeds from thousands of transit providers. Use the Transitland
+  API to query stops, routes, schedules, and more data types.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://transit.land" # the base hostname & protocol for your site
 
