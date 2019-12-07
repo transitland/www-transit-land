@@ -12,7 +12,7 @@ Transitland brings together many sources of transit data to build a directory of
 
 [Transitland Datastore](/documentation/datastore/) brings together data from the Feed Registry with contributions, edits, and fixes from transit enthusiasts and developers. The Datastore is a hosted service that provides a web API for querying and editing.
 
-[Mobility Explorer](https://mobility-explorer.interline.io) is an interactive interface for querying the Transitland Dtastore API.
+[Mobility Explorer](https://mobility-explorer.interline.io) is an interactive interface for querying the Transitland Datastore API.
 
 [Transitland Dispatcher](/documentation/dispatcher/) is an administrative interface, which also queries the Datastore API.
 
