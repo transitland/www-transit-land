@@ -29,7 +29,7 @@ For each of the placeholders, we have created a Transitland operator record. Thi
 
 We're now asking for your help to create additional placeholder operators, as well as to help find GTFS feeds that are available for any placeholder operators. Together, we can help build Transitland as both a deep source of data, where it's available, and a broad overview of where we know transit service exists but detailed open data is not yet available.
 
- <a href="https://transit.land/feed-registry/?country=KR"><img src="/images/placeholders/feed-registry-south-korean-placeholders.png" alt="screenshot of Feed Registry"/></a>
+ <a href="/feed-registry/?country=KR"><img src="/images/placeholders/feed-registry-south-korean-placeholders.png" alt="screenshot of Feed Registry"/></a>
  *Transitland Feed Registry now lists "placeholder" operators added for South Korea. Browse them in the [Feed Registry](https://transit.land/feed-registry/?country=KR).*
 
 ## We could use your knowledge

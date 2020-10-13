@@ -59,7 +59,7 @@ We can see that frequently published feeds (as often as every day) tend to have 
 
 Statistics on feed updates can now be generated for each Feed using the [Transitland API](https://transit.land/documentation/datastore/feeds.html), and are also shown in the [Dispatcher page](https://transit.land/dispatcher/feeds) for each Feed.
 
-<a href="https://transit.land/dispatcher/feeds/f-c2g5-bctransit~kelownaregionaltransitsystem"><img src="/images/transitland-historical-feed-versions/dispatcher-feed-stats.png" alt="Feed version update statistics in Dispatcher" /></a>
+<a href="/dispatcher/feeds/f-c2g5-bctransit~kelownaregionaltransitsystem"><img src="/images/transitland-historical-feed-versions/dispatcher-feed-stats.png" alt="Feed version update statistics in Dispatcher" /></a>
 
 ## Conclusion
 
