@@ -65,13 +65,13 @@ We're now pleased to offer another view into Transitland's collection of data, t
 
 <!-- more -->
 
-<a href="https://transit.land/feed-registry">![screenshot of Transitland Feed Registry](https://s3.amazonaws.com/assets-staging.mapzen.com/images/feed-registry/transitland-feed-registry-screenshot.png)</a>
+<a href="/feed-registry">![screenshot of Transitland Feed Registry](https://s3.amazonaws.com/assets-staging.mapzen.com/images/feed-registry/transitland-feed-registry-screenshot.png)</a>
 
 ### What transit agencies offer open feeds?
 
 The Feed Registry provides an overview of all the operators represented in Transitland. For every operator, we include a list of the feeds we aggregate from each. Most transit operators only offer one feed, but some, like [MTA New York City Transit](https://transit.land/feed-registry/operators/o-dr5r-nyct), are split across many feeds.
 
-Want to use the Feed Registry's data in your own application? It's all available through the Datastore API under the <a href="https://transit.land/api/v1/operators">`/api/v1/operators`</a> and <a href="https://transit.land/api/v1/feeds">`/api/v1/feeds`</a> endpoints. We're assembling and sharing this data under <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons CC0</a> (CC0), so you're free to use this catalog of operators and feeds however you see fit in your own applications and services.
+Want to use the Feed Registry's data in your own application? It's all available through the Datastore API under the <a href="/api/v1/operators">`/api/v1/operators`</a> and <a href="/api/v1/feeds">`/api/v1/feeds`</a> endpoints. We're assembling and sharing this data under <a href="https://creativecommons.org/publicdomain/zero/1.0/legalcode">Creative Commons CC0</a> (CC0), so you're free to use this catalog of operators and feeds however you see fit in your own applications and services.
 
 For now, we only list transit operators in San Francisco and New York City. Soon, we'll be expanding our coverage worldwide, and we'll be opening the Datastore API to outside contributors to add additional operators and feeds. Do you work for a transit operator that is looking to share its data more widely? Or are you a transit data enthusiast interested in contributing to Transitland? Please <a href="mailto:hello@transit.land">write us</a>, and we'll add you to our list of beta testers.
 
@@ -87,7 +87,7 @@ With the [Feed Registry](https://transit.land/feed-registry), we're hoping to cl
     <p style="clear: both;"><div class="allow-redistribution"></div> can you take this feed and redistribute it to others, in a different context or embedded within a different application?</p>
 </div>
 
-<a class="license-image" href="https://transit.land/feed-registry"><img src="https://s3.amazonaws.com/assets-staging.mapzen.com/images/feed-registry/transitland-feed-registry-mouseover.png" alt="screenshot of Transitland Feed Registry: mousing over an informational license icon" width="211" height="319"/></a>
+<a class="license-image" href="/feed-registry"><img src="https://s3.amazonaws.com/assets-staging.mapzen.com/images/feed-registry/transitland-feed-registry-mouseover.png" alt="screenshot of Transitland Feed Registry: mousing over an informational license icon" width="211" height="319"/></a>
 Each license is summarized with three icons that are color-coded for quick reference. Hold your cursor over an icon in the Feed Registry to get more information about what that license permits, or click the question mark at the top of the "License Details" column for more information. Even with just these feeds from the San Francisco and New York regions, it's possible to see how each license is "open" in a slightly different way.
 
 Please note the Feed Registry is provided for informational purposes only and does not constitute legal advice. We make a good faith effort to ensure accuracy, but cannot guarantee the accuracy or reliability of the information provided in the Feed Registry. You are advised to click through to each feed's license, review it, and consult with a lawyer if you need proper legal advice on using and consuming the data referenced in the Feed Registry.
